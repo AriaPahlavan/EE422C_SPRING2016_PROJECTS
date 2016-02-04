@@ -1,0 +1,65 @@
+
+package Assignment1;
+
+public class MyTranslator{
+	private String phrase = null;
+	private String firstPart = null;
+	private int firstPartIndex = -1;
+	private final char[] vowels = {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'};
+	private int length;
+	private String[] listPrases;
+
+	/*************Constructor***********************/
+	MyTranslator(){
+		this.phrase = "Empty";
+		this.length = 0;
+		listPhrases = null;
+	}
+
+	/*************Setters and Getters**************/
+	public void setPhrase(String phrase){
+		this.phrase = phrase;
+	}
+
+	public String getPhrase(){
+		return this.phrase;
+	}
+
+	public String getFirstPart(){
+		return this.firstPart;
+	}
+
+
+	public int getFirstPartIndex(){
+		return this.firstPartIndex;
+	}
+	
+	/*************Member functions**************/
+	public String[] parsePhraseString(String phrase, int length){
+		String[] listOfPhrase = new String[length];
+		
+		return listOfPhrase;
+	}
+	
+	public boolean isVowel(char character){
+		int length = vowels.length;
+
+		//check the char agains all vowels in the alphabet
+		for (int i = 0; i < length; i+=1 ) {
+			if(character == vowels[i]) return true;
+		}
+
+		//if reached this point, not a vowel
+		return false;
+	}
+
+	public String EngToPiglatinTranslator(){
+		int index = 0;
+
+		while(! isVowel(this.phrase.charAt(index))){
+			
+		}
+
+		return null;
+	}
+}

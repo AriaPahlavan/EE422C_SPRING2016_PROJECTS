@@ -13,18 +13,18 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Translator 
+public class Translator
 {
-	
-	public static void main (String args[]) 
-	{ 
-		if (args.length != 1) 
+
+	public static void main (String args[])
+	{
+		if (args.length != 1)
 		{
 			System.err.println ("Error: Incorrect number of command line arguments");
 			System.exit(-1);
 		}
 		processLinesInFile (args[0]);
-		
+
 	}
 
 	/******************************************************************************
@@ -34,34 +34,34 @@ public class Translator
 	*          translated piglatin string.                                        *
 	* Returns: None                                                               *
 	******************************************************************************/
-	public static void processLinesInFile (String filename) 
-	{ 
+	public static void processLinesInFile (String filename)
+	{
 
-		Translator translator = new Translator(); 
-		try 
+		Translator translator = new Translator();
+		try
 		{
 			FileReader freader = new FileReader(filename);
 			BufferedReader reader = new BufferedReader(freader);
-			
-			for (String s = reader.readLine(); s != null; s = reader.readLine()) 
+
+			for (String s = reader.readLine(); s != null; s = reader.readLine())
 			{
 				String pigLatin = translator.translate(s);
 				System.out.println(pigLatin);
 			}
-		} 
-		catch (FileNotFoundException e) 
+		}
+		catch (FileNotFoundException e)
 		{
 			System.err.println ("Error: File not found. Exiting...");
 			e.printStackTrace();
 			System.exit(-1);
-		} catch (IOException e) 
+		} catch (IOException e)
 		{
 			System.err.println ("Error: IO exception. Exiting...");
 			e.printStackTrace();
 			System.exit(-1);
 		}
 	}
-	
+
 	/******************************************************************************
 	* Method Name: translate                                                      *
 	* Purpose: Converts String inputString into piglatin based on rules specified *
@@ -69,9 +69,9 @@ public class Translator
 	* Returns: String object containing the piglatin translation of               *
 	*          String inputString                                                 *
 	******************************************************************************/
-	
-	public String translate (String inputString) 
-	{ 
+
+	public String translate (String inputString)
+	{
 		// modify the following code. Add/delete anything after this point.
 		//stringBuilder helps me translate each line to piglatine :)
 		StringBuilder stringBuilder = new StringBuilder();
@@ -81,7 +81,7 @@ public class Translator
 		//pattern and matcher help me separate eligible words from the naughty ones :)
 
 		//I'm looking for anything that starts with chars a-z or A-Z or 0-9
-		Pattern pattern = Pattern.compile("[a-zA-Z0-9]+");
+		Pattern pattern = Pattern.compile("[a-zA-Z0-9'-]+");
 
 		//matchers takes each like and will let me compare my pattern with the string line
 		Matcher matcher = pattern.matcher(inputString);
@@ -109,10 +109,47 @@ public class Translator
 	}
 
 	private String piglatinMachine(String substring) {
-		//I first check to see if there
+		StringBuilder stringBuilder = new StringBuilder();
+		int indexOfVowel = 0, endIndex = 0;
+		//I first use pattern match to see if I'm dealing with a numeric value
+		//if so I'm just gonna return.... I promise :)
+
+		Pattern pattern = Pattern.compile("[0-9]+");
+		Matcher matcher = pattern.matcher(substring);
+
+		//just a conditional statement to see if I can find a naughty number!!
+		if(matcher.find()){
+			//just return the number back!!
+			return substring;
+		}
+
+		//Now I'll change the pattern to catch a vowel or two :)
+		Pattern pattern2 = Pattern.compile("[aeiouAEIOU]");
+		Matcher matcher2 = pattern2.matcher(substring);
 
 
-		return null;
+		//using a while loop to find the index position of the first vowel in the string
+		if (matcher2.find()){
+			indexOfVowel = matcher2.start();
+			endIndex = substring.length();
+
+			//first append the part starting with the vowel
+			stringBuilder.append(substring.substring(indexOfVowel, endIndex));
+
+			//If the word starts with a vowel, I'll just append "yay" to the end
+			if(indexOfVowel == 0){
+				stringBuilder.append("yay");
+			}
+
+			//else I move the first part to the end and the append "ay"
+			else {
+				stringBuilder.append(substring.substring(0, indexOfVowel));
+				stringBuilder.append("ay");
+			}
+		}
+
+
+		return stringBuilder.toString();
 	}
 
 }

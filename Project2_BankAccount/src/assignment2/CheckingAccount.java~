@@ -1,0 +1,29 @@
+/** 
+ * @author Aria Pahlavan
+ * @version 1.0
+ */
+package assignment2;
+
+/**
+ * @author Aria Pahlavan
+ *
+ */
+public class CheckingAccount extends BankAccount {
+
+
+	public CheckingAccount(double initialBalance) {
+		super(initialBalance);
+	}
+
+	/**
+	 * @param acct
+	 * @param owner
+	 * @param initBalance
+	 */
+	public CheckingAccount(long acct, String owner, double initBalance) {
+		super(acct, owner, initBalance);
+	}
+
+
+
+}

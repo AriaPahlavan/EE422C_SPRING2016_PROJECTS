@@ -1,6 +1,8 @@
 /** 
+ * Assignment 2: Bank Account
  * @author Aria Pahlavan
  * @version 1.0
+ * Spring 2016
  */
 package assignment2;
 

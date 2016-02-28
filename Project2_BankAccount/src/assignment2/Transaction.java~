@@ -1,0 +1,182 @@
+package assignment2;
+
+import java.util.Scanner;
+
+/**
+ * All possible transaction types
+ * <p>
+ * Created by Aria Pahlavan on 2/18/2016.
+ */
+enum TransactionTypes {
+    NONE,
+    DEPST,
+    TRNSFR,
+    INTRST,
+    WITHDRAW,
+    GET
+}
+
+/**
+ * Created by Aria Pahlavan on 2/18/2016.
+ */
+public class Transaction {
+    protected TransactionTypes transactionTypes;
+    private BankAccount newAccount;
+    private String accType1;
+    private String accType2;
+    private long accNumber;
+    private double amount;
+    private static final String CURRENCY_REGEX = "[0-9]+([\\.]([0-9]{1,2})?)?";
+    private static final String TRANS_REGEX = "[DWITG]";
+
+
+    /**
+     * Default constructor
+     */
+    public Transaction() {
+        this.transactionTypes = TransactionTypes.NONE;
+        newAccount = null;
+        accType2 = null;
+    }
+
+    /**
+     * Custom construcotr - Initializes the trans type and customer
+     *
+     * @param transactionTypes
+     */
+    public Transaction(TransactionTypes transactionTypes) {
+        this.transactionTypes = transactionTypes;
+    }
+
+
+    //getters
+    public String getAccType1() {
+        return accType1;
+    }
+
+    public long getAccNumber() {
+        return accNumber;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public TransactionTypes getTransactionTypes() {
+        return transactionTypes;
+    }
+
+    public BankAccount getNewAccount() {
+        return newAccount;
+    }
+
+    public String getAccType2() {
+        return accType2;
+    }
+
+    /**
+     * To process a single line string input
+     *
+     * @param transaction A single line string input
+     */
+    public Transaction(String transaction) {
+        //local variables
+        accType1 = null;
+        accType2 = null;
+        accNumber = -1;
+        amount = -1;
+        String amountValidator = null;
+        String transType = null;
+
+
+        //scanner is used to scan and parse the transaction token by token
+        Scanner scanner = new Scanner(transaction);
+
+        try {
+            //parsing
+            accNumber = scanner.nextInt();
+            transType = scanner.next();
+
+            if (!transType.matches(TRANS_REGEX)) {
+                throw new Exception("Invalid Transaction Type");
+            }
+
+
+            //W, D, and T must include an amount
+            if (transType.equals("W") || transType.equals("D") || transType.equals("T")) {
+                if (scanner.hasNext()) {
+                    amountValidator = scanner.next();
+                    if (amountValidator.matches(CURRENCY_REGEX))
+                        amount = Double.parseDouble(amountValidator);
+                    else
+                        //if the the amount is not in valid format, report an error
+                        throw new Exception("Invalid Price Format");
+                } else {
+                    //if the the amount was not specified, report an error
+                    throw new Exception("Amount Not Specified");
+                }
+            }
+
+
+            //if no account type
+            if (!scanner.hasNext())
+                throw new Exception("Account Type Not Specified");
+            accType1 = scanner.next();
+
+            //checking validity for the account type
+            if (!isValidAcc(accType1))
+                throw new Exception("Invalid Account Type");
+
+            if (transType.equals("T")) {
+                if (scanner.hasNext()) {
+                    accType2 = scanner.next();
+
+                    //checking validity
+                    if (!isValidAcc(accType2))
+                        throw new Exception("Invalid Account Type");
+                } else
+                    throw new Exception("Account Type Not Specified");
+            } else if (scanner.hasNext())
+                throw new Exception("Invalid Format");
+            //end of parsing
+
+            //identifying the transaction and process accordingly
+            switch (transType) {
+                case "D":
+                    transactionTypes = TransactionTypes.DEPST;
+                    break;
+                case "T":
+                    transactionTypes = TransactionTypes.TRNSFR;
+                    break;
+                case "I":
+                    transactionTypes = TransactionTypes.INTRST;
+                    break;
+                case "W":
+                    transactionTypes = TransactionTypes.WITHDRAW;
+                    break;
+                case "G":
+                    transactionTypes = TransactionTypes.GET;
+                    break;
+                default:
+                    throw new Exception("Invalid Transaction Format");
+            }
+        } catch (Exception e) {
+            if (!transaction.equals(""))
+                System.out.println("Error: " + e.getMessage() + ", in the following transaction: \"" + transaction + "\"");
+            else
+                System.out.println("Error: TRANSACTION NOT RECEIVED!");
+        }
+    }
+
+
+    private boolean isValidAcc(String accType) {
+        if (accType.equals("C") || accType.equals("S") || accType.equals("L") || accType.equals("A"))
+            return true;
+
+
+        return false;
+    }
+
+
+
+}

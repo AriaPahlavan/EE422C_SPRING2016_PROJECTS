@@ -1,0 +1,206 @@
+package assignment2;
+
+import javax.swing.*;
+
+public class BankDriver {
+
+	public static void main(String[] args) {
+
+		try {
+            BankDirectory myBank = new BankDirectory();
+
+            String transactionInput = JOptionPane.showInputDialog("Please enter your transaction:");
+
+			while (true) {
+
+				Transaction newTransaction = new Transaction(transactionInput);
+                myBank.processTransaction(newTransaction);
+
+
+				transactionInput = JOptionPane.showInputDialog("Please enter your next transaction (Enter N to exit):");
+                if (transactionInput.toLowerCase().equals("n"))
+                    break;
+			}
+
+            //Summary:
+            myBank.printSummary();
+        } catch (Exception e) {
+			System.out.println("Error: Invalid Transaction Format. Please try again!");
+		}
+
+	}
+
+//
+//	// Customer-ID# transaction-type [ amount] account-type [account-type2]
+//	public static boolean parseTransaction(String transaction) {
+//		//local vatiables
+//		boolean doesExist = false;
+//		long id;
+//		double amount = 0;
+//		String transType, accType1, accType2;
+//
+//		//scanner is used to scan and parse the transaction token by token
+//		Scanner scanner = new Scanner(transaction);
+//
+//		try {
+//			//parsing
+//			id = scanner.nextInt();
+//			transType = scanner.next();
+//
+//			if (transType.equals("W") || transType.equals("D") || transType.equals("T")) {
+//				amount = scanner.nextDouble();
+//			}
+//
+//			accType1 = scanner.next();
+//
+//			if (scanner.hasNext())
+//				accType2 = scanner.next();
+//			//end of parsing
+//
+//			//identifying the transaction and process accordingly
+//			switch (transType) {
+//			case "D":
+//
+//				break;
+//			case "T":
+//
+//				break;
+//			case "I":
+//
+//				break;
+//			case "W":
+//
+//				break;
+//			case "G":
+//
+//				break;
+//
+//			default:
+//				break;
+//			}
+//
+//			/*
+//			 * @param customerName
+//			 *
+//			 * @param customerNumber
+//			 *
+//			 * @param checkingAccount || savingAccount ||
+//			 * autoLoanRepaymentAccount || studentLoanRepayment
+//			 */
+//			switch (transType) {
+//			case "D":
+//				switch (accType1) {
+//				case "C":
+//
+//					break;
+//				case "S":
+//
+//					break;
+//				case "L":
+//
+//					break;
+//				case "A":
+//
+//					break;
+//
+//				default:
+//					break;
+//				}
+//
+//				CheckingAccount newCheckingAccount = new CheckingAccount(amount);
+//				Customer newCustomer = new Customer();
+//				newCheckingAccount.setAccountNumber(id);
+//				newCustomer.setCheckingAccount(newCheckingAccount);
+//				customers.add(newCustomer);
+//
+//				break;
+//			case "T":
+//
+//				break;
+//			case "I":
+//
+//				break;
+//			case "W":
+//
+//				break;
+//			case "G":
+//				for (Customer customer : customers) {
+//					switch (accType1) {
+//					case "C":
+//						if (customer.getCheckingAccount().getAccountNumber() == id)
+//							if (customer.getCheckingAccount() != null)
+//
+//								System.out.println(
+//										"The current balance is $" + customer.getCheckingAccount().getBalance());
+//							else
+//								System.out.println("The account number is invalid");
+//						break;
+//
+//					case "S":
+//						if (customer.getCheckingAccount().getAccountNumber() == id)
+//							if (customer.getSavingAccount() != null)
+//								System.out
+//										.println("The current balance is $" + customer.getSavingAccount().getBalance());
+//							else
+//								System.out.println("The account number is invalid");
+//						break;
+//					case "L":
+//						if (customer.getCheckingAccount().getAccountNumber() == id)
+//							if (customer.getStudentLoanRepayment() != null)
+//
+//								System.out.println(
+//										"The current balance is $" + customer.getStudentLoanRepayment().getBalance());
+//							else
+//								System.out.println("The account number is invalid");
+//
+//						break;
+//					case "A":
+//						if (customer.getCheckingAccount().getAccountNumber() == id)
+//							if (customer.getAutoLoanRepaymentAccount() != null)
+//
+//								System.out.println("The current balance is $"
+//										+ customer.getAutoLoanRepaymentAccount().getBalance());
+//							else
+//								System.out.println("The account number is invalid");
+//						break;
+//
+//					default:
+//						break;
+//					}
+//				}
+//				break;
+//
+//			default:
+//				break;
+//			}
+//
+//		} catch (Exception e) {
+//			System.out.println("The following transaction contains an error: " +transaction);
+//			return false;
+//		}
+//
+//		return true;
+//	}
+
+
+	/*
+	 * public static void main(String[] args) { JFrame jFrame = new JFrame(
+	 * "InputDialog Example #1");
+	 * 
+	 * String input = JOptionPane.showInputDialog("Enter somthing");
+	 * 
+	 * String[] parse = input.split(" "); for (String string : parse) {
+	 * System.out.println(string); }
+	 * 
+	 * Scanner scanner = new Scanner(JOptionPane.showInputDialog(
+	 * "Enter somthing" ));
+	 * 
+	 * while (scanner.hasNext()) { System.out.println("I'm here"); if
+	 * (scanner.hasNextInt()) {
+	 * 
+	 * int i = scanner.nextInt(); System.out.println("it is " + i); } else {
+	 * scanner.next(); } }
+	 * 
+	 * }
+	 */
+}

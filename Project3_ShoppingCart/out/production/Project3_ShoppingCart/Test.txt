@@ -1,0 +1,13 @@
+insert clothing shirt 20.50 1 1
+insert electronics PS3 300 1 5 F NM
+insert groceries cabbage 2.00 5 1 NP
+print
+insert groceries cabbage 2.00 5 1 NP
+update cabbage 10
+delete cabbage
+print
+
+
+insert clothing smalShirt 20.50 1,500,000.00 500.00
+insert electronics PS4 400.00 5,000 1,000 NF NM
+insert groceries cilantero 20.25 1,000 2 P

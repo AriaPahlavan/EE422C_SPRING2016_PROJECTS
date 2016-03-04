@@ -45,7 +45,7 @@ public class Vertex {
         return parent;
     }
 
-    public boolean isWasChecked() {
+    public boolean wasChecked() {
         return wasChecked;
     }
 
@@ -61,7 +61,7 @@ public class Vertex {
         this.parent = parent;
     }
 
-    public void setWasChecked(boolean wasChecked) {
+    public void setStatus(boolean wasChecked) {
         this.wasChecked = wasChecked;
     }
 

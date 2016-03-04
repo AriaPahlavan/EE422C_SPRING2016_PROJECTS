@@ -11,8 +11,9 @@ import java.util.Scanner;
 
 // do not change class name or interface it implements
 public class WordLadderSolver implements Assignment4Interface {
-    // declares class members here.
     private Dictionary dictionary;
+    private ArrayList<String> solutionList;
+    private ArrayList<String> tempList;
     private final int START_INDEX = 0;
 
     // add a constructor for this object. HINT: it would be a good idea to set up the dictionary there
@@ -20,66 +21,109 @@ public class WordLadderSolver implements Assignment4Interface {
     /**
      * Custom constructor - Opens the file containing the dictionary words, scan the words
      * then initializes the dictionary fields.
+     *
      * @param filename
-     * @throws FileNotFoundException if an error occurs while attempting to
-     * open the dictionary file.
+     * @throws FileNotFoundException
+     *         if an error occurs while attempting to
+     *         open the dictionary file.
      */
-    public WordLadderSolver (String filename) {
-        //Opening file and scanning the contents
-        File file = new File(filename);
-        Scanner scan = null;
-        ArrayList<String> list = new ArrayList<String>();
-        try {
-            scan = new Scanner(file);
+    public WordLadderSolver(ArrayList<String> list) {
 
-            //if a line does not start with an '*', the first 5 letters
-            //are copied into the list.
-            while ( scan.hasNextLine() ) {
-                String line = scan.nextLine();
-                if ( line.charAt(0) != '*' ) {
-                    String word = line.substring(0, 5);
-                    list.add(word);
-                }
-            }
-        } catch (FileNotFoundException fnfe) {
-            //File error handling
-            fnfe.printStackTrace();
-            System.err.println("Error - File " + file + " not found.");
-        } finally {
-            //In case an error occurs, close the scanner safely.
-            if ( scan != null ) {
-                scan.close();
-            }
-        }
 
         //initializing dictionary
         list.trimToSize();
         dictionary = new Dictionary(list);
 
+        //initializing solutionList
+        solutionList = new ArrayList<>();
+
     }
 
-    // do not change signature of the method implemented from the interface
     @Override
-    public ArrayList<String> computeLadder (String startWord, String endWord) throws NoSuchLadderException {
+    public ArrayList<String> computeLadder(String startWord, String endWord) throws NoSuchLadderException {
+
+        Vertex startVertex = dictionary.search(startWord);
+        Vertex endVertex = dictionary.search(endWord);
+
+        if ( startVertex != null && endVertex != null ) {
+
+            solutionList.add(startWord);
+            if(makeLadder(startVertex, endVertex, 0)){
+                completeSolution();
+                return solutionList;
+            }
+            else {
+                return null;
+            }
+        }
 
         return null;
     }
 
+    /**
+     * updates the solution list using the temporary list
+     */
+    private void completeSolution() {
+
+        int lastIndex = tempList.size()-1;
+
+        for(int i = lastIndex; i >= 0; i-=1){
+            solutionList.add(tempList.get(i));
+        }
+    }
+
+
+    /**
+     *
+     */
+    public boolean makeLadder(Vertex start, Vertex end, int position) {
+
+        //Base case:
+        if ( start == null || end == null )
+            return false;
+        if ( numDifferentChar(start.getPhrase(), end.getPhrase()) == 1 ) {
+            tempList.add(end.getPhrase());
+            return true;
+        }
+
+        //Recursion body
+        start.setStatus(true);
+        for ( Vertex vertex : start.getEdges() ) {
+
+            int updatedPosition = findCharIndex(start.getPhrase(), vertex.getPhrase());
+
+            //for all edges of start, if not visited the, do a recurse call
+            if ( updatedPosition != position && !vertex.wasChecked() ) {
+                if ( makeLadder(vertex, end, updatedPosition) ) {
+                    tempList.add(vertex.getPhrase());
+                    return true;
+                }
+            }
+        }
+
+        //No ladder found
+        return false;
+    }
+
     @Override
-    public boolean validateResult (String startWord, String endWord, ArrayList<String> wordLadder) {
+    public boolean validateResult(String startWord, String endWord, ArrayList<String> wordLadder) {
+
+        if ( wordLadder == null )
+            return false;
+
         //stripping the first and last word for testing
         int size = wordLadder.size();
         String start = wordLadder.get(START_INDEX);
-        String end = wordLadder.get(size-1);
+        String end = wordLadder.get(size - 1);
 
         //Checking the first and last word in the ladder
         if ( !start.equals(startWord) || !end.equals(endWord) )
             return false;
 
         //checking if all intermediate words are exactly one distance apart
-        for (int i = 0; i<(size-1); i++){
-            int numCharDiff = numDifferentChar(wordLadder.get(i), wordLadder.get(i+1));
-            if ( numCharDiff != 1 ){
+        for ( int i = 0; i < (size - 1); i++ ) {
+            int numCharDiff = numDifferentChar(wordLadder.get(i), wordLadder.get(i + 1));
+            if ( numCharDiff != 1 ) {
                 return false;
             }
         }
@@ -90,11 +134,12 @@ public class WordLadderSolver implements Assignment4Interface {
     /**
      * This method compares to strings character by character and counts the number
      * of character differences between the two input parameters.
+     *
      * @param s1
      * @param s2
      * @return the number of character difference between the two string parameters.
      */
-    private int numDifferentChar (String s1, String s2) {
+    private int numDifferentChar(String s1, String s2) {
         //counter of the differing letters
         int counter = 0;
         char[] firstWord = s1.toCharArray();
@@ -106,7 +151,7 @@ public class WordLadderSolver implements Assignment4Interface {
 
         // checking the letters one by one and
         // counting the unlike chars
-        for (int i=0; i<size; i+=1 ){
+        for ( int i = 0; i < size; i += 1 ) {
             if ( firstWord[i] != secondWord[i] )
                 counter += 1;
         }
@@ -114,6 +159,38 @@ public class WordLadderSolver implements Assignment4Interface {
         return counter;
     }
 
-    // add additional methods here
+    /**
+     * This method compares to strings character by character and looks for the
+     * a difference in characters and if caught.
+     *
+     * @param s1
+     * @param s2
+     * @return the position where a character difference occurred.
+     */
+    private int findCharIndex(String s1, String s2) {
+
+        //making sure that we're dealing with adjacent edges
+        if ( numDifferentChar(s1, s2) != 1 )
+            System.err.println("The edge is not adjacent: " + s1 + " - " + s2);
+
+        //Position of the different letter
+        char[] first = s1.toCharArray();
+        char[] second = s2.toCharArray();
+
+        // the size of the shortest string
+        // (more specifically character array).
+        int size = Math.min(s1.length(), s2.length());
+
+        // checking the letters one by one and
+        // looking for a difference in chars
+        for ( int i = 0; i < size; i += 1 ) {
+            if ( first[i] != second[i] )
+                return i;
+        }
+
+        //NOT REACHED
+        return -1;
+    }
+
 
 }

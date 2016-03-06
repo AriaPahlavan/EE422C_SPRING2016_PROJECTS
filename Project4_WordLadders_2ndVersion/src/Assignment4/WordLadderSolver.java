@@ -4,10 +4,8 @@
 
 package Assignment4;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 // do not change class name or interface it implements
 public class WordLadderSolver implements Assignment4Interface {
@@ -18,11 +16,22 @@ public class WordLadderSolver implements Assignment4Interface {
 
     // add a constructor for this object. HINT: it would be a good idea to set up the dictionary there
 
+
+    /**
+     * Default constructor - Used for Junit testing
+     */
+    public WordLadderSolver() {
+        //initializing solutionList
+        solutionList = new ArrayList<>();
+
+
+    }
+
     /**
      * Custom constructor - Opens the file containing the dictionary words, scan the words
      * then initializes the dictionary fields.
      *
-     * @param filename
+     * @param list
      * @throws FileNotFoundException
      *         if an error occurs while attempting to
      *         open the dictionary file.
@@ -39,9 +48,19 @@ public class WordLadderSolver implements Assignment4Interface {
 
     }
 
+    //Setters and Getters
+    public void setDictionary(Dictionary dictionary) {
+        this.dictionary = dictionary;
+    }
+
+    public ArrayList<String> getSolutionList() {
+        return solutionList;
+    }
+
+    //Member methods
     @Override
     public ArrayList<String> computeLadder(String startWord, String endWord) throws NoSuchLadderException {
-
+        tempList = new ArrayList<>();
         Vertex startVertex = dictionary.search(startWord);
         Vertex endVertex = dictionary.search(endWord);
 
@@ -70,13 +89,15 @@ public class WordLadderSolver implements Assignment4Interface {
         for(int i = lastIndex; i >= 0; i-=1){
             solutionList.add(tempList.get(i));
         }
+
+        tempList.clear();
     }
 
 
     /**
      *
      */
-    public boolean makeLadder(Vertex start, Vertex end, int position) {
+    private boolean makeLadder(Vertex start, Vertex end, int position) {
 
         //Base case:
         if ( start == null || end == null )
@@ -92,8 +113,11 @@ public class WordLadderSolver implements Assignment4Interface {
 
             int updatedPosition = findCharIndex(start.getPhrase(), vertex.getPhrase());
 
+            if ( updatedPosition < 0 )
+                System.err.println("There is an error in find char index: "+start.getPhrase()+ vertex.getPhrase());
+
             //for all edges of start, if not visited the, do a recurse call
-            if ( updatedPosition != position && !vertex.wasChecked() ) {
+            if ( position!= updatedPosition && !vertex.wasChecked() ) {
                 if ( makeLadder(vertex, end, updatedPosition) ) {
                     tempList.add(vertex.getPhrase());
                     return true;
@@ -169,10 +193,6 @@ public class WordLadderSolver implements Assignment4Interface {
      */
     private int findCharIndex(String s1, String s2) {
 
-        //making sure that we're dealing with adjacent edges
-        if ( numDifferentChar(s1, s2) != 1 )
-            System.err.println("The edge is not adjacent: " + s1 + " - " + s2);
-
         //Position of the different letter
         char[] first = s1.toCharArray();
         char[] second = s2.toCharArray();
@@ -192,5 +212,15 @@ public class WordLadderSolver implements Assignment4Interface {
         return -1;
     }
 
+
+    /**
+     * Resets the solutions list and temporary list.
+     */
+    void reset(){
+        solutionList.clear();
+
+        for ( Vertex vertex : dictionary.getGraph() )
+            vertex.setStatus(false);
+    }
 
 }

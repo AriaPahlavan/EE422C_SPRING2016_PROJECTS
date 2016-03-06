@@ -9,9 +9,9 @@ import java.util.Scanner;
  * Assignment4
  * Created by Aria Pahlavan on Mar 2016.
  */
-public class FileOpener {
+public class FileReader {
 
-    public ArrayList<String> openDictionaryFile(String filename) {
+    public ArrayList<String> readDictionaryFile(String filename) {
         //Opening file and scanning the contents
         File file = new File(filename);
         Scanner scan = null;
@@ -42,7 +42,7 @@ public class FileOpener {
         return list;
     }
 
-    public ArrayList<String> openTestFile(String filename) {
+    public ArrayList<String> readTestFile(String filename) {
         //Opening file and scanning the contents
         File file = new File(filename);
         Scanner scan = null;
@@ -50,11 +50,14 @@ public class FileOpener {
         try {
             scan = new Scanner(file);
 
-            while ( scan.hasNextLine() ) {
-                String startingWord = scan.next();
-                list.add(startingWord);
-                String endingWord = scan.next();
-                list.add(endingWord);
+            while ( scan.hasNext() ) {
+                StringBuffer word = new StringBuffer(scan.next());
+                word.append(" ");
+                word.append(scan.next());
+
+                if ( word.toString().matches("[a-z]{5}( +)?(\t+)?[a-z]{5}") && !scan.hasNext("[^\\n]"))
+                    list.add(word.toString());
+                else System.err.println("Error - Invalid Input found: " + word.toString());
             }
         } catch (FileNotFoundException fnfe) {
             //File error handling

@@ -25,8 +25,10 @@ public class A4Driver {
                 String endWord = testCase.substring(6, 11);
                 ArrayList<String> result = wordLadderSolver.computeLadder(statWord, endWord);
                 boolean correct = wordLadderSolver.validateResult(statWord, endWord, result);
-                if ( correct == false )
-                    throw new NoSuchLadderException("Invalid Ladder");
+                if ( correct == false ) {
+                    System.err.println("Invalid Ladder: between " + statWord + " and " + endWord);
+                    System.err.println("**********");
+                }
                 else {
                     System.out.println("Word ladder found is (" + result.size() +"):");
 

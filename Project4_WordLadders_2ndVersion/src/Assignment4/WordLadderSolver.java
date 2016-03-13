@@ -120,13 +120,20 @@ public class WordLadderSolver implements Assignment4Interface {
         ArrayList<String> edges = new ArrayList<>();
         for ( int i = 0; i < size; i+=1 ) {
            edges.add(numDifferentChar(edgeVertex.get(i).getPhrase(), end.getPhrase()) + edgeVertex.get(i).getPhrase());
+            //
+//            System.out.println(edges.get(i));
+            //
         }
 
         Collections.sort(edges);
 
         for ( String s : edges ) {
+            int length = s.length();
+            Vertex vertex = dictionary.search(s.subSequence((length - 5), length).toString());
+            //
+//            System.out.println(vertex.getPhrase());
+            //
 
-            
             int updatedPosition = findCharIndex(start.getPhrase(), vertex.getPhrase());
 
             if ( updatedPosition < 0 )

@@ -3,7 +3,6 @@ package Assignment4;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -13,7 +12,7 @@ import static junit.framework.TestCase.assertEquals;
  */
 public class graphTest {
     ArrayList<String> myDictionary = new ArrayList<>();
-    final String[] edges = { "alone", "clane" };
+    final String[] edges = { "scone", "shone" };
     Dictionary dictionary;
 
 
@@ -23,7 +22,6 @@ public class graphTest {
         dictionary = new Dictionary(myDictionary);
         ArrayList<Vertex> graph = dictionary.getGraph();
 
-        Collections.sort(myDictionary);
 
         //Testing vertices list
         for ( int i = 0; i < myDictionary.size(); i++ ) {
@@ -43,11 +41,6 @@ public class graphTest {
     public void testMAkeLadder() throws NoSuchLadderException {
         testGraph();
 
-//        for (Vertex vertex : dictionary.getGraph()) {
-//            System.out.println(vertex.getPhrase());
-//        }
-//        System.out.println("*********");
-
         WordLadderSolver wordLadderSolver = new WordLadderSolver();
 
         wordLadderSolver.setDictionary(dictionary);
@@ -56,8 +49,6 @@ public class graphTest {
 
         for (String ladderStep : wordLadderSolver.getSolutionList() )
             System.out.println(ladderStep);
-
-
     }
 
     private void init() {

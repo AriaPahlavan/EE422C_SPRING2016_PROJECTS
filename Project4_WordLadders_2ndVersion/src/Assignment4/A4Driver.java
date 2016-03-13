@@ -3,7 +3,7 @@ package Assignment4;
 import java.util.ArrayList;
 
 public class A4Driver {
-    private static final String DICTIONARY_PATH = "../A4words.dat";
+    private static final String DICTIONARY_PATH = "/home/aria/EE422C_Ubuntu/Project4_WordLadders_2ndVersion/A4words.dat";
 
     public static void main(String[] args) {
 
@@ -39,6 +39,7 @@ public class A4Driver {
             }
 
         } catch (NoSuchLadderException e) {
+            e.printStackTrace();
             e.printError();
         }
     }

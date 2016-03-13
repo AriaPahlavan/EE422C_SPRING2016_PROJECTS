@@ -6,6 +6,7 @@ package Assignment4;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 // do not change class name or interface it implements
 public class WordLadderSolver implements Assignment4Interface {
@@ -67,11 +68,10 @@ public class WordLadderSolver implements Assignment4Interface {
         if ( startVertex != null && endVertex != null ) {
 
             solutionList.add(startWord);
-            if(makeLadder(startVertex, endVertex, 0)){
+            if ( makeLadder(startVertex, endVertex, 0) ) {
                 completeSolution();
                 return solutionList;
-            }
-            else {
+            } else {
                 return null;
             }
         }
@@ -84,9 +84,9 @@ public class WordLadderSolver implements Assignment4Interface {
      */
     private void completeSolution() {
 
-        int lastIndex = tempList.size()-1;
+        int lastIndex = tempList.size() - 1;
 
-        for(int i = lastIndex; i >= 0; i-=1){
+        for ( int i = lastIndex; i >= 0; i -= 1 ) {
             solutionList.add(tempList.get(i));
         }
 
@@ -102,22 +102,38 @@ public class WordLadderSolver implements Assignment4Interface {
         //Base case:
         if ( start == null || end == null )
             return false;
-        if ( numDifferentChar(start.getPhrase(), end.getPhrase()) == 1 ) {
+        int difference = numDifferentChar(start.getPhrase(), end.getPhrase());
+        if ( difference == 1 || difference == 0 ) {
             tempList.add(end.getPhrase());
             return true;
         }
 
         //Recursion body
         start.setStatus(true);
-        for ( Vertex vertex : start.getEdges() ) {
 
+
+        /**
+         * Sorting edges by distance from end word
+         */
+        ArrayList<Vertex> edgeVertex = start.getEdges();
+        int size = edgeVertex.size();
+        ArrayList<String> edges = new ArrayList<>();
+        for ( int i = 0; i < size; i+=1 ) {
+           edges.add(numDifferentChar(edgeVertex.get(i).getPhrase(), end.getPhrase()) + edgeVertex.get(i).getPhrase());
+        }
+
+        Collections.sort(edges);
+
+        for ( String s : edges ) {
+
+            
             int updatedPosition = findCharIndex(start.getPhrase(), vertex.getPhrase());
 
             if ( updatedPosition < 0 )
-                System.err.println("There is an error in find char index: "+start.getPhrase()+ vertex.getPhrase());
+                System.err.println("There is an error in find char index: " + start.getPhrase() + vertex.getPhrase());
 
             //for all edges of start, if not visited the, do a recurse call
-            if ( position!= updatedPosition && !vertex.wasChecked() ) {
+            if ( position != updatedPosition && !vertex.wasChecked() ) {
                 if ( makeLadder(vertex, end, updatedPosition) ) {
                     tempList.add(vertex.getPhrase());
                     return true;
@@ -147,7 +163,7 @@ public class WordLadderSolver implements Assignment4Interface {
         //checking if all intermediate words are exactly one distance apart
         for ( int i = 0; i < (size - 1); i++ ) {
             int numCharDiff = numDifferentChar(wordLadder.get(i), wordLadder.get(i + 1));
-            if ( numCharDiff != 1 ) {
+            if ( !(numCharDiff == 1 || numCharDiff == 0) ) {
                 return false;
             }
         }
@@ -163,7 +179,7 @@ public class WordLadderSolver implements Assignment4Interface {
      * @param s2
      * @return the number of character difference between the two string parameters.
      */
-    private int numDifferentChar(String s1, String s2) {
+    int numDifferentChar(String s1, String s2) {
         //counter of the differing letters
         int counter = 0;
         char[] firstWord = s1.toCharArray();
@@ -191,7 +207,7 @@ public class WordLadderSolver implements Assignment4Interface {
      * @param s2
      * @return the position where a character difference occurred.
      */
-    private int findCharIndex(String s1, String s2) {
+    int findCharIndex(String s1, String s2) {
 
         //Position of the different letter
         char[] first = s1.toCharArray();
@@ -216,11 +232,37 @@ public class WordLadderSolver implements Assignment4Interface {
     /**
      * Resets the solutions list and temporary list.
      */
-    void reset(){
+    void reset() {
         solutionList.clear();
 
         for ( Vertex vertex : dictionary.getGraph() )
             vertex.setStatus(false);
+    }
+
+    /**
+     * 1 Breadth-First-Search(Graph, root):
+     * 2
+     * 3     for each node n in Graph:
+     * 4         n.distance = INFINITY
+     * 5         n.parent = NIL
+     * 6
+     * 7     create empty queue Q
+     * 8
+     * 9     root.distance = 0
+     * 10     Q.enqueue(root)
+     * 11
+     * 12     while Q is not empty:
+     * 13
+     * 14         current = Q.dequeue()
+     * 15
+     * 16         for each node n that is adjacent to current:
+     * 17             if n.distance == INFINITY:
+     * 18                 n.distance = current.distance + 1
+     * 19                 n.parent = current
+     * 20                 Q.enqueue(n)
+     */
+    public void BreadthFirstSearch() {
+
     }
 
 }

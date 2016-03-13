@@ -11,6 +11,7 @@ public class Vertex {
     private Vertex parent;
     private boolean wasChecked;
     private String phrase;
+    private int difference;
 
     /**
      * Default constructor
@@ -20,6 +21,7 @@ public class Vertex {
         this.parent = null;
         this.wasChecked = false;
         this.phrase = "";
+        this.difference = -1;
     }
 
     /**
@@ -35,6 +37,14 @@ public class Vertex {
 
     public String getPhrase() {
         return phrase;
+    }
+
+    public int getDifference() {
+        return difference;
+    }
+
+    public void setDifference(int difference) {
+        this.difference = difference;
     }
 
     public ArrayList<Vertex> getEdges() {

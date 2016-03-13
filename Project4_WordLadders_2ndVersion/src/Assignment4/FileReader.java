@@ -64,7 +64,7 @@ public class FileReader {
             fnfe.printStackTrace();
             System.err.println("Error - File " + file + " not found.");
         } finally {
-            //In case an error occurs, close the scanner safely.
+            //safely close the scanner.
             if ( scan != null ) {
                 scan.close();
             }

@@ -1,7 +1,6 @@
 package Assignment4;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * @author Aria Pahlavan, Jett Anderson on Mar 2016
@@ -19,7 +18,6 @@ public class Dictionary {
     public Dictionary(ArrayList<String> list) {
         //initializing dictionary
         dictionary = list;
-        Collections.sort(dictionary);
 
 
         // Creating graph:
@@ -75,7 +73,7 @@ public class Dictionary {
                     Vertex edgeVertex = graph.get(j);
                     second = edgeVertex.getPhrase();
 
-                    int distance = numDifferentChar(first, second);
+                    int distance = new WordLadderSolver().numDifferentChar(first, second);
 
                     if ( distance == 1 )
                         vertex.setEdges(edgeVertex);
@@ -109,40 +107,6 @@ public class Dictionary {
     }
 
 
-    /**
-     *
-     */
-    public void BreadthFirstSearch() {
 
-    }
-
-
-    /**
-     * This method compares to strings character by character and counts the number
-     * of character differences between the two input parameters.
-     *
-     * @param s1
-     * @param s2
-     * @return the number of character difference between the two string parameters.
-     */
-    private int numDifferentChar(String s1, String s2) {
-        //counter of the differing letters
-        int counter = 0;
-        char[] firstWord = s1.toCharArray();
-        char[] secondWord = s2.toCharArray();
-
-        // the size of the shortest string
-        // (more specifically character array).
-        int size = Math.min(s1.length(), s2.length());
-
-        // checking the letters one by one and
-        // counting the unlike chars
-        for ( int i = 0; i < size; i += 1 ) {
-            if ( firstWord[i] != secondWord[i] )
-                counter += 1;
-        }
-
-        return counter;
-    }
 
 }

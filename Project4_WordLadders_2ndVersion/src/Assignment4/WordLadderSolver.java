@@ -68,7 +68,7 @@ public class WordLadderSolver implements Assignment4Interface {
         if ( startVertex != null && endVertex != null ) {
 
             solutionList.add(startWord);
-            if ( makeLadder(startVertex, endVertex, 0) ) {
+            if ( makeLadder(startVertex, endVertex, -1) ) {
                 completeSolution();
                 return solutionList;
             } else {
@@ -118,14 +118,15 @@ public class WordLadderSolver implements Assignment4Interface {
         ArrayList<Vertex> edgeVertex = start.getEdges();
         int size = edgeVertex.size();
         ArrayList<String> edges = new ArrayList<>();
-        for ( int i = 0; i < size; i+=1 ) {
-           edges.add(numDifferentChar(edgeVertex.get(i).getPhrase(), end.getPhrase()) + edgeVertex.get(i).getPhrase());
+        for ( int i = 0; i < size; i += 1 ) {
+            edges.add(numDifferentChar(edgeVertex.get(i).getPhrase(), end.getPhrase()) + edgeVertex.get(i).getPhrase());
             //
 //            System.out.println(edges.get(i));
             //
         }
 
         Collections.sort(edges);
+
 
         for ( String s : edges ) {
             int length = s.length();
@@ -140,7 +141,7 @@ public class WordLadderSolver implements Assignment4Interface {
                 System.err.println("There is an error in find char index: " + start.getPhrase() + vertex.getPhrase());
 
             //for all edges of start, if not visited the, do a recurse call
-            if ( position != updatedPosition && !vertex.wasChecked() ) {
+            if ( position != updatedPosition &&!vertex.wasChecked() ) {
                 if ( makeLadder(vertex, end, updatedPosition) ) {
                     tempList.add(vertex.getPhrase());
                     return true;
@@ -242,8 +243,9 @@ public class WordLadderSolver implements Assignment4Interface {
     void reset() {
         solutionList.clear();
 
-        for ( Vertex vertex : dictionary.getGraph() )
+        for ( Vertex vertex : dictionary.getGraph() ) {
             vertex.setStatus(false);
+        }
     }
 
     /**

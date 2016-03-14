@@ -45,10 +45,12 @@ public class graphTest {
 
         wordLadderSolver.setDictionary(dictionary);
 
-        wordLadderSolver.computeLadder("stone", "money");
+        ArrayList<String> s = wordLadderSolver.computeLadder("stone", "money");
 
-        for (String ladderStep : wordLadderSolver.getSolutionList() )
-            System.out.println(ladderStep);
+        if ( s != null )
+            for ( String ladderStep : s ) {
+                System.out.println(ladderStep);
+            }
     }
 
     private void init() {

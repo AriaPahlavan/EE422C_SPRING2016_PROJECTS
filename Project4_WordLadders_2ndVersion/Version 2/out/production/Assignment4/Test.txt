@@ -1,4 +1,0 @@
-heads tails
-hello world
-stone money
-bells tolls

@@ -7,6 +7,7 @@ import java.util.ArrayList;
  * Created by Aria Pahlavan on Mar 2016.
  */
 public class Vertex {
+    private final int WORD_SIZE = 5;
     private ArrayList<Vertex> edges;
     private Vertex parent;
     private boolean wasChecked;
@@ -77,5 +78,38 @@ public class Vertex {
 
     public void setPhrase(String phrase) {
         this.phrase = phrase;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        //counter of the differing letters
+        int counter = 0;
+        char[] firstWord = this.getPhrase().toCharArray();
+        char[] secondWord = ((Vertex)obj).getPhrase().toCharArray();
+
+        // checking the letters one by one and
+        // counting the unlike chars
+        for ( int i = 0; i < WORD_SIZE; i += 1 ) {
+            if ( firstWord[i] != secondWord[i] )
+                counter += 1;
+        }
+
+        return (counter == 0);
+    }
+
+    public int distance(Object obj) {
+        //counter of the differing letters
+        int counter = 0;
+        char[] firstWord = this.getPhrase().toCharArray();
+        char[] secondWord = ((Vertex)obj).getPhrase().toCharArray();
+
+        // checking the letters one by one and
+        // counting the unlike chars
+        for ( int i = 0; i < WORD_SIZE; i += 1 ) {
+            if ( firstWord[i] != secondWord[i] )
+                counter += 1;
+        }
+
+        return counter;
     }
 }

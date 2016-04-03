@@ -46,6 +46,8 @@ public class graphTest {
         wordLadderSolver.setDictionary(dictionary);
 
         ArrayList<String> s = wordLadderSolver.computeLadder("stone", "money");
+        if ( !wordLadderSolver.validateResult("stone", "money", s) )
+            System.err.println("Error Occurred");
 
         if ( s != null )
             for ( String ladderStep : s ) {

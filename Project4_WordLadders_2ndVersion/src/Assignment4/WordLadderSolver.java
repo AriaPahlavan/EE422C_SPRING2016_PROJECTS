@@ -67,9 +67,9 @@ public class WordLadderSolver implements Assignment4Interface {
 
         if ( startVertex != null && endVertex != null ) {
 
-            solutionList.add(startWord);
+//            solutionList.add(startWord);
             if ( makeLadder(startVertex, endVertex, -1) ) {
-                completeSolution();
+                solutionList.addAll(tempList);
                 return solutionList;
             } else {
                 return null;
@@ -87,7 +87,7 @@ public class WordLadderSolver implements Assignment4Interface {
         int lastIndex = tempList.size() - 1;
 
         for ( int i = lastIndex; i >= 0; i -= 1 ) {
-            solutionList.add(tempList.get(i));
+            solutionList.addAll(tempList);
         }
 
         tempList.clear();
@@ -100,10 +100,13 @@ public class WordLadderSolver implements Assignment4Interface {
     private boolean makeLadder(Vertex start, Vertex end, int position) {
 
         //Base case:
-        if ( start == null || end == null )
-            return false;
-        int difference = numDifferentChar(start.getPhrase(), end.getPhrase());
-        if ( difference == 1 || difference == 0 ) {
+        if ( start.equals(end) ){
+            tempList.add(start.getPhrase());
+        }
+
+        tempList.add(start.getPhrase());
+
+        if ( start.distance(end) == 1) {
             tempList.add(end.getPhrase());
             return true;
         }
@@ -143,9 +146,12 @@ public class WordLadderSolver implements Assignment4Interface {
             //for all edges of start, if not visited the, do a recurse call
             if ( position != updatedPosition &&!vertex.wasChecked() ) {
                 if ( makeLadder(vertex, end, updatedPosition) ) {
-                    tempList.add(vertex.getPhrase());
+//                    tempList.add(vertex.getPhrase());
                     return true;
                 }
+            }
+            else {
+                tempList.remove(start.getPhrase());
             }
         }
 

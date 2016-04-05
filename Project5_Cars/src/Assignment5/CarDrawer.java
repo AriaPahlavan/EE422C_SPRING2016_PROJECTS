@@ -15,10 +15,10 @@ public class CarDrawer {
     //Member data
     private int xCar, yCar;
     private double dxCar;
-    private final int SPEED_LIMIT = 200;
+    private final int SPEED_LIMIT = 140;
     protected Color BurntOrange = new Color(204, 102, 0);
-    private final double dt = 0.25;
-    private final double ACCELERATION = 50;
+    private final double dt = 0.2;
+    private final double ACCELERATION = 30;
     private final double FRICTION = 0.9;
     private final int WIDTH_CAR = 60;
     private final int HEIGHT_CAR = 35;
@@ -76,8 +76,9 @@ public class CarDrawer {
         if ( Math.abs(dxCar) < 0.05 ) dxCar = 0;
 
 
-        //displacement formula: i.e. d = v0*t + 1/2*a*t^2
-        xCar += dxCar * dt + .5 * ACCELERATION * dt * dt;
+        if ( dxCar != 0 )
+            //displacement formula: i.e. d = v0*t + 1/2*a*t^2
+            xCar += dxCar * dt + .5 * ACCELERATION * dt * dt;
 
         if ( dxCar != 0 ) {
             //Friction formula

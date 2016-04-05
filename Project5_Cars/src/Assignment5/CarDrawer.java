@@ -123,6 +123,15 @@ public class CarDrawer {
 
 
 // draw all of the car parts on the screen
+        if ( dxCar >= 0 ) {
+            g2.setColor(Color.orange);
+            g2.fillArc(xCar + 55, yCar + 13, 10, 5, 270, 180);
+        }
+        else {
+            g2.setColor(Color.red);
+            g2.fillArc(xCar -5, yCar + 13, 10, 5, 90, 180);
+        }
+        g2.setColor(Color.black);
         g2.draw(frontWindshield);
         g2.draw(rearWindshield);
         g2.draw(frontTire);

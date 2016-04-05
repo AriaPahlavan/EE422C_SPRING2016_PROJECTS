@@ -18,7 +18,7 @@ public class CarDrawer {
     private final int SPEED_LIMIT = 200;
     protected Color BurntOrange = new Color(204, 102, 0);
     private final double dt = 0.25;
-    private final double ACCELERATION = 20;
+    private final double ACCELERATION = 50;
     private final double FRICTION = 0.9;
     private final int WIDTH_CAR = 60;
     private final int HEIGHT_CAR = 35;
@@ -63,7 +63,6 @@ public class CarDrawer {
     public void updateCarPosition(A5Driver display) {
 
 
-
         if ( xCar + dxCar > display.getWidth() - WIDTH_CAR - 1 ) {
             //The car has hit the right wall.
             //TODO Game Over: this car is the winner.
@@ -76,13 +75,15 @@ public class CarDrawer {
 
         if ( Math.abs(dxCar) < 0.05 ) dxCar = 0;
 
+
         //displacement formula: i.e. d = v0*t + 1/2*a*t^2
         xCar += dxCar * dt + .5 * ACCELERATION * dt * dt;
-        System.out.println("2)>>\t"+dxCar);
 
-        //Friction formula
-        dxCar *= FRICTION;
-        System.out.println("3)>>\t"+dxCar);
+        if ( dxCar != 0 ) {
+            //Friction formula
+            dxCar *= FRICTION;
+            System.out.println("3)>>\t" + dxCar);
+        }
 
 
     }
@@ -145,12 +146,12 @@ public class CarDrawer {
         if ( dxCar + (ACCELERATION * dt) < SPEED_LIMIT ) {
             //velocity formula: i.e. v = v0 + a*t
             dxCar += ACCELERATION * dt;
-            System.out.println("1)\t"+dxCar);
+            System.out.println("1)\t" + dxCar);
         }
     }//end of move right
 
     public void decelerate() {
-        if ( dxCar > 0 ) dxCar -= 2;
-        if ( dxCar < 0 ) dxCar += 2;
+//        if ( dxCar > 0 ) dxCar -= 2;
+//        if ( dxCar < 0 ) dxCar += 2;
     }
 } // end of CarDrawer

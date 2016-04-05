@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea029d9-b1a5-42b3-86c2-d289e0e5efb6" name="Default" comment="Created a driver class.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project5_Cars/Assignment5/CarDrawer.class" afterPath="$PROJECT_DIR$/out/production/Project5_Cars/Assignment5/CarDrawer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment5/CarDrawer.java" afterPath="$PROJECT_DIR$/src/Assignment5/CarDrawer.java" />
     </list>
@@ -28,14 +29,12 @@
       <file leaf-file-name="CarDrawer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Assignment5/CarDrawer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="131" column="30" selection-start-line="131" selection-start-column="30" selection-end-line="131" selection-end-column="30" />
+            <state relative-caret-position="-57">
+              <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
                 <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-                <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
-                <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -535,7 +534,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -578,7 +577,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -595,8 +594,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
             <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -609,8 +606,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
             <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -638,8 +633,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
             <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -667,8 +660,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
             <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -682,8 +673,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
             <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -737,14 +726,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment5/CarDrawer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="131" column="30" selection-start-line="131" selection-start-column="30" selection-end-line="131" selection-end-column="30" />
+        <state relative-caret-position="-57">
+          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
             <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
           </folding>
         </state>
       </provider>

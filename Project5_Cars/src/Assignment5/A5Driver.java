@@ -11,7 +11,7 @@ import java.awt.event.KeyListener;
  */
 public class A5Driver extends Applet implements Runnable, KeyListener {
 
-    private CarDrawer myCar;
+    private CarDrawer myCar[] = new CarDrawer[5];
     private Graphics doubleG;
     private Image image;
 
@@ -23,7 +23,8 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
     @Override
     public void start() {
-        myCar = new CarDrawer();
+        for ( int i = 0; i < myCar.length; i += 1 )
+            myCar[i] = new CarDrawer(100, (i+1)*100, new Integer(i+1).toString());
         Thread thread = new Thread(this);
         thread.start();
     }
@@ -32,11 +33,12 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     public void run() {
         while ( true ) {
 
-            myCar.updateCarPosition(this);
+            for ( int i = 0; i < myCar.length; i += 1 )
+                myCar[i].updateCarPosition(this);
 
             repaint();
             try {
-                Thread.sleep(17);
+                Thread.sleep(16);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -63,23 +65,22 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
     @Override
     public void paint(Graphics g) {
-        myCar.paint(g);
+        for ( int i = 0; i < myCar.length; i += 1 )
+            myCar[i].paint(g);
     }
 
 
     @Override
     public void keyPressed(KeyEvent e) {
-        switch (e.getKeyCode()){
+        switch (e.getKeyCode()) {
             case KeyEvent.VK_A:
             case KeyEvent.VK_LEFT:
-                myCar.moveLeft();
+                myCar[0].moveLeft();
                 break;
             case KeyEvent.VK_RIGHT:
             case KeyEvent.VK_D:
-                myCar.moveRight();
+                myCar[0].moveRight();
                 break;
-            default:
-                myCar.decelerate();
 
         }
     }

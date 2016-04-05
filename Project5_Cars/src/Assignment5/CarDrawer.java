@@ -15,13 +15,16 @@ public class CarDrawer {
     //Member data
     private int xCar, yCar;
     private double dxCar;
-    private final int SPEED_LIMIT = 140;
+    private final int SPEED_LIMIT = 100;
     protected Color BurntOrange = new Color(204, 102, 0);
     private final double dt = 0.2;
-    private final double ACCELERATION = 30;
-    private final double FRICTION = 0.9;
+    private final double ACCELERATION = 140;
+    private final double BACKUP_ACCELERATION = 50;
+    private final double FRICTION = 0.6;
     private final int WIDTH_CAR = 60;
     private final int HEIGHT_CAR = 35;
+    private final int BACKUP_SPEED_LIMIT = 20;
+    private String carNum;
 
     public CarDrawer() {
         this.xCar = 100;
@@ -29,10 +32,10 @@ public class CarDrawer {
         this.dxCar = 0;
     }
 
-    public CarDrawer(int xCar, int yCar, double dxCar) {
+    public CarDrawer(int xCar, int yCar, String carNum) {
         this.xCar = xCar;
         this.yCar = yCar;
-        this.dxCar = dxCar;
+        this.carNum = carNum;
     }
 
     public double getDxCar() {
@@ -75,15 +78,19 @@ public class CarDrawer {
 
         if ( Math.abs(dxCar) < 0.05 ) dxCar = 0;
 
-
-        if ( dxCar != 0 )
-            //displacement formula: i.e. d = v0*t + 1/2*a*t^2
-            xCar += dxCar * dt + .5 * ACCELERATION * dt * dt;
-
         if ( dxCar != 0 ) {
             //Friction formula
             dxCar *= FRICTION;
             System.out.println("3)>>\t" + dxCar);
+        }
+
+        if ( dxCar != 0 ) {
+            if ( dxCar > 0 )
+                //displacement formula: i.e. d = v0*t + 1/2*a*t^2
+                xCar += dxCar * dt + .5 * ACCELERATION * dt * dt;
+            else
+                //displacement formula: i.e. d = v0*t + 1/2*a*t^2
+                xCar += dxCar * dt - (.5 * BACKUP_ACCELERATION * dt * dt);
         }
 
 
@@ -125,17 +132,22 @@ public class CarDrawer {
         g2.draw(roofTop);
 // draw the label under the car
         g2.setColor(Color.red);
-        g2.drawString("UT JavaMobile 1.0", 100, 150);
+        g2.drawString("UT JavaMobile 1.0", xCar, yCar + 50);
+
+        //draw the car number
+        g2.setColor(Color.black);
+        g2.drawString(carNum, xCar + 30, yCar + 20);
+
     } // end of paint
 
     /**
      * This method changes dx so the car would start moving left
      */
     public void moveLeft() {
-        if ( Math.abs(dxCar - (ACCELERATION * dt)) < SPEED_LIMIT )
+        if ( Math.abs(dxCar - (BACKUP_ACCELERATION * dt)) < BACKUP_SPEED_LIMIT )
 
             //velocity formula: i.e. v = v0 + a*t
-            dxCar -= (ACCELERATION * dt);
+            dxCar -= (BACKUP_ACCELERATION * dt);
 
     }// end of move left
 
@@ -147,12 +159,7 @@ public class CarDrawer {
         if ( dxCar + (ACCELERATION * dt) < SPEED_LIMIT ) {
             //velocity formula: i.e. v = v0 + a*t
             dxCar += ACCELERATION * dt;
-            System.out.println("1)\t" + dxCar);
         }
     }//end of move right
 
-    public void decelerate() {
-//        if ( dxCar > 0 ) dxCar -= 2;
-//        if ( dxCar < 0 ) dxCar += 2;
-    }
 } // end of CarDrawer

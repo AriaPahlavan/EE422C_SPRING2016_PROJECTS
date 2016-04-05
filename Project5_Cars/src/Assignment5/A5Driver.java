@@ -17,7 +17,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
     @Override
     public void init() {
-        this.setSize(600, 600);
+        this.setSize(1500, 900);
         addKeyListener(this);
     }
 
@@ -32,10 +32,11 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     public void run() {
         while ( true ) {
 
-            myCar.setxCar(myCar.getxCar() + 1);
+            myCar.updateCarPosition(this);
+
             repaint();
             try {
-                Thread.sleep(3);
+                Thread.sleep(17);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -68,7 +69,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        switch (e.getKeyChar()){
+        switch (e.getKeyCode()){
             case KeyEvent.VK_A:
             case KeyEvent.VK_LEFT:
                 myCar.moveLeft();
@@ -77,6 +78,8 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
             case KeyEvent.VK_D:
                 myCar.moveRight();
                 break;
+            default:
+                myCar.decelerate();
 
         }
     }

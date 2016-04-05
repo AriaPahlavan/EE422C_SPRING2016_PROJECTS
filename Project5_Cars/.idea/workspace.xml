@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea029d9-b1a5-42b3-86c2-d289e0e5efb6" name="Default" comment="Created a driver class.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project5_Cars/Assignment5/CarDrawer.class" afterPath="$PROJECT_DIR$/out/production/Project5_Cars/Assignment5/CarDrawer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment5/A5Driver.java" afterPath="$PROJECT_DIR$/src/Assignment5/A5Driver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment5/CarDrawer.java" afterPath="$PROJECT_DIR$/src/Assignment5/CarDrawer.java" />
     </list>
@@ -30,27 +28,28 @@
       <file leaf-file-name="CarDrawer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Assignment5/CarDrawer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+            <state relative-caret-position="528">
+              <caret line="147" column="45" selection-start-line="147" selection-start-column="45" selection-end-line="147" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
                 <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
-                <element signature="e#859#860#0" expanded="true" />
-                <element signature="e#887#888#0" expanded="true" />
-                <element signature="e#929#930#0" expanded="true" />
-                <element signature="e#963#964#0" expanded="true" />
-                <element signature="e#991#992#0" expanded="true" />
-                <element signature="e#1018#1019#0" expanded="true" />
-                <element signature="e#1055#1056#0" expanded="true" />
-                <element signature="e#1087#1088#0" expanded="true" />
-                <element signature="e#1115#1116#0" expanded="true" />
-                <element signature="e#1142#1143#0" expanded="true" />
-                <element signature="e#1179#1180#0" expanded="true" />
-                <element signature="e#1211#1212#0" expanded="true" />
+                <element signature="e#875#876#0" expanded="true" />
+                <element signature="e#903#904#0" expanded="true" />
+                <element signature="e#945#946#0" expanded="true" />
+                <element signature="e#979#980#0" expanded="true" />
+                <element signature="e#1007#1008#0" expanded="true" />
+                <element signature="e#1034#1035#0" expanded="true" />
+                <element signature="e#1071#1072#0" expanded="true" />
+                <element signature="e#1103#1104#0" expanded="true" />
+                <element signature="e#1131#1132#0" expanded="true" />
+                <element signature="e#1158#1159#0" expanded="true" />
+                <element signature="e#1195#1196#0" expanded="true" />
+                <element signature="e#1227#1228#0" expanded="true" />
+                <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
                 <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
                 <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
-                <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
+                <element signature="method#decelerate#0;class#CarDrawer#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,15 +58,16 @@
       <file leaf-file-name="A5Driver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment5/A5Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1332">
-              <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+            <state relative-caret-position="342">
+              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
               <folding>
-                <element signature="method#init#0;class#A5Driver#0" expanded="true" />
+                <element signature="imports" expanded="true" />
                 <element signature="method#start#0;class#A5Driver#0" expanded="true" />
                 <element signature="method#run#0;class#A5Driver#0" expanded="true" />
                 <element signature="method#update#0;class#A5Driver#0" expanded="true" />
-                <element signature="e#1395#1396#0" expanded="true" />
-                <element signature="e#1425#1426#0" expanded="true" />
+                <element signature="e#1393#1394#0" expanded="true" />
+                <element signature="e#1423#1424#0" expanded="true" />
+                <element signature="method#keyPressed#0;class#A5Driver#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -608,21 +608,22 @@
             <element signature="imports" expanded="true" />
             <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#963#964#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1018#1019#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
+            <element signature="e#979#980#0" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+            <element signature="e#1131#1132#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
+            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+            <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
+            <element signature="method#decelerate#0;class#CarDrawer#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -632,12 +633,13 @@
         <state relative-caret-position="288">
           <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding>
-            <element signature="method#init#0;class#A5Driver#0" expanded="true" />
+            <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#A5Driver#0" expanded="true" />
             <element signature="method#run#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
-            <element signature="e#1395#1396#0" expanded="true" />
-            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#1393#1394#0" expanded="true" />
+            <element signature="e#1423#1424#0" expanded="true" />
+            <element signature="method#keyPressed#0;class#A5Driver#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -650,21 +652,22 @@
             <element signature="imports" expanded="true" />
             <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#963#964#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1018#1019#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
+            <element signature="e#979#980#0" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+            <element signature="e#1131#1132#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
+            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+            <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
+            <element signature="method#decelerate#0;class#CarDrawer#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -674,12 +677,13 @@
         <state relative-caret-position="288">
           <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding>
-            <element signature="method#init#0;class#A5Driver#0" expanded="true" />
+            <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#A5Driver#0" expanded="true" />
             <element signature="method#run#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
-            <element signature="e#1395#1396#0" expanded="true" />
-            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#1393#1394#0" expanded="true" />
+            <element signature="e#1423#1424#0" expanded="true" />
+            <element signature="method#keyPressed#0;class#A5Driver#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -692,21 +696,22 @@
             <element signature="imports" expanded="true" />
             <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#963#964#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1018#1019#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
+            <element signature="e#979#980#0" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+            <element signature="e#1131#1132#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
+            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+            <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
+            <element signature="method#decelerate#0;class#CarDrawer#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -720,21 +725,22 @@
             <element signature="imports" expanded="true" />
             <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#963#964#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1018#1019#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
+            <element signature="e#979#980#0" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+            <element signature="e#1131#1132#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
+            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+            <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
+            <element signature="method#decelerate#0;class#CarDrawer#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -773,42 +779,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment5/A5Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+        <state relative-caret-position="342">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
           <folding>
-            <element signature="method#init#0;class#A5Driver#0" expanded="true" />
+            <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#A5Driver#0" expanded="true" />
             <element signature="method#run#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
-            <element signature="e#1395#1396#0" expanded="true" />
-            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#1393#1394#0" expanded="true" />
+            <element signature="e#1423#1424#0" expanded="true" />
+            <element signature="method#keyPressed#0;class#A5Driver#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment5/CarDrawer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+        <state relative-caret-position="528">
+          <caret line="147" column="45" selection-start-line="147" selection-start-column="45" selection-end-line="147" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#963#964#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1018#1019#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
+            <element signature="e#979#980#0" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+            <element signature="e#1131#1132#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
+            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+            <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
+            <element signature="method#decelerate#0;class#CarDrawer#0" expanded="true" />
           </folding>
         </state>
       </provider>

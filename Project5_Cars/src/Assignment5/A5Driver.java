@@ -67,6 +67,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
                     for ( int i = 0; i < myCar.length; i += 1 )
                         myCar[i].updateCarPosition(this);
+                    xRaceTrack -= dxRaceTrack;
                 }
             }
             //when the race is done

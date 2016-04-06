@@ -28,14 +28,13 @@
       <file leaf-file-name="CarDrawer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Assignment5/CarDrawer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="30" column="79" selection-start-line="30" selection-start-column="79" selection-end-line="30" selection-end-column="79" />
+            <state relative-caret-position="314">
+              <caret line="176" column="95" selection-start-line="176" selection-start-column="95" selection-end-line="176" selection-end-column="95" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
                 <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
                 <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-                <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
                 <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
                 <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
               </folding>
@@ -46,7 +45,7 @@
       <file leaf-file-name="StopWatch.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment5/StopWatch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-336">
+            <state relative-caret-position="-270">
               <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding />
             </state>
@@ -56,20 +55,20 @@
       <file leaf-file-name="A5Driver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment5/A5Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="90" column="35" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
+            <state relative-caret-position="384">
+              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#607#608#0" expanded="true" />
-                <element signature="e#635#636#0" expanded="true" />
-                <element signature="e#670#671#0" expanded="true" />
-                <element signature="e#701#702#0" expanded="true" />
-                <element signature="e#750#751#0" expanded="true" />
-                <element signature="e#790#791#0" expanded="true" />
+                <element signature="e#608#609#0" expanded="true" />
+                <element signature="e#636#637#0" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
+                <element signature="e#702#703#0" expanded="true" />
+                <element signature="e#751#752#0" expanded="true" />
+                <element signature="e#791#792#0" expanded="true" />
                 <element signature="method#init#0;class#A5Driver#0" expanded="true" />
                 <element signature="method#start#0;class#A5Driver#0" expanded="true" />
-                <element signature="method#run#0;class#A5Driver#0" expanded="true" />
                 <element signature="method#update#0;class#A5Driver#0" expanded="true" />
+                <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
                 <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
                 <element signature="method#keyPressed#0;class#A5Driver#0" expanded="true" />
                 <element signature="method#keyReleased#0;class#A5Driver#0" expanded="true" />
@@ -128,7 +127,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="-772" />
+    <option name="x" value="1366" />
+    <option name="y" value="-4" />
     <option name="width" value="1366" />
     <option name="height" value="772" />
   </component>
@@ -570,7 +570,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-772" width="1366" height="772" extended-state="6" />
+    <frame x="1366" y="-4" width="1366" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -645,7 +645,6 @@
             <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
             <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
           </folding>
@@ -658,16 +657,16 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#635#636#0" expanded="true" />
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
             <element signature="method#start#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyPressed#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyReleased#0;class#A5Driver#0" expanded="true" />
@@ -684,7 +683,6 @@
             <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
             <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
           </folding>
@@ -700,7 +698,6 @@
             <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
             <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
           </folding>
@@ -713,16 +710,16 @@
           <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#635#636#0" expanded="true" />
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
             <element signature="method#start#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyPressed#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyReleased#0;class#A5Driver#0" expanded="true" />
@@ -739,7 +736,6 @@
             <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
             <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
           </folding>
@@ -752,16 +748,16 @@
           <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#635#636#0" expanded="true" />
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
             <element signature="method#start#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyPressed#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyReleased#0;class#A5Driver#0" expanded="true" />
@@ -778,7 +774,6 @@
             <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
             <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
           </folding>
@@ -795,7 +790,6 @@
             <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
             <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
           </folding>
@@ -838,22 +832,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assignment5/StopWatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment5/A5Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="90" column="35" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
+        <state relative-caret-position="384">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#635#636#0" expanded="true" />
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
             <element signature="method#start#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyPressed#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyReleased#0;class#A5Driver#0" expanded="true" />
@@ -861,24 +863,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assignment5/StopWatch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-336">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment5/CarDrawer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="30" column="79" selection-start-line="30" selection-start-column="79" selection-end-line="30" selection-end-column="79" />
+        <state relative-caret-position="314">
+          <caret line="176" column="95" selection-start-line="176" selection-start-column="95" selection-end-line="176" selection-end-column="95" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#CarDrawer#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#CarDrawer#1;class#CarDrawer#0" expanded="true" />
             <element signature="method#updateCarPosition#0;class#CarDrawer#0" expanded="true" />
-            <element signature="method#paint#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveLeft#0;class#CarDrawer#0" expanded="true" />
             <element signature="method#moveRight#0;class#CarDrawer#0" expanded="true" />
           </folding>

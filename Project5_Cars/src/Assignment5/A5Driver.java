@@ -17,7 +17,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     private boolean isStarted = false;
     private boolean finished = false;
     private StopWatch timer = new StopWatch();
-    private final Font TIMER_FONT = new Font("Serif", Font.BOLD, 20);
+    private final Font TIMER_FONT = new Font("Purisa", Font.BOLD, 20);
 
     public StopWatch getTimer() {
         return timer;
@@ -52,6 +52,8 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
             if ( !finished ) {
                 //When the Enter or Space key is pressed, start the race
                 if ( isStarted ) {
+                    timer.start();
+
                     for ( int i = 0; i < myCar.length; i += 1 )
                         myCar[i].updateCarPosition(this);
                 }
@@ -98,9 +100,11 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
         String elapsedTime = Long.toString(timer.getElapsedTime());
         g2.setFont(TIMER_FONT);
         g2.setColor(Color.lightGray);
-        g2.drawString(elapsedTime + " milliseconds", getWidth() - 150, 25);
+        g2.drawString(elapsedTime, getWidth() - 250, 25);
+        g2.drawString(" milliseconds", getWidth() - 200, 25);
         g2.setColor(Color.red);
-        g2.drawString(elapsedTime + " milliseconds", getWidth() - 150+2, 25+2);
+        g2.drawString(elapsedTime, getWidth() - 250 + 2, 25 + 2);
+        g2.drawString(" milliseconds", getWidth() - 200 + 2, 25 + 2);
 
     }
 
@@ -112,7 +116,6 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER ) {
-            timer.start();
             isStarted = true;
         }
     }

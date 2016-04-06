@@ -28,7 +28,7 @@ public class CarDrawer {
     private final double RIM_RADIUS = ((31 - 19 - 6) * HEIGHT_CAR) / 32;
     private final int BACKUP_SPEED_LIMIT = 20;
     private String carNum;
-    private final Font CAR_FONT = new Font("Serif", Font.ITALIC + Font.BOLD, 12);
+    private final Font CAR_FONT = new Font("Century SchoolBook L Bold", Font.ITALIC , 15);
 
     public CarDrawer() {
         this.xCar = 100;
@@ -174,7 +174,7 @@ public class CarDrawer {
         //draw the car number
         g2.setColor(Color.black);
         g2.setFont(CAR_FONT);
-        g2.drawString(carNum, xCar + (int) (WIDTH_CAR / 2), yCar + (int) (5 * HEIGHT_CAR) / 8);
+        g2.drawString(carNum, xCar + (int) (WIDTH_CAR / 2), yCar + (int) (18 * HEIGHT_CAR) / 32);
 
     } // end of paint
 

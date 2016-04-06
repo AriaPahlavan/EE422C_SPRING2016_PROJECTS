@@ -21,7 +21,6 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     private final Font TIMER_FONT = new Font("Purisa", Font.BOLD, 20);
     private double xRaceTrack = 0;
     private double dxRaceTrack = 0.3;
-    private URL url;
     private Image raceTrack;
 
 
@@ -39,12 +38,13 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
     @Override
     public void init() {
+        URL url;
         this.setSize(1500, 900);
         addKeyListener(this);
-        try{
-            url = getDocumentBase();
-        } catch (Exception e){
-
+        try {
+            url = A5Driver.class.getResource("/images/background.png");
+            raceTrack = this.getImage(url);
+        } catch (Exception e) {
         }
     }
 
@@ -102,7 +102,12 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
     @Override
     public void paint(Graphics g) {
+//        g.setColor(new Color(15,77,147));
+//        g.fillRect(0,0, getWidth(),getHeight());
         Graphics2D g2 = (Graphics2D) g;
+
+        g2.drawImage(raceTrack, (int) xRaceTrack, 0, this);
+
         //Displaying the cars
         for ( int i = 0; i < myCar.length; i += 1 )
             myCar[i].paint(g2);
@@ -113,7 +118,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
         g2.setColor(Color.lightGray);
         g2.drawString(elapsedTime, getWidth() - 250, 25);
         g2.drawString(" milliseconds", getWidth() - 200, 25);
-        g2.setColor(new Color(2,104,70));
+        g2.setColor(new Color(2, 104, 70));
         g2.drawString(elapsedTime, getWidth() - 250 - 2, 25 + 2);
         g2.drawString(" milliseconds", getWidth() - 200 - 2, 25 + 2);
 

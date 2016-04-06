@@ -16,7 +16,7 @@ public class CarDrawer {
     //Member data
     private int xCar, yCar;
     private double dxCar;
-    private final int SPEED_LIMIT = 20;
+    private final int SPEED_LIMIT = 40;
     protected Color BurntOrange = new Color(204, 102, 0);
     private double dt = 0.2;
     private double ACCELERATION = 80;
@@ -39,16 +39,13 @@ public class CarDrawer {
         }
 
         //random value btwn 65 - 85
-        this.ACCELERATION = random.nextInt(21) + 60;
-        System.out.println(ACCELERATION);
+        this.ACCELERATION = random.nextInt(21) + 50;
 
         //random value btwn 0.15 - 0.25
         this.dt = (random.nextFloat() + 1.3)/10;
-        System.out.println(dt);
 
         //random value btwn 0 - 0.2 + 0.45 - 0.65 = 0.45 - 0.85
         this.FRICTION = (random.nextInt(3)  + (random.nextInt(3) + 4.5))/10;
-        System.out.println(FRICTION);
 
     }
 
@@ -103,7 +100,6 @@ public class CarDrawer {
         if ( dxCar != 0 ) {
             //Friction formula
             dxCar *= FRICTION;
-            System.out.println("3)>>\t" + dxCar);
         }
 
         if ( dxCar != 0 ) {

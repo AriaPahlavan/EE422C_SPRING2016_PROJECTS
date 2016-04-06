@@ -2,20 +2,24 @@ package Assignment5;
 
 import java.applet.Applet;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /**
  * Project5_Cars
  * Created by Aria Pahlavan on Apr 2016.
  */
-public class A5Driver extends Applet implements Runnable{
+public class A5Driver extends Applet implements Runnable, KeyListener{
 
     private CarDrawer myCar[] = new CarDrawer[5];
     private Graphics doubleG;
     private Image image;
+    private boolean start = false;
 
     @Override
     public void init() {
         this.setSize(1500, 900);
+        addKeyListener(this);
     }
 
     @Override
@@ -30,10 +34,12 @@ public class A5Driver extends Applet implements Runnable{
     public void run() {
         while ( true ) {
 
-            for ( int i = 0; i < myCar.length; i += 1 )
-                myCar[i].updateCarPosition(this);
+            if ( start ) {
+                for ( int i = 0; i < myCar.length; i += 1 )
+                    myCar[i].updateCarPosition(this);
 
-            repaint();
+                repaint();
+            }
             try {
                 Thread.sleep(16);
             } catch (InterruptedException e) {
@@ -64,5 +70,22 @@ public class A5Driver extends Applet implements Runnable{
     public void paint(Graphics g) {
         for ( int i = 0; i < myCar.length; i += 1 )
             myCar[i].paint(g);
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER){
+            start = true;
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }

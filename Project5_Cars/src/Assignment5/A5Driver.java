@@ -16,6 +16,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener{
     private Image image;
     private boolean isStarted = false;
     private boolean isFinished = false;
+    private StopWatch timer = new StopWatch();
 
     public boolean isFinished() {
         return isFinished;
@@ -29,6 +30,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener{
     public void init() {
         this.setSize(1500, 900);
         addKeyListener(this);
+        
     }
 
     @Override
@@ -42,14 +44,20 @@ public class A5Driver extends Applet implements Runnable, KeyListener{
     @Override
     public void run() {
         while ( true ) {
+            //while the race is happening
             if ( !isFinished ) {
+                //When the Enter or Space key is pressed, start the race
                 if ( isStarted ) {
                     for ( int i = 0; i < myCar.length; i += 1 )
                         myCar[i].updateCarPosition(this);
-                    repaint();
                 }
             }
+            //when the race is done
+            else {
 
+            }
+
+            repaint();
             try {
                 Thread.sleep(16);
             } catch (InterruptedException e) {

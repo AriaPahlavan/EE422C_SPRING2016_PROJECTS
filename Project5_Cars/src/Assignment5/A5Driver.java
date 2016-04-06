@@ -17,6 +17,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     private boolean isStarted = false;
     private boolean finished = false;
     private StopWatch timer = new StopWatch();
+    private final Font TIMER_FONT = new Font("Serif", Font.BOLD, 20);
 
     public StopWatch getTimer() {
         return timer;
@@ -95,6 +96,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
         //Displaying the time
         String elapsedTime = Long.toString(timer.getElapsedTime());
+        g2.setFont(TIMER_FONT);
         g2.setColor(Color.lightGray);
         g2.drawString(elapsedTime + " milliseconds", getWidth() - 150, 25);
         g2.setColor(Color.red);

@@ -28,6 +28,7 @@ public class CarDrawer {
     private final double RIM_RADIUS = ((31 - 19 - 6) * HEIGHT_CAR) / 32;
     private final int BACKUP_SPEED_LIMIT = 20;
     private String carNum;
+    private final Font CAR_FONT = new Font("Serif", Font.ITALIC + Font.BOLD, 12);
 
     public CarDrawer() {
         this.xCar = 100;
@@ -166,12 +167,13 @@ public class CarDrawer {
         g2.setColor(Color.gray);
         g2.fill(frontRim);
         g2.fill(rearRim);
-// draw the label under the car
-        g2.setColor(Color.red);
-        g2.drawString("UT JavaMobile 1.0", xCar, (float) (yCar + (25 * HEIGHT_CAR) / 16));
+//// draw the label under the car
+//        g2.setColor(Color.red);
+//        g2.drawString("UT JavaMobile 1.0", xCar, (float) (yCar + (25 * HEIGHT_CAR) / 16));
 
         //draw the car number
         g2.setColor(Color.black);
+        g2.setFont(CAR_FONT);
         g2.drawString(carNum, xCar + (int) (WIDTH_CAR / 2), yCar + (int) (5 * HEIGHT_CAR) / 8);
 
     } // end of paint

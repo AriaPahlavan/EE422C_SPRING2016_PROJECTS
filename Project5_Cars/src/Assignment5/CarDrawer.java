@@ -49,6 +49,7 @@ public class CarDrawer {
         //random value btwn 0 - 0.2 + 0.45 - 0.65 = 0.45 - 0.85
         this.FRICTION = (random.nextInt(3) / 10) + ((random.nextInt(3) / 10) + 0.45);
         System.out.println(FRICTION);
+        
     }
 
     public CarDrawer(int xCar, int yCar, String carNum) {

@@ -9,18 +9,19 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.util.Random;
 
 public class CarDrawer {
 
     //Member data
     private int xCar, yCar;
     private double dxCar;
-    private final int SPEED_LIMIT = 100;
+    private final int SPEED_LIMIT = 160;
     protected Color BurntOrange = new Color(204, 102, 0);
-    private final double dt = 0.2;
-    private final double ACCELERATION = 140;
+    private double dt = 0.2;
+    private double ACCELERATION = 80;
     private final double BACKUP_ACCELERATION = 50;
-    private final double FRICTION = 0.6;
+    private double FRICTION = 0.6;
     private final double WIDTH_CAR = 90;
     private final double HEIGHT_CAR = 62;
     private final double TIRE_RADIUS = ((31 - 19) * HEIGHT_CAR) / 32;
@@ -32,9 +33,26 @@ public class CarDrawer {
         this.xCar = 100;
         this.yCar = 100;
         this.dxCar = 0;
+        Random random = new Random();
+        for ( long rand2 = System.currentTimeMillis() % 31; rand2 > 0; rand2 -= 1 ) {
+            random.nextInt();
+        }
+
+        //random value btwn 70 - 90
+        this.ACCELERATION = random.nextInt(21) + 70;
+        System.out.println(ACCELERATION);
+
+        //random value btwn 1.6 - 2.5
+        this.dt = random.nextFloat() + 1.6;
+        System.out.println(dt);
+
+        //random value btwn 0 - 0.2 + 0.45 - 0.65 = 0.45 - 0.85
+        this.FRICTION = (random.nextInt(3) / 10) + ((random.nextInt(3) / 10) + 0.45);
+        System.out.println(FRICTION);
     }
 
     public CarDrawer(int xCar, int yCar, String carNum) {
+        this();
         this.xCar = xCar;
         this.yCar = yCar;
         this.carNum = carNum;
@@ -66,13 +84,14 @@ public class CarDrawer {
 
 
     public void updateCarPosition(A5Driver display) {
+        moveRight();
 
 
         if ( xCar + dxCar > display.getWidth() - WIDTH_CAR - 1 ) {
             //The car has hit the right wall.
             //TODO Game Over: this car is the winner.
         }
-        if ( xCar + dxCar <= WIDTH_CAR ) {
+        if ( xCar + dxCar <= 0 ) {
             //the car is behind the left wall, i.e. out of the screen
             xCar = (int) WIDTH_CAR;
 //            dxCar= -dxCar;
@@ -94,8 +113,6 @@ public class CarDrawer {
                 //displacement formula: i.e. d = v0*t + 1/2*a*t^2
                 xCar += dxCar * dt - (.5 * BACKUP_ACCELERATION * dt * dt);
         }
-
-
     }
 
     /**
@@ -110,8 +127,7 @@ public class CarDrawer {
         Rectangle body = new Rectangle(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16), (int) WIDTH_CAR, (int) ((5 * HEIGHT_CAR) / 16));
 // create the car tires
         Ellipse2D.Double frontTire = new Ellipse2D.Double(xCar + (40 * WIDTH_CAR) / 60, yCar + (19 * HEIGHT_CAR) / 32, TIRE_RADIUS, TIRE_RADIUS);
-        Ellipse2D.Double frontRim = new Ellipse2D.Double(xCar + (43.5 * WIDTH_CAR) / 60, yCar + (22 * HEIGHT_CAR) / 32, RIM_RADIUS,RIM_RADIUS);
-
+        Ellipse2D.Double frontRim = new Ellipse2D.Double(xCar + (43.5 * WIDTH_CAR) / 60, yCar + (22 * HEIGHT_CAR) / 32, RIM_RADIUS, RIM_RADIUS);
 
 
         Ellipse2D.Double rearTire = new Ellipse2D.Double(xCar + (10 * WIDTH_CAR) / 60, yCar + (19 * HEIGHT_CAR) / 32, TIRE_RADIUS, TIRE_RADIUS);

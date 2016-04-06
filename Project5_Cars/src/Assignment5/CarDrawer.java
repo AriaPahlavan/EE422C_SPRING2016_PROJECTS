@@ -88,27 +88,30 @@ public class CarDrawer {
         if ( xCar + dxCar > display.getWidth() - WIDTH_CAR - 1 ) {
             //The car has hit the right wall.
             //TODO Game Over: this car is the winner.
+            xCar = (int) (display.getWidth() - WIDTH_CAR - 6);
+            display.setFinished(true);
         }
-        if ( xCar + dxCar <= 0 ) {
-            //the car is behind the left wall, i.e. out of the screen
-            xCar = (int) WIDTH_CAR;
-//            dxCar= -dxCar;
-        }
+        else {
+            if ( xCar + dxCar <= 0 ) {
+                //the car is behind the left wall, i.e. out of the screen
+                //TODO The car is going in reverse
+            }
 
-        if ( Math.abs(dxCar) < 0.05 ) dxCar = 0;
+            if ( Math.abs(dxCar) < 0.05 ) dxCar = 0;
 
-        if ( dxCar != 0 ) {
-            //Friction formula
-            dxCar *= FRICTION;
-        }
+            if ( dxCar != 0 ) {
+                //Friction formula
+                dxCar *= FRICTION;
+            }
 
-        if ( dxCar != 0 ) {
-            if ( dxCar > 0 )
-                //displacement formula: i.e. d = v0*t + 1/2*a*t^2
-                xCar += dxCar * dt + .5 * ACCELERATION * dt * dt;
-            else
-                //displacement formula: i.e. d = v0*t + 1/2*a*t^2
-                xCar += dxCar * dt - (.5 * BACKUP_ACCELERATION * dt * dt);
+            if ( dxCar != 0 ) {
+                if ( dxCar > 0 )
+                    //displacement formula: i.e. d = v0*t + 1/2*a*t^2
+                    xCar += dxCar * dt + .5 * ACCELERATION * dt * dt;
+                else
+                    //displacement formula: i.e. d = v0*t + 1/2*a*t^2
+                    xCar += dxCar * dt - (.5 * BACKUP_ACCELERATION * dt * dt);
+            }
         }
     }
 

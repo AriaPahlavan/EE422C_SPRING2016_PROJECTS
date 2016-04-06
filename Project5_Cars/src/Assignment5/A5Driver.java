@@ -14,7 +14,16 @@ public class A5Driver extends Applet implements Runnable, KeyListener{
     private CarDrawer myCar[] = new CarDrawer[5];
     private Graphics doubleG;
     private Image image;
-    private boolean start = false;
+    private boolean isStarted = false;
+    private boolean isFinished = false;
+
+    public boolean isFinished() {
+        return isFinished;
+    }
+
+    public void setFinished(boolean finished) {
+        isFinished = finished;
+    }
 
     @Override
     public void init() {
@@ -33,13 +42,14 @@ public class A5Driver extends Applet implements Runnable, KeyListener{
     @Override
     public void run() {
         while ( true ) {
-
-            if ( start ) {
-                for ( int i = 0; i < myCar.length; i += 1 )
-                    myCar[i].updateCarPosition(this);
-
-                repaint();
+            if ( !isFinished ) {
+                if ( isStarted ) {
+                    for ( int i = 0; i < myCar.length; i += 1 )
+                        myCar[i].updateCarPosition(this);
+                    repaint();
+                }
             }
+
             try {
                 Thread.sleep(16);
             } catch (InterruptedException e) {
@@ -80,7 +90,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener{
     @Override
     public void keyPressed(KeyEvent e) {
         if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER){
-            start = true;
+            isStarted = true;
         }
     }
 

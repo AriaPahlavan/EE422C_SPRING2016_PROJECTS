@@ -16,19 +16,19 @@ public class CarDrawer {
     //Member data
     private int xCar, yCar;
     private double dxCar;
-    private final int SPEED_LIMIT = 40;
+    private final int SPEED_LIMIT = 20;
     protected Color BurntOrange = new Color(204, 102, 0);
     private double dt = 0.2;
     private double ACCELERATION = 80;
     private final double BACKUP_ACCELERATION = 50;
     private double FRICTION = 0.6;
-    private final double WIDTH_CAR = 90;
-    private final double HEIGHT_CAR = 62;
+    private final double WIDTH_CAR = 70;
+    private final double HEIGHT_CAR = 42;
     private final double TIRE_RADIUS = ((31 - 19) * HEIGHT_CAR) / 32;
     private final double RIM_RADIUS = ((31 - 19 - 6) * HEIGHT_CAR) / 32;
     private final int BACKUP_SPEED_LIMIT = 20;
     private String carNum;
-    private final Font CAR_FONT = new Font("Century SchoolBook L Bold", Font.ITALIC , 15);
+    private final Font CAR_FONT = new Font("Century SchoolBook L Bold", Font.ITALIC , (int)(WIDTH_CAR)/6);
 
     public CarDrawer() {
         this.xCar = 100;

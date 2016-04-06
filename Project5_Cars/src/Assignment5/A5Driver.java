@@ -4,6 +4,7 @@ import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.net.URL;
 
 /**
  * Project5_Cars
@@ -18,6 +19,11 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     private boolean finished = false;
     private StopWatch timer = new StopWatch();
     private final Font TIMER_FONT = new Font("Purisa", Font.BOLD, 20);
+    private double xRaceTrack = 0;
+    private double dxRaceTrack = 0.3;
+    private URL url;
+    private Image raceTrack;
+
 
     public StopWatch getTimer() {
         return timer;
@@ -35,6 +41,11 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     public void init() {
         this.setSize(1500, 900);
         addKeyListener(this);
+        try{
+            url = getDocumentBase();
+        } catch (Exception e){
+
+        }
     }
 
     @Override
@@ -102,9 +113,9 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
         g2.setColor(Color.lightGray);
         g2.drawString(elapsedTime, getWidth() - 250, 25);
         g2.drawString(" milliseconds", getWidth() - 200, 25);
-        g2.setColor(Color.red);
-        g2.drawString(elapsedTime, getWidth() - 250 + 2, 25 + 2);
-        g2.drawString(" milliseconds", getWidth() - 200 + 2, 25 + 2);
+        g2.setColor(new Color(2,104,70));
+        g2.drawString(elapsedTime, getWidth() - 250 - 2, 25 + 2);
+        g2.drawString(" milliseconds", getWidth() - 200 - 2, 25 + 2);
 
     }
 

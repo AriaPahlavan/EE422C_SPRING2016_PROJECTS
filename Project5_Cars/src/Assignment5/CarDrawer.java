@@ -5,9 +5,8 @@ package Assignment5;
  * Created by Aria Pahlavan on Apr 2016.
  */
 
-import javafx.scene.shape.Circle;
-
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 
@@ -22,11 +21,10 @@ public class CarDrawer {
     private final double ACCELERATION = 140;
     private final double BACKUP_ACCELERATION = 50;
     private final double FRICTION = 0.6;
-    private final double WIDTH_CAR = 100;
-    private final double HEIGHT_CAR = 72;
-    private final double DIAMETER = ((31 - 19) * HEIGHT_CAR) / 32;
-    private final double TIRE_RADIUS = ((31 - 19) * HEIGHT_CAR) / 64;
-    private final double RIM_RADIUS = ((31 - 19 - 6) * HEIGHT_CAR) / 64;
+    private final double WIDTH_CAR = 90;
+    private final double HEIGHT_CAR = 62;
+    private final double TIRE_RADIUS = ((31 - 19) * HEIGHT_CAR) / 32;
+    private final double RIM_RADIUS = ((31 - 19 - 6) * HEIGHT_CAR) / 32;
     private final int BACKUP_SPEED_LIMIT = 20;
     private String carNum;
 
@@ -111,16 +109,13 @@ public class CarDrawer {
 //        RoundRectangle2D body = new RoundRectangle2D.Double(xCar, yCar + 10, 60, 15, 20, 360);
         Rectangle body = new Rectangle(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16), (int) WIDTH_CAR, (int) ((5 * HEIGHT_CAR) / 16));
 // create the car tires
-//        Ellipse2D.Double frontTire = new Ellipse2D.Double(xCar + (40 * WIDTH_CAR) / 60, yCar + (19 * HEIGHT_CAR) / 32, DIAMETER, DIAMETER);
-//        Ellipse2D.Double frontRim = new Ellipse2D.Double(xCar + (43 * WIDTH_CAR) / 60, yCar + (22 * HEIGHT_CAR) / 32, DIAMETER / 2, DIAMETER / 2);
-        Circle frontTire = new Circle(xCar + (16 * WIDTH_CAR) / 60, yCar + (25 * HEIGHT_CAR) / 32, TIRE_RADIUS);
-        Circle frontRim = new Circle(xCar + (16 * WIDTH_CAR) / 60, yCar + (25 * HEIGHT_CAR) / 32, RIM_RADIUS);
+        Ellipse2D.Double frontTire = new Ellipse2D.Double(xCar + (40 * WIDTH_CAR) / 60, yCar + (19 * HEIGHT_CAR) / 32, TIRE_RADIUS, TIRE_RADIUS);
+        Ellipse2D.Double frontRim = new Ellipse2D.Double(xCar + (43.5 * WIDTH_CAR) / 60, yCar + (22 * HEIGHT_CAR) / 32, RIM_RADIUS,RIM_RADIUS);
 
 
-//        Ellipse2D.Double rearTire = new Ellipse2D.Double(xCar + (10 * WIDTH_CAR) / 60, yCar + (19 * HEIGHT_CAR) / 32, DIAMETER, DIAMETER);
-//        Ellipse2D.Double rearRim = new Ellipse2D.Double(xCar + (13 * WIDTH_CAR) / 60, yCar + (22 * HEIGHT_CAR) / 32, DIAMETER / 2, DIAMETER / 2);
-        Circle rearTire = new Circle(xCar + (46 * WIDTH_CAR) / 60, yCar + (25 * HEIGHT_CAR) / 32, TIRE_RADIUS, );
-        Circle rearRim = new Circle(xCar + (46 * WIDTH_CAR) / 60, yCar + (25 * HEIGHT_CAR) / 32, RIM_RADIUS);
+
+        Ellipse2D.Double rearTire = new Ellipse2D.Double(xCar + (10 * WIDTH_CAR) / 60, yCar + (19 * HEIGHT_CAR) / 32, TIRE_RADIUS, TIRE_RADIUS);
+        Ellipse2D.Double rearRim = new Ellipse2D.Double(xCar + (13.5 * WIDTH_CAR) / 60, yCar + (22 * HEIGHT_CAR) / 32, RIM_RADIUS, RIM_RADIUS);
 
 // create the 4 points connecting the windshields and roof
         Point2D.Double r1 = new Point2D.Double(xCar + WIDTH_CAR / 6, yCar + (5 * HEIGHT_CAR) / 16);
@@ -144,15 +139,15 @@ public class CarDrawer {
         g2.setColor(Color.black);
         g2.draw(frontWindshield);
         g2.draw(rearWindshield);
-//        g2.fill(frontTire);
-//        g2.fill(rearTire);
+        g2.fill(frontTire);
+        g2.fill(rearTire);
         g2.setColor(BurntOrange);
         g2.fill(body);
         g2.draw(roofTop);
 
         g2.setColor(Color.gray);
-//        g2.fill(frontRim);
-//        g2.fill(rearRim);
+        g2.fill(frontRim);
+        g2.fill(rearRim);
 // draw the label under the car
         g2.setColor(Color.red);
         g2.drawString("UT JavaMobile 1.0", xCar, (float) (yCar + (25 * HEIGHT_CAR) / 16));

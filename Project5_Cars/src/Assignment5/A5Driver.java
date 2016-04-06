@@ -11,7 +11,7 @@ import java.awt.event.KeyListener;
  */
 public class A5Driver extends Applet implements Runnable, KeyListener {
 
-    private CarDrawer myCar[] = new CarDrawer[5];
+    private CarDrawer myCar[] = new CarDrawer[1];
     private Graphics doubleG;
     private Image image;
 
@@ -24,7 +24,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     @Override
     public void start() {
         for ( int i = 0; i < myCar.length; i += 1 )
-            myCar[i] = new CarDrawer(100, (i+1)*100, new Integer(i+1).toString());
+            myCar[i] = new CarDrawer(100, (i+1)*150, new Integer(i+1).toString());
         Thread thread = new Thread(this);
         thread.start();
     }

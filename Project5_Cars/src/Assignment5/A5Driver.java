@@ -9,34 +9,37 @@ import java.awt.event.KeyListener;
  * Project5_Cars
  * Created by Aria Pahlavan on Apr 2016.
  */
-public class A5Driver extends Applet implements Runnable, KeyListener{
+public class A5Driver extends Applet implements Runnable, KeyListener {
 
     private CarDrawer myCar[] = new CarDrawer[5];
     private Graphics doubleG;
     private Image image;
     private boolean isStarted = false;
-    private boolean isFinished = false;
+    private boolean finished = false;
     private StopWatch timer = new StopWatch();
 
+    public StopWatch getTimer() {
+        return timer;
+    }
+
     public boolean isFinished() {
-        return isFinished;
+        return finished;
     }
 
     public void setFinished(boolean finished) {
-        isFinished = finished;
+        this.finished = finished;
     }
 
     @Override
     public void init() {
         this.setSize(1500, 900);
         addKeyListener(this);
-        
     }
 
     @Override
     public void start() {
         for ( int i = 0; i < myCar.length; i += 1 )
-            myCar[i] = new CarDrawer(100, ((i)*120) + 25, new Integer(i+1).toString());
+            myCar[i] = new CarDrawer(100, ((i) * 120) + 50, new Integer(i + 1).toString());
         Thread thread = new Thread(this);
         thread.start();
     }
@@ -45,7 +48,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener{
     public void run() {
         while ( true ) {
             //while the race is happening
-            if ( !isFinished ) {
+            if ( !finished ) {
                 //When the Enter or Space key is pressed, start the race
                 if ( isStarted ) {
                     for ( int i = 0; i < myCar.length; i += 1 )
@@ -54,7 +57,6 @@ public class A5Driver extends Applet implements Runnable, KeyListener{
             }
             //when the race is done
             else {
-
             }
 
             repaint();
@@ -86,8 +88,18 @@ public class A5Driver extends Applet implements Runnable, KeyListener{
 
     @Override
     public void paint(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+        //Displaying the cars
         for ( int i = 0; i < myCar.length; i += 1 )
-            myCar[i].paint(g);
+            myCar[i].paint(g2);
+
+        //Displaying the time
+        String elapsedTime = Long.toString(timer.getElapsedTime());
+        g2.setColor(Color.lightGray);
+        g2.drawString(elapsedTime + " milliseconds", getWidth() - 150, 25);
+        g2.setColor(Color.red);
+        g2.drawString(elapsedTime + " milliseconds", getWidth() - 150+2, 25+2);
+
     }
 
     @Override
@@ -97,7 +109,8 @@ public class A5Driver extends Applet implements Runnable, KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER){
+        if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER ) {
+            timer.start();
             isStarted = true;
         }
     }

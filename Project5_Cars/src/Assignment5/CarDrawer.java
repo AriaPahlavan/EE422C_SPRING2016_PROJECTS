@@ -90,6 +90,9 @@ public class CarDrawer {
             //TODO Game Over: this car is the winner.
             xCar = (int) (display.getWidth() - WIDTH_CAR - 6);
             display.setFinished(true);
+            display.getTimer().stop();
+            System.out.println(display.getTimer().getElapsedTime() + " milliseconds");
+
         }
         else {
             if ( xCar + dxCar <= 0 ) {
@@ -118,10 +121,9 @@ public class CarDrawer {
     /**
      * This method paints the car on the applet screen display.
      *
-     * @param g
+     * @param g2
      */
-    public void paint(Graphics g) {
-        Graphics2D g2 = (Graphics2D) g;
+    public void paint(Graphics2D g2) {
 // create the car body
 //        RoundRectangle2D body = new RoundRectangle2D.Double(xCar, yCar + 10, 60, 15, 20, 360);
         Rectangle body = new Rectangle(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16), (int) WIDTH_CAR, (int) ((5 * HEIGHT_CAR) / 16));

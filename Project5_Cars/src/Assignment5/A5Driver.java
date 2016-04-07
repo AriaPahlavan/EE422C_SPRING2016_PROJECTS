@@ -18,9 +18,9 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     private boolean isStarted = false;
     private boolean finished = false;
     private StopWatch timer = new StopWatch();
-    private final Font TIMER_FONT = new Font("Purisa", Font.BOLD, 20);
+    private final Font TIMER_FONT = new Font("Purisa", Font.BOLD, 15);
     private double xRaceTrack = 0;
-    private double dxRaceTrack = 0.3;
+    private double dxRaceTrack = 0;
     private Image raceTrack;
 
 
@@ -39,7 +39,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     @Override
     public void init() {
         URL url;
-        this.setSize(1500, 900);
+        this.setSize(1500, 700);
         addKeyListener(this);
         try {
             url = A5Driver.class.getResource("/images/background.png");
@@ -51,7 +51,8 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     @Override
     public void start() {
         for ( int i = 0; i < myCar.length; i += 1 )
-            myCar[i] = new CarDrawer(100, ((i) * 120) + 50, new Integer(i + 1).toString());
+            //x = 100;  y = 50, 170, 290, 410, 530
+            myCar[i] = new CarDrawer(100, ((i) * 120) + 125, new Integer(i + 1).toString());
         Thread thread = new Thread(this);
         thread.start();
     }

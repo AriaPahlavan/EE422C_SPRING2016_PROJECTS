@@ -86,10 +86,10 @@ public class CarDrawer {
         moveRight();
 
 
-        if ( xCar + dxCar > display.getWidth() - WIDTH_CAR - 1 ) {
+        if ( xCar + dxCar > display.getWidth() - WIDTH_CAR - 56 ) {
             //The car has hit the right wall.
             //TODO Game Over: this car is the winner.
-            xCar = (int) (display.getWidth() - WIDTH_CAR - 6);
+            xCar = (int) (display.getWidth() - WIDTH_CAR - 56);
             display.setFinished(true);
             display.getTimer().stop();
             System.out.println(display.getTimer().getElapsedTime() + " milliseconds");

@@ -12,17 +12,31 @@ import java.net.URL;
  */
 public class A5Driver extends Applet implements Runnable, KeyListener {
 
+    protected final Color BurntOrange = new Color(204, 102, 0);
     private CarDrawer myCar[] = new CarDrawer[5];
     private Graphics doubleG;
     private Image image;
     private boolean isStarted = false;
     private boolean finished = false;
     private StopWatch timer = new StopWatch();
-    private final Font TIMER_FONT = new Font("Purisa", Font.BOLD, 15);
+    protected final Font TIMER_FONT = new Font("Purisa", Font.BOLD, 15);
     private double xRaceTrack = 0;
     private double dxRaceTrack = 0;
     private Image raceTrack;
+    private Prompt winnerPrompt;
+    private CarDrawer winner = null;
 
+    public CarDrawer[] getMyCar() {
+        return myCar;
+    }
+
+    public void setWinner(CarDrawer winner) {
+        this.winner = winner;
+    }
+
+    public CarDrawer getWinner() {
+        return winner;
+    }
 
     public StopWatch getTimer() {
         return timer;
@@ -39,7 +53,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     @Override
     public void init() {
         URL url;
-        this.setSize(1500, 700);
+        this.setSize(1400, 700);
         addKeyListener(this);
         try {
             url = A5Driver.class.getResource("/images/background.png");
@@ -50,16 +64,20 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
     @Override
     public void start() {
+
         for ( int i = 0; i < myCar.length; i += 1 )
             //x = 100;  y = 50, 170, 290, 410, 530
-            myCar[i] = new CarDrawer(100, ((i) * 120) + 125, new Integer(i + 1).toString());
+            myCar[i] = new CarDrawer(20, ((i) * 120) + 125, new Integer(i + 1).toString());
         Thread thread = new Thread(this);
         thread.start();
+        winnerPrompt = new Prompt();
     }
 
     @Override
     public void run() {
         while ( true ) {
+//            winnerPrompt.announceWinner(this);
+
             //while the race is happening
             if ( !finished ) {
                 //When the Enter or Space key is pressed, start the race
@@ -124,11 +142,12 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
         g2.drawString(elapsedTime, getWidth() - 250 - 2, 25 + 2);
         g2.drawString(" milliseconds", getWidth() - 200 - 2, 25 + 2);
 
+        if ( isFinished() )
+            winnerPrompt.paint(this, g);
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
-
     }
 
     @Override
@@ -140,6 +159,5 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-
     }
 }

@@ -17,13 +17,12 @@ public class CarDrawer {
     private int xCar, yCar;
     private double dxCar;
     private final int SPEED_LIMIT = 20;
-    protected Color BurntOrange = new Color(204, 102, 0);
     private double dt = 0.2;
     private double ACCELERATION = 80;
     private final double BACKUP_ACCELERATION = 50;
     private double FRICTION = 0.6;
-    private final double WIDTH_CAR = 70;
-    private final double HEIGHT_CAR = 42;
+    private final double WIDTH_CAR = 90;
+    private final double HEIGHT_CAR = 62;
     private final double TIRE_RADIUS = ((31 - 19) * HEIGHT_CAR) / 32;
     private final double RIM_RADIUS = ((31 - 19 - 6) * HEIGHT_CAR) / 32;
     private final int BACKUP_SPEED_LIMIT = 20;
@@ -55,6 +54,10 @@ public class CarDrawer {
         this.xCar = xCar;
         this.yCar = yCar;
         this.carNum = carNum;
+    }
+
+    public String getCarNum() {
+        return carNum;
     }
 
     public double getDxCar() {
@@ -92,8 +95,7 @@ public class CarDrawer {
             xCar = (int) (display.getWidth() - WIDTH_CAR - 56);
             display.setFinished(true);
             display.getTimer().stop();
-            System.out.println(display.getTimer().getElapsedTime() + " milliseconds");
-
+            display.setWinner(this);
         }
         else {
             if ( xCar + dxCar <= 0 ) {
@@ -160,7 +162,7 @@ public class CarDrawer {
         g2.draw(rearWindshield);
         g2.fill(frontTire);
         g2.fill(rearTire);
-        g2.setColor(BurntOrange);
+        g2.setColor(new A5Driver().BurntOrange);
         g2.fill(body);
         g2.draw(roofTop);
 

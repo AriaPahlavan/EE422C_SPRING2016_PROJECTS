@@ -19,7 +19,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     private boolean isStarted = false;
     private boolean finished = false;
     private StopWatch timer = new StopWatch();
-    protected final Font TIMER_FONT = new Font("Purisa", Font.BOLD, 15);
+    protected final Font TIMER_FONT = new Font("Purisa", Font.BOLD, 30);
     private double xRaceTrack = 0;
     private double dxRaceTrack = 0;
     private Image raceTrack;
@@ -133,14 +133,20 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
             myCar[i].paint(g2);
 
         //Displaying the time
-        String elapsedTime = Long.toString(timer.getElapsedTime());
+        String elapsedTime = new Integer((int)(timer.getElapsedTime()*0.001)).toString();
         g2.setFont(TIMER_FONT);
         g2.setColor(Color.lightGray);
-        g2.drawString(elapsedTime, getWidth() - 250, 25);
-        g2.drawString(" milliseconds", getWidth() - 200, 25);
-        g2.setColor(new Color(2, 104, 70));
-        g2.drawString(elapsedTime, getWidth() - 250 - 2, 25 + 2);
-        g2.drawString(" milliseconds", getWidth() - 200 - 2, 25 + 2);
+        g2.drawString("Time: ", getWidth() - 550, 50);
+        g2.drawString(elapsedTime, getWidth() - 350, 50);
+        g2.drawString(" seconds", getWidth() - 335, 50);
+        g2.setColor(new Color(255, 0, 43));
+        g2.drawString("Time: ", getWidth() - 550 - 1, 50 + 2);
+        g2.drawString(elapsedTime, getWidth() - 350 - 1, 50 + 2);
+        g2.drawString(" seconds", getWidth() - 335 - 1, 50 + 2);
+
+        if(!isStarted)
+            winnerPrompt.startGame(this, g2);
+
 
         if ( isFinished() )
             winnerPrompt.paint(this, g);

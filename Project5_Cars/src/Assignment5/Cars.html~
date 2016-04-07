@@ -1,0 +1,8 @@
+<html>
+<title>My first java applet</title>
+<hr>
+Here's my first java applet: <Br><Br>
+<applet code="A5Drive.class" width="1400" height="700">
+</applet>
+<hr>
+</html>

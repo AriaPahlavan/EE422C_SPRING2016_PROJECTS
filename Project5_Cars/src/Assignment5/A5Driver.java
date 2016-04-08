@@ -26,6 +26,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     private Prompt winnerPrompt;
     private CarDrawer winner = null;
     private boolean isPromptDisabled = false;
+    private boolean isSport = false;
 
     public CarDrawer[] getMyCar() {
         return myCar;
@@ -140,9 +141,16 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
         g2.drawImage(raceTrack, (int) xRaceTrack, 0, this);
 
-        //Displaying the cars
-        for ( int i = 0; i < myCar.length; i += 1 )
-            myCar[i].paint2(g2);
+        if ( isSport ) {
+            //Displaying the cars
+            for ( int i = 0; i < myCar.length; i += 1 )
+                myCar[i].paint2(g2);
+        }
+        else {
+            //Displaying the cars
+            for ( int i = 0; i < myCar.length; i += 1 )
+                myCar[i].paint(g2);
+        }
 
         //Displaying the time
         String elapsedTime = new Integer((int) (timer.getElapsedTime() * 0.001)).toString();
@@ -198,6 +206,11 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
         //Enabling popup!
         if ( e.getKeyCode() == KeyEvent.VK_E )
             isPromptDisabled = false;
+
+        //S for Sport!! ;)
+
+        if ( e.getKeyCode() == KeyEvent.VK_S )
+            isSport = true;
 
 
     }

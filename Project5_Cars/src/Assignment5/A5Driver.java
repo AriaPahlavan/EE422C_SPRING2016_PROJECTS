@@ -64,6 +64,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
     @Override
     public void start() {
+        myCar = new CarDrawer[5];
 
         for ( int i = 0; i < myCar.length; i += 1 )
             //x = 100;  y = 50, 170, 290, 410, 530
@@ -144,8 +145,17 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
         g2.drawString(elapsedTime, getWidth() - 350 - 1, 50 + 2);
         g2.drawString(" seconds", getWidth() - 335 - 1, 50 + 2);
 
-        if(!isStarted)
+        if(!isStarted) {
             winnerPrompt.startGame(this, g2);
+        }
+        else {
+            if ( !isFinished() ) {
+
+                winnerPrompt.setPROMPT_HEIGHT(0);
+                winnerPrompt.setPROMPT_WIDTH(0);
+                winnerPrompt.setDone(false);
+            }
+        }
 
 
         if ( isFinished() )
@@ -161,10 +171,29 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
         if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER ) {
             isStarted = true;
         }
+
+        if ( e.getKeyCode() == KeyEvent.VK_R && isFinished())
+            reset();
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
+    }
+
+    /**
+     * resets all classes to initial state
+     */
+    public void reset(){
+//        myCar = new CarDrawer[5];
+        timer.reset();
+        winner = null;
+        finished = false;
+        isStarted = false;
+        winnerPrompt.reset();
+        for ( int i = 0; i < myCar.length; i += 1 )
+            myCar[i].reset();
+        start();
+
     }
 
 

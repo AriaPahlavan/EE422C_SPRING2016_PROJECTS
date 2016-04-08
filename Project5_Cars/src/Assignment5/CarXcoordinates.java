@@ -42,4 +42,6 @@ public class CarXcoordinates implements Comparable<CarXcoordinates> {
     public int compareTo(CarXcoordinates car) {
         return this.getxCarCoordinate() > (car.getxCarCoordinate()) ? -1:this.getxCarCoordinate() < (car.getxCarCoordinate())? +1 : 0;
     }
+
+
 }

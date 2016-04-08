@@ -18,8 +18,10 @@ public class Prompt {
     protected final Font PROMPT_FONT = new Font("Purisa", Font.BOLD, 25);
     protected final Font SMALL_FONT = new Font("Purisa", Font.BOLD, 18);
     private ArrayList<Integer> winnersList = new ArrayList<>();
-    private final int PROMPT_HEIGHT = 100;
-    private final int PROMPT_WIDTH = 300;
+    private  int PROMPT_HEIGHT = 0;
+    private  int PROMPT_WIDTH = 0;
+    private boolean done = false;
+
 
 
     /**
@@ -31,10 +33,22 @@ public class Prompt {
         g2.setFont(START_FONT);
         g2.setColor(Color.cyan);
 
+
         //draw Prompt window
         g2.fillRoundRect(PROMPT_WIDTH, PROMPT_HEIGHT, 2 * PROMPT_WIDTH, 5 * PROMPT_HEIGHT, 20, 45);
         g2.setColor(new Color(14, 61, 58));
         g2.fillRoundRect(PROMPT_WIDTH + 10, PROMPT_HEIGHT + 10, 2 * PROMPT_WIDTH - 20, 5 * PROMPT_HEIGHT - 20, 20, 45);
+
+
+        if ( PROMPT_WIDTH != 300 && PROMPT_HEIGHT != 100) {
+            PROMPT_WIDTH  += 6;
+            PROMPT_HEIGHT += 2;
+        }
+        else
+            done = true;
+
+
+
 
         //Write game title
         g2.setColor(new Color(226, 45, 0));

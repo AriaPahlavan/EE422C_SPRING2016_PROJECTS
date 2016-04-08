@@ -9,11 +9,9 @@ import java.util.Collections;
  * Created by Aria Pahlavan on Apr 2016.
  */
 public class Prompt {
-
-
+    //Member data
     protected final Font START_FONT = new Font("DejaVu Sans, Bold", Font.BOLD + Font.ITALIC, 40);
     protected final Font START_SMALL_FONT = new Font("DejaVu Sans, Bold", Font.BOLD + Font.ITALIC, 20);
-
     protected final Font WINNER_FONT = new Font("Purisa", Font.BOLD, 40);
     protected final Font PROMPT_FONT = new Font("Purisa", Font.BOLD, 25);
     protected final Font SMALL_FONT = new Font("Purisa", Font.BOLD, 18);
@@ -22,6 +20,7 @@ public class Prompt {
     private int PROMPT_WIDTH = 0;
     private boolean done = false;
 
+    //Getters and Setters
     public void setPROMPT_HEIGHT(int PROMPT_HEIGHT) {
         this.PROMPT_HEIGHT = PROMPT_HEIGHT;
     }
@@ -35,10 +34,10 @@ public class Prompt {
     }
 
     /**
-     * @param display
+     * This method prompts the user to the isntructions on how to start the race.
      * @param g2
      */
-    public void startGame(A5Driver display, Graphics2D g2) {
+    public void startGame(Graphics2D g2) {
         g2.setFont(START_FONT);
         g2.setColor(Color.cyan);
 
@@ -48,14 +47,14 @@ public class Prompt {
         g2.setColor(new Color(14, 61, 58));
         g2.fillRoundRect(PROMPT_WIDTH + 10, PROMPT_HEIGHT + 10, 2 * PROMPT_WIDTH - 20, 5 * PROMPT_HEIGHT - 20, 20, 45);
 
-
+        //Beginning animation
         if ( PROMPT_WIDTH != 300 && PROMPT_HEIGHT != 100 ) {
             PROMPT_WIDTH += 6;
             PROMPT_HEIGHT += 2;
         } else
             done = true;
 
-
+        //End of animation, start prompting
         if ( done ) {
             //Write game title
             g2.setColor(new Color(226, 45, 0));
@@ -69,11 +68,13 @@ public class Prompt {
 
             g2.drawString("Press Enter or Space key to race...", (11 * PROMPT_WIDTH) / 10 + 60, (21 * PROMPT_HEIGHT) / 10 + 175);
             g2.drawString("Press R at the end to restart the race.", (11 * PROMPT_WIDTH) / 10 + 60, (21 * PROMPT_HEIGHT) / 10 + 250);
+            g2.drawString("Press N to disable popup and E to enable.", (11 * PROMPT_WIDTH) / 10 + 60, (21 * PROMPT_HEIGHT) / 10 + 325);
         }
     }
 
 
     /**
+     * This method prompts the user with the stats regarding to the previous race.
      * @param display
      * @param g2
      */
@@ -83,15 +84,14 @@ public class Prompt {
         g2.setColor(new A5Driver().BurntOrange);
         g2.fillRoundRect(PROMPT_WIDTH + 10, PROMPT_HEIGHT + 10, 2 * PROMPT_WIDTH - 20, 5 * PROMPT_HEIGHT - 20, 20, 45);
 
-
+        //Beginning animation
         if ( PROMPT_WIDTH != 300 && PROMPT_HEIGHT != 100 ) {
             PROMPT_WIDTH += 6;
             PROMPT_HEIGHT += 2;
         } else
             done = true;
 
-
-
+        //End of animation, start prompting
         if ( done ) {
             //draw the car number
             g2.setColor(new Color(4, 41, 19));
@@ -125,6 +125,10 @@ public class Prompt {
     }
 
 
+    /**
+     * This method rearranges the racers from winner to the last place
+     * @param display
+     */
     public void getWinnersList(A5Driver display) {
         CarDrawer[] temp = display.getMyCar();
         ArrayList<CarXcoordinates> xCoordinates = new ArrayList<>();
@@ -147,6 +151,7 @@ public class Prompt {
 
 
     /**
+     * This method paints the popups
      * @param g
      */
     public void paint(A5Driver display, Graphics g) {
@@ -156,9 +161,9 @@ public class Prompt {
     } // end of paint
 
     /**
-     * Resets the prompt member variables
+     * This method resets the prompt member variables
      */
-    public void reset(){
+    public void reset() {
         winnersList = new ArrayList<>();
         PROMPT_HEIGHT = 0;
         PROMPT_WIDTH = 0;

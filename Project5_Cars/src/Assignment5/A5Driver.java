@@ -25,6 +25,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     private Image raceTrack;
     private Prompt winnerPrompt;
     private CarDrawer winner = null;
+    private boolean isPromptDisabled = false;
 
     public CarDrawer[] getMyCar() {
         return myCar;
@@ -51,7 +52,11 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     }
 
     @Override
+    /**
+     * This method initializes the background images and threads
+     */
     public void init() {
+        //initializing the background images and threads
         URL url;
         this.setSize(1400, 700);
         addKeyListener(this);
@@ -63,7 +68,11 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     }
 
     @Override
+    /**
+     * This method starts and initializes the cars, thread, and popups
+     */
     public void start() {
+        //setting up the game!
         myCar = new CarDrawer[5];
 
         for ( int i = 0; i < myCar.length; i += 1 )
@@ -75,10 +84,11 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     }
 
     @Override
+    /**
+     * This method updates the is called over and over to do stuff life repainting the screen!
+     */
     public void run() {
         while ( true ) {
-//            winnerPrompt.announceWinner(this);
-
             //while the race is happening
             if ( !finished ) {
                 //When the Enter or Space key is pressed, start the race
@@ -106,6 +116,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
     @Override
     public void update(Graphics g) {
+        //improve graphics and decrease the flickering
         if ( image == null ) {
             image = createImage(this.getWidth(), this.getHeight());
             doubleG = image.getGraphics();
@@ -131,7 +142,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
         //Displaying the cars
         for ( int i = 0; i < myCar.length; i += 1 )
-            myCar[i].paint(g2);
+            myCar[i].paint2(g2);
 
         //Displaying the time
         String elapsedTime = new Integer((int) (timer.getElapsedTime() * 0.001)).toString();
@@ -145,18 +156,20 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
         g2.drawString(elapsedTime, getWidth() - 350 - 1, 50 + 2);
         g2.drawString(" seconds", getWidth() - 335 - 1, 50 + 2);
 
-        if ( !isStarted ) {
-            winnerPrompt.startGame(this, g2);
-        } else {
-            if ( !isFinished() ) {
+        //popup before starting the race
+        if ( !isPromptDisabled )
+            if ( !isStarted ) {
+                winnerPrompt.startGame(g2);
+            } else {
+                if ( !isFinished() ) {
 
-                winnerPrompt.setPROMPT_HEIGHT(0);
-                winnerPrompt.setPROMPT_WIDTH(0);
-                winnerPrompt.setDone(false);
+                    winnerPrompt.setPROMPT_HEIGHT(0);
+                    winnerPrompt.setPROMPT_WIDTH(0);
+                    winnerPrompt.setDone(false);
+                }
             }
-        }
 
-
+        //popup for game stats
         if ( isFinished() )
             winnerPrompt.paint(this, g);
     }
@@ -167,34 +180,43 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
+
+        //Notifies that user wants to start the race
         if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER ) {
             isStarted = true;
         }
 
+        //Resets the race
         if ( e.getKeyCode() == KeyEvent.VK_R && isFinished() )
             reset();
+
+        //Disabling popup!
+        if ( e.getKeyCode() == KeyEvent.VK_N )
+            isPromptDisabled = true;
+
+
+        //Enabling popup!
+        if ( e.getKeyCode() == KeyEvent.VK_E )
+            isPromptDisabled = false;
+
+
     }
+
 
     @Override
     public void keyReleased(KeyEvent e) {
     }
 
     /**
-     * resets all classes to initial state
+     * This method resets all classes to initial state
      */
     public void reset() {
-//        myCar = new CarDrawer[5];
         timer.reset();
         winner = null;
         finished = false;
         isStarted = false;
         winnerPrompt.reset();
-//        for ( int i = 0; i < myCar.length; i += 1 )
-//            myCar[i].reset();
-
-
         myCar = new CarDrawer[5];
-
         for ( int i = 0; i < myCar.length; i += 1 )
             myCar[i] = new CarDrawer(20, ((i) * 120) + 125, new Integer(i + 1).toString());
         winnerPrompt = new Prompt();

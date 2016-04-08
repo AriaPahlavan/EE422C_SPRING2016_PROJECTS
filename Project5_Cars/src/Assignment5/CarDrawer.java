@@ -29,6 +29,7 @@ public class CarDrawer {
     private String carNum;
     private final Font CAR_FONT = new Font("Century SchoolBook L Bold", Font.ITALIC , (int)(WIDTH_CAR)/6);
 
+    //Constructors
     public CarDrawer() {
         this.xCar = 100;
         this.yCar = 100;
@@ -56,6 +57,7 @@ public class CarDrawer {
         this.carNum = carNum;
     }
 
+    //Getters and Setters
     public String getCarNum() {
         return carNum;
     }
@@ -85,13 +87,17 @@ public class CarDrawer {
     }
 
 
+    /**
+     * This method updates the position of the car using the
+     * acceleration, friction, and dt values (using actual mechanic physics formulas).
+     * @param display
+     */
     public void updateCarPosition(A5Driver display) {
         moveRight();
 
-
+        //this car is the winner car!!
         if ( xCar + dxCar > display.getWidth() - WIDTH_CAR - 56 ) {
             //The car has hit the right wall.
-            //TODO Game Over: this car is the winner.
             xCar = (int) (display.getWidth() - WIDTH_CAR - 56);
             display.setFinished(true);
             display.getTimer().stop();
@@ -100,7 +106,7 @@ public class CarDrawer {
         else {
             if ( xCar + dxCar <= 0 ) {
                 //the car is behind the left wall, i.e. out of the screen
-                //TODO The car is going in reverse
+                //Never gonna happen in this game!! :(
             }
 
             if ( Math.abs(dxCar) < 0.05 ) dxCar = 0;
@@ -184,6 +190,7 @@ public class CarDrawer {
      * This method changes dx so the car would start moving left
      */
     public void moveLeft() {
+        //Never gonna be used in this game :(
         if ( Math.abs(dxCar - (BACKUP_ACCELERATION * dt)) < BACKUP_SPEED_LIMIT )
 
             //velocity formula: i.e. v = v0 + a*t
@@ -202,11 +209,60 @@ public class CarDrawer {
         }
     }//end of move right
 
-    /**
-     * Resets all member variables to its original value
-     */
-    public void reset(){
-        this.dxCar = 0;
-    }
+
+    public void paint2(Graphics2D g2) {
+// create the car body
+//        RoundRectangle2D body = new RoundRectangle2D.Double(xCar, yCar + 10, 60, 15, 20, 360);
+// create the car tires
+        Ellipse2D.Double frontTire = new Ellipse2D.Double(xCar + (40 * WIDTH_CAR) / 60, yCar + (19 * HEIGHT_CAR) / 32, TIRE_RADIUS, TIRE_RADIUS);
+        Ellipse2D.Double frontRim = new Ellipse2D.Double(xCar + (43.5 * WIDTH_CAR) / 60, yCar + (22 * HEIGHT_CAR) / 32, RIM_RADIUS, RIM_RADIUS);
+
+
+        Ellipse2D.Double rearTire = new Ellipse2D.Double(xCar + (10 * WIDTH_CAR) / 60, yCar + (19 * HEIGHT_CAR) / 32, TIRE_RADIUS, TIRE_RADIUS);
+        Ellipse2D.Double rearRim = new Ellipse2D.Double(xCar + (13.5 * WIDTH_CAR) / 60, yCar + (22 * HEIGHT_CAR) / 32, RIM_RADIUS, RIM_RADIUS);
+
+// create the 4 points connecting the windshields and roof
+        Point2D.Double r1 = new Point2D.Double(xCar + WIDTH_CAR / 6, yCar + (5 * HEIGHT_CAR) / 16);
+        Point2D.Double r2 = new Point2D.Double(xCar + WIDTH_CAR / 3, yCar);
+        Point2D.Double r3 = new Point2D.Double(xCar + (2 * WIDTH_CAR) / 3, yCar);
+        Point2D.Double r4 = new Point2D.Double(xCar + (5 * WIDTH_CAR) / 6, yCar + (5 * HEIGHT_CAR) / 16);
+// create the windshields and roof of the car
+        Line2D.Double frontWindshield = new Line2D.Double(r1, r2);
+        Line2D.Double roofTop = new Line2D.Double(r2, r3);
+        Line2D.Double rearWindshield = new Line2D.Double(r3, r4);
+
+
+// draw all of the car parts on the screen
+        if ( dxCar >= 0 ) {
+            g2.setColor(Color.orange);
+            g2.fillArc(xCar + (int) ((55 * WIDTH_CAR) / 60), yCar + (int) ((13 * HEIGHT_CAR) / 32), (int) (WIDTH_CAR / 6), (int) ((5 * HEIGHT_CAR) / 32), 270, 180);
+        } else {
+            g2.setColor(Color.red);
+            g2.fillArc(xCar - (int) ((5 * WIDTH_CAR) / 60), yCar + (int) ((13 * HEIGHT_CAR) / 32), (int) (WIDTH_CAR / 6), (int) ((5 * HEIGHT_CAR) / 32), 90, 180);
+        }
+        g2.setColor(Color.black);
+        g2.draw(frontWindshield);
+        g2.draw(rearWindshield);
+        g2.fill(frontTire);
+        g2.fill(rearTire);
+        g2.setColor(new A5Driver().BurntOrange);
+//        g2.fill(body);
+        g2.fillRoundRect(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16), (int) WIDTH_CAR, (int) ((5 * HEIGHT_CAR) / 16), 20, 360);
+
+        g2.draw(roofTop);
+
+        g2.setColor(Color.gray);
+        g2.fill(frontRim);
+        g2.fill(rearRim);
+//// draw the label under the car
+//        g2.setColor(Color.red);
+//        g2.drawString("UT JavaMobile 1.0", xCar, (float) (yCar + (25 * HEIGHT_CAR) / 16));
+
+        //draw the car number
+        g2.setColor(Color.black);
+        g2.setFont(CAR_FONT);
+        g2.drawString(carNum, xCar + (int) (WIDTH_CAR / 2), yCar + (int) (18 * HEIGHT_CAR) / 32);
+
+    } // end of paint
 
 } // end of CarDrawer

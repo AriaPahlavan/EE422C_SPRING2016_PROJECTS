@@ -66,9 +66,11 @@ public class Prompt {
             g2.setFont(START_SMALL_FONT);
             g2.setColor(Color.BLACK);
 
-            g2.drawString("Press Enter or Space key to race...", (11 * PROMPT_WIDTH) / 10 + 60, (21 * PROMPT_HEIGHT) / 10 + 175);
-            g2.drawString("Press R at the end to restart the race.", (11 * PROMPT_WIDTH) / 10 + 60, (21 * PROMPT_HEIGHT) / 10 + 250);
-            g2.drawString("Press N to disable popup and E to enable.", (11 * PROMPT_WIDTH) / 10 + 60, (21 * PROMPT_HEIGHT) / 10 + 325);
+            g2.drawString("Press Enter or Space key to race...", (11 * PROMPT_WIDTH) / 10 + 60, (21 * PROMPT_HEIGHT) / 10 + 100);
+            g2.drawString("Press R at the end to restart the race.", (11 * PROMPT_WIDTH) / 10 + 60, (21 * PROMPT_HEIGHT) / 10 + 175);
+            g2.drawString("Press N to disable popup and E to enable.", (11 * PROMPT_WIDTH) / 10 + 60, (21 * PROMPT_HEIGHT) / 10 + 250);
+            g2.drawString("Press S for Sport ;)", (11 * PROMPT_WIDTH) / 10 + 60, (21 * PROMPT_HEIGHT) / 10 + 325);
+
         }
     }
 

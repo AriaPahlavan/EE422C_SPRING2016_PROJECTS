@@ -206,22 +206,7 @@ public class CarDrawer {
      * Resets all member variables to its original value
      */
     public void reset(){
-        this.xCar = 100;
-        this.yCar = 100;
         this.dxCar = 0;
-        Random random = new Random();
-        for ( long rand2 = System.currentTimeMillis() % 31; rand2 > 0; rand2 -= 1 ) {
-            random.nextInt();
-        }
-
-        //random value btwn 65 - 85
-        this.ACCELERATION = random.nextInt(21) + 50;
-
-        //random value btwn 0.15 - 0.25
-        this.dt = (random.nextFloat() + 1.3)/10;
-
-        //random value btwn 0 - 0.2 + 0.45 - 0.65 = 0.45 - 0.85
-        this.FRICTION = (random.nextInt(3)  + (random.nextInt(3) + 4.5))/10;
     }
 
 } // end of CarDrawer

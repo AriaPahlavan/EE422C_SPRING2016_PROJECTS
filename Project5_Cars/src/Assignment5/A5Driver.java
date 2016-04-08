@@ -134,7 +134,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
             myCar[i].paint(g2);
 
         //Displaying the time
-        String elapsedTime = new Integer((int)(timer.getElapsedTime()*0.001)).toString();
+        String elapsedTime = new Integer((int) (timer.getElapsedTime() * 0.001)).toString();
         g2.setFont(TIMER_FONT);
         g2.setColor(Color.lightGray);
         g2.drawString("Time: ", getWidth() - 550, 50);
@@ -145,10 +145,9 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
         g2.drawString(elapsedTime, getWidth() - 350 - 1, 50 + 2);
         g2.drawString(" seconds", getWidth() - 335 - 1, 50 + 2);
 
-        if(!isStarted) {
+        if ( !isStarted ) {
             winnerPrompt.startGame(this, g2);
-        }
-        else {
+        } else {
             if ( !isFinished() ) {
 
                 winnerPrompt.setPROMPT_HEIGHT(0);
@@ -172,7 +171,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
             isStarted = true;
         }
 
-        if ( e.getKeyCode() == KeyEvent.VK_R && isFinished())
+        if ( e.getKeyCode() == KeyEvent.VK_R && isFinished() )
             reset();
     }
 
@@ -183,16 +182,22 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
     /**
      * resets all classes to initial state
      */
-    public void reset(){
+    public void reset() {
 //        myCar = new CarDrawer[5];
         timer.reset();
         winner = null;
         finished = false;
         isStarted = false;
         winnerPrompt.reset();
+//        for ( int i = 0; i < myCar.length; i += 1 )
+//            myCar[i].reset();
+
+
+        myCar = new CarDrawer[5];
+
         for ( int i = 0; i < myCar.length; i += 1 )
-            myCar[i].reset();
-        start();
+            myCar[i] = new CarDrawer(20, ((i) * 120) + 125, new Integer(i + 1).toString());
+        winnerPrompt = new Prompt();
 
     }
 

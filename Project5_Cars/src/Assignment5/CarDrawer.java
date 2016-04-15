@@ -243,7 +243,7 @@ public class CarDrawer {
 
 // draw all of the car parts on the screen
         if ( dxCar >= 0 ) {
-            g2.setColor(Color.orange);
+            g2.setColor(new Color(143, 226, 231));
             g2.fillArc(xCar + (int) ((55 * WIDTH_CAR) / 60), yCar + (int) ((13 * HEIGHT_CAR) / 32), (int) (WIDTH_CAR / 6), (int) ((5 * HEIGHT_CAR) / 32), 270, 180);
         } else {
             g2.setColor(Color.red);

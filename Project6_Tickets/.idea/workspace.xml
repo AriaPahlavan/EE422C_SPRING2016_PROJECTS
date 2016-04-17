@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27147180-7d8d-428e-bcb5-42ed822047ec" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assignment6/Main.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assignment6/Seat.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assignment6/TheaterHouse.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assignment6/Theatre.java" />
@@ -84,8 +85,8 @@
       <file leaf-file-name="Seat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment6/Seat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="278">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding>
                 <element signature="method#Seat#0;class#Seat#0" expanded="true" />
                 <element signature="method#Seat#1;class#Seat#0" expanded="true" />
@@ -113,10 +114,18 @@
       <file leaf-file-name="Theatre.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment6/Theatre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+            <state relative-caret-position="126">
+              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
               <folding>
                 <element signature="method#Theatre#0;class#Theatre#0" expanded="true" />
+                <element signature="e#513#514#0" expanded="true" />
+                <element signature="e#542#543#0" expanded="true" />
+                <element signature="e#585#586#0" expanded="true" />
+                <element signature="e#618#619#0" expanded="true" />
+                <element signature="e#660#661#0" expanded="true" />
+                <element signature="e#692#693#0" expanded="true" />
+                <element signature="e#736#737#0" expanded="true" />
+                <element signature="e#779#780#0" expanded="true" />
                 <element signature="method#bestAvailableSeat#0;class#Theatre#0" expanded="true" />
                 <element signature="method#markAvailableSeatTaken#0;class#Theatre#0" expanded="true" />
                 <element signature="method#printTicketSeat#0;class#Theatre#0" expanded="true" />
@@ -125,14 +134,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TheaterHouse.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TheaterHouse.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment6/TheaterHouse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+            <state relative-caret-position="240">
+              <caret line="68" column="81" selection-start-line="68" selection-start-column="81" selection-end-line="68" selection-end-column="81" />
               <folding>
                 <element signature="method#TheaterHouse#0;class#TheaterHouse#0" expanded="true" />
+                <element signature="e#2906#2907#0" expanded="true" />
+                <element signature="e#2934#2935#0" expanded="true" />
+                <element signature="e#2985#2986#0" expanded="true" />
+                <element signature="e#3019#3020#0" expanded="true" />
+                <element signature="e#3055#3056#0" expanded="true" />
+                <element signature="e#3090#3091#0" expanded="true" />
+                <element signature="e#3143#3144#0" expanded="true" />
+                <element signature="e#3191#3192#0" expanded="true" />
+                <element signature="e#3233#3234#0" expanded="true" />
+                <element signature="e#3269#3270#0" expanded="true" />
+                <element signature="e#3329#3330#0" expanded="true" />
+                <element signature="e#3379#3380#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/assignment6/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -163,9 +194,10 @@
         <option value="$PROJECT_DIR$/src/assignment6/TicketServer.java" />
         <option value="$PROJECT_DIR$/src/assignment6/House.java" />
         <option value="$PROJECT_DIR$/src/assignment6/Seats.java" />
-        <option value="$PROJECT_DIR$/src/assignment6/Theatre.java" />
         <option value="$PROJECT_DIR$/src/assignment6/Seat.java" />
+        <option value="$PROJECT_DIR$/src/assignment6/Theatre.java" />
         <option value="$PROJECT_DIR$/src/assignment6/TheaterHouse.java" />
+        <option value="$PROJECT_DIR$/src/assignment6/Main.java" />
       </list>
     </option>
   </component>
@@ -213,7 +245,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestTicketOffice">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="TestTicketOffice.basicServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -292,32 +324,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="TestTicketOffice.twoConcurrentServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="assignment6.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Project6_Tickets" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="assignment6" />
-      <option name="MAIN_CLASS_NAME" value="assignment6.TestTicketOffice" />
-      <option name="METHOD_NAME" value="twoConcurrentServerTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="TestTicketOffice.twoNonConcurrentServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -342,6 +348,26 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="assignment6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="assignment6.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Project6_Tickets" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -560,16 +586,16 @@
       <item index="0" class="java.lang.String" itemvalue="JUnit.TestTicketOffice.basicServerTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.TestTicketOffice.testServerCachedHardInstance" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.TestTicketOffice" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TestTicketOffice.twoConcurrentServerTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TestTicketOffice.twoNonConcurrentServerTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestTicketOffice.twoNonConcurrentServerTest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestTicketOffice" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestTicketOffice.basicServerTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestTicketOffice.testServerCachedHardInstance" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TestTicketOffice.twoNonConcurrentServerTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TestTicketOffice.twoConcurrentServerTest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestTicketOffice" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestTicketOffice.basicServerTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestTicketOffice.testServerCachedHardInstance" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestTicketOffice.twoNonConcurrentServerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -650,7 +676,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39969134" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -673,7 +699,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assignment6/Main.java</url>
+          <line>9</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -839,8 +873,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment6/Seat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="278">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="method#Seat#0;class#Seat#0" expanded="true" />
             <element signature="method#Seat#1;class#Seat#0" expanded="true" />
@@ -866,10 +900,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment6/Theatre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+        <state relative-caret-position="126">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding>
             <element signature="method#Theatre#0;class#Theatre#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+            <element signature="e#736#737#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
             <element signature="method#bestAvailableSeat#0;class#Theatre#0" expanded="true" />
             <element signature="method#markAvailableSeatTaken#0;class#Theatre#0" expanded="true" />
             <element signature="method#printTicketSeat#0;class#Theatre#0" expanded="true" />
@@ -879,11 +921,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment6/TheaterHouse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+        <state relative-caret-position="240">
+          <caret line="68" column="81" selection-start-line="68" selection-start-column="81" selection-end-line="68" selection-end-column="81" />
           <folding>
             <element signature="method#TheaterHouse#0;class#TheaterHouse#0" expanded="true" />
+            <element signature="e#2906#2907#0" expanded="true" />
+            <element signature="e#2934#2935#0" expanded="true" />
+            <element signature="e#2985#2986#0" expanded="true" />
+            <element signature="e#3019#3020#0" expanded="true" />
+            <element signature="e#3055#3056#0" expanded="true" />
+            <element signature="e#3090#3091#0" expanded="true" />
+            <element signature="e#3143#3144#0" expanded="true" />
+            <element signature="e#3191#3192#0" expanded="true" />
+            <element signature="e#3233#3234#0" expanded="true" />
+            <element signature="e#3269#3270#0" expanded="true" />
+            <element signature="e#3329#3330#0" expanded="true" />
+            <element signature="e#3379#3380#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment6/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>

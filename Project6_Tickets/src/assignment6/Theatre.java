@@ -5,16 +5,32 @@ package assignment6;
  * Created by Aria Pahlavan on Apr 2016.
  */
 public class Theatre {
-    private TheaterHouse houseFront;
+    private TheaterHouse middle;
     private TheaterHouse houseRight;
     private TheaterHouse houseLeft;
     private int numberAvailableSeats;
 
 
     public Theatre() {
-        this.houseFront = new TheaterHouse(HousePos.HOUSE_MIDDLE);
+        this.middle = new TheaterHouse(HousePos.MIDDLE);
         this.houseRight = new TheaterHouse(HousePos.HOUSE_RIGHT);
         this.houseLeft = new TheaterHouse(HousePos.HOUSE_LEFT);
+    }
+
+    public TheaterHouse getMiddle() {
+        return middle;
+    }
+
+    public TheaterHouse getHouseRight() {
+        return houseRight;
+    }
+
+    public TheaterHouse getHouseLeft() {
+        return houseLeft;
+    }
+
+    public int getNumberAvailableSeats() {
+        return numberAvailableSeats;
     }
 
     /**

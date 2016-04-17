@@ -12,7 +12,7 @@ public class Theatre {
 
 
     public Theatre() {
-        this.houseFront = new TheaterHouse(HousePos.HOUSE_FRONT);
+        this.houseFront = new TheaterHouse(HousePos.HOUSE_MIDDLE);
         this.houseRight = new TheaterHouse(HousePos.HOUSE_RIGHT);
         this.houseLeft = new TheaterHouse(HousePos.HOUSE_LEFT);
     }

@@ -18,7 +18,7 @@ enum HousePos{
  * Created by Aria Pahlavan on Apr 2016.
  */
 public class TheaterHouse {
-    private ArrayList<Seats> house;
+    private ArrayList<Seat> house;
     private int numberOfRows;
     private HousePos housePosition;
 

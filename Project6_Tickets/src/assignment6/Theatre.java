@@ -15,13 +15,35 @@ public class Theatre {
         this.houseFront = new TheaterHouse(HousePos.HOUSE_FRONT);
         this.houseRight = new TheaterHouse(HousePos.HOUSE_RIGHT);
         this.houseLeft = new TheaterHouse(HousePos.HOUSE_LEFT);
-        
     }
 
-    public String bestAvailableSeat(){
+    /**
+     * This method will find the best seat available in all three house of theatre
+     * @return Seat to be used to generate customer ticket
+     */
+    public Seat bestAvailableSeat(){
         //TODO find the best available seat
         return null;
     }
 
-    public
+    /**
+     * Attempts to mark the seat as taken,
+     * However if it is already taken then report unsuccessful
+     * @param seat
+     * @return
+     */
+    public boolean markAvailableSeatTaken(Seat seat){
+        //TODO implement the method to mark seat as taken and return false if it is already taken
+        return true;
+    }
+
+    /**
+     * A ticket for that seat is printed to the screen – leave it on the screen long enough to be
+     * read easily by the client. The output format is up to you, but should contain the essential
+     * information found on a theater ticket.
+     * @param seat
+     */
+    public void printTicketSeat(Seat seat){
+        //TODO print on A ticket for that seat is printed to the screen
+    }
 }

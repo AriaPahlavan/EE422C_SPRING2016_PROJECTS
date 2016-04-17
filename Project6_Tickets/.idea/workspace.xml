@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27147180-7d8d-428e-bcb5-42ed822047ec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assignment6/Seats.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assignment6/Seat.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assignment6/TheaterHouse.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assignment6/Theatre.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project6_Tickets/assignment6/ThreadedTicketClient.class" afterPath="$PROJECT_DIR$/out/production/Project6_Tickets/assignment6/ThreadedTicketClient.class" />
@@ -81,14 +81,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Seats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assignment6/Seats.java">
+      <file leaf-file-name="Seat.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assignment6/Seat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
               <folding>
-                <element signature="method#Seats#0;class#Seats#0" expanded="true" />
-                <element signature="method#Seats#1;class#Seats#0" expanded="true" />
+                <element signature="method#Seat#0;class#Seat#0" expanded="true" />
+                <element signature="method#Seat#1;class#Seat#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,10 +97,13 @@
       <file leaf-file-name="Theatre.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assignment6/Theatre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+            <state relative-caret-position="492">
+              <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
               <folding>
+                <element signature="method#Theatre#0;class#Theatre#0" expanded="true" />
                 <element signature="method#bestAvailableSeat#0;class#Theatre#0" expanded="true" />
+                <element signature="method#markAvailableSeatTaken#0;class#Theatre#0" expanded="true" />
+                <element signature="method#printTicketSeat#0;class#Theatre#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,14 +146,14 @@
         <option value="$PROJECT_DIR$/src/assignment6/TicketClient.java" />
         <option value="$PROJECT_DIR$/src/assignment6/TicketServer.java" />
         <option value="$PROJECT_DIR$/src/assignment6/House.java" />
-        <option value="$PROJECT_DIR$/src/assignment6/Seats.java" />
         <option value="$PROJECT_DIR$/src/assignment6/TheaterHouse.java" />
+        <option value="$PROJECT_DIR$/src/assignment6/Seats.java" />
+        <option value="$PROJECT_DIR$/src/assignment6/Seat.java" />
         <option value="$PROJECT_DIR$/src/assignment6/Theatre.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1366" />
     <option name="y" value="-744" />
     <option name="width" value="1366" />
     <option name="height" value="744" />
@@ -611,7 +614,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="-744" width="1366" height="744" extended-state="6" />
+    <frame x="0" y="-744" width="1366" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -797,13 +800,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment6/Seats.java">
+    <entry file="file://$PROJECT_DIR$/src/assignment6/TicketServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="335">
+          <caret line="34" column="59" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="59" />
           <folding>
-            <element signature="method#Seats#0;class#Seats#0" expanded="true" />
-            <element signature="method#Seats#1;class#Seats#0" expanded="true" />
+            <element signature="method#start#0;class#TicketServer#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment6/Seat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding>
+            <element signature="method#Seat#0;class#Seat#0" expanded="true" />
+            <element signature="method#Seat#1;class#Seat#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -818,22 +831,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment6/TicketServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="34" column="59" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="59" />
-          <folding>
-            <element signature="method#start#0;class#TicketServer#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment6/Theatre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        <state relative-caret-position="492">
+          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
           <folding>
+            <element signature="method#Theatre#0;class#Theatre#0" expanded="true" />
             <element signature="method#bestAvailableSeat#0;class#Theatre#0" expanded="true" />
+            <element signature="method#markAvailableSeatTaken#0;class#Theatre#0" expanded="true" />
+            <element signature="method#printTicketSeat#0;class#Theatre#0" expanded="true" />
           </folding>
         </state>
       </provider>

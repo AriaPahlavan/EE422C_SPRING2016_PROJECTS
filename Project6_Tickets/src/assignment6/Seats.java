@@ -21,10 +21,4 @@ public class Seats {
         this.seat = seat;
     }
 
-    public String bestAvailableSeat(){
-        //TODO find the best available seat
-        return null;
-    }
-
-    public
 }

@@ -24,20 +24,26 @@ public class TheaterHouse {
 
     public TheaterHouse() {
         this.house = new ArrayList<>();
-        this.numberOfRows = numberOfRows;
+        this.numberOfRows = 0;
         this.housePosition = HousePos.NONE;
     }
 
-    public TheaterHouse(int numberOfRows, HousePos housePosition) {
-        this.numberOfRows = numberOfRows;
+    public TheaterHouse(HousePos housePosition) {
+
         this.housePosition = housePosition;
 
         switch (this.housePosition){
             case HOUSE_FRONT:
+                //TODO Setup the house front
+                this.numberOfRows = numberOfRows;
                 break;
             case HOUSE_LEFT:
+                //TODO Setup the house left
+                this.numberOfRows = numberOfRows;
                 break;
             case HOUSE_RIGHT:
+                //TODO Setup the house right
+                this.numberOfRows = numberOfRows;
                 break;
             default:
                 System.err.println("No such house exist at our theatre!");

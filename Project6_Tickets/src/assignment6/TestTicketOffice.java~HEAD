@@ -1,0 +1,201 @@
+package assignment6;
+
+import org.junit.Test;
+
+import static org.junit.Assert.fail;
+
+public class TestTicketOffice {
+
+    public static int score = 0;
+    
+    public static void main(String[] args){
+    	//basicServerTest();
+    	//testServerCachedHardInstance();
+    	//twoNonConcurrentServerTest();
+    	twoConcurrentServerTest();
+    	//multipleServerTestOne();
+    	//clientsTest1000();
+//    	fillTheTheaterTest();
+    }
+
+    @Test
+    public static void basicServerTest() {
+        try {
+            TicketServer.start(16789);
+        } catch (Exception e) {
+            fail();
+        }
+        TicketClient client = new TicketClient();
+        client.requestTicket();
+    }
+
+    @Test
+    public static void testServerCachedHardInstance() {
+        try {
+            TicketServer.start(16790);
+        } catch (Exception e) {
+            fail();
+        }
+        TicketClient client1 = new TicketClient("localhost", "c1");
+        TicketClient client2 = new TicketClient("localhost", "c2");
+        client1.requestTicket();
+        client2.requestTicket();
+
+    }
+
+    @Test
+    public static void twoNonConcurrentServerTest() {
+        try {
+            TicketServer.start(16791);
+        } catch (Exception e) {
+            fail();
+        }
+        TicketClient c1 = new TicketClient("nonconc1");
+        TicketClient c2 = new TicketClient("nonconc2");
+        TicketClient c3 = new TicketClient("nonconc3");
+        c1.requestTicket();
+        c2.requestTicket();
+        c3.requestTicket();
+    }
+
+    @Test
+    public static void twoConcurrentServerTest() {
+        try {
+            TicketServer.start(16790);
+            TicketServer.start(16792);
+        } catch (Exception e) {
+            fail();
+        }
+        final TicketClient c1 = new TicketClient("conc1");
+        final TicketClient c2 = new TicketClient("conc2");
+        final TicketClient c3 = new TicketClient("conc3");
+        Thread t1 = new Thread() {
+            public void run() {
+                c1.requestTicket();
+            }
+        };
+        Thread t2 = new Thread() {
+            public void run() {
+                c2.requestTicket();
+            }
+        };
+        Thread t3 = new Thread() {
+            public void run() {
+                c3.requestTicket();
+            }
+        };
+        t1.start();
+        t2.start();
+        t3.start();
+        try {
+            t1.join();
+            t2.join();
+            t3.join();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+    
+    @Test
+    public static void multipleServerTestOne(){
+    	 try {
+             TicketServer.start(16792, 2);
+         } catch (Exception e) {
+             fail();
+         }
+    	 
+    	 final TicketClient c1 = new TicketClient("conc1");
+         final TicketClient c2 = new TicketClient("conc2");
+         final TicketClient c3 = new TicketClient("conc3");
+         Thread t1 = new Thread() {
+             public void run() {
+                 c1.requestTicket();
+             }
+         };
+         Thread t2 = new Thread() {
+             public void run() {
+                 c2.requestTicket();
+             }
+         };
+         Thread t3 = new Thread() {
+             public void run() {
+                 c3.requestTicket();
+             }
+         };
+         t1.start();
+         t2.start();
+         t3.start();
+         try {
+             t1.join();
+             t2.join();
+             t3.join();
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+    }
+    
+    @Test
+    public static void clientsTest1000(){
+    	try {
+            TicketServer.start(16792);
+        } catch (Exception e) {
+            fail();
+        }
+    	int num = 1000;
+    	for(int i = 0; i < num; i++){
+    		final TicketClient c1 = new TicketClient("conc" + i);
+    		
+    		Thread t1 = new Thread() {
+            public void run() {
+                c1.requestTicket();
+            }
+    		};
+    		
+    		t1.start();
+    	}
+    }
+    
+    @Test
+    public static void fillTheTheaterTest(){
+    	try {
+            TicketServer.start(16794);
+        } catch (Exception e) {
+            fail();
+        }
+    	
+    	int i = 0;
+    	while(true){
+    		final TicketClient c1 = new TicketClient("conc" + i);
+            final TicketClient c2 = new TicketClient("conc" + (i + 1));
+            final TicketClient c3 = new TicketClient("conc" + (i + 2));
+            Thread t1 = new Thread() {
+                public void run() {
+                    c1.requestTicket();
+                }
+            };
+            Thread t2 = new Thread() {
+                public void run() {
+                    c2.requestTicket();
+                }
+            };
+            Thread t3 = new Thread() {
+                public void run() {
+                    c3.requestTicket();
+                }
+            };
+            t1.start();
+            t2.start();
+            t3.start();
+            try {
+                t1.join();
+                t2.join();
+                t3.join();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            i += 3;
+    	}
+        
+    }
+}

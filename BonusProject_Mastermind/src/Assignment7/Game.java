@@ -13,8 +13,7 @@ public class Game extends Applet implements Runnable, KeyListener {
     private Graphics doubleG;
     private Image image;
     private GameBoard myGameBoard;
-
-
+    private boolean isStarted;
 
 
     @Override
@@ -46,6 +45,27 @@ public class Game extends Applet implements Runnable, KeyListener {
      * This method updates the is called over and over to do stuff life repainting the screen!
      */
     public void run() {
+        while ( true ) {
+            //while the guess is incorrect
+            if ( !myGameBoard.isGuessMatch() ) {
+                //When the Enter or Space key is pressed, start the game
+                if ( isStarted ) {
+
+                    //TODO what to do when they hit Enter
+                }
+            }
+            //when the code is guessed
+            else {
+                //TODO what to do when they guessed the code
+            }
+
+            repaint();
+            try {
+                Thread.sleep(16);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
@@ -69,6 +89,43 @@ public class Game extends Applet implements Runnable, KeyListener {
 
     @Override
     public void paint(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+
+
+
+            //Displaying the cars
+        for ( int i = 0; i < myCar.length; i += 1 )
+                myCar[i].paint(g2);
+
+
+        //Displaying the time
+        String elapsedTime = new Integer((int) (timer.getElapsedTime() * 0.001)).toString();
+        g2.setFont(TIMER_FONT);
+        g2.setColor(Color.lightGray);
+        g2.drawString("Time: ", getWidth() - 550, 50);
+        g2.drawString(elapsedTime, getWidth() - 350, 50);
+        g2.drawString(" seconds", getWidth() - 335, 50);
+        g2.setColor(new Color(255, 0, 43));
+        g2.drawString("Time: ", getWidth() - 550 - 1, 50 + 2);
+        g2.drawString(elapsedTime, getWidth() - 350 - 1, 50 + 2);
+        g2.drawString(" seconds", getWidth() - 335 - 1, 50 + 2);
+
+        //popup before starting the race
+        if ( !isPromptDisabled )
+            if ( !isStarted ) {
+                winnerPrompt.startGame(g2);
+            } else {
+                if ( !isFinished() ) {
+
+                    winnerPrompt.setPROMPT_HEIGHT(0);
+                    winnerPrompt.setPROMPT_WIDTH(0);
+                    winnerPrompt.setDone(false);
+                }
+            }
+
+        //popup for game stats
+        if ( isFinished() )
+            winnerPrompt.paint(this, g);
     }
 
 
@@ -80,6 +137,28 @@ public class Game extends Applet implements Runnable, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
+        //Notifies that user wants to start the race
+        if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER ) {
+            isStarted = true;
+        }
+
+//        //Resets the race
+//        if ( e.getKeyCode() == KeyEvent.VK_R && isFinished() )
+//            reset();
+//
+//        //Disabling popup!
+//        if ( e.getKeyCode() == KeyEvent.VK_N )
+//            isPromptDisabled = true;
+//
+//
+//        //Enabling popup!
+//        if ( e.getKeyCode() == KeyEvent.VK_E )
+//            isPromptDisabled = false;
+//
+//        //S for Sport!! ;)
+//
+//        if ( e.getKeyCode() == KeyEvent.VK_S )
+//            isSport = true;
 
     }
 

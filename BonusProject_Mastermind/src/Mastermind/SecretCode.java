@@ -20,7 +20,7 @@ public class SecretCode {
 
     public SecretCode(SecretPeg[] secretCode) {
         this.secretCode = secretCode;
-        generateSecretCode();
+//        generateSecretCode();
     }
 
     public SecretPeg[] getSecretCode() {
@@ -30,6 +30,8 @@ public class SecretCode {
     public void setSecretCode(SecretPeg[] secretCode) {
         this.secretCode = secretCode;
     }
+
+
 
     /**
      * Generates a secret code consisting of a sequence of
@@ -42,6 +44,34 @@ public class SecretCode {
 
         for ( int i = 0; i < 4; i += 1 ) {
             secretCode[i].setColor(colorPallet[random.nextInt(6)]);
+        }
+    }
+
+    public void displaySecretCode(){
+        for(int i = 0; i < 4; i+=1){
+
+            switch (secretCode[i].getColor()) {
+                case blue:
+                    System.out.println("blue");
+                    break;
+                case green:
+                    System.out.println("green");
+                    break;
+                case orange:
+                    System.out.println("orange");
+                    break;
+                case purple:
+                    System.out.println("purple");
+                    break;
+                case red:
+                    System.out.println("red");
+                    break;
+                case yellow:
+                    System.out.println("yellow");
+                    break;
+                case none:
+                    break;
+            }
         }
     }
 }

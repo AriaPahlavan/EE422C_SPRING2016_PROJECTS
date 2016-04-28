@@ -26,6 +26,9 @@ public class GameBoard {
         this.results = results;
     }
 
+    public boolean isGuessMatch() {
+        return guessMatch;
+    }
 
     public List<Result> getResults() {
         return results;
@@ -45,6 +48,11 @@ public class GameBoard {
 
     public void setGuesses(List<Guess> guesses) {
         this.guesses = guesses;
+    }
+
+    //Just for testing
+    public void setSecretCode(SecretCode secretCode) {
+        this.secretCode = secretCode;
     }
 
     /**
@@ -83,7 +91,7 @@ public class GameBoard {
         int numWhitePeg = 0;
 
         // figure out the number of black peg
-        for ( int i = 0; i < 0; i += 1 ) {
+        for ( int i = 0; i < 4; i += 1 ) {
 
             //same position for both
             Peg guessPeg = guess.getGuess()[i];
@@ -107,7 +115,7 @@ public class GameBoard {
         }
 
         // figure out the number of white peg
-        for ( int i = 0; i < 0; i += 1 ) {
+        for ( int i = 0; i < 4; i += 1 ) {
 
             //same position for both
             Peg guessPeg = guess.getGuess()[i];
@@ -153,5 +161,6 @@ public class GameBoard {
                 System.err.println("There's a problem with verifying win");
         }
 
+        this.results.add(newResult);
     }
 }

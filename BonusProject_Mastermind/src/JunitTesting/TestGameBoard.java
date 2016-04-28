@@ -208,7 +208,7 @@ public class TestGameBoard {
     }
 
     @Test
-    public void multipleGuessTest() throws Exception {
+    public void historyTest() throws Exception {
         GameBoard gameBoard = new GameBoard();
         SecretPeg[] secretPeg = new SecretPeg[4];
         RoundPegColor[] colors0 = {RoundPegColor.green, RoundPegColor.blue, RoundPegColor.red, RoundPegColor.yellow};
@@ -230,19 +230,23 @@ public class TestGameBoard {
 
         gameBoard.setSecretCode(secretCode);
 
+        for(int j = 0; j < 4; j +=1) {
+
+            Guess guess = new Guess(guessColorList[j]);
+            assertTrue("Oops! Having problem processing your guess :(", gameBoard.addGuess(guess));
+
+        }
 
 
         for(int j = 0; j < 4; j +=1) {
 
             System.out.println("============================Guess # "+ (j+1)+"========================\n");
 
-            Guess guess = new Guess(guessColorList[j]);
 
             System.out.println("--------------------Code--------------------");
             gameBoard.getSecretCode().displaySecretCode();
 
             System.out.println("\n--------------------Guess-------------------");
-            assertTrue("Oops! Having problem processing your guess :(", gameBoard.addGuess(guess));
             gameBoard.getGuesses().get(j).displayGuess();
 
 

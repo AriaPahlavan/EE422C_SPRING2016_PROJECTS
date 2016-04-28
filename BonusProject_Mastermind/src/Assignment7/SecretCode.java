@@ -1,5 +1,6 @@
 package Assignment7;
 
+import java.awt.*;
 import java.util.Random;
 
 /**
@@ -55,10 +56,11 @@ public class SecretCode {
     /**
      * Displays the auto-generated secret code
      */
-    public void displaySecretCode(){
+    public void displaySecretCode(Graphics2D g2){
         for(int i = 0; i < 4; i+=1){
 
             System.out.println((secretCode[i].getColor()));
+            secretCode[i].paintPeg(g2);
         }
     }
 }

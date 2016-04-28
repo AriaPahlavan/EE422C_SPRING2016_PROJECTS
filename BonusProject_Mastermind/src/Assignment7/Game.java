@@ -91,41 +91,38 @@ public class Game extends Applet implements Runnable, KeyListener {
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
 
+        // Paint board and it's elements
+        myGameBoard.paintBoard(g2);
 
 
-            //Displaying the cars
-        for ( int i = 0; i < myCar.length; i += 1 )
-                myCar[i].paint(g2);
+//        //Displaying the time
+//        String elapsedTime = new Integer((int) (timer.getElapsedTime() * 0.001)).toString();
+//        g2.setFont(TIMER_FONT);
+//        g2.setColor(Color.lightGray);
+//        g2.drawString("Time: ", getWidth() - 550, 50);
+//        g2.drawString(elapsedTime, getWidth() - 350, 50);
+//        g2.drawString(" seconds", getWidth() - 335, 50);
+//        g2.setColor(new Color(255, 0, 43));
+//        g2.drawString("Time: ", getWidth() - 550 - 1, 50 + 2);
+//        g2.drawString(elapsedTime, getWidth() - 350 - 1, 50 + 2);
+//        g2.drawString(" seconds", getWidth() - 335 - 1, 50 + 2);
 
-
-        //Displaying the time
-        String elapsedTime = new Integer((int) (timer.getElapsedTime() * 0.001)).toString();
-        g2.setFont(TIMER_FONT);
-        g2.setColor(Color.lightGray);
-        g2.drawString("Time: ", getWidth() - 550, 50);
-        g2.drawString(elapsedTime, getWidth() - 350, 50);
-        g2.drawString(" seconds", getWidth() - 335, 50);
-        g2.setColor(new Color(255, 0, 43));
-        g2.drawString("Time: ", getWidth() - 550 - 1, 50 + 2);
-        g2.drawString(elapsedTime, getWidth() - 350 - 1, 50 + 2);
-        g2.drawString(" seconds", getWidth() - 335 - 1, 50 + 2);
-
-        //popup before starting the race
-        if ( !isPromptDisabled )
-            if ( !isStarted ) {
-                winnerPrompt.startGame(g2);
-            } else {
-                if ( !isFinished() ) {
-
-                    winnerPrompt.setPROMPT_HEIGHT(0);
-                    winnerPrompt.setPROMPT_WIDTH(0);
-                    winnerPrompt.setDone(false);
-                }
-            }
-
-        //popup for game stats
-        if ( isFinished() )
-            winnerPrompt.paint(this, g);
+//        //popup before starting the race
+//        if ( !isPromptDisabled )
+//            if ( !isStarted ) {
+//                winnerPrompt.startGame(g2);
+//            } else {
+//                if ( !isFinished() ) {
+//
+//                    winnerPrompt.setPROMPT_HEIGHT(0);
+//                    winnerPrompt.setPROMPT_WIDTH(0);
+//                    winnerPrompt.setDone(false);
+//                }
+//            }
+//
+//        //popup for game stats
+//        if ( isFinished() )
+//            winnerPrompt.paint(this, g);
     }
 
 

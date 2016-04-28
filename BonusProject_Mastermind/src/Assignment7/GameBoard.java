@@ -211,26 +211,29 @@ public class GameBoard {
     /**
      * Displays the game play history
      */
-    public void displayHistory() {
+    public void displayHistory(Graphics2D g2) {
         for ( int j = 0; j < guesses.size(); j += 1 ) {
 
             System.out.println("============================Guess # " + (j + 1) + "========================\n");
 
 
             System.out.println("--------------------Code--------------------");
-            secretCode.displaySecretCode();
+            secretCode.displaySecretCode(g2);
 
             System.out.println("\n--------------------Guess-------------------");
-            guesses.get(j).displayGuess();
+            guesses.get(j).displayGuess(g2);
+
 
 
             System.out.println("\n--------------------Result------------------\n");
 
             Result result = results.get(j);
+            result.displayResult(g2);
 
             for ( int i = 0; i < result.getNumFeedbackPegs(); i += 1 ) {
 
                 System.out.println(result.getResult()[i].getFlatColor());
+
             }
 
 
@@ -245,6 +248,7 @@ public class GameBoard {
     public void paintBoard(Graphics2D g2) {
         g2.setColor(boardColor);
         g2.fillRoundRect(xBoard, yBoard, 400, 500, 10, 360);
+        displayHistory(g2);
     }
 
 }

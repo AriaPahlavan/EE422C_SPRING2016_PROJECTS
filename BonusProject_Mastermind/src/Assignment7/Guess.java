@@ -1,5 +1,6 @@
 package Assignment7;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -85,10 +86,11 @@ public class Guess {
     /**
      * Displays users guess
      */
-    public void displayGuess(){
+    public void displayGuess(Graphics2D g2){
         for(int i = 0; i < 4; i+=1){
 
             System.out.println((guess[i].getColor()));
+            guess[i].paintPeg(g2);
         }
     }
 }

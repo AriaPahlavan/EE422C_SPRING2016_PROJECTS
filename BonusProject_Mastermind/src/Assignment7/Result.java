@@ -1,5 +1,7 @@
 package Assignment7;
 
+import java.awt.*;
+
 /**
  * BonusProject_Mastermind
  * Created by Aria Pahlavan on Apr 2016.
@@ -32,5 +34,16 @@ public class Result {
 
     public void setResult(ResultPeg[] result) {
         this.result = result;
+    }
+
+    /**
+     * Displays users guess
+     */
+    public void displayResult(Graphics2D g2){
+        for(int i = 0; i < 4; i+=1){
+
+            System.out.println((result[i].getColor()));
+            result[i].paintPeg(g2);
+        }
     }
 }

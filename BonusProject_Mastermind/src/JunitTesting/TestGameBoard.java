@@ -100,6 +100,7 @@ public class TestGameBoard {
         }
 
          assertTrue( "Oops! You didn't win :(", gameBoard.isGuessMatch() );
+        System.out.println("Success!");
     }
 
 
@@ -108,8 +109,8 @@ public class TestGameBoard {
         GameBoard gameBoard = new GameBoard();
         GuessPeg[] guessPeg = new GuessPeg[4];
         SecretPeg[] secretPeg = new SecretPeg[4];
-        RoundPegColor[] colors = {RoundPegColor.blue, RoundPegColor.blue, RoundPegColor.red, RoundPegColor.orange};
-        RoundPegColor[] colors2 = {RoundPegColor.blue, RoundPegColor.blue, RoundPegColor.blue, RoundPegColor.blue};
+        RoundPegColor[] colors = {RoundPegColor.yellow, RoundPegColor.yellow, RoundPegColor.purple, RoundPegColor.purple};
+        RoundPegColor[] colors2 = {RoundPegColor.yellow, RoundPegColor.purple, RoundPegColor.purple, RoundPegColor.yellow};
 
         for(int i = 0; i < 4; i += 1) {
             guessPeg[i] = new GuessPeg();
@@ -141,14 +142,123 @@ public class TestGameBoard {
 
         Result result = gameBoard.getResults().get(0);
 
-        for(int i = 0; i < result.getNumFeedbackPegs(); i+=1) {
 
-            assertEquals("Oops! The result is not correct :(", result.getResult()[i].getFlatColor(), FlatPegColor.black);
+        assertEquals("Oops! The result is not correct :(", result.getResult()[0].getFlatColor(), FlatPegColor.black);
+        assertEquals("Oops! The result is not correct :(", result.getResult()[1].getFlatColor(), FlatPegColor.black);
+        assertEquals("Oops! The result is not correct :(", result.getResult()[2].getFlatColor(), FlatPegColor.white);
+        assertEquals("Oops! The result is not correct :(", result.getResult()[3].getFlatColor(), FlatPegColor.white);
 
-            System.out.println(result.getResult()[i].getFlatColor());
+
+        System.out.println("Success!");
+    }
+
+
+    @Test
+    public void multipleGuessTest() throws Exception {
+        GameBoard gameBoard = new GameBoard();
+        SecretPeg[] secretPeg = new SecretPeg[4];
+        RoundPegColor[] colors0 = {RoundPegColor.green, RoundPegColor.blue, RoundPegColor.red, RoundPegColor.yellow};
+        RoundPegColor[] colors1 = {RoundPegColor.red, RoundPegColor.green, RoundPegColor.purple, RoundPegColor.orange};
+        RoundPegColor[] colors2 = {RoundPegColor.blue, RoundPegColor.blue, RoundPegColor.green, RoundPegColor.blue};
+        RoundPegColor[] colors3 = {RoundPegColor.yellow, RoundPegColor.purple, RoundPegColor.purple, RoundPegColor.yellow};
+
+        RoundPegColor[][] guessColorList = {colors0, colors1, colors2, colors3};
+
+        for(int i = 0; i < 4; i += 1) {
+            secretPeg[i] = new SecretPeg();
+            secretPeg[i].setColor(colors3[i]);
         }
 
-//        assertTrue( "Oops! You didn't win :(", gameBoard.isGuessMatch() );
+
+        List<Guess> guesses = new ArrayList<>();
+
+        SecretCode secretCode = new SecretCode(secretPeg);
+
+        gameBoard.setSecretCode(secretCode);
+
+
+
+        for(int j = 0; j < 4; j +=1) {
+
+            System.out.println("============================Guess # "+ (j+1)+"========================\n");
+
+            Guess guess = new Guess(guessColorList[j]);
+
+            System.out.println("--------------------Code--------------------");
+            gameBoard.getSecretCode().displaySecretCode();
+
+            System.out.println("\n--------------------Guess-------------------");
+            assertTrue("Oops! Having problem processing your guess :(", gameBoard.addGuess(guess));
+            gameBoard.getGuesses().get(j).displayGuess();
+
+
+            System.out.println("\n--------------------Result------------------\n");
+
+            Result result = gameBoard.getResults().get(j);
+
+            for ( int i = 0; i < result.getNumFeedbackPegs(); i += 1 ) {
+
+                System.out.println(result.getResult()[i].getFlatColor());
+            }
+
+            if ( gameBoard.isGuessMatch() )
+                break;
+        }
+        System.out.println("Congratulations!");
+    }
+
+    @Test
+    public void multipleGuessTest() throws Exception {
+        GameBoard gameBoard = new GameBoard();
+        SecretPeg[] secretPeg = new SecretPeg[4];
+        RoundPegColor[] colors0 = {RoundPegColor.green, RoundPegColor.blue, RoundPegColor.red, RoundPegColor.yellow};
+        RoundPegColor[] colors1 = {RoundPegColor.red, RoundPegColor.green, RoundPegColor.purple, RoundPegColor.orange};
+        RoundPegColor[] colors2 = {RoundPegColor.blue, RoundPegColor.blue, RoundPegColor.green, RoundPegColor.blue};
+        RoundPegColor[] colors3 = {RoundPegColor.yellow, RoundPegColor.purple, RoundPegColor.purple, RoundPegColor.yellow};
+
+        RoundPegColor[][] guessColorList = {colors0, colors1, colors2, colors3};
+
+        for(int i = 0; i < 4; i += 1) {
+            secretPeg[i] = new SecretPeg();
+            secretPeg[i].setColor(colors3[i]);
+        }
+
+
+        List<Guess> guesses = new ArrayList<>();
+
+        SecretCode secretCode = new SecretCode(secretPeg);
+
+        gameBoard.setSecretCode(secretCode);
+
+
+
+        for(int j = 0; j < 4; j +=1) {
+
+            System.out.println("============================Guess # "+ (j+1)+"========================\n");
+
+            Guess guess = new Guess(guessColorList[j]);
+
+            System.out.println("--------------------Code--------------------");
+            gameBoard.getSecretCode().displaySecretCode();
+
+            System.out.println("\n--------------------Guess-------------------");
+            assertTrue("Oops! Having problem processing your guess :(", gameBoard.addGuess(guess));
+            gameBoard.getGuesses().get(j).displayGuess();
+
+
+            System.out.println("\n--------------------Result------------------\n");
+
+            Result result = gameBoard.getResults().get(j);
+
+            for ( int i = 0; i < result.getNumFeedbackPegs(); i += 1 ) {
+
+                System.out.println(result.getResult()[i].getFlatColor());
+            }
+
+            if ( gameBoard.isGuessMatch() )
+                break;
+        }
+        System.out.println("Congratulations!");
     }
 
 }

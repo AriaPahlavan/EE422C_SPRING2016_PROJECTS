@@ -12,7 +12,7 @@ public class GameBoard {
     private List<Guess> guesses;
     private List<Result> results;
     private boolean guessMatch = false;
-    private final int MAX_GUESS = 12;
+    private final int MAX_GUESS = 4;
 
     public GameBoard() {
         this.secretCode = new SecretCode();
@@ -66,7 +66,7 @@ public class GameBoard {
         boolean wasAdded = true;
 
         // Limit for number of guesses to be made
-        if ( this.guesses.size() <= MAX_GUESS ) {
+        if ( this.guesses.size() < MAX_GUESS ) {
 
             // Check to see if this is a match, else figure out the feedback
             evaluateGuess(guess);
@@ -164,5 +164,7 @@ public class GameBoard {
         this.results.add(newResult);
 
         //TODO reset the isMatched data member of secret pegs for future checks
+        for ( SecretPeg secretPeg : secretCode.getSecretCode() )
+            secretPeg.setMatched(false);
     }
 }

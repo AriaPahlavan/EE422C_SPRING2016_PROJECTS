@@ -25,6 +25,11 @@ public class Peg {
         this.isMatched = isMatched;
     }
 
+    public Peg(RoundPegColor color) {
+        this();
+        this.color = color;
+    }
+
     public boolean isMatched() {
         return isMatched;
     }

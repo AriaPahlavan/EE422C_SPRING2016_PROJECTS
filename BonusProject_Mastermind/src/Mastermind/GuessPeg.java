@@ -9,6 +9,11 @@ public class GuessPeg extends Peg{
         super();
     }
 
+    public GuessPeg(RoundPegColor color) {
+        super(color);
+    }
+
+
     public GuessPeg(RoundPegColor color, int position, boolean isMatched) {
         super(color, position, isMatched);
     }

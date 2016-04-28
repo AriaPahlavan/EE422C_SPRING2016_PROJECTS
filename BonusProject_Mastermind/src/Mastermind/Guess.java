@@ -1,5 +1,7 @@
 package Mastermind;
 
+import java.util.ArrayList;
+
 /**
  * BonusProject_Mastermind
  * Created by Aria Pahlavan on Apr 2016.
@@ -11,9 +13,21 @@ public class Guess {
         this.guess = new GuessPeg[4];
     }
 
+    public Guess(ArrayList<RoundPegColor> pegColors) {
+        this.guess = new GuessPeg[4];
+        makeGuess(pegColors);
+    }
+
+    public Guess(RoundPegColor[] pegColors) {
+        this.guess = new GuessPeg[4];
+        makeGuess(pegColors);
+    }
+
     public Guess(GuessPeg[] guess) {
         this.guess = guess;
     }
+
+
 
     public GuessPeg[] getGuess() {
         return guess;
@@ -21,6 +35,43 @@ public class Guess {
 
     public void setGuess(GuessPeg[] guess) {
         this.guess = guess;
+    }
+
+    /**
+     * This method receives 4 colors and makes an array of 4 guessPegs
+     * @param pegColors
+     */
+    public void makeGuess(ArrayList<RoundPegColor> pegColors){
+
+        int i = 0;
+        for ( RoundPegColor pegColor : pegColors ){
+
+            //make a peg for each color
+            GuessPeg newPeg = new GuessPeg(pegColor);
+
+            //add the new peg to guess
+            guess[i] = newPeg;
+            i+=1;
+        }
+    }
+
+
+    /**
+     * This method receives 4 colors and makes an array of 4 guessPegs
+     * @param pegColors
+     */
+    public void makeGuess(RoundPegColor[] pegColors){
+
+        int i = 0;
+        for ( RoundPegColor pegColor : pegColors ){
+
+            //make a peg for each color
+            GuessPeg newPeg = new GuessPeg(pegColor);
+
+            //add the new peg to guess
+            guess[i] = newPeg;
+            i+=1;
+        }
     }
 
     /**

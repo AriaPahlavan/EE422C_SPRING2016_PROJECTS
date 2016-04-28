@@ -14,11 +14,10 @@ public class GameBoard {
     private List<Result> results;
     private boolean guessMatch = false;
     private final int MAX_GUESS = 12;
-    protected static Color boardColor = new Color(246,163,90);
+    protected static Color boardColor = new Color(246, 163, 90);
 
     private int xBoard;
     private int yBoard;
-
 
 
     public GameBoard() {
@@ -106,6 +105,10 @@ public class GameBoard {
             this.guesses.add(guess);
             wasAdded = true;
 
+            for ( int i = 0; i < 4; i += 1 ) {
+                guesses.get(guesses.size() - 1).getGuess()[i].setxyPeg(525 + 100 * i, 585 - 35 * i);
+            }
+
         } else
             wasAdded = false;
 
@@ -189,8 +192,7 @@ public class GameBoard {
             if ( numWhitePeg == 0 ) {
                 guessMatch = true;
 
-            }
-            else
+            } else
                 System.err.println("There's a problem with verifying win");
         }
 
@@ -203,10 +205,10 @@ public class GameBoard {
     /**
      * Displays the game play history
      */
-    public void displayHistory(){
-        for(int j = 0; j < guesses.size(); j +=1) {
+    public void displayHistory() {
+        for ( int j = 0; j < guesses.size(); j += 1 ) {
 
-            System.out.println("============================Guess # "+ (j+1)+"========================\n");
+            System.out.println("============================Guess # " + (j + 1) + "========================\n");
 
 
             System.out.println("--------------------Code--------------------");
@@ -231,11 +233,12 @@ public class GameBoard {
 
     /**
      * his method paints the board on the applet screen display.
+     *
      * @param g2
      */
-    public void paintBoard(Graphics2D g2){
+    public void paintBoard(Graphics2D g2) {
         g2.setColor(boardColor);
-        g2.fillRoundRect(xBoard, yBoard, 400, 1200, 10, 360);
+        g2.fillRoundRect(xBoard, yBoard, 400, 500, 10, 360);
     }
 
 }

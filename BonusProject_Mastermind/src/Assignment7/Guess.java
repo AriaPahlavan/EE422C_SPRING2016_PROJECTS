@@ -13,11 +13,19 @@ public class Guess {
         this.guess = new GuessPeg[4];
     }
 
+    /**
+     * For testing purposes only!
+     * @param pegColors
+     */
     public Guess(ArrayList<RoundPegColor> pegColors) {
         this.guess = new GuessPeg[4];
         makeGuess(pegColors);
     }
 
+    /**
+     * For testing purposes only!
+     * @param pegColors
+     */
     public Guess(RoundPegColor[] pegColors) {
         this.guess = new GuessPeg[4];
         makeGuess(pegColors);

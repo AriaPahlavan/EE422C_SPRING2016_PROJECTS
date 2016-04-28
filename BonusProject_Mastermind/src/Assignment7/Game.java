@@ -35,7 +35,8 @@ public class Game extends Applet implements Runnable, KeyListener {
     public void start() {
         //setting up the game!
         myGameBoard = new GameBoard();
-        myGameBoard.setxyBoard();
+        myGameBoard.setxyBoard(500, 100);
+
 
         for ( int i = 0; i < myCar.length; i += 1 )
             //x = 100;  y = 50, 170, 290, 410, 530

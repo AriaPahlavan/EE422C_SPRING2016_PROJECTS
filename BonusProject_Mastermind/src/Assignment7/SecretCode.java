@@ -13,14 +13,19 @@ public class SecretCode {
 
         this.secretCode = new SecretPeg[4];
 
-        for ( int i = 0; i < 4; i += 1 )
+        for ( int i = 0; i < 4; i += 1 ) {
             this.secretCode[i] = new SecretPeg();
+            this.secretCode[i].setxyPeg(25 + 100*i , 135);
+        }
         generateSecretCode();
     }
 
+    /**
+     * For testing purposes only!
+     * @param secretCode
+     */
     public SecretCode(SecretPeg[] secretCode) {
         this.secretCode = secretCode;
-//        generateSecretCode();
     }
 
     public SecretPeg[] getSecretCode() {

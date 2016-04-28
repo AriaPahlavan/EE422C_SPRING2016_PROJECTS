@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="039e1ec8-789c-4264-85aa-9f063ea18884" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Mastermind/Result.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Mastermind/GameBoard.java" afterPath="$PROJECT_DIR$/src/Mastermind/GameBoard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Mastermind/Peg.java" afterPath="$PROJECT_DIR$/src/Mastermind/Peg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Mastermind/ResultPeg.java" afterPath="$PROJECT_DIR$/src/Mastermind/ResultPeg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Mastermind/SecretPeg.java" afterPath="$PROJECT_DIR$/src/Mastermind/SecretPeg.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Mastermind/Result.java" afterPath="$PROJECT_DIR$/src/Mastermind/Result.java" />
     </list>
     <list id="0220926e-bf47-4d15-8031-cb901fc093da" name="New changelist" comment="" />
     <ignored path="BonusProject_Mastermind.iws" />
@@ -42,22 +40,22 @@
       <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Mastermind/GameBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
+            <state relative-caret-position="1842">
+              <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#GameBoard#0;class#GameBoard#0" expanded="true" />
                 <element signature="method#GameBoard#1;class#GameBoard#0" expanded="true" />
-                <element signature="e#752#753#0" expanded="true" />
-                <element signature="e#782#783#0" expanded="true" />
-                <element signature="e#834#835#0" expanded="true" />
-                <element signature="e#872#873#0" expanded="true" />
-                <element signature="e#913#914#0" expanded="true" />
-                <element signature="e#946#947#0" expanded="true" />
-                <element signature="e#985#986#0" expanded="true" />
-                <element signature="e#1015#1016#0" expanded="true" />
-                <element signature="e#1066#1067#0" expanded="true" />
-                <element signature="e#1104#1105#0" expanded="true" />
+                <element signature="e#751#752#0" expanded="true" />
+                <element signature="e#781#782#0" expanded="true" />
+                <element signature="e#833#834#0" expanded="true" />
+                <element signature="e#871#872#0" expanded="true" />
+                <element signature="e#912#913#0" expanded="true" />
+                <element signature="e#945#946#0" expanded="true" />
+                <element signature="e#984#985#0" expanded="true" />
+                <element signature="e#1014#1015#0" expanded="true" />
+                <element signature="e#1065#1066#0" expanded="true" />
+                <element signature="e#1103#1104#0" expanded="true" />
                 <element signature="method#addGuess#0;class#GameBoard#0" expanded="true" />
               </folding>
             </state>
@@ -77,13 +75,28 @@
       <file leaf-file-name="Result.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Mastermind/Result.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+            <state relative-caret-position="360">
+              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
               <folding>
-                <element signature="e#172#173#0" expanded="true" />
-                <element signature="e#218#219#0" expanded="true" />
-                <element signature="e#259#260#0" expanded="true" />
-                <element signature="e#295#296#0" expanded="true" />
+                <element signature="method#Result#0;class#Result#0" expanded="true" />
+                <element signature="method#Result#1;class#Result#0" expanded="true" />
+                <element signature="e#473#474#0" expanded="true" />
+                <element signature="e#532#533#0" expanded="true" />
+                <element signature="e#586#587#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResultPeg.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Mastermind/ResultPeg.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding>
+                <element signature="method#ResultPeg#0;class#ResultPeg#0" expanded="true" />
+                <element signature="method#ResultPeg#1;class#ResultPeg#0" expanded="true" />
+                <element signature="method#ResultPeg#2;class#ResultPeg#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,23 +122,23 @@
       <file leaf-file-name="Peg.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Mastermind/Peg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+            <state relative-caret-position="216">
+              <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
               <folding>
                 <element signature="method#Peg#0;class#Peg#0" expanded="true" />
                 <element signature="method#Peg#1;class#Peg#0" expanded="true" />
-                <element signature="e#571#572#0" expanded="true" />
-                <element signature="e#604#605#0" expanded="true" />
-                <element signature="e#657#658#0" expanded="true" />
-                <element signature="e#701#702#0" expanded="true" />
-                <element signature="e#740#741#0" expanded="true" />
-                <element signature="e#768#769#0" expanded="true" />
-                <element signature="e#817#818#0" expanded="true" />
-                <element signature="e#851#852#0" expanded="true" />
-                <element signature="e#883#884#0" expanded="true" />
-                <element signature="e#914#915#0" expanded="true" />
-                <element signature="e#959#960#0" expanded="true" />
-                <element signature="e#999#1000#0" expanded="true" />
+                <element signature="e#563#564#0" expanded="true" />
+                <element signature="e#595#596#0" expanded="true" />
+                <element signature="e#642#643#0" expanded="true" />
+                <element signature="e#682#683#0" expanded="true" />
+                <element signature="e#721#722#0" expanded="true" />
+                <element signature="e#749#750#0" expanded="true" />
+                <element signature="e#798#799#0" expanded="true" />
+                <element signature="e#832#833#0" expanded="true" />
+                <element signature="e#864#865#0" expanded="true" />
+                <element signature="e#895#896#0" expanded="true" />
+                <element signature="e#940#941#0" expanded="true" />
+                <element signature="e#980#981#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,16 +187,16 @@
         <option value="$PROJECT_DIR$/src/Mastermind/FlatPegColor.java" />
         <option value="$PROJECT_DIR$/src/Mastermind/Game.java" />
         <option value="$PROJECT_DIR$/src/Mastermind/SecretPeg.java" />
-        <option value="$PROJECT_DIR$/src/Mastermind/Peg.java" />
         <option value="$PROJECT_DIR$/src/Mastermind/ResultPeg.java" />
         <option value="$PROJECT_DIR$/src/Mastermind/Result.java" />
+        <option value="$PROJECT_DIR$/src/Mastermind/Peg.java" />
         <option value="$PROJECT_DIR$/src/Mastermind/GameBoard.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1366" />
-    <option name="y" value="-744" />
+    <option name="y" value="24" />
     <option name="width" value="1366" />
     <option name="height" value="744" />
   </component>
@@ -537,7 +550,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="-744" width="1366" height="744" extended-state="6" />
+    <frame x="1366" y="24" width="1366" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -651,29 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Mastermind/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Mastermind/ResultPeg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-          <folding>
-            <element signature="method#ResultPeg#0;class#ResultPeg#0" expanded="true" />
-            <element signature="method#ResultPeg#1;class#ResultPeg#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#605#606#0" expanded="true" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JunitTesting/SecretCodeTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -695,23 +685,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Mastermind/Peg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        <state relative-caret-position="216">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
           <folding>
             <element signature="method#Peg#0;class#Peg#0" expanded="true" />
             <element signature="method#Peg#1;class#Peg#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#604#605#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-            <element signature="e#740#741#0" expanded="true" />
-            <element signature="e#768#769#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#851#852#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#914#915#0" expanded="true" />
-            <element signature="e#959#960#0" expanded="true" />
-            <element signature="e#999#1000#0" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#798#799#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#895#896#0" expanded="true" />
+            <element signature="e#940#941#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -731,15 +721,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Mastermind/ResultPeg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="method#ResultPeg#0;class#ResultPeg#0" expanded="true" />
+            <element signature="method#ResultPeg#1;class#ResultPeg#0" expanded="true" />
+            <element signature="method#ResultPeg#2;class#ResultPeg#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Mastermind/Result.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        <state relative-caret-position="360">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
           <folding>
-            <element signature="e#172#173#0" expanded="true" />
-            <element signature="e#218#219#0" expanded="true" />
-            <element signature="e#259#260#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
+            <element signature="method#Result#0;class#Result#0" expanded="true" />
+            <element signature="method#Result#1;class#Result#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -752,24 +755,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Mastermind/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Mastermind/GameBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
+        <state relative-caret-position="1842">
+          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#GameBoard#0;class#GameBoard#0" expanded="true" />
             <element signature="method#GameBoard#1;class#GameBoard#0" expanded="true" />
-            <element signature="e#752#753#0" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#872#873#0" expanded="true" />
-            <element signature="e#913#914#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#985#986#0" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
-            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#833#834#0" expanded="true" />
+            <element signature="e#871#872#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
+            <element signature="e#984#985#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
             <element signature="method#addGuess#0;class#GameBoard#0" expanded="true" />
           </folding>
         </state>

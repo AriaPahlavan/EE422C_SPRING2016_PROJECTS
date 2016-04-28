@@ -10,27 +10,27 @@ package Mastermind;
  */
 public class Peg {
     private RoundPegColor color;
-    private boolean wasChecked;
+    private boolean isMatched;
     private int position;
 
     public Peg() {
         this.color = RoundPegColor.none;
         this.position = 0;  // 1    2   3   4
-        this.wasChecked = false;
+        this.isMatched = false;
     }
 
-    public Peg(RoundPegColor color, int position, boolean wasChecked) {
+    public Peg(RoundPegColor color, int position, boolean isMatched) {
         this.color = color;
         this.position = position;
-        this.wasChecked = wasChecked;
+        this.isMatched = isMatched;
     }
 
-    public boolean isWasChecked() {
-        return wasChecked;
+    public boolean isMatched() {
+        return isMatched;
     }
 
-    public void setWasChecked(boolean wasChecked) {
-        this.wasChecked = wasChecked;
+    public void setMatched(boolean matched) {
+        this.isMatched = matched;
     }
 
     public RoundPegColor getColor() {

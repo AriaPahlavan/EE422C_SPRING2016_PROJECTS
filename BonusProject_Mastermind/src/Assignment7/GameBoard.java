@@ -1,5 +1,6 @@
 package Assignment7;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,17 +14,44 @@ public class GameBoard {
     private List<Result> results;
     private boolean guessMatch = false;
     private final int MAX_GUESS = 12;
+    protected static Color boardColor = new Color(246,163,90);
+
+    private int xBoard;
+    private int yBoard;
+
+
 
     public GameBoard() {
         this.secretCode = new SecretCode();
         this.guesses = new ArrayList<>();
         this.results = new ArrayList<>();
+        xBoard = 0;
+        yBoard = 0;
+
     }
 
     public GameBoard(SecretCode secretCode, List<Guess> guesses, List<Result> results) {
         this.secretCode = secretCode;
         this.guesses = guesses;
         this.results = results;
+        xBoard = 0;
+        yBoard = 0;
+    }
+
+    public int getxBoard() {
+        return xBoard;
+    }
+
+    public void setxBoard(int xBoard) {
+        this.xBoard = xBoard;
+    }
+
+    public int getyBoard() {
+        return yBoard;
+    }
+
+    public void setyBoard(int yBoard) {
+        this.yBoard = yBoard;
     }
 
     public boolean isGuessMatch() {
@@ -194,6 +222,14 @@ public class GameBoard {
 
 
         }
+    }
+
+    /**
+     * his method paints the board on the applet screen display.
+     * @param g2
+     */
+    public void paintBoard(Graphics2D g2){
+        g2.setColor(boardColor);
     }
 
 }

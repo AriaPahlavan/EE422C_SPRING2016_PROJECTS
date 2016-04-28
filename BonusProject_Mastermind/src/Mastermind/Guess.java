@@ -22,4 +22,14 @@ public class Guess {
     public void setGuess(GuessPeg[] guess) {
         this.guess = guess;
     }
+
+    /**
+     * Displays users guess
+     */
+    public void displayGuess(){
+        for(int i = 0; i < 4; i+=1){
+
+            System.out.println((guess[i].getColor()));
+        }
+    }
 }

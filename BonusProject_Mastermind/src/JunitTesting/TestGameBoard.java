@@ -36,10 +36,8 @@ public class TestGameBoard {
         gameBoard.getSecretCode().displaySecretCode();
 
         System.out.println("\n--------------------Guess-------------------");
-        System.out.println("blue");
-        System.out.println("yellow");
-        System.out.println("red");
-        System.out.println("orange");
+        guess.displayGuess();
+
         System.out.println("\n--------------------Result------------------");
 
 
@@ -86,10 +84,7 @@ public class TestGameBoard {
         gameBoard.getSecretCode().displaySecretCode();
 
         System.out.println("\n--------------------Guess-------------------");
-        System.out.println("blue");
-        System.out.println("yellow");
-        System.out.println("red");
-        System.out.println("orange");
+        guess.displayGuess();
         System.out.println("\n--------------------Result------------------");
 
 
@@ -113,8 +108,8 @@ public class TestGameBoard {
         GameBoard gameBoard = new GameBoard();
         GuessPeg[] guessPeg = new GuessPeg[4];
         SecretPeg[] secretPeg = new SecretPeg[4];
-        RoundPegColor[] colors = {RoundPegColor.blue, RoundPegColor.yellow, RoundPegColor.red, RoundPegColor.orange};
-        RoundPegColor[] colors2 = {RoundPegColor.blue, RoundPegColor.yellow, RoundPegColor.red, RoundPegColor.blue};
+        RoundPegColor[] colors = {RoundPegColor.blue, RoundPegColor.blue, RoundPegColor.red, RoundPegColor.orange};
+        RoundPegColor[] colors2 = {RoundPegColor.blue, RoundPegColor.blue, RoundPegColor.blue, RoundPegColor.blue};
 
         for(int i = 0; i < 4; i += 1) {
             guessPeg[i] = new GuessPeg();
@@ -136,10 +131,7 @@ public class TestGameBoard {
         gameBoard.getSecretCode().displaySecretCode();
 
         System.out.println("\n--------------------Guess-------------------");
-        System.out.println("blue");
-        System.out.println("yellow");
-        System.out.println("red");
-        System.out.println("orange");
+        guess.displayGuess();
         System.out.println("\n--------------------Result------------------");
 
 

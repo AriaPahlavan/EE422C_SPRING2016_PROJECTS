@@ -47,6 +47,9 @@ public class SecretCode {
         }
     }
 
+    /**
+     * Displays the auto-generated secret code
+     */
     public void displaySecretCode(){
         for(int i = 0; i < 4; i+=1){
 

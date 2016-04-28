@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="039e1ec8-789c-4264-85aa-9f063ea18884" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java" afterPath="$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Mastermind/GameBoard.java" afterPath="$PROJECT_DIR$/src/Mastermind/GameBoard.java" />
     </list>
     <list id="0220926e-bf47-4d15-8031-cb901fc093da" name="New changelist" comment="" />
     <ignored path="BonusProject_Mastermind.iws" />
@@ -25,28 +26,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Mastermind/GameBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+            <state relative-caret-position="528">
+              <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#GameBoard#0;class#GameBoard#0" expanded="true" />
                 <element signature="method#GameBoard#1;class#GameBoard#0" expanded="true" />
                 <element signature="e#819#820#0" expanded="true" />
                 <element signature="e#849#850#0" expanded="true" />
+                <element signature="method#addGuess#0;class#GameBoard#0" expanded="true" />
                 <element signature="method#evaluateGuess#0;class#GameBoard#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestGameBoard.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestGameBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="242" column="0" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#sequenceMatchTest#0;class#TestGameBoard#0" expanded="true" />
@@ -199,8 +201,8 @@
         <option value="$PROJECT_DIR$/src/Mastermind/Peg.java" />
         <option value="$PROJECT_DIR$/src/Mastermind/GuessPeg.java" />
         <option value="$PROJECT_DIR$/src/Mastermind/Guess.java" />
-        <option value="$PROJECT_DIR$/src/Mastermind/GameBoard.java" />
         <option value="$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java" />
+        <option value="$PROJECT_DIR$/src/Mastermind/GameBoard.java" />
       </list>
     </option>
   </component>
@@ -655,11 +657,11 @@
     <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 42m 53s.xml">
       <configuration name="TestGameBoard.historyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestGameBoard_multipleGuessTest - 2016.04.28 at 16h 24m 32s.xml">
-      <configuration name="TestGameBoard.multipleGuessTest" configurationId="JUnit" />
+    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 47m 14s.xml">
+      <configuration name="TestGameBoard.historyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestGameBoard_multipleGuessTest - 2016.04.28 at 16h 29m 01s.xml">
-      <configuration name="TestGameBoard.multipleGuessTest" configurationId="JUnit" />
+    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 47m 25s.xml">
+      <configuration name="TestGameBoard.historyTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestGameBoard_multipleGuessTest - 2016.04.28 at 16h 38m 24s.xml">
       <configuration name="TestGameBoard.multipleGuessTest" configurationId="JUnit" />
@@ -676,7 +678,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-744" width="1366" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -694,7 +696,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46141976" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32253087" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -747,6 +749,7 @@
             <element signature="method#GameBoard#1;class#GameBoard#0" expanded="true" />
             <element signature="e#819#820#0" expanded="true" />
             <element signature="e#849#850#0" expanded="true" />
+            <element signature="method#addGuess#0;class#GameBoard#0" expanded="true" />
             <element signature="method#evaluateGuess#0;class#GameBoard#0" expanded="true" />
           </folding>
         </state>
@@ -912,29 +915,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#sequenceMatchTest#0;class#TestGameBoard#0" expanded="true" />
+            <element signature="method#multipleGuessTest#0;class#TestGameBoard#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Mastermind/GameBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="528">
+          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#GameBoard#0;class#GameBoard#0" expanded="true" />
             <element signature="method#GameBoard#1;class#GameBoard#0" expanded="true" />
             <element signature="e#819#820#0" expanded="true" />
             <element signature="e#849#850#0" expanded="true" />
+            <element signature="method#addGuess#0;class#GameBoard#0" expanded="true" />
             <element signature="method#evaluateGuess#0;class#GameBoard#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="242" column="0" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#sequenceMatchTest#0;class#TestGameBoard#0" expanded="true" />
-            <element signature="method#multipleGuessTest#0;class#TestGameBoard#0" expanded="true" />
           </folding>
         </state>
       </provider>

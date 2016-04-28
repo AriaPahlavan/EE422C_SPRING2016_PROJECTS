@@ -259,8 +259,7 @@ public class TestGameBoard {
                 System.out.println(result.getResult()[i].getFlatColor());
             }
 
-            if ( gameBoard.isGuessMatch() )
-                break;
+
         }
         System.out.println("Congratulations!");
     }

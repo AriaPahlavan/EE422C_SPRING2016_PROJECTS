@@ -163,8 +163,9 @@ public class GameBoard {
 
         this.results.add(newResult);
 
-        //TODO reset the isMatched data member of secret pegs for future checks
         for ( SecretPeg secretPeg : secretCode.getSecretCode() )
             secretPeg.setMatched(false);
     }
+
+
 }

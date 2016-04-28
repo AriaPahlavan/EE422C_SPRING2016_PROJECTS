@@ -18,7 +18,7 @@ public class ResultPeg extends Peg{
     }
 
     public ResultPeg(RoundPegColor color, int position, FlatPegColor flatColor) {
-        super(color, position);
+        super(color, position, false);
         this.flatColor = flatColor;
     }
 

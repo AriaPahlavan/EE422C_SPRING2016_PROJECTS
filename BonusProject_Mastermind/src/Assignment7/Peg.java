@@ -86,9 +86,17 @@ public class Peg {
      * his method paints the board on the applet screen display.
      * @param g2
      */
-    public void paintBoard(Graphics2D g2){
+    public void paintPeg(Graphics2D g2){
         g2.setColor(pickColor());
         g2.fillOval(xPeg, yPeg, PEG_RADIOUS, PEG_RADIOUS);
+    }
+
+    /**
+     * his method paints the board on the applet screen display.
+     * @param g2
+     */
+    public void paintResultPeg(Graphics2D g2){
+        g2.fillOval(xPeg, yPeg, PEG_RADIOUS-2, PEG_RADIOUS-2);
     }
 
     /**
@@ -122,4 +130,6 @@ public class Peg {
 
         return newColor;
     }
+
+
 }

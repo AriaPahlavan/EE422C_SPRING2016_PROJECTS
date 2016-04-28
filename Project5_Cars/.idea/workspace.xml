@@ -4,9 +4,8 @@
     <list default="true" id="9ea029d9-b1a5-42b3-86c2-d289e0e5efb6" name="Default" comment="Created a driver class.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Game.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/GameBoard.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/GameBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Guess.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Guess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/GuessPeg.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/GuessPeg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/SecretCode.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/SecretCode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Peg.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Peg.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/ResultPeg.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/ResultPeg.java" />
     </list>
     <ignored path="Project5_Cars.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,12 +57,12 @@
       <file leaf-file-name="A5Driver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Assignment5/A5Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="83" selection-end-column="36" />
+            <state relative-caret-position="72">
+              <caret line="91" column="8" selection-start-line="91" selection-start-column="8" selection-end-line="113" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#init#0;class#A5Driver#0" expanded="true" />
-                <element signature="method#run#0;class#A5Driver#0" expanded="true" />
+                <element signature="method#start#0;class#A5Driver#0" expanded="true" />
                 <element signature="method#update#0;class#A5Driver#0" expanded="true" />
                 <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
                 <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
@@ -725,7 +724,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#start#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
             <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
@@ -803,7 +802,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#start#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
             <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
@@ -881,7 +880,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#start#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
             <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
@@ -959,7 +958,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#start#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
             <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
@@ -1035,7 +1034,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#start#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
             <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
@@ -1092,7 +1091,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#start#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
             <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
@@ -1121,7 +1120,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#start#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
             <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
@@ -1161,7 +1160,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#start#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
             <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
@@ -1190,7 +1189,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#start#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
             <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />
@@ -1319,12 +1318,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment5/A5Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="83" selection-end-column="36" />
+        <state relative-caret-position="72">
+          <caret line="91" column="8" selection-start-line="91" selection-start-column="8" selection-end-line="113" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#A5Driver#0" expanded="true" />
-            <element signature="method#run#0;class#A5Driver#0" expanded="true" />
+            <element signature="method#start#0;class#A5Driver#0" expanded="true" />
             <element signature="method#update#0;class#A5Driver#0" expanded="true" />
             <element signature="method#paint#0;class#A5Driver#0" expanded="true" />
             <element signature="method#keyTyped#0;class#A5Driver#0" expanded="true" />

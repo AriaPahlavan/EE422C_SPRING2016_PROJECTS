@@ -106,7 +106,7 @@ public class GameBoard {
             wasAdded = true;
 
             for ( int i = 0; i < 4; i += 1 ) {
-                guesses.get(guesses.size() - 1).getGuess()[i].setxyPeg(525 + 100 * i, 585 - 35 * i);
+                guesses.get(guesses.size() - 1).getGuess()[i].setxyPeg(525 + 100 * i, 585 - 35 * (guesses.size() - 1));
             }
 
         } else
@@ -198,8 +198,14 @@ public class GameBoard {
 
         this.results.add(newResult);
 
+        // Unchecking the matched variable of source code for future checking
         for ( SecretPeg secretPeg : secretCode.getSecretCode() )
             secretPeg.setMatched(false);
+
+        // Adding the position of result pegs
+        for ( int i = 0; i < 4; i += 1 ){
+            newResult.getResult()[i].setxyPeg(925 + 50 * i, 585 - 35 * (guesses.size() - 1));
+        }
     }
 
     /**

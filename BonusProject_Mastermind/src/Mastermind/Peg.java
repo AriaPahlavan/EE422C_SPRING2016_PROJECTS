@@ -13,8 +13,8 @@ enum FlatPegColor {
  * Created by Aria Pahlavan on Apr 2016.
  */
 public class Peg {
-    RoundPegColor color;
-    int position;
+    private RoundPegColor color;
+    private int position;
 
     public Peg() {
         this.color = RoundPegColor.none;

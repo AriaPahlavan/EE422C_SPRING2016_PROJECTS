@@ -5,7 +5,7 @@ package Mastermind;
  * Created by Aria Pahlavan on Apr 2016.
  */
 public class ResultPeg extends Peg{
-    FlatPegColor flatColor;
+    private FlatPegColor flatColor;
 
     public ResultPeg() {
         super();

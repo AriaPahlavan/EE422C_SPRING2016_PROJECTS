@@ -1,6 +1,6 @@
 package JunitTesting;
 
-import Mastermind.SecretCode;
+import Assignment7.SecretCode;
 import org.junit.Test;
 
 /**

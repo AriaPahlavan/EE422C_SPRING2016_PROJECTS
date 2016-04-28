@@ -1,4 +1,4 @@
-package Mastermind;
+package Assignment7;
 
 import java.util.ArrayList;
 

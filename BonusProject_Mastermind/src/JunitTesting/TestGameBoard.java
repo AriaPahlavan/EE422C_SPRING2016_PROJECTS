@@ -1,6 +1,6 @@
 package JunitTesting;
 
-import Mastermind.*;
+import Assignment7.*;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -221,7 +221,7 @@ public class TestGameBoard {
 
         RoundPegColor[][] guessColorList = {colors0, colors1, colors2, colors3, colors4, colors5, colors6};
 
-        
+
 
         for(int j = 0; j < guessColorList.length; j +=1) {
 

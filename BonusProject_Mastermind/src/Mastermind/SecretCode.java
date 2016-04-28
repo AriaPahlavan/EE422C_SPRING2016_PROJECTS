@@ -10,11 +10,17 @@ public class SecretCode {
     private SecretPeg[] secretCode;
 
     public SecretCode() {
+
         this.secretCode = new SecretPeg[4];
+
+        for ( int i = 0; i < 4; i += 1 )
+            this.secretCode[i] = new SecretPeg();
+        generateSecretCode();
     }
 
     public SecretCode(SecretPeg[] secretCode) {
         this.secretCode = secretCode;
+        generateSecretCode();
     }
 
     public SecretPeg[] getSecretCode() {
@@ -29,11 +35,13 @@ public class SecretCode {
      * Generates a secret code consisting of a sequence of
      * colored pegs for the player to guess!
      */
-    private void generateSecretCode(){
+    private void generateSecretCode() {
         Random random = new Random();
+        RoundPegColor[] colorPallet = { RoundPegColor.blue, RoundPegColor.yellow, RoundPegColor.green,
+                RoundPegColor.red, RoundPegColor.orange, RoundPegColor.purple };
 
-        for ( int i = 0; i < 4; i+=1 ){
-            
+        for ( int i = 0; i < 4; i += 1 ) {
+            secretCode[i].setColor(colorPallet[random.nextInt(6)]);
         }
     }
 }

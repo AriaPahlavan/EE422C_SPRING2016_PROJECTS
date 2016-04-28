@@ -1,13 +1,9 @@
 package Mastermind;
 
 
-enum RoundPegColor {
-    blue, green, orange, purple, red, yellow, none
-}
 
-enum FlatPegColor {
-    black, white, none
-}
+
+
 /**
  * BonusProject_Mastermind
  * Created by Aria Pahlavan on Apr 2016.

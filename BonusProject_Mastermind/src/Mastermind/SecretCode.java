@@ -50,28 +50,7 @@ public class SecretCode {
     public void displaySecretCode(){
         for(int i = 0; i < 4; i+=1){
 
-            switch (secretCode[i].getColor()) {
-                case blue:
-                    System.out.println("blue");
-                    break;
-                case green:
-                    System.out.println("green");
-                    break;
-                case orange:
-                    System.out.println("orange");
-                    break;
-                case purple:
-                    System.out.println("purple");
-                    break;
-                case red:
-                    System.out.println("red");
-                    break;
-                case yellow:
-                    System.out.println("yellow");
-                    break;
-                case none:
-                    break;
-            }
+            System.out.println((secretCode[i].getColor()));
         }
     }
 }

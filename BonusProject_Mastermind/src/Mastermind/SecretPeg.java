@@ -21,4 +21,12 @@ public class SecretPeg extends Peg{
         super(roundPegColor, position);
         this.wasChecked = wasChecked1;
     }
+
+    public boolean isWasChecked() {
+        return wasChecked;
+    }
+
+    public void setWasChecked(boolean wasChecked) {
+        this.wasChecked = wasChecked;
+    }
 }

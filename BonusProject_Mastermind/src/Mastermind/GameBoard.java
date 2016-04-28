@@ -8,7 +8,7 @@ import java.util.List;
  * Created by Aria Pahlavan on Apr 2016.
  */
 public class GameBoard {
-    private SecretPeg[] secretCode = new SecretPeg[4];
+    private SecretCode secretCode;
     private List<GuessPeg[]> guessSlots = new ArrayList<>();
 
 }

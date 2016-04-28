@@ -25,4 +25,21 @@ public class Peg {
         this.color = color;
         this.position = position;
     }
+
+
+    public RoundPegColor getColor() {
+        return color;
+    }
+
+    public void setColor(RoundPegColor color) {
+        this.color = color;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
 }

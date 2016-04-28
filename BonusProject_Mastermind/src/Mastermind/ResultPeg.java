@@ -21,4 +21,12 @@ public class ResultPeg extends Peg{
         super(color, position);
         this.flatColor = flatColor;
     }
+
+    public FlatPegColor getFlatColor() {
+        return flatColor;
+    }
+
+    public void setFlatColor(FlatPegColor flatColor) {
+        this.flatColor = flatColor;
+    }
 }

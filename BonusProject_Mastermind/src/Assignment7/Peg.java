@@ -45,6 +45,11 @@ public class Peg {
         this.yPeg = yPeg;
     }
 
+    public void setxyPeg(int xPeg, int yPeg) {
+        this.xPeg = xPeg;
+        this.yPeg = yPeg;
+    }
+
     public int getxPeg() {
         return xPeg;
     }

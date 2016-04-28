@@ -46,6 +46,11 @@ public class GameBoard {
         this.xBoard = xBoard;
     }
 
+    public void setxyBoard(int xBoard, int yBoard) {
+        this.xBoard = xBoard;
+        this.yBoard = yBoard;
+    }
+
     public int getyBoard() {
         return yBoard;
     }
@@ -230,6 +235,7 @@ public class GameBoard {
      */
     public void paintBoard(Graphics2D g2){
         g2.setColor(boardColor);
+        g2.fillRoundRect(xBoard, yBoard, 400, 1200, 10, 360);
     }
 
 }

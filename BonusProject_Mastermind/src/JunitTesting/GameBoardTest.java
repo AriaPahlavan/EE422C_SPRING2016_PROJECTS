@@ -49,9 +49,12 @@ public class GameBoardTest {
         if ( gameBoard.addGuess(guess) )
             System.out.println("The guess was added successfully");
 
-        for(int i = 0; i < 4; i+=1) {
 
-            switch (gameBoard.getResults().get(0).getResult()[i].getFlatColor()) {
+        Result result = gameBoard.getResults().get(0);
+
+        for(int i = 0; i < result.getNumFeedbackPegs(); i+=1) {
+
+            switch (result.getResult()[i].getFlatColor()) {
 
                 case black:
                     System.out.println("black");

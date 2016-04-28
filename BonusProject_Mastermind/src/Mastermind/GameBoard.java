@@ -12,7 +12,7 @@ public class GameBoard {
     private List<Guess> guesses;
     private List<Result> results;
     private boolean guessMatch = false;
-    private final int MAX_GUESS = 4;
+    private final int MAX_GUESS = 12;
 
     public GameBoard() {
         this.secretCode = new SecretCode();
@@ -167,5 +167,33 @@ public class GameBoard {
             secretPeg.setMatched(false);
     }
 
+    /**
+     * Displays the game play history
+     */
+    public void displayHistory(){
+        for(int j = 0; j < guesses.size(); j +=1) {
+
+            System.out.println("============================Guess # "+ (j+1)+"========================\n");
+
+
+            System.out.println("--------------------Code--------------------");
+            secretCode.displaySecretCode();
+
+            System.out.println("\n--------------------Guess-------------------");
+            guesses.get(j).displayGuess();
+
+
+            System.out.println("\n--------------------Result------------------\n");
+
+            Result result = results.get(j);
+
+            for ( int i = 0; i < result.getNumFeedbackPegs(); i += 1 ) {
+
+                System.out.println(result.getResult()[i].getFlatColor());
+            }
+
+
+        }
+    }
 
 }

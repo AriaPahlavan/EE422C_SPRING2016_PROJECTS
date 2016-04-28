@@ -215,52 +215,27 @@ public class TestGameBoard {
         RoundPegColor[] colors1 = {RoundPegColor.red, RoundPegColor.green, RoundPegColor.purple, RoundPegColor.orange};
         RoundPegColor[] colors2 = {RoundPegColor.blue, RoundPegColor.blue, RoundPegColor.green, RoundPegColor.blue};
         RoundPegColor[] colors3 = {RoundPegColor.yellow, RoundPegColor.purple, RoundPegColor.purple, RoundPegColor.yellow};
+        RoundPegColor[] colors4 = {RoundPegColor.green, RoundPegColor.purple, RoundPegColor.purple, RoundPegColor.yellow};
+        RoundPegColor[] colors5 = {RoundPegColor.red, RoundPegColor.purple, RoundPegColor.purple, RoundPegColor.yellow};
+        RoundPegColor[] colors6 = {RoundPegColor.purple, RoundPegColor.purple, RoundPegColor.purple, RoundPegColor.yellow};
 
-        RoundPegColor[][] guessColorList = {colors0, colors1, colors2, colors3};
+        RoundPegColor[][] guessColorList = {colors0, colors1, colors2, colors3, colors4, colors5, colors6};
 
-        for(int i = 0; i < 4; i += 1) {
-            secretPeg[i] = new SecretPeg();
-            secretPeg[i].setColor(colors3[i]);
-        }
+        
 
-
-        List<Guess> guesses = new ArrayList<>();
-
-        SecretCode secretCode = new SecretCode(secretPeg);
-
-        gameBoard.setSecretCode(secretCode);
-
-        for(int j = 0; j < 4; j +=1) {
+        for(int j = 0; j < guessColorList.length; j +=1) {
 
             Guess guess = new Guess(guessColorList[j]);
             assertTrue("Oops! Having problem processing your guess :(", gameBoard.addGuess(guess));
-
-        }
-
-
-        for(int j = 0; j < 4; j +=1) {
-
-            System.out.println("============================Guess # "+ (j+1)+"========================\n");
-
-
-            System.out.println("--------------------Code--------------------");
-            gameBoard.getSecretCode().displaySecretCode();
-
-            System.out.println("\n--------------------Guess-------------------");
-            gameBoard.getGuesses().get(j).displayGuess();
-
-
-            System.out.println("\n--------------------Result------------------\n");
-
-            Result result = gameBoard.getResults().get(j);
-
-            for ( int i = 0; i < result.getNumFeedbackPegs(); i += 1 ) {
-
-                System.out.println(result.getResult()[i].getFlatColor());
+            if ( gameBoard.isGuessMatch() ){
+                System.out.println("You win!");
+                System.exit(0);
             }
 
-
         }
+
+        gameBoard.displayHistory();
+
         System.out.println("Congratulations!");
     }
 

@@ -26,29 +26,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Mastermind/GameBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+            <state relative-caret-position="252">
+              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#GameBoard#0;class#GameBoard#0" expanded="true" />
                 <element signature="method#GameBoard#1;class#GameBoard#0" expanded="true" />
-                <element signature="e#819#820#0" expanded="true" />
-                <element signature="e#849#850#0" expanded="true" />
+                <element signature="e#820#821#0" expanded="true" />
+                <element signature="e#850#851#0" expanded="true" />
                 <element signature="method#addGuess#0;class#GameBoard#0" expanded="true" />
                 <element signature="method#evaluateGuess#0;class#GameBoard#0" expanded="true" />
+                <element signature="method#displayHistory#0;class#GameBoard#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestGameBoard.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestGameBoard.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="223" column="8" selection-start-line="223" selection-start-column="8" selection-end-line="223" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#sequenceMatchTest#0;class#TestGameBoard#0" expanded="true" />
@@ -201,8 +202,8 @@
         <option value="$PROJECT_DIR$/src/Mastermind/Peg.java" />
         <option value="$PROJECT_DIR$/src/Mastermind/GuessPeg.java" />
         <option value="$PROJECT_DIR$/src/Mastermind/Guess.java" />
-        <option value="$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java" />
         <option value="$PROJECT_DIR$/src/Mastermind/GameBoard.java" />
+        <option value="$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java" />
       </list>
     </option>
   </component>
@@ -645,35 +646,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 42m 08s.xml">
+    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 58m 38s.xml">
       <configuration name="TestGameBoard.historyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 42m 26s.xml">
+    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 58m 39s.xml">
       <configuration name="TestGameBoard.historyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 42m 43s.xml">
+    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 58m 41s.xml">
       <configuration name="TestGameBoard.historyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 42m 53s.xml">
+    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 58m 44s.xml">
       <configuration name="TestGameBoard.historyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 47m 14s.xml">
+    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 59m 24s.xml">
       <configuration name="TestGameBoard.historyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 16h 47m 25s.xml">
+    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 17h 00m 00s.xml">
       <configuration name="TestGameBoard.historyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestGameBoard_multipleGuessTest - 2016.04.28 at 16h 38m 24s.xml">
-      <configuration name="TestGameBoard.multipleGuessTest" configurationId="JUnit" />
+    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 17h 00m 07s.xml">
+      <configuration name="TestGameBoard.historyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestGameBoard_multipleGuessTest - 2016.04.28 at 16h 39m 09s.xml">
-      <configuration name="TestGameBoard.multipleGuessTest" configurationId="JUnit" />
+    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 17h 00m 10s.xml">
+      <configuration name="TestGameBoard.historyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestGameBoard_multipleGuessTest - 2016.04.28 at 16h 39m 23s.xml">
-      <configuration name="TestGameBoard.multipleGuessTest" configurationId="JUnit" />
+    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 17h 00m 14s.xml">
+      <configuration name="TestGameBoard.historyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestGameBoard_multipleGuessTest - 2016.04.28 at 16h 42m 20s.xml">
-      <configuration name="TestGameBoard.multipleGuessTest" configurationId="JUnit" />
+    <history-entry file="TestGameBoard_historyTest - 2016.04.28 at 17h 00m 18s.xml">
+      <configuration name="TestGameBoard.historyTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -718,14 +719,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java</url>
-          <line>232</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager>
@@ -747,10 +740,11 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GameBoard#0;class#GameBoard#0" expanded="true" />
             <element signature="method#GameBoard#1;class#GameBoard#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
             <element signature="method#addGuess#0;class#GameBoard#0" expanded="true" />
             <element signature="method#evaluateGuess#0;class#GameBoard#0" expanded="true" />
+            <element signature="method#displayHistory#0;class#GameBoard#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -864,6 +858,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Mastermind/Result.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -873,14 +875,6 @@
             <element signature="method#Result#1;class#Result#0" expanded="true" />
             <element signature="e#653#654#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -915,30 +909,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#sequenceMatchTest#0;class#TestGameBoard#0" expanded="true" />
-            <element signature="method#multipleGuessTest#0;class#TestGameBoard#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Mastermind/GameBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+        <state relative-caret-position="252">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#GameBoard#0;class#GameBoard#0" expanded="true" />
             <element signature="method#GameBoard#1;class#GameBoard#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
             <element signature="method#addGuess#0;class#GameBoard#0" expanded="true" />
             <element signature="method#evaluateGuess#0;class#GameBoard#0" expanded="true" />
+            <element signature="method#displayHistory#0;class#GameBoard#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="223" column="8" selection-start-line="223" selection-start-column="8" selection-end-line="223" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#sequenceMatchTest#0;class#TestGameBoard#0" expanded="true" />
+            <element signature="method#multipleGuessTest#0;class#TestGameBoard#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -12,6 +12,7 @@ import java.awt.event.KeyListener;
 public class Game extends Applet implements Runnable, KeyListener {
     private Graphics doubleG;
     private Image image;
+    private GameBoard myGameBoard;
 
 
 

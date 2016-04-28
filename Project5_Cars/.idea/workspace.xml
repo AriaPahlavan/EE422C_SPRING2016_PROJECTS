@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea029d9-b1a5-42b3-86c2-d289e0e5efb6" name="Default" comment="Created a driver class.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Game.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Mastermind/Game.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Mastermind/FlatPegColor.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/FlatPegColor.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Mastermind/GameBoard.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/GameBoard.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Mastermind/Guess.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Guess.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Mastermind/GuessPeg.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/GuessPeg.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Mastermind/Peg.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Peg.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Mastermind/Result.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Result.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Mastermind/ResultPeg.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/ResultPeg.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Mastermind/RoundPegColor.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/RoundPegColor.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Mastermind/SecretCode.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/SecretCode.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Mastermind/SecretPeg.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/SecretPeg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/JunitTesting/SecretCodeTest.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/JunitTesting/SecretCodeTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/JunitTesting/TestGameBoard.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/JunitTesting/TestGameBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Game.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Game.java" />
     </list>
     <ignored path="Project5_Cars.iws" />
     <ignored path=".idea/workspace.xml" />

@@ -91,8 +91,8 @@ public class Guess {
      */
     public void displayGuess(Graphics2D g2) {
         for ( int i = 0; i < 4; i += 1 ) {
-
-            System.out.println((guess[i].getColor()));
+            if ( guess[i] == null )
+                break;
             guess[i].paintPeg(g2);
         }
     }
@@ -105,12 +105,13 @@ public class Guess {
     }
 
     public void displayTempGuess(Graphics2D g2) {
+
         for ( int i = 0; i < guess.length; i += 1 ) {
 
             if ( guess[i] == null)
                 break;
-            System.out.println((guess[i].getColor()));
             guess[i].paintPeg(g2);
         }
+
     }
 }

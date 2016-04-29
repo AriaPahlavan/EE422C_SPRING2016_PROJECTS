@@ -41,8 +41,8 @@ public class Result {
      */
     public void displayResult(Graphics2D g2){
         for(int i = 0; i < 4; i+=1){
-
-            System.out.println((result[i].getColor()));
+            if ( result[i] == null )
+                break;
             result[i].paintPeg(g2);
         }
     }

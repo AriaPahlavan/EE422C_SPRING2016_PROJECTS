@@ -17,7 +17,7 @@ public class SecretCode {
         for ( int i = 0; i < 4; i += 1 ) {
             this.secretCode[i] = new SecretPeg();
             //TODO reenable this part plaese!
-            this.secretCode[i].setxyPeg(525 + 100*i , 135);
+            this.secretCode[i].setxyPeg(525 + 100*i , 100);
         }
         generateSecretCode();
     }
@@ -60,7 +60,6 @@ public class SecretCode {
     public void displaySecretCode(Graphics2D g2){
         for(int i = 0; i < 4; i+=1){
 
-            System.out.println((secretCode[i].getColor()));
             secretCode[i].paintPeg(g2);
         }
     }

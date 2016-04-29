@@ -16,6 +16,7 @@ public class GameBoard {
     private final int MAX_GUESS = 12;
     protected static Color boardColor = new Color(246, 163, 90);
 
+
     private int xBoard;
     private int yBoard;
 
@@ -102,12 +103,9 @@ public class GameBoard {
 
             // Check to see if this is a match, else figure out the feedback
             evaluateGuess(guess);
-            this.guesses.add(guess);
             wasAdded = true;
+            System.out.println("guess was added!");
 
-            for ( int i = 0; i < 4; i += 1 ) {
-                guesses.get(guesses.size() - 1).getGuess()[i].setxyPeg(525 + 100 * i, 585 - 35 * (guesses.size() - 1));
-            }
 
         } else
             wasAdded = false;
@@ -122,6 +120,7 @@ public class GameBoard {
      * @param guess
      */
     public void evaluateGuess(Guess guess) {
+
         Result newResult = new Result();
         int numBlackPeg = 0;
         int numWhitePeg = 0;
@@ -203,8 +202,15 @@ public class GameBoard {
             secretPeg.setMatched(false);
 
         // Adding the position of result pegs
-        for ( int i = 0; i < 4; i += 1 ){
-            newResult.getResult()[i].setxyPeg(925 + 50 * i, 585 - 35 * (guesses.size() - 1));
+        for ( int i = 0; i < 4; i += 1 ) {
+            if ( newResult.getResult()[i] == null )
+                break;
+            newResult.getResult()[i].setxyPeg(800 + 20 * i, 575 - 35 * (guesses.size() - 1));
+        }
+
+        this.guesses.add(guess);
+        for ( int i = 0; i < 4; i += 1 ) {
+            this.guesses.get(this.guesses.size()-1).getGuess()[i].setxyPeg(525 + 50 * i, 575 - 35 * (guesses.size() - 2));
         }
     }
 
@@ -212,28 +218,20 @@ public class GameBoard {
      * Displays the game play history
      */
     public void displayHistory(Graphics2D g2) {
-        secretCode.displaySecretCode(g2);
+
+        //TODO Show the code after a success
+//        if ( guessMatch )
+            secretCode.displaySecretCode(g2);
 
         for ( int j = 0; j < guesses.size(); j += 1 ) {
-
-            System.out.println("\n--------------------Guess-------------------");
+            // Display guesses
             guesses.get(j).displayGuess(g2);
 
 
-
-            System.out.println("\n--------------------Result------------------\n");
-
-            Result result = results.get(j);
-            result.displayResult(g2);
-
-            for ( int i = 0; i < result.getNumFeedbackPegs(); i += 1 ) {
-
-                System.out.println(result.getResult()[i].getFlatColor());
-
-            }
-
-
+            // Display results
+            results.get(j).displayResult(g2);
         }
+
     }
 
     /**
@@ -243,7 +241,7 @@ public class GameBoard {
      */
     public void paintBoard(Graphics2D g2) {
         g2.setColor(boardColor);
-        g2.fillRoundRect(xBoard, yBoard, 400, 500, 10, 360);
+        g2.fillRoundRect(xBoard, yBoard, 400, 600, 10, 360);
         displayHistory(g2);
     }
 

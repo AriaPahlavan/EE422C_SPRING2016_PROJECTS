@@ -212,13 +212,9 @@ public class GameBoard {
      * Displays the game play history
      */
     public void displayHistory(Graphics2D g2) {
+        secretCode.displaySecretCode(g2);
+
         for ( int j = 0; j < guesses.size(); j += 1 ) {
-
-            System.out.println("============================Guess # " + (j + 1) + "========================\n");
-
-
-            System.out.println("--------------------Code--------------------");
-            secretCode.displaySecretCode(g2);
 
             System.out.println("\n--------------------Guess-------------------");
             guesses.get(j).displayGuess(g2);

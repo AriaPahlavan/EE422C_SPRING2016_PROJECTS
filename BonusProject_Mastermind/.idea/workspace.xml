@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="039e1ec8-789c-4264-85aa-9f063ea18884" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BonusProject_Mastermind/Assignment7/GameBoard.class" afterPath="$PROJECT_DIR$/out/production/BonusProject_Mastermind/Assignment7/GameBoard.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BonusProject_Mastermind/Assignment7/SecretCode.class" afterPath="$PROJECT_DIR$/out/production/BonusProject_Mastermind/Assignment7/SecretCode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment7/Game.java" afterPath="$PROJECT_DIR$/src/Assignment7/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment7/GameBoard.java" afterPath="$PROJECT_DIR$/src/Assignment7/GameBoard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment7/Guess.java" afterPath="$PROJECT_DIR$/src/Assignment7/Guess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment7/Result.java" afterPath="$PROJECT_DIR$/src/Assignment7/Result.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment7/SecretCode.java" afterPath="$PROJECT_DIR$/src/Assignment7/SecretCode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java" afterPath="$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Project5_Cars/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Project5_Cars/.idea/workspace.xml" />
     </list>
     <list id="0220926e-bf47-4d15-8031-cb901fc093da" name="New changelist" comment="" />
     <ignored path="BonusProject_Mastermind.iws" />
@@ -26,7 +28,9 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="BonusProject_Mastermind" />
+    <favorites_list name="BonusProject_Mastermind">
+      <favorite_root url="Assignment7.Game" module="BonusProject_Mastermind" type="class" klass="com.intellij.ide.favoritesTreeView.smartPointerPsiNodes.ClassSmartPointerNode" />
+    </favorites_list>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -34,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/src/Assignment7/GameBoard.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="456">
-              <caret line="250" column="25" selection-start-line="250" selection-start-column="25" selection-end-line="250" selection-end-column="25" />
+              <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#GameBoard#0;class#GameBoard#0" expanded="true" />
@@ -55,28 +59,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestGameBoard.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="35" column="54" selection-start-line="0" selection-start-column="2" selection-end-line="241" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+            <state relative-caret-position="226">
+              <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#init#0;class#Game#0" expanded="true" />
                 <element signature="method#start#0;class#Game#0" expanded="true" />
                 <element signature="method#run#0;class#Game#0" expanded="true" />
                 <element signature="method#update#0;class#Game#0" expanded="true" />
-                <element signature="method#paint#0;class#Game#0" expanded="true" />
                 <element signature="method#keyTyped#0;class#Game#0" expanded="true" />
                 <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
                 <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
@@ -101,8 +94,8 @@
       <file leaf-file-name="Peg.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/Peg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="97" column="16" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
+            <state relative-caret-position="242">
+              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding>
                 <element signature="method#Peg#0;class#Peg#0" expanded="true" />
                 <element signature="method#Peg#1;class#Peg#0" expanded="true" />
@@ -116,7 +109,8 @@
                 <element signature="e#1134#1135#0" expanded="true" />
                 <element signature="e#1171#1172#0" expanded="true" />
                 <element signature="e#1203#1204#0" expanded="true" />
-                <element signature="method#paintPeg#0;class#Peg#0" expanded="true" />
+                <element signature="e#1395#1396#0" expanded="true" />
+                <element signature="e#1423#1424#0" expanded="true" />
                 <element signature="e#2039#2040#0" expanded="true" />
                 <element signature="e#2108#2109#0" expanded="true" />
                 <element signature="method#pickColor#0;class#Peg#0" expanded="true" />
@@ -128,8 +122,8 @@
       <file leaf-file-name="Guess.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/Guess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="85" column="4" selection-start-line="85" selection-start-column="4" selection-end-line="94" selection-end-column="5" />
+            <state relative-caret-position="402">
+              <caret line="110" column="22" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#217#218#0" expanded="true" />
@@ -139,6 +133,8 @@
                 <element signature="method#makeGuess#0;class#Guess#0" expanded="true" />
                 <element signature="method#makeGuess#1;class#Guess#0" expanded="true" />
                 <element signature="method#displayGuess#0;class#Guess#0" expanded="true" />
+                <element signature="e#2119#2120#0" expanded="true" />
+                <element signature="e#2163#2164#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -175,14 +171,14 @@
       <file leaf-file-name="SecretCode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/SecretCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
+            <state relative-caret-position="360">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#SecretCode#0;class#SecretCode#0" expanded="true" />
-                <element signature="e#598#599#0" expanded="true" />
-                <element signature="e#642#643#0" expanded="true" />
+                <element signature="e#645#646#0" expanded="true" />
+                <element signature="e#689#690#0" expanded="true" />
                 <element signature="method#generateSecretCode#0;class#SecretCode#0" expanded="true" />
+                <element signature="method#displaySecretCode#0;class#SecretCode#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -229,17 +225,18 @@
         <option value="$PROJECT_DIR$/src/Assignment7/GuessPeg.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/Peg.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/ResultPeg.java" />
-        <option value="$PROJECT_DIR$/src/Assignment7/SecretCode.java" />
-        <option value="$PROJECT_DIR$/src/Assignment7/Guess.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/Result.java" />
+        <option value="$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/GameBoard.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/Game.java" />
-        <option value="$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java" />
+        <option value="$PROJECT_DIR$/src/Assignment7/Guess.java" />
+        <option value="$PROJECT_DIR$/src/Assignment7/SecretCode.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="-4" />
+    <option name="x" value="1366" />
+    <option name="y" value="-772" />
     <option name="width" value="1366" />
     <option name="height" value="772" />
   </component>
@@ -299,7 +296,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project5_Cars" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Assignment7/java.policy.applet" />
   </component>
   <component name="RunManager" selected="Applet.Game">
     <configuration default="false" name="TestGameBoard.duplicatePegsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -404,13 +401,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="Game" type="Applet" factoryName="Applet" temporary="true">
-      <option name="WIDTH" value="0" />
-      <option name="MAIN_CLASS_NAME" value="Assignment7.Game" />
-      <option name="HEIGHT" value="0" />
-      <module name="BonusProject_Mastermind" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -631,20 +621,27 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="false" name="Game" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="0" />
+      <option name="MAIN_CLASS_NAME" value="Assignment7.Game" />
+      <option name="HEIGHT" value="0" />
+      <option name="POLICY_FILE" value="file://$PROJECT_DIR$/src/Assignment7/java.policy.applet" />
+      <module name="BonusProject_Mastermind" />
+      <method />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.TestGameBoard.duplicatePegsTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.TestGameBoard.multipleGuessTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TestGameBoard.sequenceMatchTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TestGameBoard.historyTest" />
-      <item index="4" class="java.lang.String" itemvalue="Applet.Game" />
+      <item index="0" class="java.lang.String" itemvalue="Applet.Game" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TestGameBoard.duplicatePegsTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestGameBoard.multipleGuessTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestGameBoard.sequenceMatchTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TestGameBoard.historyTest" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Applet.Game" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestGameBoard.historyTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestGameBoard.multipleGuessTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TestGameBoard.sequenceMatchTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TestGameBoard.duplicatePegsTest" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestGameBoard.historyTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestGameBoard.multipleGuessTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestGameBoard.sequenceMatchTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestGameBoard.duplicatePegsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -698,17 +695,17 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
+    <frame x="1366" y="-772" width="1366" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50454545" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6037879" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -717,7 +714,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32253087" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38734567" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -739,7 +736,21 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Assignment7/Game.java</url>
+          <line>163</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Assignment7/Game.java</url>
+          <line>115</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -762,7 +773,6 @@
             <element signature="method#start#0;class#Game#0" expanded="true" />
             <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
-            <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#keyTyped#0;class#Game#0" expanded="true" />
             <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
@@ -803,7 +813,6 @@
             <element signature="method#start#0;class#Game#0" expanded="true" />
             <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
-            <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#keyTyped#0;class#Game#0" expanded="true" />
             <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
@@ -821,7 +830,6 @@
             <element signature="method#start#0;class#Game#0" expanded="true" />
             <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
-            <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#keyTyped#0;class#Game#0" expanded="true" />
             <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
@@ -883,16 +891,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assignment7/SecretCode.java">
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/security/AccessControlContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="471" column="0" selection-start-line="471" selection-start-column="0" selection-end-line="471" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="35" column="54" selection-start-line="0" selection-start-column="2" selection-end-line="241" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assignment7/GameBoard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
-          <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
+          <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#SecretCode#0;class#SecretCode#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
+            <element signature="method#GameBoard#0;class#GameBoard#0" expanded="true" />
+            <element signature="method#GameBoard#1;class#GameBoard#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+            <element signature="e#985#986#0" expanded="true" />
+            <element signature="e#1026#1027#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="method#setxyBoard#0;class#GameBoard#0" expanded="true" />
+            <element signature="e#1212#1213#0" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1282#1283#0" expanded="true" />
+            <element signature="e#1318#1319#0" expanded="true" />
+            <element signature="method#addGuess#0;class#GameBoard#0" expanded="true" />
+            <element signature="method#displayHistory#0;class#GameBoard#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assignment7/SecretCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
             <element signature="method#generateSecretCode#0;class#SecretCode#0" expanded="true" />
+            <element signature="method#displaySecretCode#0;class#SecretCode#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -923,8 +970,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment7/Guess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="85" column="4" selection-start-line="85" selection-start-column="4" selection-end-line="94" selection-end-column="5" />
+        <state relative-caret-position="402">
+          <caret line="110" column="22" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#217#218#0" expanded="true" />
@@ -934,14 +981,16 @@
             <element signature="method#makeGuess#0;class#Guess#0" expanded="true" />
             <element signature="method#makeGuess#1;class#Guess#0" expanded="true" />
             <element signature="method#displayGuess#0;class#Guess#0" expanded="true" />
+            <element signature="e#2119#2120#0" expanded="true" />
+            <element signature="e#2163#2164#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment7/Peg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="97" column="16" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
+        <state relative-caret-position="242">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
             <element signature="method#Peg#0;class#Peg#0" expanded="true" />
             <element signature="method#Peg#1;class#Peg#0" expanded="true" />
@@ -955,7 +1004,8 @@
             <element signature="e#1134#1135#0" expanded="true" />
             <element signature="e#1171#1172#0" expanded="true" />
             <element signature="e#1203#1204#0" expanded="true" />
-            <element signature="method#paintPeg#0;class#Peg#0" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#2039#2040#0" expanded="true" />
             <element signature="e#2108#2109#0" expanded="true" />
             <element signature="method#pickColor#0;class#Peg#0" expanded="true" />
@@ -974,52 +1024,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assignment7/GameBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="250" column="25" selection-start-line="250" selection-start-column="25" selection-end-line="250" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#GameBoard#0;class#GameBoard#0" expanded="true" />
-            <element signature="method#GameBoard#1;class#GameBoard#0" expanded="true" />
-            <element signature="e#956#957#0" expanded="true" />
-            <element signature="e#985#986#0" expanded="true" />
-            <element signature="e#1026#1027#0" expanded="true" />
-            <element signature="e#1062#1063#0" expanded="true" />
-            <element signature="method#setxyBoard#0;class#GameBoard#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1282#1283#0" expanded="true" />
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="method#addGuess#0;class#GameBoard#0" expanded="true" />
-            <element signature="method#displayHistory#0;class#GameBoard#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment7/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        <state relative-caret-position="226">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#Game#0" expanded="true" />
             <element signature="method#start#0;class#Game#0" expanded="true" />
             <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
-            <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#keyTyped#0;class#Game#0" expanded="true" />
             <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JunitTesting/TestGameBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="35" column="54" selection-start-line="0" selection-start-column="2" selection-end-line="241" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>

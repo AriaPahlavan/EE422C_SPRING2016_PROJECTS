@@ -4,6 +4,7 @@ import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 
 /**
  * BonusProject_Mastermind
@@ -14,6 +15,9 @@ public class Game extends Applet implements Runnable, KeyListener {
     private Image image;
     private GameBoard myGameBoard;
     private boolean isStarted;
+    private Guess tempGuess;
+    private ArrayList<RoundPegColor> tempPegs;
+    private boolean waiting = true;
 
 
     @Override
@@ -33,6 +37,9 @@ public class Game extends Applet implements Runnable, KeyListener {
      */
     public void start() {
         //setting up the game!
+        tempGuess = new Guess();
+        tempPegs = new ArrayList<>();
+
         myGameBoard = new GameBoard();
         myGameBoard.setxyBoard(500, 100);
         Thread thread = new Thread(this);
@@ -52,6 +59,15 @@ public class Game extends Applet implements Runnable, KeyListener {
                 if ( isStarted ) {
 
                     //TODO what to do when they hit Enter
+                    if ( waiting ){
+                        tempGuess.makeGuess(tempPegs);
+                        for ( RoundPegColor r : tempPegs ){
+                            System.out.println(r);
+                            System.out.println("-------------------");
+                        }
+                    }
+
+                    repaint();
                 }
             }
             //when the code is guessed
@@ -59,7 +75,10 @@ public class Game extends Applet implements Runnable, KeyListener {
                 //TODO what to do when they guessed the code
             }
 
-            repaint();
+            for ( RoundPegColor r : tempPegs ){
+                System.out.println(r);
+                System.out.println("-------------------");
+            }
             try {
                 Thread.sleep(16);
             } catch (InterruptedException e) {
@@ -90,9 +109,11 @@ public class Game extends Applet implements Runnable, KeyListener {
     @Override
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
-
         // Paint board and it's elements
         myGameBoard.paintBoard(g2);
+
+
+        tempGuess.displayTempGuess(g2);
 
 
 //        //Displaying the time
@@ -139,9 +160,30 @@ public class Game extends Applet implements Runnable, KeyListener {
             isStarted = true;
         }
 
-//        //Resets the race
-//        if ( e.getKeyCode() == KeyEvent.VK_R && isFinished() )
-//            reset();
+        //update guess
+        if (tempPegs.size() <= 4 &&  waiting){
+            switch (e.getKeyCode()){
+                case KeyEvent.VK_B:
+                    tempPegs.add(RoundPegColor.blue);
+                    break;
+                case KeyEvent.VK_R:
+                    tempPegs.add(RoundPegColor.red);
+                    break;
+                case KeyEvent.VK_G:
+                    tempPegs.add(RoundPegColor.green);
+                    break;
+                case KeyEvent.VK_P:
+                    tempPegs.add(RoundPegColor.purple);
+                    break;
+                case KeyEvent.VK_O:
+                    tempPegs.add(RoundPegColor.orange);
+                    break;
+                case KeyEvent.VK_Y:
+                    tempPegs.add(RoundPegColor.yellow);
+                    break;
+            }
+        }
+
 //
 //        //Disabling popup!
 //        if ( e.getKeyCode() == KeyEvent.VK_N )

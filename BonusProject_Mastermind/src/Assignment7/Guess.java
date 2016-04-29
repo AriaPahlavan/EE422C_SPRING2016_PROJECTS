@@ -16,6 +16,7 @@ public class Guess {
 
     /**
      * For testing purposes only!
+     *
      * @param pegColors
      */
     public Guess(ArrayList<RoundPegColor> pegColors) {
@@ -25,6 +26,7 @@ public class Guess {
 
     /**
      * For testing purposes only!
+     *
      * @param pegColors
      */
     public Guess(RoundPegColor[] pegColors) {
@@ -37,7 +39,6 @@ public class Guess {
     }
 
 
-
     public GuessPeg[] getGuess() {
         return guess;
     }
@@ -48,47 +49,66 @@ public class Guess {
 
     /**
      * This method receives 4 colors and makes an array of 4 guessPegs
+     *
      * @param pegColors
      */
-    public void makeGuess(ArrayList<RoundPegColor> pegColors){
+    public void makeGuess(ArrayList<RoundPegColor> pegColors) {
 
         int i = 0;
-        for ( RoundPegColor pegColor : pegColors ){
+        for ( RoundPegColor pegColor : pegColors ) {
 
             //make a peg for each color
             GuessPeg newPeg = new GuessPeg(pegColor);
 
             //add the new peg to guess
             guess[i] = newPeg;
-            i+=1;
+            i += 1;
         }
     }
 
 
     /**
      * This method receives 4 colors and makes an array of 4 guessPegs
+     *
      * @param pegColors
      */
-    public void makeGuess(RoundPegColor[] pegColors){
+    public void makeGuess(RoundPegColor[] pegColors) {
 
         int i = 0;
-        for ( RoundPegColor pegColor : pegColors ){
+        for ( RoundPegColor pegColor : pegColors ) {
 
             //make a peg for each color
             GuessPeg newPeg = new GuessPeg(pegColor);
 
             //add the new peg to guess
             guess[i] = newPeg;
-            i+=1;
+            i += 1;
         }
     }
 
     /**
      * Displays users guess
      */
-    public void displayGuess(Graphics2D g2){
-        for(int i = 0; i < 4; i+=1){
+    public void displayGuess(Graphics2D g2) {
+        for ( int i = 0; i < 4; i += 1 ) {
 
+            System.out.println((guess[i].getColor()));
+            guess[i].paintPeg(g2);
+        }
+    }
+
+    /**
+     * This method resets the guess
+     */
+    public void reset() {
+        this.guess = new GuessPeg[4];
+    }
+
+    public void displayTempGuess(Graphics2D g2) {
+        for ( int i = 0; i < guess.length; i += 1 ) {
+
+            if ( guess[i] == null)
+                break;
             System.out.println((guess[i].getColor()));
             guess[i].paintPeg(g2);
         }

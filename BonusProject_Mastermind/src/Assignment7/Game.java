@@ -14,13 +14,15 @@ public class Game extends Applet implements Runnable, KeyListener {
     private Graphics doubleG;
     private Image image;
     private GameBoard myGameBoard;
-    private boolean isStarted;
+    private boolean isStarted = false;
     private Guess tempGuess;
     private ArrayList<RoundPegColor> tempPegs;
     private boolean waiting = true;
     private int numTempGuess = 0;
     private final int MAX_GUESS = 12;
     private boolean isOver = false;
+    private boolean isPromptDisabled = false;
+    private Prompt winnerPrompt;
 
 
     @Override
@@ -42,6 +44,7 @@ public class Game extends Applet implements Runnable, KeyListener {
         //setting up the game!
         tempGuess = new Guess();
         tempPegs = new ArrayList<>();
+        winnerPrompt = new Prompt();
 
         myGameBoard = new GameBoard();
         myGameBoard.setxyBoard(500, 50);
@@ -57,7 +60,7 @@ public class Game extends Applet implements Runnable, KeyListener {
     public void run() {
         while ( true ) {
 
-            if ( myGameBoard.getGuesses().size() == MAX_GUESS )
+            if ( myGameBoard.getGuesses().size() == MAX_GUESS || myGameBoard.isGuessMatch() )
                 isOver = true;
 
 
@@ -132,40 +135,28 @@ public class Game extends Applet implements Runnable, KeyListener {
             myGameBoard.paintBoard(g2);
             tempGuess.displayTempGuess(g2);
             tempGuess.reset();
-//            g2.setColor(new Color(205,133,63));
-//            g2.fillRoundRect(522, 80, 350, 60, 10, 360);
+            g2.setColor(new Color(205,133,63));
+            g2.fillRoundRect(522, 80, 350, 60, 10, 360);
 
 
         }
 
-//        //Displaying the time
-//        String elapsedTime = new Integer((int) (timer.getElapsedTime() * 0.001)).toString();
-//        g2.setFont(TIMER_FONT);
-//        g2.setColor(Color.lightGray);
-//        g2.drawString("Time: ", getWidth() - 550, 50);
-//        g2.drawString(elapsedTime, getWidth() - 350, 50);
-//        g2.drawString(" seconds", getWidth() - 335, 50);
-//        g2.setColor(new Color(255, 0, 43));
-//        g2.drawString("Time: ", getWidth() - 550 - 1, 50 + 2);
-//        g2.drawString(elapsedTime, getWidth() - 350 - 1, 50 + 2);
-//        g2.drawString(" seconds", getWidth() - 335 - 1, 50 + 2);
 
-//        //popup before starting the race
-//        if ( !isPromptDisabled )
-//            if ( !isStarted ) {
-//                winnerPrompt.startGame(g2);
-//            } else {
-//                if ( !isFinished() ) {
-//
-//                    winnerPrompt.setPROMPT_HEIGHT(0);
-//                    winnerPrompt.setPROMPT_WIDTH(0);
-//                    winnerPrompt.setDone(false);
-//                }
-//            }
-//
-//        //popup for game stats
-//        if ( isFinished() )
-//            winnerPrompt.paint(this, g);
+        //popup before starting the race
+        if ( !isPromptDisabled )
+            if ( !isStarted )
+                this.winnerPrompt.startGame(g2);
+
+
+        if ( isOver ) {
+            if ( myGameBoard.isGuessMatch() ) {
+                winnerPrompt.endGame(g2, "Congrats! You won :)", myGameBoard);
+            } else
+                winnerPrompt.endGame(g2, "You lost :(", null);
+        }
+
+
+
     }
 
 
@@ -177,24 +168,27 @@ public class Game extends Applet implements Runnable, KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         //Notifies that user wants to start the race
-        if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER) {
+        if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER ) {
             isStarted = true;
         }
 
+        if ( isOver )
+            if ( e.getKeyCode() == KeyEvent.VK_R ) {
+                reset();
+            }
+
+
         // Register guess
         if ( e.getKeyCode() == KeyEvent.VK_ENTER && tempPegs.size() == 4 ) {
-            if ( !isOver &&  !myGameBoard.isGuessMatch() ) {
+            if ( !isOver && !myGameBoard.isGuessMatch() ) {
                 configureTempGuess();
                 tempPegs.clear();
                 myGameBoard.addGuess(tempGuess);
                 tempGuess = new Guess();
             }
-            else {
-                reset();
-            }
         }
 
-        //Notifies that user wants to start the race
+        //Notifies that user wantisStarteds to start the race
         if ( e.getKeyCode() == KeyEvent.VK_BACK_SPACE || e.getKeyCode() == KeyEvent.VK_DELETE ) {
             if ( tempPegs.size() > 0 ) {
                 tempPegs.remove(tempPegs.size() - 1);
@@ -225,6 +219,7 @@ public class Game extends Applet implements Runnable, KeyListener {
             }
 //            numTempGuess+=1;
         }
+
 
 //
 //        //Disabling popup!

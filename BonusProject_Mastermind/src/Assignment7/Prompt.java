@@ -58,15 +58,16 @@ public class Prompt {
         g2.setColor(Color.BLACK);
 
         g2.drawString("Press Enter or Space key to play...", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 90);
-        g2.drawString("Press R at the end to play again.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 130);
-        g2.drawString("R, Y, O, P, G, B correspond to pegs of color", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 160);
-        g2.drawString("red, yellow, purple, green, blue, respectively.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 190);
-        g2.drawString("Press Backspace or Delete to undo last peg.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 230);
-        g2.drawString("Press Enter to place your new guess pegs", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 270);
-        g2.drawString("in corresponding holes to be checked.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 310);
-        g2.drawString("Press Q if you want to give up.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 350);
+        g2.drawString("Press Backspace or Delete to undo last peg.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 130);
+        g2.drawString("Press Enter to place your new guess pegs", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 160);
+        g2.drawString("in corresponding holes to be checked.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 190);
+        g2.drawString("Press Q if you want to give up trying.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 230);
+        g2.drawString("", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 270);
+        g2.drawString("", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 310);
+        g2.drawString("", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 350);
 
-
+//        R, Y, O, P, G, B correspond to pegs of color
+//        red, yellow, purple, green, blue, respectively
     }
 
 

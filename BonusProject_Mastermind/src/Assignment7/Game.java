@@ -28,7 +28,8 @@ public class Game extends Applet implements Runnable, KeyListener {
     private Prompt prompt;
     private boolean keyPressed = true;
     private GameStatus status = GameStatus.NOT_STRTD;
-    private boolean debugMode = false;
+    private boolean debugMode = true;
+    private boolean promptInstructions = false;
 
     @Override
     /**
@@ -135,15 +136,17 @@ public class Game extends Applet implements Runnable, KeyListener {
         if ( status == GameStatus.WON || status == GameStatus.LOST ) {
             // Paint board and it's elements
             myGameBoard.paintGameBoard(g2);
-        } else {
+        } else if ( status != GameStatus.NOT_STRTD || isPromptDisabled ) {
             // Paint board and it's elements and guess
             myGameBoard.paintGameBoard(g2);
             tempGuess.displayTempGuess(g2);
             tempGuess.reset();
 
             //code cover
-            g2.setColor(new Color(205, 133, 63));
-            g2.fillRoundRect(522, 80, 350, 60, 10, 360);
+            if ( !debugMode ) {
+                g2.setColor(new Color(205, 133, 63));
+                g2.fillRoundRect(522, 80, 350, 60, 10, 360);
+            }
         }
 
 
@@ -155,7 +158,7 @@ public class Game extends Applet implements Runnable, KeyListener {
 
         if ( status == GameStatus.WON ) {
             prompt.endGame(g2, "Congrats! You won :)", myGameBoard);
-        } else if ( status == GameStatus.LOST ){
+        } else if ( status == GameStatus.LOST ) {
             prompt.endGame(g2, "You lost :(", myGameBoard);
         }
     }
@@ -227,18 +230,19 @@ public class Game extends Applet implements Runnable, KeyListener {
 
 
         //Disabling popup!
-        if ( e.getKeyCode() == KeyEvent.VK_D )
+        if ( e.getKeyCode() == KeyEvent.VK_D ) {
             isPromptDisabled = true;
 
+            if ( status == GameStatus.NOT_STRTD )
+                status = GameStatus.IN_PRGRSS;
+        }
 
         //Enabling popup!
         if ( e.getKeyCode() == KeyEvent.VK_E )
             isPromptDisabled = false;
-//
-//        //S for Sport!! ;)
-//
-//        if ( e.getKeyCode() == KeyEvent.VK_S )
-//            isSport = true;
+
+        if ( e.getKeyCode() == KeyEvent.VK_H )
+            promptInstructions = true;
 
 
         keyPressed = true;
@@ -252,7 +256,11 @@ public class Game extends Applet implements Runnable, KeyListener {
         myGameBoard = new GameBoard();
         myGameBoard.getGameBoard().setxyBoard(500, 50);
 
-        status = GameStatus.NOT_STRTD;
+        if ( isPromptDisabled ) {
+            status = GameStatus.IN_PRGRSS;
+        } else
+            status = GameStatus.NOT_STRTD;
+
         keyPressed = true;
     }
 

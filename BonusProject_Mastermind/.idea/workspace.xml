@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="039e1ec8-789c-4264-85aa-9f063ea18884" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment7/Game.java" afterPath="$PROJECT_DIR$/src/Assignment7/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment7/Peg.java" afterPath="$PROJECT_DIR$/src/Assignment7/Peg.java" />
     </list>
     <list id="0220926e-bf47-4d15-8031-cb901fc093da" name="New changelist" comment="" />
     <ignored path="BonusProject_Mastermind.iws" />
@@ -58,15 +59,15 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="144" column="27" selection-start-line="144" selection-start-column="24" selection-end-line="144" selection-end-column="27" />
+            <state relative-caret-position="162">
+              <caret line="236" column="46" selection-start-line="236" selection-start-column="46" selection-end-line="236" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#start#0;class#Game#0" expanded="true" />
                 <element signature="method#run#0;class#Game#0" expanded="true" />
                 <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
                 <element signature="method#update#0;class#Game#0" expanded="true" />
-                <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+                <element signature="method#paint#0;class#Game#0" expanded="true" />
                 <element signature="method#reset#0;class#Game#0" expanded="true" />
                 <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
               </folding>
@@ -77,7 +78,7 @@
       <file leaf-file-name="Prompt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/Prompt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1206">
+            <state relative-caret-position="645">
               <caret line="73" column="76" selection-start-line="73" selection-start-column="76" selection-end-line="73" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -114,9 +115,13 @@
       <file leaf-file-name="Peg.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/Peg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="522">
+              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+              <folding>
+                <element signature="method#paintPeg#0;class#Peg#0" expanded="true" />
+                <element signature="method#paintCodePeg#0;class#Peg#0" expanded="true" />
+                <element signature="method#pickColor#0;class#Peg#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -197,9 +202,9 @@
         <option value="$PROJECT_DIR$/src/Assignment7/SecretCode.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/SecretPeg.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/Prompt.java" />
-        <option value="$PROJECT_DIR$/src/Assignment7/Peg.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/Board.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/GameBoard.java" />
+        <option value="$PROJECT_DIR$/src/Assignment7/Peg.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/Game.java" />
       </list>
     </option>
@@ -732,7 +737,7 @@
             <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
-            <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#reset#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
@@ -774,7 +779,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="method#paintPeg#0;class#Peg#0" expanded="true" />
+            <element signature="method#paintCodePeg#0;class#Peg#0" expanded="true" />
+            <element signature="method#pickColor#0;class#Peg#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -832,7 +841,7 @@
             <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
-            <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#reset#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
@@ -861,7 +870,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="method#paintPeg#0;class#Peg#0" expanded="true" />
+            <element signature="method#paintCodePeg#0;class#Peg#0" expanded="true" />
+            <element signature="method#pickColor#0;class#Peg#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -919,7 +932,7 @@
             <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
-            <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#reset#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
@@ -948,7 +961,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1458">
           <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#paintPeg#0;class#Peg#0" expanded="true" />
+            <element signature="method#paintCodePeg#0;class#Peg#0" expanded="true" />
+            <element signature="method#pickColor#0;class#Peg#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -985,7 +1002,7 @@
             <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
-            <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#reset#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
@@ -1015,7 +1032,7 @@
             <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
-            <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#reset#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
@@ -1032,7 +1049,7 @@
             <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
-            <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#reset#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
@@ -1136,14 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assignment7/Peg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment7/SecretCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1184,9 +1193,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assignment7/Peg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <element signature="method#paintPeg#0;class#Peg#0" expanded="true" />
+            <element signature="method#paintCodePeg#0;class#Peg#0" expanded="true" />
+            <element signature="method#pickColor#0;class#Peg#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment7/Prompt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1206">
+        <state relative-caret-position="645">
           <caret line="73" column="76" selection-start-line="73" selection-start-column="76" selection-end-line="73" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1199,15 +1220,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment7/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="144" column="27" selection-start-line="144" selection-start-column="24" selection-end-line="144" selection-end-column="27" />
+        <state relative-caret-position="162">
+          <caret line="236" column="46" selection-start-line="236" selection-start-column="46" selection-end-line="236" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Game#0" expanded="true" />
             <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
-            <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#reset#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>

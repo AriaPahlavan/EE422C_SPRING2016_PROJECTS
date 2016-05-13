@@ -146,7 +146,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
             //Displaying the cars
             for ( int i = 0; i < myCar.length; i += 1 ){
                 myCar[i].paintSport(g2);
-                if ( myCar[i].getDxCar() != 0 )
+                if ( myCar[i].getDxCar() != 0 && !finished)
                     myCar[i].paintNitro(g2);
             }
 

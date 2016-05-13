@@ -11,9 +11,9 @@ public class Peg {
     private RoundPegColor color;
     private boolean isMatched;
     private int position;
-    private final int PEG_RADIOUS = 20;
-    private final int CODE_PEG_RADIOUS = 30;
-    private final int RESULT_PEG_RADIOUS = 10;
+    protected static final int PEG_RADIOUS = 20;
+    private static final int CODE_PEG_RADIOUS = 30;
+    protected static final int RESULT_PEG_RADIOUS = 10;
     private int yPeg;
     private int xPeg;
     protected static Color PURPLE = new Color(76, 0, 153);

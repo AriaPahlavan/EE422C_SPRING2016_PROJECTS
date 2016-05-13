@@ -6,24 +6,29 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
+enum GameStatus {
+    NOT_STRTD,
+    LOST,
+    WON,
+    IN_PRGRSS
+}
+
 /**
  * BonusProject_Mastermind
  * Created by Aria Pahlavan on Apr 2016.
  */
 public class Game extends Applet implements Runnable, KeyListener {
-    private Graphics doubleG;
+    private Graphics double
     private Image image;
     private GameBoard myGameBoard;
-    private boolean isStarted = false;
     private Guess tempGuess;
     private ArrayList<RoundPegColor> tempPegs;
-    private boolean waiting = true;
-    private int numTempGuess = 0;
     private final int MAX_GUESS = 12;
     private boolean isOver = false;
     private boolean isPromptDisabled = false;
-    private Prompt winnerPrompt;
-
+    private Prompt prompt;
+    private boolean keyPressed = true;
+    private GameStatus status = GameStatus.NOT_STRTD;
 
     @Override
     /**
@@ -44,13 +49,13 @@ public class Game extends Applet implements Runnable, KeyListener {
         //setting up the game!
         tempGuess = new Guess();
         tempPegs = new ArrayList<>();
-        winnerPrompt = new Prompt();
+        prompt = new Prompt();
 
         myGameBoard = new GameBoard();
-        myGameBoard.setxyBoard(500, 50);
+        myGameBoard.getGameBoard().setxyBoard(500, 40);
         Thread thread = new Thread(this);
         thread.start();
-//        winnerPrompt = new Prompt();
+        prompt = new Prompt();
     }
 
     @Override
@@ -60,31 +65,31 @@ public class Game extends Applet implements Runnable, KeyListener {
     public void run() {
         while ( true ) {
 
-            if ( myGameBoard.getGuesses().size() == MAX_GUESS || myGameBoard.isGuessMatch() )
-                isOver = true;
+            //repaint only if the user is interacting with game
+            if ( keyPressed ) {
 
-
-            //while the guess is incorrect
-            if ( !myGameBoard.isGuessMatch() ) {
-                //When the Enter or Space key is pressed, start the game
-                if ( isStarted ) {
-
-                    //TODO what to do when they hit Enter
-                    if ( waiting ) {
-                        configureTempGuess();
-                    }
-
-                    repaint();
+                //if use won
+                if ( myGameBoard.isGuessMatch() ) {
+                    status = GameStatus.WON;
                 }
-            }
-            //when the code is guessed
-            else {
-                //TODO what to do when they guessed the code
-                repaint();
-            }
+                //if the user hasn't guessed right and reached max # of guesses
+                else if ( myGameBoard.getGuesses().size() == MAX_GUESS ) {
+                    status = GameStatus.LOST;
+                }
 
+                //When the Enter or Space key is pressed, start the game
+                if ( status == GameStatus.IN_PRGRSS ) {
+
+                    //Game has started and correct guess was not entered!
+                    configureTempGuess();
+                }
+
+                repaint();
+
+                keyPressed = false;
+            }
             try {
-                Thread.sleep(16);
+                Thread.sleep(30);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -100,7 +105,7 @@ public class Game extends Applet implements Runnable, KeyListener {
             if ( currPeg == null )
                 break;
 
-            currPeg.setxyPeg(540 + 50 * i, 575 - 35 * (guessNum));
+            currPeg.setxyPeg(565 + 50 * i, 525 - 35 * (guessNum));
         }
     }
 
@@ -127,34 +132,33 @@ public class Game extends Applet implements Runnable, KeyListener {
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
 
-        if ( myGameBoard.isGuessMatch() || isOver ) {
+        if ( status == GameStatus.WON || status == GameStatus.LOST ) {
             // Paint board and it's elements
-            myGameBoard.paintBoard(g2);
+            myGameBoard.paintGameBoard(g2);
         } else {
-            // Paint board and it's elements
-            myGameBoard.paintBoard(g2);
+            // Paint board and it's elements and guess
+            myGameBoard.paintGameBoard(g2);
             tempGuess.displayTempGuess(g2);
             tempGuess.reset();
-            g2.setColor(new Color(205,133,63));
+
+            //code cover
+            g2.setColor(new Color(205, 133, 63));
             g2.fillRoundRect(522, 80, 350, 60, 10, 360);
-
-
         }
 
 
         //popup before starting the race
         if ( !isPromptDisabled )
-            if ( !isStarted )
-                this.winnerPrompt.startGame(g2);
+            if ( status == GameStatus.NOT_STRTD )
+                this.prompt.startGame(g2);
 
 
         if ( isOver ) {
             if ( myGameBoard.isGuessMatch() ) {
-                winnerPrompt.endGame(g2, "Congrats! You won :)", myGameBoard);
+                prompt.endGame(g2, "Congrats! You won :)", myGameBoard);
             } else
-                winnerPrompt.endGame(g2, "You lost :(", null);
+                prompt.endGame(g2, "You lost :(", myGameBoard);
         }
-
 
 
     }
@@ -167,58 +171,62 @@ public class Game extends Applet implements Runnable, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        //Notifies that user wants to start the race
-        if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER ) {
-            isStarted = true;
-        }
-
-        if ( isOver )
-            if ( e.getKeyCode() == KeyEvent.VK_R ) {
-                reset();
-            }
 
 
-        // Register guess
-        if ( e.getKeyCode() == KeyEvent.VK_ENTER && tempPegs.size() == 4 ) {
-            if ( !isOver && !myGameBoard.isGuessMatch() ) {
+        if ( status == GameStatus.IN_PRGRSS ) {
+
+            // Register guess
+            if ( e.getKeyCode() == KeyEvent.VK_ENTER && tempPegs.size() == 4 ) {
                 configureTempGuess();
                 tempPegs.clear();
                 myGameBoard.addGuess(tempGuess);
                 tempGuess = new Guess();
             }
-        }
 
-        //Notifies that user wantisStarteds to start the race
-        if ( e.getKeyCode() == KeyEvent.VK_BACK_SPACE || e.getKeyCode() == KeyEvent.VK_DELETE ) {
-            if ( tempPegs.size() > 0 ) {
-                tempPegs.remove(tempPegs.size() - 1);
+            //undo prev guess peg entered by user
+            if ( e.getKeyCode() == KeyEvent.VK_BACK_SPACE || e.getKeyCode() == KeyEvent.VK_DELETE ) {
+                if ( tempPegs.size() > 0 ) {
+                    tempPegs.remove(tempPegs.size() - 1);
+                }
+            }
+
+            //update guess
+            if ( tempPegs.size() < 4 && status == GameStatus.IN_PRGRSS && !(e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER) ) {
+                switch (e.getKeyCode()) {
+                    case KeyEvent.VK_B:
+                        tempPegs.add(RoundPegColor.blue);
+                        break;
+                    case KeyEvent.VK_R:
+                        tempPegs.add(RoundPegColor.red);
+                        break;
+                    case KeyEvent.VK_G:
+                        tempPegs.add(RoundPegColor.green);
+                        break;
+                    case KeyEvent.VK_P:
+                        tempPegs.add(RoundPegColor.purple);
+                        break;
+                    case KeyEvent.VK_O:
+                        tempPegs.add(RoundPegColor.orange);
+                        break;
+                    case KeyEvent.VK_Y:
+                        tempPegs.add(RoundPegColor.yellow);
+                        break;
+                }
+
+
             }
         }
 
-        //update guess
-        if ( tempPegs.size() < 4 && waiting && !isOver && isStarted && !(e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER) ) {
-            switch (e.getKeyCode()) {
-                case KeyEvent.VK_B:
-                    tempPegs.add(RoundPegColor.blue);
-                    break;
-                case KeyEvent.VK_R:
-                    tempPegs.add(RoundPegColor.red);
-                    break;
-                case KeyEvent.VK_G:
-                    tempPegs.add(RoundPegColor.green);
-                    break;
-                case KeyEvent.VK_P:
-                    tempPegs.add(RoundPegColor.purple);
-                    break;
-                case KeyEvent.VK_O:
-                    tempPegs.add(RoundPegColor.orange);
-                    break;
-                case KeyEvent.VK_Y:
-                    tempPegs.add(RoundPegColor.yellow);
-                    break;
+        //Notifies that user wants to start the race
+        if ( status == GameStatus.NOT_STRTD )
+            if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER ) {
+                status = GameStatus.IN_PRGRSS;
             }
-//            numTempGuess+=1;
-        }
+
+        //reset after game's over
+        if ( status == GameStatus.LOST || status == GameStatus.WON )
+            if ( e.getKeyCode() == KeyEvent.VK_R )
+                reset();
 
 
 //
@@ -236,6 +244,9 @@ public class Game extends Applet implements Runnable, KeyListener {
 //        if ( e.getKeyCode() == KeyEvent.VK_S )
 //            isSport = true;
 
+
+        keyPressed = true;
+
     }
 
     private void reset() {
@@ -243,11 +254,10 @@ public class Game extends Applet implements Runnable, KeyListener {
         tempPegs = new ArrayList<>();
 
         myGameBoard = new GameBoard();
-        myGameBoard.setxyBoard(500, 50);
+        myGameBoard.getGameBoard().setxyBoard(500, 50);
 
-        isStarted = true;
-        waiting = true;
-        numTempGuess = 0;
+        status = GameStatus.NOT_STRTD;
+
         isOver = false;
     }
 

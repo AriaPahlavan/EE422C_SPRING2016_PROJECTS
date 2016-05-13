@@ -28,6 +28,7 @@ public class CarDrawer {
     private final int BACKUP_SPEED_LIMIT = 20;
     private String carNum;
     private final Font CAR_FONT = new Font("Century SchoolBook L Bold", Font.ITALIC, (int) (WIDTH_CAR) / 6);
+    private int nitroAnimation = 0;
 
     //Constructors
     public CarDrawer() {
@@ -222,11 +223,11 @@ public class CarDrawer {
         Point2D.Double r3_2R = new Point2D.Double(xCar + (2 * WIDTH_CAR) / 3, yCar + 1);
         Point2D.Double r2_3R = new Point2D.Double(xCar + WIDTH_CAR / 3, yCar - 1);
         Point2D.Double r3_3R = new Point2D.Double(xCar + (2 * WIDTH_CAR) / 3, yCar - 1);
-        Point2D.Double r3_2F = new Point2D.Double(xCar + (2 * WIDTH_CAR) / 3+1, yCar);
-        Point2D.Double r3_3F = new Point2D.Double(xCar + (2 * WIDTH_CAR) / 3-1, yCar);
+        Point2D.Double r3_2F = new Point2D.Double(xCar + (2 * WIDTH_CAR) / 3 + 1, yCar);
+        Point2D.Double r3_3F = new Point2D.Double(xCar + (2 * WIDTH_CAR) / 3 - 1, yCar);
         Point2D.Double r4 = new Point2D.Double(xCar + (5 * WIDTH_CAR) / 6, yCar + (5 * HEIGHT_CAR) / 16);
-        Point2D.Double r4_2F = new Point2D.Double(xCar + (5 * WIDTH_CAR) / 6+1, yCar + (5 * HEIGHT_CAR) / 16);
-        Point2D.Double r4_3F = new Point2D.Double(xCar + (5 * WIDTH_CAR) / 6-1, yCar + (5 * HEIGHT_CAR) / 16);
+        Point2D.Double r4_2F = new Point2D.Double(xCar + (5 * WIDTH_CAR) / 6 + 1, yCar + (5 * HEIGHT_CAR) / 16);
+        Point2D.Double r4_3F = new Point2D.Double(xCar + (5 * WIDTH_CAR) / 6 - 1, yCar + (5 * HEIGHT_CAR) / 16);
 
 
 // create the windshields and roof of the car
@@ -282,82 +283,155 @@ public class CarDrawer {
 
     /**
      * Adds nitro effect!!
+     *
      * @param g2
      */
     public void paintNitro(Graphics2D g2) {
-        Point2D.Double p1 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 10);
-        Point2D.Double p2 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 15);
-        Point2D.Double p3 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 14);
-        Point2D.Double p4 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
-        Point2D.Double p5 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 11);
-        Point2D.Double p6 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 12);
-        Point2D.Double p7 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
-        Point2D.Double p8 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 11);
-        Point2D.Double p9 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 11);
-        Point2D.Double p10 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 12);
-        Point2D.Double p11= new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
-        Point2D.Double p12 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 11);
+        if ( nitroAnimation < 3 ) {
+            Point2D.Double p1 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
+            Point2D.Double p2 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 15);
+            Point2D.Double p3 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 14);
+            Point2D.Double p4 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
+            Point2D.Double p5 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 16);
+            Point2D.Double p6 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 12);
+            Point2D.Double p7 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
+            Point2D.Double p8 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 14);
+            Point2D.Double p9 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 15);
+            Point2D.Double p10 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 16);
+            Point2D.Double p11 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 15);
+            Point2D.Double p12 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
 
-        Point2D.Double n1 = new Point2D.Double(xCar - 20, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 10);
-        Point2D.Double n2 = new Point2D.Double(xCar - 16, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 15);
-        Point2D.Double n3 = new Point2D.Double(xCar - 10, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 14);
-        Point2D.Double n4 = new Point2D.Double(xCar - 18, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
-        Point2D.Double n5 = new Point2D.Double(xCar - 8, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 11);
-        Point2D.Double n6 = new Point2D.Double(xCar - 15, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 12);
-        Point2D.Double n7 = new Point2D.Double(xCar - 11, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
-        Point2D.Double n8 = new Point2D.Double(xCar - 16, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 11);
-        Point2D.Double n9 = new Point2D.Double(xCar - 20, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 11);
-        Point2D.Double n10 = new Point2D.Double(xCar - 15, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 12);
-        Point2D.Double n11 = new Point2D.Double(xCar - 18, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
-        Point2D.Double n12 = new Point2D.Double(xCar - 17, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 11);
+            Point2D.Double n1 = new Point2D.Double(xCar - 20, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 10);
+            Point2D.Double n2 = new Point2D.Double(xCar - 16, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 15);
+            Point2D.Double n3 = new Point2D.Double(xCar - 10, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 14);
+            Point2D.Double n4 = new Point2D.Double(xCar - 18, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
+            Point2D.Double n5 = new Point2D.Double(xCar - 8, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 11);
+            Point2D.Double n6 = new Point2D.Double(xCar - 15, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 12);
+            Point2D.Double n7 = new Point2D.Double(xCar - 11, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
+            Point2D.Double n8 = new Point2D.Double(xCar - 16, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 11);
+            Point2D.Double n9 = new Point2D.Double(xCar - 20, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 11);
+            Point2D.Double n10 = new Point2D.Double(xCar - 15, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 12);
+            Point2D.Double n11 = new Point2D.Double(xCar - 18, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
+            Point2D.Double n12 = new Point2D.Double(xCar - 17, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 11);
 
-        Line2D.Double nitroLine1 = new Line2D.Double(p1 , n2);
-        Line2D.Double nitroLine2 = new Line2D.Double(p2 , n3);
-        Line2D.Double nitroLine3 = new Line2D.Double(p3 , n5);
-        Line2D.Double nitroLine4 = new Line2D.Double(p4 , n6);
-        Line2D.Double nitroLine5 = new Line2D.Double(p5 , n8);
-        Line2D.Double nitroLine6 = new Line2D.Double(p6 , n1);
-        Line2D.Double nitroLine7 = new Line2D.Double(p7 , n4);
-        Line2D.Double nitroLine8 = new Line2D.Double(p8 , n7);
-        Line2D.Double nitroLine9 = new Line2D.Double(p10 , n9);
-        Line2D.Double nitroLine10 = new Line2D.Double(p12 , n12);
-        Line2D.Double nitroLine11 = new Line2D.Double(p11 , n11);
-        Line2D.Double nitroLine12 = new Line2D.Double(p9 , n10);
-
-
-
-        g2.setColor(new Color(163, 0, 44));
-        g2.draw(nitroLine9);
-        g2.setColor(new Color(196, 109, 30));
-        g2.draw(nitroLine10);
-        g2.setColor(new Color(166, 64, 0));
-        g2.draw(nitroLine11);
-        g2.setColor(new Color(223, 0, 7));
-        g2.draw(nitroLine12);
-        g2.setColor(new Color(0, 169, 193));
-        g2.draw(nitroLine1);
-        g2.setColor(new Color(129, 172, 198));
-        g2.draw(nitroLine2);
-        g2.setColor(new Color(0, 75, 134));
-        g2.draw(nitroLine3);
-        g2.setColor(new Color(0, 52, 134));
-        g2.draw(nitroLine4);
-        g2.setColor(new Color(90, 227, 231));
-        g2.draw(nitroLine5);
-        g2.setColor(new Color(0,0, 134));
-        g2.draw(nitroLine6);
-        g2.setColor(new Color(0, 59, 134));
-        g2.draw(nitroLine7);
-        g2.setColor(new Color(223, 0, 17));
-        g2.draw(nitroLine12);
-        g2.setColor(new Color(0, 89, 134));
-        g2.draw(nitroLine8);
-        g2.draw(nitroLine9);
-        g2.setColor(new Color(182, 151, 0));
+            Line2D.Double nitroLine1 = new Line2D.Double(p1, n2);
+            Line2D.Double nitroLine2 = new Line2D.Double(p2, n3);
+            Line2D.Double nitroLine3 = new Line2D.Double(p3, n5);
+            Line2D.Double nitroLine4 = new Line2D.Double(p4, n6);
+            Line2D.Double nitroLine5 = new Line2D.Double(p5, n8);
+            Line2D.Double nitroLine6 = new Line2D.Double(p6, n1);
+            Line2D.Double nitroLine7 = new Line2D.Double(p7, n4);
+            Line2D.Double nitroLine8 = new Line2D.Double(p8, n7);
+            Line2D.Double nitroLine9 = new Line2D.Double(p10, n9);
+            Line2D.Double nitroLine10 = new Line2D.Double(p12, n12);
+            Line2D.Double nitroLine11 = new Line2D.Double(p11, n11);
+            Line2D.Double nitroLine12 = new Line2D.Double(p9, n10);
 
 
+            g2.setColor(new Color(163, 0, 44));
+            g2.draw(nitroLine9);
+            g2.setColor(new Color(196, 109, 30));
+            g2.draw(nitroLine10);
+            g2.setColor(new Color(166, 64, 0));
+            g2.draw(nitroLine11);
+            g2.setColor(new Color(223, 0, 7));
+            g2.draw(nitroLine12);
+            g2.setColor(new Color(0, 169, 193));
+            g2.draw(nitroLine1);
+            g2.setColor(new Color(129, 172, 198));
+            g2.draw(nitroLine2);
+            g2.setColor(new Color(0, 75, 134));
+            g2.draw(nitroLine3);
+            g2.setColor(new Color(0, 52, 134));
+            g2.draw(nitroLine4);
+            g2.setColor(new Color(90, 227, 231));
+            g2.draw(nitroLine5);
+            g2.setColor(new Color(0, 0, 134));
+            g2.draw(nitroLine6);
+            g2.setColor(new Color(0, 59, 134));
+            g2.draw(nitroLine7);
+            g2.setColor(new Color(223, 0, 17));
+            g2.draw(nitroLine12);
+            g2.setColor(new Color(0, 89, 134));
+            g2.draw(nitroLine8);
+            g2.draw(nitroLine9);
+            g2.setColor(new Color(182, 151, 0));
+        } else if (nitroAnimation >= 3 && nitroAnimation < 7){
+            Point2D.Double p1 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 16);
+            Point2D.Double p2 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 15);
+            Point2D.Double p3 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 14);
+            Point2D.Double p4 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
+            Point2D.Double p5 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 15);
+            Point2D.Double p6 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 16);
+            Point2D.Double p7 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 12);
+            Point2D.Double p8 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 15);
+            Point2D.Double p9 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
+            Point2D.Double p10 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 14);
+            Point2D.Double p11 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 16);
+            Point2D.Double p12 = new Point2D.Double(xCar, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 15);
 
+            Point2D.Double n1 = new Point2D.Double(xCar - 20, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 10);
+            Point2D.Double n2 = new Point2D.Double(xCar - 25, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 12);
+            Point2D.Double n3 = new Point2D.Double(xCar - 30, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 14);
+            Point2D.Double n4 = new Point2D.Double(xCar - 26, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
+            Point2D.Double n5 = new Point2D.Double(xCar - 35, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 18);
+            Point2D.Double n6 = new Point2D.Double(xCar - 28, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 20);
+            Point2D.Double n7 = new Point2D.Double(xCar - 41, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
+            Point2D.Double n8 = new Point2D.Double(xCar - 26, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 12);
+            Point2D.Double n9 = new Point2D.Double(xCar - 30, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 17);
+            Point2D.Double n10 = new Point2D.Double(xCar - 45, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 12);
+            Point2D.Double n11 = new Point2D.Double(xCar - 32, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 18);
+            Point2D.Double n12 = new Point2D.Double(xCar - 25, (int) (yCar + (5 * HEIGHT_CAR) / 16) + 13);
+
+            Line2D.Double nitroLine1 = new Line2D.Double(p1, n2);
+            Line2D.Double nitroLine2 = new Line2D.Double(p2, n3);
+            Line2D.Double nitroLine3 = new Line2D.Double(p3, n5);
+            Line2D.Double nitroLine4 = new Line2D.Double(p4, n6);
+            Line2D.Double nitroLine5 = new Line2D.Double(p5, n8);
+            Line2D.Double nitroLine6 = new Line2D.Double(p6, n1);
+            Line2D.Double nitroLine7 = new Line2D.Double(p7, n4);
+            Line2D.Double nitroLine8 = new Line2D.Double(p8, n7);
+            Line2D.Double nitroLine9 = new Line2D.Double(p10, n9);
+            Line2D.Double nitroLine10 = new Line2D.Double(p12, n12);
+            Line2D.Double nitroLine11 = new Line2D.Double(p11, n11);
+            Line2D.Double nitroLine12 = new Line2D.Double(p9, n10);
+
+
+            g2.setColor(new Color(163, 0, 44));
+            g2.draw(nitroLine9);
+            g2.setColor(new Color(0, 89, 134));
+            g2.draw(nitroLine10);
+            g2.setColor(new Color(0, 0, 134));
+            g2.draw(nitroLine11);
+            g2.setColor(new Color(0, 52, 134));
+            g2.draw(nitroLine12);
+            g2.setColor(new Color(0, 169, 193));
+            g2.draw(nitroLine1);
+            g2.setColor(new Color(129, 172, 198));
+            g2.draw(nitroLine2);
+            g2.setColor(new Color(0, 75, 134));
+            g2.draw(nitroLine3);
+            g2.setColor(new Color(196, 109, 30));
+            g2.draw(nitroLine4);
+            g2.setColor(new Color(90, 227, 231));
+            g2.draw(nitroLine5);
+            g2.setColor(new Color(0, 0, 134));
+            g2.draw(nitroLine6);
+            g2.setColor(new Color(0, 59, 134));
+            g2.draw(nitroLine7);
+            g2.setColor(new Color(223, 0, 17));
+            g2.draw(nitroLine12);
+            g2.setColor(new Color(0, 59, 134));
+            g2.draw(nitroLine8);
+            g2.draw(nitroLine9);
+            g2.setColor(new Color(223, 0, 7));
+        }
+        else {}
+
+        Random random = new Random();
+
+        nitroAnimation = random.nextInt(15);
     }
 
 
-    } // end of CarDrawer
+} // end of CarDrawer

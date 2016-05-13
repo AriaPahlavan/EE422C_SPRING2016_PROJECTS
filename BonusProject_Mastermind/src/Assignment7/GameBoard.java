@@ -14,19 +14,16 @@ public class GameBoard {
     private List<Result> results;
     private boolean guessMatch = false;
     private final int MAX_GUESS = 12;
-    protected static Color boardColor = new Color(246, 163, 90);
+    private Board gameBoard;
 
 
-    private int xBoard;
-    private int yBoard;
 
 
     public GameBoard() {
         this.secretCode = new SecretCode();
         this.guesses = new ArrayList<>();
         this.results = new ArrayList<>();
-        xBoard = 0;
-        yBoard = 0;
+        gameBoard = new Board();
 
     }
 
@@ -34,29 +31,15 @@ public class GameBoard {
         this.secretCode = secretCode;
         this.guesses = guesses;
         this.results = results;
-        xBoard = 0;
-        yBoard = 0;
     }
 
-    public int getxBoard() {
-        return xBoard;
+
+    public Board getGameBoard() {
+        return gameBoard;
     }
 
-    public void setxBoard(int xBoard) {
-        this.xBoard = xBoard;
-    }
-
-    public void setxyBoard(int xBoard, int yBoard) {
-        this.xBoard = xBoard;
-        this.yBoard = yBoard;
-    }
-
-    public int getyBoard() {
-        return yBoard;
-    }
-
-    public void setyBoard(int yBoard) {
-        this.yBoard = yBoard;
+    public void setGameBoard(Board gameBoard) {
+        this.gameBoard = gameBoard;
     }
 
     public boolean isGuessMatch() {
@@ -79,9 +62,6 @@ public class GameBoard {
         return guesses;
     }
 
-    public void setGuesses(List<Guess> guesses) {
-        this.guesses = guesses;
-    }
 
     //Just for testing
     public void setSecretCode(SecretCode secretCode) {
@@ -205,12 +185,12 @@ public class GameBoard {
         for ( int i = 0; i < 4; i += 1 ) {
             if ( newResult.getResult()[i] == null )
                 break;
-            newResult.getResult()[i].setxyPeg(800 + 20 * i, 575 - 35 * (guesses.size() - 1));
+            newResult.getResult()[i].setxyPeg(800 + 20 * i, 546  - 35 * (guesses.size() - 1));
         }
 
         this.guesses.add(guess);
         for ( int i = 0; i < 4; i += 1 ) {
-            this.guesses.get(this.guesses.size()-1).getGuess()[i].setxyPeg(525 + 50 * i, 575 - 35 * (guesses.size() - 2));
+            this.guesses.get(this.guesses.size()-1).getGuess()[i].setxyPeg(535 + 70 * i, 540 - 35 * (guesses.size() - 2));
         }
     }
 
@@ -219,7 +199,6 @@ public class GameBoard {
      */
     public void displayHistory(Graphics2D g2) {
 
-        //TODO Show the code after a success
 //        if ( guessMatch )
             secretCode.displaySecretCode(g2);
 
@@ -235,13 +214,12 @@ public class GameBoard {
     }
 
     /**
-     * his method paints the board on the applet screen display.
+     * his method paints the game board and all the pegs and everything on the applet screen display.
      *
      * @param g2
      */
-    public void paintBoard(Graphics2D g2) {
-        g2.setColor(boardColor);
-        g2.fillRoundRect(xBoard, yBoard, 400, 600, 10, 360);
+    public void paintGameBoard(Graphics2D g2) {
+        gameBoard.paintBoard(g2);
         displayHistory(g2);
     }
 

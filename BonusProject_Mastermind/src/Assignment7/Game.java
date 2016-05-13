@@ -18,17 +18,17 @@ enum GameStatus {
  * Created by Aria Pahlavan on Apr 2016.
  */
 public class Game extends Applet implements Runnable, KeyListener {
-    private Graphics double
+    private Graphics doubleG;
     private Image image;
     private GameBoard myGameBoard;
     private Guess tempGuess;
     private ArrayList<RoundPegColor> tempPegs;
-    private final int MAX_GUESS = 12;
-    private boolean isOver = false;
+    private final int MAX_GUESS = 2;
     private boolean isPromptDisabled = false;
     private Prompt prompt;
     private boolean keyPressed = true;
     private GameStatus status = GameStatus.NOT_STRTD;
+    private boolean debugMode = false;
 
     @Override
     /**
@@ -153,14 +153,11 @@ public class Game extends Applet implements Runnable, KeyListener {
                 this.prompt.startGame(g2);
 
 
-        if ( isOver ) {
-            if ( myGameBoard.isGuessMatch() ) {
-                prompt.endGame(g2, "Congrats! You won :)", myGameBoard);
-            } else
-                prompt.endGame(g2, "You lost :(", myGameBoard);
+        if ( status == GameStatus.WON ) {
+            prompt.endGame(g2, "Congrats! You won :)", myGameBoard);
+        } else if ( status == GameStatus.LOST ){
+            prompt.endGame(g2, "You lost :(", myGameBoard);
         }
-
-
     }
 
 
@@ -229,15 +226,14 @@ public class Game extends Applet implements Runnable, KeyListener {
                 reset();
 
 
-//
-//        //Disabling popup!
-//        if ( e.getKeyCode() == KeyEvent.VK_N )
-//            isPromptDisabled = true;
-//
-//
-//        //Enabling popup!
-//        if ( e.getKeyCode() == KeyEvent.VK_E )
-//            isPromptDisabled = false;
+        //Disabling popup!
+        if ( e.getKeyCode() == KeyEvent.VK_D )
+            isPromptDisabled = true;
+
+
+        //Enabling popup!
+        if ( e.getKeyCode() == KeyEvent.VK_E )
+            isPromptDisabled = false;
 //
 //        //S for Sport!! ;)
 //
@@ -257,8 +253,7 @@ public class Game extends Applet implements Runnable, KeyListener {
         myGameBoard.getGameBoard().setxyBoard(500, 50);
 
         status = GameStatus.NOT_STRTD;
-
-        isOver = false;
+        keyPressed = true;
     }
 
     @Override

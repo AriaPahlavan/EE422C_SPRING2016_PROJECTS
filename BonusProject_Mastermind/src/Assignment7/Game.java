@@ -215,6 +215,10 @@ public class Game extends Applet implements Runnable, KeyListener {
 
 
             }
+
+            //To give up
+            if ( e.getKeyCode() == KeyEvent.VK_Q )
+                status = GameStatus.LOST;
         }
 
         //Notifies that user wants to start the race
@@ -243,6 +247,8 @@ public class Game extends Applet implements Runnable, KeyListener {
 
         if ( e.getKeyCode() == KeyEvent.VK_H )
             promptInstructions = true;
+
+
 
 
         keyPressed = true;

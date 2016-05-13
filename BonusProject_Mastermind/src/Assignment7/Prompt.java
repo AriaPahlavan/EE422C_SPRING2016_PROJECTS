@@ -38,14 +38,13 @@ public class Prompt {
      * @param g2
      */
     public void startGame(Graphics2D g2) {
-        g2.setFont(START_FONT);
-        g2.setColor(Color.cyan);
-
 
         //draw Prompt window
-        g2.fillRoundRect(PROMPT_WIDTH + 100, PROMPT_HEIGHT, 2 * PROMPT_WIDTH, 5 * PROMPT_HEIGHT, 20, 45);
+        g2.setFont(START_FONT);
         g2.setColor(new Color(14, 61, 58));
-        g2.fillRoundRect(PROMPT_WIDTH + 10 + 100, PROMPT_HEIGHT + 10, 2 * PROMPT_WIDTH - 20, 5 * PROMPT_HEIGHT - 20, 20, 45);
+        g2.fillRoundRect(PROMPT_WIDTH + 100, PROMPT_HEIGHT, 2 * PROMPT_WIDTH, 5 * PROMPT_HEIGHT, 100, 90);
+        g2.setColor(new Color(0, 203, 160));
+        g2.fillRoundRect(PROMPT_WIDTH  + 100, PROMPT_HEIGHT , 2 * PROMPT_WIDTH - 5, 5 * PROMPT_HEIGHT - 12, 80, 90);
 
 
         //Write game title
@@ -63,9 +62,9 @@ public class Prompt {
         g2.drawString("R, Y, O, P, G, B correspond to pegs of color", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 160);
         g2.drawString("red, yellow, purple, green, blue, respectively.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 190);
         g2.drawString("Press Backspace or Delete to undo last peg.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 230);
-        g2.drawString("Press Enter when you are confident with ", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 270);
-        g2.drawString("your guess and want it to be matched with", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 310);
-        g2.drawString("the secret code.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 350);
+        g2.drawString("Press Enter to place your new guess pegs", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 270);
+        g2.drawString("in corresponding holes to be checked.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 310);
+        g2.drawString("Press Q if you want to give up.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 350);
 
 
     }

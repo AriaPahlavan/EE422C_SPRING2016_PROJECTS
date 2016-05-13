@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="039e1ec8-789c-4264-85aa-9f063ea18884" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment7/Game.java" afterPath="$PROJECT_DIR$/src/Assignment7/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment7/Peg.java" afterPath="$PROJECT_DIR$/src/Assignment7/Peg.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment7/Prompt.java" afterPath="$PROJECT_DIR$/src/Assignment7/Prompt.java" />
     </list>
     <list id="0220926e-bf47-4d15-8031-cb901fc093da" name="New changelist" comment="" />
     <ignored path="BonusProject_Mastermind.iws" />
@@ -31,7 +31,7 @@
       <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/GameBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2574">
+            <state relative-caret-position="537">
               <caret line="187" column="64" selection-start-line="187" selection-start-column="64" selection-end-line="187" selection-end-column="64" />
               <folding>
                 <element signature="method#GameBoard#0;class#GameBoard#0" expanded="true" />
@@ -46,7 +46,7 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1314">
+            <state relative-caret-position="537">
               <caret line="87" column="60" selection-start-line="87" selection-start-column="60" selection-end-line="87" selection-end-column="60" />
               <folding>
                 <element signature="method#Board#0;class#Board#0" expanded="true" />
@@ -59,8 +59,8 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="236" column="46" selection-start-line="236" selection-start-column="46" selection-end-line="236" selection-end-column="46" />
+            <state relative-caret-position="486">
+              <caret line="218" column="24" selection-start-line="218" selection-start-column="24" selection-end-line="218" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#start#0;class#Game#0" expanded="true" />
@@ -78,11 +78,10 @@
       <file leaf-file-name="Prompt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/Prompt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="73" column="76" selection-start-line="73" selection-start-column="76" selection-end-line="73" selection-end-column="76" />
+            <state relative-caret-position="303">
+              <caret line="66" column="54" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#startGame#0;class#Prompt#0" expanded="true" />
                 <element signature="method#endGame#0;class#Prompt#0" expanded="true" />
                 <element signature="method#reset#0;class#Prompt#0" expanded="true" />
               </folding>
@@ -201,10 +200,10 @@
         <option value="$PROJECT_DIR$/src/Assignment7/Guess.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/SecretCode.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/SecretPeg.java" />
-        <option value="$PROJECT_DIR$/src/Assignment7/Prompt.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/Board.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/GameBoard.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/Peg.java" />
+        <option value="$PROJECT_DIR$/src/Assignment7/Prompt.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/Game.java" />
       </list>
     </option>
@@ -706,7 +705,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Assignment7/Prompt.java</url>
-          <line>94</line>
+          <line>93</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
@@ -750,7 +749,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#startGame#0;class#Prompt#0" expanded="true" />
             <element signature="method#endGame#0;class#Prompt#0" expanded="true" />
             <element signature="method#reset#0;class#Prompt#0" expanded="true" />
           </folding>
@@ -1169,30 +1167,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assignment7/GameBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2574">
-          <caret line="187" column="64" selection-start-line="187" selection-start-column="64" selection-end-line="187" selection-end-column="64" />
-          <folding>
-            <element signature="method#GameBoard#0;class#GameBoard#0" expanded="true" />
-            <element signature="method#GameBoard#1;class#GameBoard#0" expanded="true" />
-            <element signature="method#displayHistory#0;class#GameBoard#0" expanded="true" />
-            <element signature="method#paintGameBoard#0;class#GameBoard#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assignment7/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="87" column="60" selection-start-line="87" selection-start-column="60" selection-end-line="87" selection-end-column="60" />
-          <folding>
-            <element signature="method#Board#0;class#Board#0" expanded="true" />
-            <element signature="method#setxyBoard#0;class#Board#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment7/Peg.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -1207,21 +1181,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment7/Prompt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="73" column="76" selection-start-line="73" selection-start-column="76" selection-end-line="73" selection-end-column="76" />
+        <state relative-caret-position="303">
+          <caret line="66" column="54" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#startGame#0;class#Prompt#0" expanded="true" />
             <element signature="method#endGame#0;class#Prompt#0" expanded="true" />
             <element signature="method#reset#0;class#Prompt#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assignment7/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="87" column="60" selection-start-line="87" selection-start-column="60" selection-end-line="87" selection-end-column="60" />
+          <folding>
+            <element signature="method#Board#0;class#Board#0" expanded="true" />
+            <element signature="method#setxyBoard#0;class#Board#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assignment7/GameBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="187" column="64" selection-start-line="187" selection-start-column="64" selection-end-line="187" selection-end-column="64" />
+          <folding>
+            <element signature="method#GameBoard#0;class#GameBoard#0" expanded="true" />
+            <element signature="method#GameBoard#1;class#GameBoard#0" expanded="true" />
+            <element signature="method#displayHistory#0;class#GameBoard#0" expanded="true" />
+            <element signature="method#paintGameBoard#0;class#GameBoard#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment7/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="236" column="46" selection-start-line="236" selection-start-column="46" selection-end-line="236" selection-end-column="46" />
+        <state relative-caret-position="486">
+          <caret line="218" column="24" selection-start-line="218" selection-start-column="24" selection-end-line="218" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Game#0" expanded="true" />

@@ -16,8 +16,8 @@ public class Prompt {
     protected final Font PROMPT_FONT = new Font("Purisa", Font.BOLD, 25);
     protected final Font SMALL_FONT = new Font("Purisa", Font.BOLD, 18);
     private ArrayList<Integer> winnersList = new ArrayList<>();
-    private int PROMPT_HEIGHT = 0;
-    private int PROMPT_WIDTH = 0;
+    private double PROMPT_HEIGHT = 0.421272023;
+    private double PROMPT_WIDTH = 1.26381607;
     private int X_AXIS = 300;
     private int X_instruction = 800;
     private int Y_instruction = 220;
@@ -25,11 +25,11 @@ public class Prompt {
 
 
     //Getters and Setters
-    public void setPROMPT_HEIGHT(int PROMPT_HEIGHT) {
+    public void setPROMPT_HEIGHT(double PROMPT_HEIGHT) {
         this.PROMPT_HEIGHT = PROMPT_HEIGHT;
     }
 
-    public void setPROMPT_WIDTH(int PROMPT_WIDTH) {
+    public void setPROMPT_WIDTH(double PROMPT_WIDTH) {
         this.PROMPT_WIDTH = PROMPT_WIDTH;
     }
 
@@ -47,49 +47,55 @@ public class Prompt {
         //draw Prompt window
         g2.setFont(START_FONT);
         g2.setColor(new Color(14, 61, 58));
-        g2.fillRoundRect(X_AXIS, PROMPT_HEIGHT, 2 * PROMPT_WIDTH + 125, 5 * PROMPT_HEIGHT, 100, 90);
+        g2.fillRoundRect(X_AXIS, (int)PROMPT_HEIGHT, 2 * (int)PROMPT_WIDTH + 125, 5 * (int)PROMPT_HEIGHT, 100, 90);
         g2.setColor(new Color(0, 203, 160));
-        g2.fillRoundRect(X_AXIS, PROMPT_HEIGHT, 2 * PROMPT_WIDTH - 5 + 125, 5 * PROMPT_HEIGHT - 12, 80, 90);
+        g2.fillRoundRect(X_AXIS, (int)PROMPT_HEIGHT, 2 * (int)PROMPT_WIDTH - 5 + 125, 5 * (int)PROMPT_HEIGHT - 12, 80, 90);
 
         //Beginning animation
-        if ( PROMPT_WIDTH != 300 && PROMPT_HEIGHT != 100 ) {
-            PROMPT_WIDTH += 6;
-            PROMPT_HEIGHT += 2;
-        } else
+        if ( (int)PROMPT_WIDTH != 300 && (int)PROMPT_HEIGHT != 100 ) {
+            PROMPT_WIDTH *= 1.2;
+            PROMPT_HEIGHT *= 1.2;
+            System.out.println("W = " + PROMPT_WIDTH);
+            System.out.println("H = " + PROMPT_HEIGHT);
+            System.out.println("-------------------");
+        } else {
             done = true;
+            PROMPT_WIDTH = 300;
+            PROMPT_HEIGHT = 100;
+        }
 
 
         if ( done ) {
 
             //Write game title
             g2.setColor(new Color(226, 45, 0));
-            g2.drawString("HELLO MASTERMIND!!", (11 * PROMPT_WIDTH) / 10 + 125, (21 * PROMPT_HEIGHT) / 10 - 25);
+            g2.drawString("HELLO MASTERMIND!!", (11 * (int)PROMPT_WIDTH) / 10 + 125, (21 * (int)PROMPT_HEIGHT) / 10 - 25);
 
 
             //Ask to press Enter or Space to start
             g2.setFont(START_SMALL_FONT);
             g2.setColor(Color.BLACK);
 
-            g2.drawString("Press Enter or Space key to play...", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 50);
-            g2.drawString("Press Backspace or Delete to undo last peg.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 80);
-            g2.drawString("Press Enter to place your new guess pegs in ", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 110);
-            g2.drawString("corresponding holes to be checked.", (11 * PROMPT_WIDTH) / 10 + 160, (21 * PROMPT_HEIGHT) / 10 + 140);
-            g2.drawString("Press Q if you want to give up trying.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 170);
+            g2.drawString("Press Enter or Space key to play...", (11 * (int)PROMPT_WIDTH) / 10 + 110, (21 * (int)PROMPT_HEIGHT) / 10 + 50);
+            g2.drawString("Press Backspace or Delete to undo last peg.", (11 * (int)PROMPT_WIDTH) / 10 + 110, (21 * (int)PROMPT_HEIGHT) / 10 + 80);
+            g2.drawString("Press Enter to place your new guess pegs in ", (11 * (int)PROMPT_WIDTH) / 10 + 110, (21 * (int)PROMPT_HEIGHT) / 10 + 110);
+            g2.drawString("corresponding holes to be checked.", (11 * (int)PROMPT_WIDTH) / 10 + 160, (21 * (int)PROMPT_HEIGHT) / 10 + 140);
+            g2.drawString("Press Q if you want to give up trying.", (11 * (int)PROMPT_WIDTH) / 10 + 110, (21 * (int)PROMPT_HEIGHT) / 10 + 170);
 
             Color[] colors = { Color.red, Peg.PURPLE, Color.blue, Color.YELLOW, Peg.ORANGE, Color.green };
             char[] colorInitials = { 'R', 'P', 'B', 'Y', 'O', 'G' };
 
             for ( int i = 0; i < 6; i += 2 ) {
                 g2.setColor(Color.black);
-                g2.drawString(colorInitials[i] + " <->", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 230 + 40 * (i / 2));
+                g2.drawString(colorInitials[i] + " <->", (11 * (int)PROMPT_WIDTH) / 10 + 110, (21 * (int)PROMPT_HEIGHT) / 10 + 230 + 40 * (i / 2));
                 g2.setColor(colors[i]);
-                g2.fillOval((11 * PROMPT_WIDTH) / 10 + 190, (21 * PROMPT_HEIGHT) / 10 + 215 + 40 * (i / 2), 20, 20);
+                g2.fillOval((11 * (int)PROMPT_WIDTH) / 10 + 190, (21 * (int)PROMPT_HEIGHT) / 10 + 215 + 40 * (i / 2), 20, 20);
 
 
                 g2.setColor(Color.black);
-                g2.drawString(colorInitials[i + 1] + " <->", (11 * PROMPT_WIDTH) / 10 + 410, (21 * PROMPT_HEIGHT) / 10 + 230 + 40 * (i / 2));
+                g2.drawString(colorInitials[i + 1] + " <->", (11 * (int)PROMPT_WIDTH) / 10 + 410, (21 * (int)PROMPT_HEIGHT) / 10 + 230 + 40 * (i / 2));
                 g2.setColor(colors[i + 1]);
-                g2.fillOval((11 * PROMPT_WIDTH) / 10 + 490, (21 * PROMPT_HEIGHT) / 10 + 215 + 40 * (i / 2), 20, 20);
+                g2.fillOval((11 * (int)PROMPT_WIDTH) / 10 + 490, (21 * (int)PROMPT_HEIGHT) / 10 + 215 + 40 * (i / 2), 20, 20);
             }
         }
     }
@@ -104,30 +110,30 @@ public class Prompt {
 
         //Draw bg box
         g2.setColor(new Color(117, 151, 101));
-        g2.fillRoundRect(X_instruction + 155, Y_instruction + 30, PROMPT_WIDTH - 20, PROMPT_HEIGHT + 180, 80, 90);
+        g2.fillRoundRect(X_instruction + 155, Y_instruction + 30, (int)PROMPT_WIDTH - 20, (int)PROMPT_HEIGHT + 180, 80, 90);
 
         //Ask to press Enter or Space to start
         g2.setFont(START_SMALL_FONT);
         g2.setColor(Color.BLACK);
 
-        g2.drawString("\"Backspace\" to undo", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 80);
-        g2.drawString("\"Enter\" to match ", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 110);
-        g2.drawString("\"Q\" to give up", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 140);
+        g2.drawString("\"Backspace\" to undo", (11 * X_instruction) / 10 + 110, (21 * (int)PROMPT_HEIGHT) / 10 + 80);
+        g2.drawString("\"Enter\" to match ", (11 * X_instruction) / 10 + 110, (21 * (int)PROMPT_HEIGHT) / 10 + 110);
+        g2.drawString("\"Q\" to give up", (11 * X_instruction) / 10 + 110, (21 * (int)PROMPT_HEIGHT) / 10 + 140);
 
         Color[] colors = { Color.red, Peg.PURPLE, Color.blue, Color.YELLOW, Peg.ORANGE, Color.green };
         char[] colorInitials = { 'R', 'P', 'B', 'Y', 'O', 'G' };
 
         for ( int i = 0; i < 6; i += 2 ) {
             g2.setColor(Color.black);
-            g2.drawString(colorInitials[i] + " > ", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
+            g2.drawString(colorInitials[i] + " > ", (11 * X_instruction) / 10 + 110, (21 * (int)PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
             g2.setColor(colors[i]);
-            g2.fillOval((11 * X_instruction) / 10 + 155, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
+            g2.fillOval((11 * X_instruction) / 10 + 155, (21 * (int)PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
 
 
             g2.setColor(Color.black);
-            g2.drawString(colorInitials[i + 1] + " > ", (11 * X_instruction) / 10 + 240, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
+            g2.drawString(colorInitials[i + 1] + " > ", (11 * X_instruction) / 10 + 240, (21 * (int)PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
             g2.setColor(colors[i + 1]);
-            g2.fillOval((11 * X_instruction) / 10 + 285, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
+            g2.fillOval((11 * X_instruction) / 10 + 285, (21 * (int)PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
         }
     }
 
@@ -145,17 +151,20 @@ public class Prompt {
 
 
         //draw Prompt window
-        g2.fillRoundRect(PROMPT_WIDTH + 100, PROMPT_HEIGHT + 100, 2 * PROMPT_WIDTH, 5 * PROMPT_HEIGHT - 100, 80, 90);
+        g2.fillRoundRect((int)PROMPT_WIDTH + 100, (int)PROMPT_HEIGHT + 100, 2 * (int)PROMPT_WIDTH, 5 * (int)PROMPT_HEIGHT - 100, 80, 90);
         g2.setColor(new Color(104, 198, 97));
-        g2.fillRoundRect(PROMPT_WIDTH + 100, PROMPT_HEIGHT + 100, 2 * PROMPT_WIDTH - 5, 5 * PROMPT_HEIGHT - 112, 80, 90);
+        g2.fillRoundRect((int)PROMPT_WIDTH + 100, (int)PROMPT_HEIGHT + 100, 2 * (int)PROMPT_WIDTH - 5, 5 * (int)PROMPT_HEIGHT - 112, 80, 90);
 
 
         //Beginning animation
-        if ( PROMPT_WIDTH != 300 && PROMPT_HEIGHT != 100 ) {
-            PROMPT_WIDTH += 6;
-            PROMPT_HEIGHT += 2;
-        } else
+        if ( PROMPT_WIDTH < 300 || PROMPT_HEIGHT < 100 ) {
+            PROMPT_WIDTH *= 1.141;
+            PROMPT_HEIGHT *= 1.1111;
+        } else {
             done = true;
+            PROMPT_WIDTH = 300;
+            PROMPT_HEIGHT = 100;
+        }
 
         if ( done ) {
 
@@ -163,9 +172,9 @@ public class Prompt {
             g2.setColor(new Color(226, 45, 0));
 
             if ( myGameBoard.isGuessMatch() )
-                g2.drawString(message, (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 210 + 300);
+                g2.drawString(message, (11 * (int)PROMPT_WIDTH) / 10 + 110, (21 * (int)PROMPT_HEIGHT) / 210 + 300);
             else
-                g2.drawString(message, (11 * PROMPT_WIDTH) / 10 + 225, (21 * PROMPT_HEIGHT) / 210 + 320);
+                g2.drawString(message, (11 * (int)PROMPT_WIDTH) / 10 + 225, (21 * (int)PROMPT_HEIGHT) / 210 + 320);
 
 
             //Ask to press Enter or Space to start
@@ -173,9 +182,9 @@ public class Prompt {
             g2.setColor(Color.BLACK);
 
             if ( myGameBoard.isGuessMatch() )
-                g2.drawString("Number of guesses: " + myGameBoard.getGuesses().size(), (11 * PROMPT_WIDTH) / 10 + 200, (21 * PROMPT_HEIGHT) / 10 + 200);
+                g2.drawString("Number of guesses: " + myGameBoard.getGuesses().size(), (11 * (int)PROMPT_WIDTH) / 10 + 200, (21 * (int)PROMPT_HEIGHT) / 10 + 200);
 
-            g2.drawString("Press R to play again.", (11 * PROMPT_WIDTH) / 10 + 200, (21 * PROMPT_HEIGHT) / 10 + 250);
+            g2.drawString("Press R to play again.", (11 * (int)PROMPT_WIDTH) / 10 + 200, (21 * (int)PROMPT_HEIGHT) / 10 + 250);
 
         }
     }
@@ -185,9 +194,8 @@ public class Prompt {
      * This method resets the prompt member variables
      */
     public void reset() {
-        winnersList = new ArrayList<>();
-        PROMPT_HEIGHT = 0;
-        PROMPT_WIDTH = 0;
+        PROMPT_HEIGHT = 1;
+        PROMPT_WIDTH = 1;
         done = false;
     }
 

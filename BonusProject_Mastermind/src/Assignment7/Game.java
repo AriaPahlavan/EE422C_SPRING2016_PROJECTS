@@ -23,14 +23,14 @@ public class Game extends Applet implements Runnable, KeyListener {
     private GameBoard myGameBoard;
     private Guess tempGuess;
     private ArrayList<RoundPegColor> tempPegs;
-    protected static final int MAX_GUESS = 13;
+    protected static final int MAX_GUESS = 1;
     private boolean isPromptDisabled = false;
     private Prompt prompt;
     private boolean keyPressed = true;
     private GameStatus status = GameStatus.NOT_STRTD;
     private boolean debugMode = false;
     private boolean promptInstructions = true;
-    private boolean isPromptUsed = false;
+    private boolean isOver = false;
 
     @Override
     /**
@@ -73,10 +73,18 @@ public class Game extends Applet implements Runnable, KeyListener {
                 //if use won
                 if ( myGameBoard.isGuessMatch() ) {
                     status = GameStatus.WON;
+                    if ( !isOver ) {
+                        prompt.reset();
+                        isOver = true;
+                    }
                 }
                 //if the user hasn't guessed right and reached max # of guesses
                 else if ( myGameBoard.getGuesses().size() == MAX_GUESS ) {
                     status = GameStatus.LOST;
+                    if ( !isOver ) {
+                        prompt.reset();
+                        isOver = true;
+                    }
                 }
 
                 //When the Enter or Space key is pressed, start the game
@@ -91,7 +99,7 @@ public class Game extends Applet implements Runnable, KeyListener {
                 keyPressed = false;
             }
             try {
-                Thread.sleep(16);
+                Thread.sleep(17);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -156,16 +164,10 @@ public class Game extends Applet implements Runnable, KeyListener {
                 prompt.startGame(g2);
             }
 
-        if ( isPromptUsed ) {
-            prompt.setPROMPT_HEIGHT(0);
-            prompt.setPROMPT_WIDTH(0);
-            prompt.setDone(false);
-            isPromptUsed = false;
-        }
 
 
         if ( status == GameStatus.IN_PRGRSS )
-            if ( promptInstructions ) {
+             {
                 prompt.setPROMPT_HEIGHT(100);
                 prompt.setPROMPT_WIDTH(300);
                 this.prompt.instructions(g2);
@@ -243,7 +245,6 @@ public class Game extends Applet implements Runnable, KeyListener {
         if ( status == GameStatus.NOT_STRTD )
             if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER ) {
                 status = GameStatus.IN_PRGRSS;
-                isPromptUsed = true;
             }
 
         //reset after game's over
@@ -285,12 +286,20 @@ public class Game extends Applet implements Runnable, KeyListener {
             status = GameStatus.NOT_STRTD;
 
         keyPressed = true;
-        isPromptUsed = true;
+        resetPrompt();
         promptInstructions = false;
+
+        isOver = false;
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
 
+    }
+
+    public void resetPrompt(){
+        prompt.setPROMPT_HEIGHT(0.421272023);
+        prompt.setPROMPT_WIDTH(1.26381607);
+        prompt.setDone(false);
     }
 }

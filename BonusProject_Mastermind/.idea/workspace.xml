@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="039e1ec8-789c-4264-85aa-9f063ea18884" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BonusProject_Mastermind/Assignment7/Prompt.class" afterPath="$PROJECT_DIR$/out/production/BonusProject_Mastermind/Assignment7/Prompt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment7/Prompt.java" afterPath="$PROJECT_DIR$/src/Assignment7/Prompt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Project5_Cars/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Project5_Cars/.idea/workspace.xml" />
     </list>
     <list id="0220926e-bf47-4d15-8031-cb901fc093da" name="New changelist" comment="" />
     <ignored path="BonusProject_Mastermind.iws" />
@@ -51,8 +48,14 @@
             <state relative-caret-position="1314">
               <caret line="87" column="60" selection-start-line="87" selection-start-column="60" selection-end-line="87" selection-end-column="60" />
               <folding>
-                <element signature="method#Board#0;class#Board#0" expanded="true" />
-                <element signature="method#setxyBoard#0;class#Board#0" expanded="true" />
+                <element signature="e#416#417#0" expanded="false" />
+                <element signature="e#445#446#0" expanded="false" />
+                <element signature="e#486#487#0" expanded="false" />
+                <element signature="e#522#523#0" expanded="false" />
+                <element signature="e#672#673#0" expanded="false" />
+                <element signature="e#701#702#0" expanded="false" />
+                <element signature="e#742#743#0" expanded="false" />
+                <element signature="e#778#779#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -80,8 +83,8 @@
       <file leaf-file-name="Prompt.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/Prompt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="48" column="82" selection-start-line="48" selection-start-column="82" selection-end-line="48" selection-end-column="82" />
+            <state relative-caret-position="342">
+              <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#endGame#0;class#Prompt#0" expanded="true" />
@@ -119,9 +122,31 @@
             <state relative-caret-position="522">
               <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
               <folding>
-                <element signature="method#paintPeg#0;class#Peg#0" expanded="true" />
-                <element signature="method#paintCodePeg#0;class#Peg#0" expanded="true" />
-                <element signature="method#pickColor#0;class#Peg#0" expanded="true" />
+                <element signature="method#Peg#0;class#Peg#0" expanded="false" />
+                <element signature="method#Peg#1;class#Peg#0" expanded="false" />
+                <element signature="method#Peg#2;class#Peg#0" expanded="false" />
+                <element signature="e#1055#1056#0" expanded="false" />
+                <element signature="e#1082#1083#0" expanded="false" />
+                <element signature="e#1119#1120#0" expanded="false" />
+                <element signature="e#1151#1152#0" expanded="false" />
+                <element signature="method#setxyPeg#0;class#Peg#0" expanded="false" />
+                <element signature="e#1285#1286#0" expanded="false" />
+                <element signature="e#1312#1313#0" expanded="false" />
+                <element signature="e#1349#1350#0" expanded="false" />
+                <element signature="e#1381#1382#0" expanded="false" />
+                <element signature="e#1415#1416#0" expanded="false" />
+                <element signature="e#1447#1448#0" expanded="false" />
+                <element signature="e#1494#1495#0" expanded="false" />
+                <element signature="e#1534#1535#0" expanded="false" />
+                <element signature="e#1573#1574#0" expanded="false" />
+                <element signature="e#1601#1602#0" expanded="false" />
+                <element signature="e#1650#1651#0" expanded="false" />
+                <element signature="e#1684#1685#0" expanded="false" />
+                <element signature="e#1716#1717#0" expanded="false" />
+                <element signature="e#1747#1748#0" expanded="false" />
+                <element signature="e#1792#1793#0" expanded="false" />
+                <element signature="e#1832#1833#0" expanded="false" />
+                <element signature="method#paintResultPeg#0;class#Peg#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -708,7 +733,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Assignment7/Prompt.java</url>
-          <line>96</line>
+          <line>107</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
@@ -781,9 +806,31 @@
         <state relative-caret-position="252">
           <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding>
-            <element signature="method#paintPeg#0;class#Peg#0" expanded="true" />
-            <element signature="method#paintCodePeg#0;class#Peg#0" expanded="true" />
-            <element signature="method#pickColor#0;class#Peg#0" expanded="true" />
+            <element signature="method#Peg#0;class#Peg#0" expanded="false" />
+            <element signature="method#Peg#1;class#Peg#0" expanded="false" />
+            <element signature="method#Peg#2;class#Peg#0" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="false" />
+            <element signature="e#1082#1083#0" expanded="false" />
+            <element signature="e#1119#1120#0" expanded="false" />
+            <element signature="e#1151#1152#0" expanded="false" />
+            <element signature="method#setxyPeg#0;class#Peg#0" expanded="false" />
+            <element signature="e#1285#1286#0" expanded="false" />
+            <element signature="e#1312#1313#0" expanded="false" />
+            <element signature="e#1349#1350#0" expanded="false" />
+            <element signature="e#1381#1382#0" expanded="false" />
+            <element signature="e#1415#1416#0" expanded="false" />
+            <element signature="e#1447#1448#0" expanded="false" />
+            <element signature="e#1494#1495#0" expanded="false" />
+            <element signature="e#1534#1535#0" expanded="false" />
+            <element signature="e#1573#1574#0" expanded="false" />
+            <element signature="e#1601#1602#0" expanded="false" />
+            <element signature="e#1650#1651#0" expanded="false" />
+            <element signature="e#1684#1685#0" expanded="false" />
+            <element signature="e#1716#1717#0" expanded="false" />
+            <element signature="e#1747#1748#0" expanded="false" />
+            <element signature="e#1792#1793#0" expanded="false" />
+            <element signature="e#1832#1833#0" expanded="false" />
+            <element signature="method#paintResultPeg#0;class#Peg#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -872,9 +919,31 @@
         <state relative-caret-position="252">
           <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding>
-            <element signature="method#paintPeg#0;class#Peg#0" expanded="true" />
-            <element signature="method#paintCodePeg#0;class#Peg#0" expanded="true" />
-            <element signature="method#pickColor#0;class#Peg#0" expanded="true" />
+            <element signature="method#Peg#0;class#Peg#0" expanded="false" />
+            <element signature="method#Peg#1;class#Peg#0" expanded="false" />
+            <element signature="method#Peg#2;class#Peg#0" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="false" />
+            <element signature="e#1082#1083#0" expanded="false" />
+            <element signature="e#1119#1120#0" expanded="false" />
+            <element signature="e#1151#1152#0" expanded="false" />
+            <element signature="method#setxyPeg#0;class#Peg#0" expanded="false" />
+            <element signature="e#1285#1286#0" expanded="false" />
+            <element signature="e#1312#1313#0" expanded="false" />
+            <element signature="e#1349#1350#0" expanded="false" />
+            <element signature="e#1381#1382#0" expanded="false" />
+            <element signature="e#1415#1416#0" expanded="false" />
+            <element signature="e#1447#1448#0" expanded="false" />
+            <element signature="e#1494#1495#0" expanded="false" />
+            <element signature="e#1534#1535#0" expanded="false" />
+            <element signature="e#1573#1574#0" expanded="false" />
+            <element signature="e#1601#1602#0" expanded="false" />
+            <element signature="e#1650#1651#0" expanded="false" />
+            <element signature="e#1684#1685#0" expanded="false" />
+            <element signature="e#1716#1717#0" expanded="false" />
+            <element signature="e#1747#1748#0" expanded="false" />
+            <element signature="e#1792#1793#0" expanded="false" />
+            <element signature="e#1832#1833#0" expanded="false" />
+            <element signature="method#paintResultPeg#0;class#Peg#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -963,9 +1032,31 @@
         <state relative-caret-position="1458">
           <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
-            <element signature="method#paintPeg#0;class#Peg#0" expanded="true" />
-            <element signature="method#paintCodePeg#0;class#Peg#0" expanded="true" />
-            <element signature="method#pickColor#0;class#Peg#0" expanded="true" />
+            <element signature="method#Peg#0;class#Peg#0" expanded="false" />
+            <element signature="method#Peg#1;class#Peg#0" expanded="false" />
+            <element signature="method#Peg#2;class#Peg#0" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="false" />
+            <element signature="e#1082#1083#0" expanded="false" />
+            <element signature="e#1119#1120#0" expanded="false" />
+            <element signature="e#1151#1152#0" expanded="false" />
+            <element signature="method#setxyPeg#0;class#Peg#0" expanded="false" />
+            <element signature="e#1285#1286#0" expanded="false" />
+            <element signature="e#1312#1313#0" expanded="false" />
+            <element signature="e#1349#1350#0" expanded="false" />
+            <element signature="e#1381#1382#0" expanded="false" />
+            <element signature="e#1415#1416#0" expanded="false" />
+            <element signature="e#1447#1448#0" expanded="false" />
+            <element signature="e#1494#1495#0" expanded="false" />
+            <element signature="e#1534#1535#0" expanded="false" />
+            <element signature="e#1573#1574#0" expanded="false" />
+            <element signature="e#1601#1602#0" expanded="false" />
+            <element signature="e#1650#1651#0" expanded="false" />
+            <element signature="e#1684#1685#0" expanded="false" />
+            <element signature="e#1716#1717#0" expanded="false" />
+            <element signature="e#1747#1748#0" expanded="false" />
+            <element signature="e#1792#1793#0" expanded="false" />
+            <element signature="e#1832#1833#0" expanded="false" />
+            <element signature="method#paintResultPeg#0;class#Peg#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1133,8 +1224,14 @@
         <state relative-caret-position="1314">
           <caret line="87" column="60" selection-start-line="87" selection-start-column="60" selection-end-line="87" selection-end-column="60" />
           <folding>
-            <element signature="method#Board#0;class#Board#0" expanded="true" />
-            <element signature="method#setxyBoard#0;class#Board#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="false" />
+            <element signature="e#445#446#0" expanded="false" />
+            <element signature="e#486#487#0" expanded="false" />
+            <element signature="e#522#523#0" expanded="false" />
+            <element signature="e#672#673#0" expanded="false" />
+            <element signature="e#701#702#0" expanded="false" />
+            <element signature="e#742#743#0" expanded="false" />
+            <element signature="e#778#779#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1171,8 +1268,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment7/Prompt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="48" column="82" selection-start-line="48" selection-start-column="82" selection-end-line="48" selection-end-column="82" />
+        <state relative-caret-position="342">
+          <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#endGame#0;class#Prompt#0" expanded="true" />
@@ -1204,9 +1301,31 @@
         <state relative-caret-position="522">
           <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
           <folding>
-            <element signature="method#paintPeg#0;class#Peg#0" expanded="true" />
-            <element signature="method#paintCodePeg#0;class#Peg#0" expanded="true" />
-            <element signature="method#pickColor#0;class#Peg#0" expanded="true" />
+            <element signature="method#Peg#0;class#Peg#0" expanded="false" />
+            <element signature="method#Peg#1;class#Peg#0" expanded="false" />
+            <element signature="method#Peg#2;class#Peg#0" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="false" />
+            <element signature="e#1082#1083#0" expanded="false" />
+            <element signature="e#1119#1120#0" expanded="false" />
+            <element signature="e#1151#1152#0" expanded="false" />
+            <element signature="method#setxyPeg#0;class#Peg#0" expanded="false" />
+            <element signature="e#1285#1286#0" expanded="false" />
+            <element signature="e#1312#1313#0" expanded="false" />
+            <element signature="e#1349#1350#0" expanded="false" />
+            <element signature="e#1381#1382#0" expanded="false" />
+            <element signature="e#1415#1416#0" expanded="false" />
+            <element signature="e#1447#1448#0" expanded="false" />
+            <element signature="e#1494#1495#0" expanded="false" />
+            <element signature="e#1534#1535#0" expanded="false" />
+            <element signature="e#1573#1574#0" expanded="false" />
+            <element signature="e#1601#1602#0" expanded="false" />
+            <element signature="e#1650#1651#0" expanded="false" />
+            <element signature="e#1684#1685#0" expanded="false" />
+            <element signature="e#1716#1717#0" expanded="false" />
+            <element signature="e#1747#1748#0" expanded="false" />
+            <element signature="e#1792#1793#0" expanded="false" />
+            <element signature="e#1832#1833#0" expanded="false" />
+            <element signature="method#paintResultPeg#0;class#Peg#0" expanded="false" />
           </folding>
         </state>
       </provider>

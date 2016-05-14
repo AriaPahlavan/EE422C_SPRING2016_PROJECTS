@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="039e1ec8-789c-4264-85aa-9f063ea18884" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BonusProject_Mastermind/Assignment7/Game.class" afterPath="$PROJECT_DIR$/out/production/BonusProject_Mastermind/Assignment7/Game.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BonusProject_Mastermind/Assignment7/Prompt.class" afterPath="$PROJECT_DIR$/out/production/BonusProject_Mastermind/Assignment7/Prompt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment7/Game.java" afterPath="$PROJECT_DIR$/src/Assignment7/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assignment7/Prompt.java" afterPath="$PROJECT_DIR$/src/Assignment7/Prompt.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Project5_Cars/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Project5_Cars/.idea/workspace.xml" />
     </list>
     <list id="0220926e-bf47-4d15-8031-cb901fc093da" name="New changelist" comment="" />
     <ignored path="BonusProject_Mastermind.iws" />
@@ -62,30 +66,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2431">
-              <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
+            <state relative-caret-position="87">
+              <caret line="93" column="31" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#start#0;class#Game#0" expanded="true" />
-                <element signature="method#run#0;class#Game#0" expanded="true" />
                 <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
                 <element signature="method#update#0;class#Game#0" expanded="true" />
                 <element signature="method#paint#0;class#Game#0" expanded="true" />
                 <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+                <element signature="method#reset#0;class#Game#0" expanded="true" />
                 <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Prompt.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Prompt.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/Prompt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="677">
-              <caret line="141" column="13" selection-start-line="141" selection-start-column="13" selection-end-line="141" selection-end-column="13" />
+            <state relative-caret-position="216">
+              <caret line="108" column="80" selection-start-line="108" selection-start-column="80" selection-end-line="108" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#startGame#0;class#Prompt#0" expanded="true" />
@@ -232,8 +236,8 @@
         <option value="$PROJECT_DIR$/src/Assignment7/Board.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/GameBoard.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/Peg.java" />
-        <option value="$PROJECT_DIR$/src/Assignment7/Prompt.java" />
         <option value="$PROJECT_DIR$/src/Assignment7/Game.java" />
+        <option value="$PROJECT_DIR$/src/Assignment7/Prompt.java" />
       </list>
     </option>
   </component>
@@ -735,7 +739,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Assignment7/Prompt.java</url>
-          <line>181</line>
+          <line>176</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
@@ -763,11 +767,11 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Game#0" expanded="true" />
-            <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
             <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#reset#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
         </state>
@@ -889,11 +893,11 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Game#0" expanded="true" />
-            <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
             <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#reset#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
         </state>
@@ -1002,11 +1006,11 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Game#0" expanded="true" />
-            <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
             <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#reset#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
         </state>
@@ -1094,11 +1098,11 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Game#0" expanded="true" />
-            <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
             <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#reset#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
         </state>
@@ -1124,11 +1128,11 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Game#0" expanded="true" />
-            <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
             <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#reset#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
         </state>
@@ -1141,11 +1145,11 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Game#0" expanded="true" />
-            <element signature="method#run#0;class#Game#0" expanded="true" />
             <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="true" />
             <element signature="method#paint#0;class#Game#0" expanded="true" />
             <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#reset#0;class#Game#0" expanded="true" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
         </state>
@@ -1328,32 +1332,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assignment7/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="93" column="31" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#start#0;class#Game#0" expanded="true" />
+            <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
+            <element signature="method#update#0;class#Game#0" expanded="true" />
+            <element signature="method#paint#0;class#Game#0" expanded="true" />
+            <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
+            <element signature="method#reset#0;class#Game#0" expanded="true" />
+            <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment7/Prompt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="141" column="13" selection-start-line="141" selection-start-column="13" selection-end-line="141" selection-end-column="13" />
+        <state relative-caret-position="216">
+          <caret line="108" column="80" selection-start-line="108" selection-start-column="80" selection-end-line="108" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#startGame#0;class#Prompt#0" expanded="true" />
             <element signature="method#endGame#0;class#Prompt#0" expanded="true" />
             <element signature="method#reset#0;class#Prompt#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assignment7/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2431">
-          <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#start#0;class#Game#0" expanded="true" />
-            <element signature="method#run#0;class#Game#0" expanded="true" />
-            <element signature="method#configureTempGuess#0;class#Game#0" expanded="true" />
-            <element signature="method#update#0;class#Game#0" expanded="true" />
-            <element signature="method#paint#0;class#Game#0" expanded="true" />
-            <element signature="method#keyPressed#0;class#Game#0" expanded="true" />
-            <element signature="method#keyReleased#0;class#Game#0" expanded="true" />
           </folding>
         </state>
       </provider>

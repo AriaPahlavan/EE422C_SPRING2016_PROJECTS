@@ -19,9 +19,11 @@ public class Prompt {
     private int PROMPT_HEIGHT = 0;
     private int PROMPT_WIDTH = 0;
     private int X_AXIS = 300;
-    private int X_instruction = 400;
+    private int X_instruction = 800;
     private int Y_instruction = 220;
     private boolean done = false;
+
+
 
     //Getters and Setters
     public void setPROMPT_HEIGHT(int PROMPT_HEIGHT) {
@@ -101,38 +103,30 @@ public class Prompt {
      */
     public void instructions(Graphics2D g2) {
 
-        //draw Prompt window
-        g2.setFont(START_FONT);
-        g2.setColor(new Color(46, 62, 73));
-        g2.fillRoundRect(X_instruction, Y_instruction, 2 * PROMPT_WIDTH - 60, 5 * PROMPT_HEIGHT - 150, 100, 90);
-        g2.setColor(new Color(0, 205, 166));
-        g2.fillRoundRect(X_instruction, Y_instruction, 2 * PROMPT_WIDTH - 5 - 60, 5 * PROMPT_HEIGHT - 12 - 150, 80, 90);
-
-
         //Ask to press Enter or Space to start
         g2.setFont(START_SMALL_FONT);
         g2.setColor(Color.BLACK);
 
-        g2.drawString("Press Enter or Space key to play...", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 50);
-        g2.drawString("Press Backspace or Delete to undo last peg.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 80);
-        g2.drawString("Press Enter to place your new guess pegs in ", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 110);
-        g2.drawString("corresponding holes to be checked.", (11 * PROMPT_WIDTH) / 10 + 160, (21 * PROMPT_HEIGHT) / 10 + 140);
-        g2.drawString("Press Q if you want to give up trying.", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 170);
+        g2.drawString("> Backspace/Delete to undo last peg.", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 50);
+        g2.drawString("> Enter to place your new guess pegs in ", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 80);
+        g2.drawString("corresponding holes to be checked.", (11 * X_instruction) / 10 + 160, (21 * PROMPT_HEIGHT) / 10 + 110);
+        g2.drawString("> Q if you want to give up trying.", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 140);
+        g2.drawString("", (11 * PROMPT_WIDTH) / 10 + 110, (21 * X_instruction) / 10 + 170);
 
         Color[] colors = { Color.red, Peg.PURPLE, Color.blue, Color.YELLOW, Peg.ORANGE, Color.green };
         char[] colorInitials = { 'R', 'P', 'B', 'Y', 'O', 'G' };
 
         for ( int i = 0; i < 6; i += 2 ) {
             g2.setColor(Color.black);
-            g2.drawString(colorInitials[i] + " <->", (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 230 + 40 * (i / 2));
+            g2.drawString(colorInitials[i] + " <->", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
             g2.setColor(colors[i]);
-            g2.fillOval((11 * PROMPT_WIDTH) / 10 + 190, (21 * PROMPT_HEIGHT) / 10 + 215 + 40 * (i / 2), 20, 20);
+            g2.fillOval((11 * X_instruction) / 10 + 190, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
 
 
             g2.setColor(Color.black);
-            g2.drawString(colorInitials[i + 1] + " <->", (11 * PROMPT_WIDTH) / 10 + 410, (21 * PROMPT_HEIGHT) / 10 + 230 + 40 * (i / 2));
+            g2.drawString(colorInitials[i + 1] + " <->", (11 * X_instruction) / 10 + 410, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
             g2.setColor(colors[i + 1]);
-            g2.fillOval((11 * PROMPT_WIDTH) / 10 + 490, (21 * PROMPT_HEIGHT) / 10 + 215 + 40 * (i / 2), 20, 20);
+            g2.fillOval((11 * X_instruction) / 10 + 490, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
         }
     }
 

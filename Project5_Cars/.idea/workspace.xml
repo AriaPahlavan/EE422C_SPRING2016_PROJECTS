@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea029d9-b1a5-42b3-86c2-d289e0e5efb6" name="Default" comment="Created a driver class.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/out/production/BonusProject_Mastermind/Assignment7/Game.class" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/out/production/BonusProject_Mastermind/Assignment7/Game.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/out/production/BonusProject_Mastermind/Assignment7/Prompt.class" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/out/production/BonusProject_Mastermind/Assignment7/Prompt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Game.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Prompt.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Prompt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Project5_Cars.iws" />
     <ignored path=".idea/workspace.xml" />

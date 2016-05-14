@@ -68,7 +68,7 @@ public class Game extends Applet implements Runnable, KeyListener {
         while ( true ) {
 
             //repaint only if the user is interacting with game
-            if ( keyPressed || status != GameStatus.IN_PRGRSS || promptInstructions ) {
+            if ( keyPressed || status != GameStatus.IN_PRGRSS ) {
 
                 //if use won
                 if ( myGameBoard.isGuessMatch() ) {

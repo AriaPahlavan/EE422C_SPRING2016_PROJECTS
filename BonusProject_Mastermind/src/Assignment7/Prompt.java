@@ -17,6 +17,8 @@ public class Prompt {
     private ArrayList<Integer> winnersList = new ArrayList<>();
     private int PROMPT_HEIGHT = 100;
     private int PROMPT_WIDTH = 300;
+
+
     private boolean done = false;
 
     //Getters and Setters
@@ -42,9 +44,9 @@ public class Prompt {
         //draw Prompt window
         g2.setFont(START_FONT);
         g2.setColor(new Color(14, 61, 58));
-        g2.fillRoundRect(PROMPT_WIDTH + 100, PROMPT_HEIGHT, 2 * PROMPT_WIDTH, 5 * PROMPT_HEIGHT, 100, 90);
+        g2.fillRoundRect(PROMPT_WIDTH , PROMPT_HEIGHT, 2 * PROMPT_WIDTH + 125, 5 * PROMPT_HEIGHT, 100, 90);
         g2.setColor(new Color(0, 203, 160));
-        g2.fillRoundRect(PROMPT_WIDTH  + 100, PROMPT_HEIGHT , 2 * PROMPT_WIDTH - 5, 5 * PROMPT_HEIGHT - 12, 80, 90);
+        g2.fillRoundRect(PROMPT_WIDTH , PROMPT_HEIGHT , 2 * PROMPT_WIDTH - 5 + 125, 5 * PROMPT_HEIGHT - 12, 80, 90);
 
 
         //Write game title

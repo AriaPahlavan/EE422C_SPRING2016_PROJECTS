@@ -83,12 +83,11 @@
       <file leaf-file-name="Prompt.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Assignment7/Prompt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1425">
-              <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+            <state relative-caret-position="123">
+              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#startGame#0;class#Prompt#0" expanded="true" />
-                <element signature="method#instructions#0;class#Prompt#0" expanded="true" />
                 <element signature="method#endGame#0;class#Prompt#0" expanded="true" />
                 <element signature="method#reset#0;class#Prompt#0" expanded="true" />
               </folding>
@@ -735,7 +734,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Assignment7/Prompt.java</url>
-          <line>170</line>
+          <line>168</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
@@ -780,7 +779,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#startGame#0;class#Prompt#0" expanded="true" />
-            <element signature="method#instructions#0;class#Prompt#0" expanded="true" />
             <element signature="method#endGame#0;class#Prompt#0" expanded="true" />
             <element signature="method#reset#0;class#Prompt#0" expanded="true" />
           </folding>
@@ -1348,12 +1346,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment7/Prompt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1425">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        <state relative-caret-position="123">
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#startGame#0;class#Prompt#0" expanded="true" />
-            <element signature="method#instructions#0;class#Prompt#0" expanded="true" />
             <element signature="method#endGame#0;class#Prompt#0" expanded="true" />
             <element signature="method#reset#0;class#Prompt#0" expanded="true" />
           </folding>

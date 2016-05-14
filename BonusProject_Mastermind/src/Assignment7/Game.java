@@ -67,7 +67,7 @@ public class Game extends Applet implements Runnable, KeyListener {
         while ( true ) {
 
             //repaint only if the user is interacting with game
-            if ( keyPressed ) {
+            if ( keyPressed || status != GameStatus.IN_PRGRSS) {
 
                 //if use won
                 if ( myGameBoard.isGuessMatch() ) {
@@ -156,6 +156,28 @@ public class Game extends Applet implements Runnable, KeyListener {
                 this.prompt.startGame(g2);
 
 
+        if ( status == GameStatus.WON ) {
+            prompt.endGame(g2, "Congrats! You won :)", myGameBoard);
+        } else if ( status == GameStatus.LOST ) {
+            prompt.endGame(g2, "You lost :(", myGameBoard);
+        }
+
+
+
+        //popup before starting the race
+        if ( !isPromptDisabled )
+            if ( status == GameStatus.NOT_STRTD ) {
+                prompt.startGame(g2);
+            } else {
+                if ( status == GameStatus.IN_PRGRSS ) {
+
+                    prompt.setPROMPT_HEIGHT(0);
+                    prompt.setPROMPT_WIDTH(0);
+                    prompt.setDone(false);
+                }
+            }
+
+        //popup for game stats
         if ( status == GameStatus.WON ) {
             prompt.endGame(g2, "Congrats! You won :)", myGameBoard);
         } else if ( status == GameStatus.LOST ) {

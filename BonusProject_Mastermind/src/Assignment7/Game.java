@@ -30,6 +30,7 @@ public class Game extends Applet implements Runnable, KeyListener {
     private GameStatus status = GameStatus.NOT_STRTD;
     private boolean debugMode = true;
     private boolean promptInstructions = false;
+    private boolean isPromptUsed = false;
 
     @Override
     /**
@@ -67,7 +68,7 @@ public class Game extends Applet implements Runnable, KeyListener {
         while ( true ) {
 
             //repaint only if the user is interacting with game
-            if ( keyPressed || status != GameStatus.IN_PRGRSS) {
+            if ( keyPressed || status != GameStatus.IN_PRGRSS ) {
 
                 //if use won
                 if ( myGameBoard.isGuessMatch() ) {
@@ -149,33 +150,24 @@ public class Game extends Applet implements Runnable, KeyListener {
             }
         }
 
-
-        //popup before starting the race
-        if ( !isPromptDisabled )
-            if ( status == GameStatus.NOT_STRTD )
-                this.prompt.startGame(g2);
-
-
-        if ( status == GameStatus.WON ) {
-            prompt.endGame(g2, "Congrats! You won :)", myGameBoard);
-        } else if ( status == GameStatus.LOST ) {
-            prompt.endGame(g2, "You lost :(", myGameBoard);
-        }
-
-
-
         //popup before starting the race
         if ( !isPromptDisabled )
             if ( status == GameStatus.NOT_STRTD ) {
                 prompt.startGame(g2);
-            } else {
-                if ( status == GameStatus.IN_PRGRSS ) {
-
-                    prompt.setPROMPT_HEIGHT(0);
-                    prompt.setPROMPT_WIDTH(0);
-                    prompt.setDone(false);
-                }
             }
+
+        if ( isPromptUsed ) {
+            prompt.setPROMPT_HEIGHT(0);
+            prompt.setPROMPT_WIDTH(0);
+            prompt.setDone(false);
+            isPromptUsed = false;
+        }
+
+
+        if ( status == GameStatus.IN_PRGRSS )
+            if ( promptInstructions )
+                this.prompt.startGame(g2);
+
 
         //popup for game stats
         if ( status == GameStatus.WON ) {
@@ -239,14 +231,23 @@ public class Game extends Applet implements Runnable, KeyListener {
             }
 
             //To give up
-            if ( e.getKeyCode() == KeyEvent.VK_Q )
+            if ( e.getKeyCode() == KeyEvent.VK_Q ) {
                 status = GameStatus.LOST;
+
+            }
+
+            if ( e.getKeyCode() == KeyEvent.VK_H ) {
+                promptInstructions = !promptInstructions;
+                if ( promptInstructions == false )
+                    isPromptUsed = true;
+            }
         }
 
         //Notifies that user wants to start the race
         if ( status == GameStatus.NOT_STRTD )
             if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER ) {
                 status = GameStatus.IN_PRGRSS;
+                isPromptUsed = true;
             }
 
         //reset after game's over
@@ -267,11 +268,6 @@ public class Game extends Applet implements Runnable, KeyListener {
         if ( e.getKeyCode() == KeyEvent.VK_E )
             isPromptDisabled = false;
 
-        if ( e.getKeyCode() == KeyEvent.VK_H )
-            promptInstructions = true;
-
-
-
 
         keyPressed = true;
 
@@ -290,6 +286,8 @@ public class Game extends Applet implements Runnable, KeyListener {
             status = GameStatus.NOT_STRTD;
 
         keyPressed = true;
+
+        isPromptUsed = true;
     }
 
     @Override

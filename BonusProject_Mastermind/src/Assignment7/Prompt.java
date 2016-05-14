@@ -98,9 +98,9 @@ public class Prompt {
 
 
         //draw Prompt window
-        g2.fillRoundRect(PROMPT_WIDTH + 100, PROMPT_HEIGHT + 100, 2 * PROMPT_WIDTH, 5 * PROMPT_HEIGHT - 100, 20, 45);
+        g2.fillRoundRect(PROMPT_WIDTH + 100, PROMPT_HEIGHT + 100, 2 * PROMPT_WIDTH, 5 * PROMPT_HEIGHT - 100, 80,90);
         g2.setColor(new Color(14, 61, 58));
-        g2.fillRoundRect(PROMPT_WIDTH + 10 + 100, PROMPT_HEIGHT + 110, 2 * PROMPT_WIDTH - 20, 5 * PROMPT_HEIGHT - 120, 20, 45);
+        g2.fillRoundRect(PROMPT_WIDTH+ 100, PROMPT_HEIGHT + 100, 2 * PROMPT_WIDTH - 5, 5 * PROMPT_HEIGHT - 112, 80,90);
 
 
         //Beginning animation

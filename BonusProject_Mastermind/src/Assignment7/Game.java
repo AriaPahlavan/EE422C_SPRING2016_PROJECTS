@@ -23,7 +23,7 @@ public class Game extends Applet implements Runnable, KeyListener {
     private GameBoard myGameBoard;
     private Guess tempGuess;
     private ArrayList<RoundPegColor> tempPegs;
-    protected static final int MAX_GUESS = 1;
+    protected static final int MAX_GUESS = 13;
     private boolean isPromptDisabled = false;
     private Prompt prompt;
     private boolean keyPressed = true;

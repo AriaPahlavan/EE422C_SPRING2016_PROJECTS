@@ -11,7 +11,7 @@ public class Prompt {
     //Member data
     protected final Font START_FONT = new Font("DejaVu Sans, Bold", Font.BOLD + Font.ITALIC, 40);
     protected final Font START_SMALL_FONT = new Font("DejaVu Sans, Bold", Font.BOLD + Font.ITALIC, 20);
-    protected final Font START_MINI_FONT = new Font("DejaVu Sans, Bold", Font.BOLD + Font.ITALIC, 15);
+    protected final Font START_BIG_FONT = new Font("DejaVu Sans, Bold", Font.BOLD + Font.ITALIC, 45);
     protected final Font WINNER_FONT = new Font("Purisa", Font.BOLD, 40);
     protected final Font PROMPT_FONT = new Font("Purisa", Font.BOLD, 25);
     protected final Font SMALL_FONT = new Font("Purisa", Font.BOLD, 18);
@@ -22,7 +22,6 @@ public class Prompt {
     private int X_instruction = 800;
     private int Y_instruction = 220;
     private boolean done = false;
-
 
 
     //Getters and Setters
@@ -103,6 +102,10 @@ public class Prompt {
      */
     public void instructions(Graphics2D g2) {
 
+        //Draw bg box
+        g2.setColor(new Color(117, 151, 101));
+        g2.fillRoundRect(X_instruction + 155, Y_instruction + 30, PROMPT_WIDTH - 20, PROMPT_HEIGHT + 180, 80, 90);
+
         //Ask to press Enter or Space to start
         g2.setFont(START_SMALL_FONT);
         g2.setColor(Color.BLACK);
@@ -116,15 +119,15 @@ public class Prompt {
 
         for ( int i = 0; i < 6; i += 2 ) {
             g2.setColor(Color.black);
-            g2.drawString(colorInitials[i] + "", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
+            g2.drawString(colorInitials[i] + " > ", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
             g2.setColor(colors[i]);
-            g2.fillOval((11 * X_instruction) / 10 + 150, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
+            g2.fillOval((11 * X_instruction) / 10 + 155, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
 
 
             g2.setColor(Color.black);
-            g2.drawString(colorInitials[i + 1] + "", (11 * X_instruction) / 10 + 310, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
+            g2.drawString(colorInitials[i + 1] + " > ", (11 * X_instruction) / 10 + 240, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
             g2.setColor(colors[i + 1]);
-            g2.fillOval((11 * X_instruction) / 10 + 350, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
+            g2.fillOval((11 * X_instruction) / 10 + 285, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
         }
     }
 
@@ -137,13 +140,13 @@ public class Prompt {
      * @param myGameBoard
      */
     public void endGame(Graphics2D g2, String message, GameBoard myGameBoard) {
-        g2.setFont(START_FONT);
-        g2.setColor(Color.cyan);
+        g2.setFont(START_BIG_FONT);
+        g2.setColor(new Color(0, 102, 28));
 
 
         //draw Prompt window
         g2.fillRoundRect(PROMPT_WIDTH + 100, PROMPT_HEIGHT + 100, 2 * PROMPT_WIDTH, 5 * PROMPT_HEIGHT - 100, 80, 90);
-        g2.setColor(new Color(14, 61, 58));
+        g2.setColor(new Color(104, 198, 97));
         g2.fillRoundRect(PROMPT_WIDTH + 100, PROMPT_HEIGHT + 100, 2 * PROMPT_WIDTH - 5, 5 * PROMPT_HEIGHT - 112, 80, 90);
 
 
@@ -159,17 +162,20 @@ public class Prompt {
             //Write game title
             g2.setColor(new Color(226, 45, 0));
 
-            g2.drawString(message, (11 * PROMPT_WIDTH) / 10 + 125, (21 * PROMPT_HEIGHT) / 210 + 300);
+            if ( myGameBoard.isGuessMatch() )
+                g2.drawString(message, (11 * PROMPT_WIDTH) / 10 + 110, (21 * PROMPT_HEIGHT) / 210 + 300);
+            else
+                g2.drawString(message, (11 * PROMPT_WIDTH) / 10 + 225, (21 * PROMPT_HEIGHT) / 210 + 320);
 
 
             //Ask to press Enter or Space to start
-            g2.setFont(START_SMALL_FONT);
+            g2.setFont(PROMPT_FONT);
             g2.setColor(Color.BLACK);
 
             if ( myGameBoard.isGuessMatch() )
-                g2.drawString("Number of guesses: " + myGameBoard.getGuesses().size(), (11 * PROMPT_WIDTH) / 10 + 125, (21 * PROMPT_HEIGHT) / 10 + 200);
+                g2.drawString("Number of guesses: " + myGameBoard.getGuesses().size(), (11 * PROMPT_WIDTH) / 10 + 200, (21 * PROMPT_HEIGHT) / 10 + 200);
 
-            g2.drawString("Press R to play again.", (11 * PROMPT_WIDTH) / 10 + 125, (21 * PROMPT_HEIGHT) / 10 + 260);
+            g2.drawString("Press R to play again.", (11 * PROMPT_WIDTH) / 10 + 200, (21 * PROMPT_HEIGHT) / 10 + 250);
 
         }
     }

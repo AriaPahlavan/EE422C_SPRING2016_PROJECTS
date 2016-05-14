@@ -13,7 +13,7 @@ public class GameBoard {
     private List<Guess> guesses;
     private List<Result> results;
     private boolean guessMatch = false;
-    private final int MAX_GUESS = 12;
+    private final int MAX_GUESS = new ;
     private Board gameBoard;
 
 

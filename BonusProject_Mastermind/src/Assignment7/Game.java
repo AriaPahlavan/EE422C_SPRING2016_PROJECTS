@@ -23,13 +23,13 @@ public class Game extends Applet implements Runnable, KeyListener {
     private GameBoard myGameBoard;
     private Guess tempGuess;
     private ArrayList<RoundPegColor> tempPegs;
-    private final int MAX_GUESS = 2;
+    protected static final int MAX_GUESS = 13;
     private boolean isPromptDisabled = false;
     private Prompt prompt;
     private boolean keyPressed = true;
     private GameStatus status = GameStatus.NOT_STRTD;
-    private boolean debugMode = true;
-    private boolean promptInstructions = false;
+    private boolean debugMode = false;
+    private boolean promptInstructions = true;
     private boolean isPromptUsed = false;
 
     @Override
@@ -237,12 +237,6 @@ public class Game extends Applet implements Runnable, KeyListener {
                 status = GameStatus.LOST;
 
             }
-
-            if ( e.getKeyCode() == KeyEvent.VK_H ) {
-                promptInstructions = !promptInstructions;
-                if ( promptInstructions == false )
-                    isPromptUsed = true;
-            }
         }
 
         //Notifies that user wants to start the race
@@ -261,14 +255,17 @@ public class Game extends Applet implements Runnable, KeyListener {
         //Disabling popup!
         if ( e.getKeyCode() == KeyEvent.VK_D ) {
             isPromptDisabled = true;
+            promptInstructions = false;
 
             if ( status == GameStatus.NOT_STRTD )
                 status = GameStatus.IN_PRGRSS;
         }
 
         //Enabling popup!
-        if ( e.getKeyCode() == KeyEvent.VK_E )
+        if ( e.getKeyCode() == KeyEvent.VK_E ) {
             isPromptDisabled = false;
+            promptInstructions = true;
+        }
 
 
         keyPressed = true;

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea029d9-b1a5-42b3-86c2-d289e0e5efb6" name="Default" comment="Created a driver class.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Game.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/GameBoard.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/GameBoard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Prompt.java" afterPath="$PROJECT_DIR$/../BonusProject_Mastermind/src/Assignment7/Prompt.java" />
     </list>
     <ignored path="Project5_Cars.iws" />

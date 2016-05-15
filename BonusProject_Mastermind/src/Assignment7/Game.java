@@ -29,7 +29,6 @@ public class Game extends Applet implements Runnable, KeyListener {
     private boolean keyPressed = true;
     private GameStatus status = GameStatus.NOT_STRTD;
     private boolean debugMode = false;
-    private boolean promptInstructions = true;
     private boolean isOver = false;
 
     @Override
@@ -165,19 +164,18 @@ public class Game extends Applet implements Runnable, KeyListener {
             }
 
 
+        if ( status == GameStatus.IN_PRGRSS ) {
+            prompt.setPROMPT_HEIGHT(100);
+            prompt.setPROMPT_WIDTH(300);
+            this.prompt.instructions(g2);
+        }
 
-        if ( status == GameStatus.IN_PRGRSS )
-             {
-                prompt.setPROMPT_HEIGHT(100);
-                prompt.setPROMPT_WIDTH(300);
-                this.prompt.instructions(g2);
-            }
 
         //popup for game stats
         if ( status == GameStatus.WON ) {
-            prompt.endGame(g2, "Congrats! You won :)", myGameBoard);
+                prompt.endGame(g2, "Congrats! You won :)", myGameBoard);
         } else if ( status == GameStatus.LOST ) {
-            prompt.endGame(g2, "You lost :(", myGameBoard);
+                prompt.endGame(g2, "You lost :(", myGameBoard);
         }
     }
 
@@ -249,14 +247,14 @@ public class Game extends Applet implements Runnable, KeyListener {
 
         //reset after game's over
         if ( status == GameStatus.LOST || status == GameStatus.WON )
-            if ( e.getKeyCode() == KeyEvent.VK_R )
+            if ( e.getKeyCode() == KeyEvent.VK_R ) {
                 reset();
+            }
 
 
         //Disabling popup!
         if ( e.getKeyCode() == KeyEvent.VK_D ) {
             isPromptDisabled = true;
-            promptInstructions = false;
 
             if ( status == GameStatus.NOT_STRTD )
                 status = GameStatus.IN_PRGRSS;
@@ -265,7 +263,6 @@ public class Game extends Applet implements Runnable, KeyListener {
         //Enabling popup!
         if ( e.getKeyCode() == KeyEvent.VK_E ) {
             isPromptDisabled = false;
-            promptInstructions = true;
         }
 
 
@@ -287,8 +284,6 @@ public class Game extends Applet implements Runnable, KeyListener {
 
         keyPressed = true;
         resetPrompt();
-        promptInstructions = false;
-
         isOver = false;
     }
 
@@ -297,7 +292,7 @@ public class Game extends Applet implements Runnable, KeyListener {
 
     }
 
-    public void resetPrompt(){
+    public void resetPrompt() {
         prompt.setPROMPT_HEIGHT(0.421272023);
         prompt.setPROMPT_WIDTH(1.26381607);
         prompt.setDone(false);

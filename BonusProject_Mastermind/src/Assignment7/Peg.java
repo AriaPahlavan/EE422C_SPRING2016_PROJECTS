@@ -17,7 +17,7 @@ public class Peg {
     private int yPeg;
     private int xPeg;
     protected static Color PURPLE = new Color(95, 4, 153);
-    protected static Color ORANGE = new Color(255, 83, 0);
+    protected static Color ORANGE = new Color(255, 122, 0);
 
     public Peg() {
         this.color = RoundPegColor.none;

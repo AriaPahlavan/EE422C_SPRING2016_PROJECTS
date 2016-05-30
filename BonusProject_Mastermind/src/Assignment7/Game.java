@@ -31,7 +31,7 @@ public class Game extends Applet implements Runnable, KeyListener {
     private boolean debugMode = false;
     private boolean isOver = false;
     private TextField maxGuess;
-
+    private boolean popupIsRunning = true;
 
 
     @Override
@@ -174,22 +174,29 @@ public class Game extends Applet implements Runnable, KeyListener {
         //popup before starting the race
         if ( !isPromptDisabled )
             if ( status == GameStatus.NOT_STRTD ) {
+
+                //reset the prompt parameters and start the game
+                if ( prompt.getStatus() == PopupStatus.RESET ){
+                    prompt.setStatus(PopupStatus.INIT);
+                    status = GameStatus.IN_PRGRSS;
+                }
+
+                //initialize, run and close the prompt
                 prompt.startGame(g2);
+
             }
 
 
         if ( status == GameStatus.IN_PRGRSS ) {
-            prompt.setPROMPT_HEIGHT(100);
-            prompt.setPROMPT_WIDTH(300);
             this.prompt.instructions(g2);
         }
 
 
         //popup for game stats
         if ( status == GameStatus.WON ) {
-                prompt.endGame(g2, "Congrats! You won :)", myGameBoard);
+            prompt.endGame(g2, "Congrats! You won :)", myGameBoard);
         } else if ( status == GameStatus.LOST ) {
-                prompt.endGame(g2, "You lost :(", myGameBoard);
+            prompt.endGame(g2, "You lost :(", myGameBoard);
         }
     }
 
@@ -203,6 +210,7 @@ public class Game extends Applet implements Runnable, KeyListener {
     public void keyPressed(KeyEvent e) {
 
 
+        //When game in progress
         if ( status == GameStatus.IN_PRGRSS ) {
 
             // Register guess
@@ -242,8 +250,6 @@ public class Game extends Applet implements Runnable, KeyListener {
                         tempPegs.add(RoundPegColor.yellow);
                         break;
                 }
-
-
             }
 
             //To give up
@@ -253,10 +259,11 @@ public class Game extends Applet implements Runnable, KeyListener {
             }
         }
 
+
         //Notifies that user wants to start the race
         if ( status == GameStatus.NOT_STRTD )
             if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER ) {
-                status = GameStatus.IN_PRGRSS;
+                prompt.setStatus(PopupStatus.DONE);
             }
 
         //reset after game's over

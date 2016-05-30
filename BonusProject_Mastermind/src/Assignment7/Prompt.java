@@ -3,6 +3,13 @@ package Assignment7;
 import java.awt.*;
 import java.util.ArrayList;
 
+enum PopupStatus {
+    INIT,
+    RUN,
+    DONE,
+    RESET
+}
+
 /**
  * Project5_Cars
  * Created by Aria Pahlavan on Apr 2016.
@@ -23,6 +30,8 @@ public class Prompt {
     private int X_instruction = 800;
     private int Y_instruction = 220;
     private boolean done = false;
+    private boolean inprogress = true;
+    private PopupStatus status = PopupStatus.INIT;
 
 
     //Getters and Setters
@@ -36,6 +45,22 @@ public class Prompt {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public boolean isInprogress() {
+        return inprogress;
+    }
+
+    public PopupStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(PopupStatus status) {
+        this.status = status;
+    }
+
+    public void setInprogress(boolean inprogress) {
+        this.inprogress = inprogress;
     }
 
     /**
@@ -53,19 +78,21 @@ public class Prompt {
         g2.fillRoundRect(X_AXIS, (int) PROMPT_HEIGHT, 2 * (int) PROMPT_WIDTH - 5 + 125, 5 * (int) PROMPT_HEIGHT - 12, 80, 90);
 
         //Beginning animation
-        if ( !done ) {
+        if ( status == PopupStatus.INIT ) {
             PROMPT_WIDTH *= 1.2;
             PROMPT_HEIGHT *= 1.2;
+
+            if ( (int) PROMPT_WIDTH == 300 || (int) PROMPT_HEIGHT == 100 ) {
+
+                status = PopupStatus.RUN;
+                PROMPT_WIDTH = 300;
+                PROMPT_HEIGHT = 100;
+            }
         }
-        if ( (int) PROMPT_WIDTH == 300 || (int) PROMPT_HEIGHT == 100 ) {
-
-            done = true;
-            PROMPT_WIDTH = 300;
-            PROMPT_HEIGHT = 100;
-        }
 
 
-        if ( done ) {
+
+        if ( status == PopupStatus.RUN ) {
 
             //Write game title
             g2.setColor(new Color(226, 45, 0));
@@ -98,6 +125,21 @@ public class Prompt {
                 g2.fillOval((11 * (int) PROMPT_WIDTH) / 10 + 490, (21 * (int) PROMPT_HEIGHT) / 10 + 215 + 40 * (i / 2), 20, 20);
             }
         }
+
+        //closing animation
+        if ( status == PopupStatus.DONE ) {
+            PROMPT_WIDTH /= 1.7;
+            PROMPT_HEIGHT /= 1.7;
+
+            System.out.println("1) Width: " + (int)PROMPT_WIDTH);
+            System.out.println("2) Height: " + (int)PROMPT_HEIGHT);
+            if ( (int) PROMPT_WIDTH == 0  ) {
+
+                status = PopupStatus.RESET;
+            }
+
+        }
+
     }
 
 
@@ -107,7 +149,8 @@ public class Prompt {
      * @param g2
      */
     public void instructions(Graphics2D g2) {
-
+        int PROMPT_WIDTH = 300;
+        int PROMPT_HEIGHT = 100;
         //Draw bg box
         g2.setColor(new Color(117, 151, 101));
         g2.fillRoundRect(X_instruction + 155, Y_instruction + 30, (int) PROMPT_WIDTH - 20, (int) PROMPT_HEIGHT + 180, 80, 90);

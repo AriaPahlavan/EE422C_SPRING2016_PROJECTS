@@ -91,7 +91,6 @@ public class Prompt {
         }
 
 
-
         if ( status == PopupStatus.RUN ) {
 
             //Write game title
@@ -131,9 +130,9 @@ public class Prompt {
             PROMPT_WIDTH /= 1.7;
             PROMPT_HEIGHT /= 1.7;
 
-            System.out.println("1) Width: " + (int)PROMPT_WIDTH);
-            System.out.println("2) Height: " + (int)PROMPT_HEIGHT);
-            if ( (int) PROMPT_WIDTH == 0  ) {
+            System.out.println("1) Width: " + (int) PROMPT_WIDTH);
+            System.out.println("2) Height: " + (int) PROMPT_HEIGHT);
+            if ( (int) PROMPT_WIDTH == 0 ) {
 
                 status = PopupStatus.RESET;
             }
@@ -153,13 +152,13 @@ public class Prompt {
         int PROMPT_HEIGHT = 100;
         //Draw bg box
         g2.setColor(new Color(117, 151, 101));
-        g2.fillRoundRect(X_instruction + 155, Y_instruction + 30,  PROMPT_WIDTH - 20,  PROMPT_HEIGHT + 180, 80, 90);
+        g2.fillRoundRect(X_instruction + 155, Y_instruction + 30, PROMPT_WIDTH - 20, PROMPT_HEIGHT + 180, 80, 90);
 
         //Ask to press Enter or Space to start
         g2.setFont(START_SMALL_FONT);
         g2.setColor(Color.BLACK);
 
-        g2.drawString("\"Backspace\" to undo", (11 * X_instruction) / 10 + 110, (21 *  PROMPT_HEIGHT) / 10 + 80);
+        g2.drawString("\"Backspace\" to undo", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 80);
         g2.drawString("\"Enter\" to match ", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 110);
         g2.drawString("\"Q\" to give up", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 140);
 
@@ -168,9 +167,9 @@ public class Prompt {
 
         for ( int i = 0; i < 6; i += 2 ) {
             g2.setColor(Color.black);
-            g2.drawString(colorInitials[i] + " > ", (11 * X_instruction) / 10 + 110, (21 *  PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
+            g2.drawString(colorInitials[i] + " > ", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
             g2.setColor(colors[i]);
-            g2.fillOval((11 * X_instruction) / 10 + 155, (21 *  PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
+            g2.fillOval((11 * X_instruction) / 10 + 155, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
 
 
             g2.setColor(Color.black);
@@ -189,6 +188,8 @@ public class Prompt {
      * @param myGameBoard
      */
     public void endGame(Graphics2D g2, String message, GameBoard myGameBoard) {
+
+
         g2.setFont(START_BIG_FONT);
         g2.setColor(new Color(0, 102, 28));
 
@@ -200,18 +201,22 @@ public class Prompt {
 
 
         //Beginning animation
-        if ( !done ) {
+        if ( status == PopupStatus.INIT ) {
             PROMPT_WIDTH *= 1.141;
             PROMPT_HEIGHT *= 1.113;
-        }
-        if ( (int) PROMPT_WIDTH == 290 || (int) PROMPT_HEIGHT == 99 ) {
 
-            done = true;
-            PROMPT_WIDTH = 300;
-            PROMPT_HEIGHT = 100;
+
+
+            if ( (int) PROMPT_WIDTH == 290 || (int) PROMPT_HEIGHT == 99 ) {
+
+                status = PopupStatus.RUN;
+                PROMPT_WIDTH = 300;
+                PROMPT_HEIGHT = 100;
+            }
         }
 
-        if ( done ) {
+
+        if ( status == PopupStatus.RUN ) {
 
             //Write game title
             g2.setColor(new Color(226, 45, 0));
@@ -233,6 +238,17 @@ public class Prompt {
                 g2.drawString("Number of guesses: " + myGameBoard.getGuesses().size(), (11 * (int) PROMPT_WIDTH) / 10 - 220, (21 * (int) PROMPT_HEIGHT) / 10 + 200);
 
             g2.drawString("Press R to play again.", (11 * (int) PROMPT_WIDTH) / 10 - 220, (21 * (int) PROMPT_HEIGHT) / 10 + 250);
+
+        }
+
+        //closing animation
+        if ( status == PopupStatus.DONE ) {
+            PROMPT_WIDTH /= 1.141;
+            PROMPT_HEIGHT /= 1.113;
+
+            if ( (int) PROMPT_WIDTH == 0 ) {
+                status = PopupStatus.RESET;
+            }
 
         }
     }

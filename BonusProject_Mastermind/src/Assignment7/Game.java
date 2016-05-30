@@ -23,15 +23,14 @@ public class Game extends Applet implements Runnable, KeyListener {
     private GameBoard myGameBoard;
     private Guess tempGuess;
     private ArrayList<RoundPegColor> tempPegs;
-    protected static int MAX_GUESS = 13;
-    private boolean isPromptDisabled = false;
+    protected static int MAX_GUESS = 1; //TODO
+    private boolean isPromptDisabled = true; //TODO
     private Prompt prompt;
     private boolean keyPressed = true;
-    private GameStatus status = GameStatus.NOT_STRTD;
+    private GameStatus status = GameStatus.IN_PRGRSS; //TODO
     private boolean debugMode = false;
     private boolean isOver = false;
     private TextField maxGuess;
-    private boolean popupIsRunning = true;
 
 
     @Override
@@ -172,9 +171,8 @@ public class Game extends Applet implements Runnable, KeyListener {
         }
 
         //popup before starting the race
-        if ( !isPromptDisabled )
+        if ( !isPromptDisabled ) {
             if ( status == GameStatus.NOT_STRTD ) {
-
 
 
                 //initialize, run and close the prompt
@@ -182,12 +180,13 @@ public class Game extends Applet implements Runnable, KeyListener {
 
 
                 //reset the prompt parameters and start the game
-                if ( prompt.getStatus() == PopupStatus.RESET ){
+                if ( prompt.getStatus() == PopupStatus.RESET ) {
                     prompt.setStatus(PopupStatus.INIT);
                     status = GameStatus.IN_PRGRSS;
-                    keyPressed =true;
+                    keyPressed = true;
                 }
             }
+        }
 
 
         if ( status == GameStatus.IN_PRGRSS ) {
@@ -198,9 +197,29 @@ public class Game extends Applet implements Runnable, KeyListener {
         //popup for game stats
         if ( status == GameStatus.WON ) {
             prompt.endGame(g2, "Congrats! You won :)", myGameBoard);
+
+            //reset the prompt parameters and start the game
+            if ( prompt.getStatus() == PopupStatus.RESET ) {
+                prompt.setStatus(PopupStatus.INIT);
+//                status = GameStatus.IN_PRGRSS;
+//                keyPressed = true;
+                reset();
+            }
+
         } else if ( status == GameStatus.LOST ) {
             prompt.endGame(g2, "You lost :(", myGameBoard);
+
+            //reset the prompt parameters and start the game
+            if ( prompt.getStatus() == PopupStatus.RESET ) {
+                prompt.setStatus(PopupStatus.INIT);
+//                status = GameStatus.IN_PRGRSS;
+//                keyPressed = true;
+                reset();
+
+            }
         }
+
+
     }
 
 
@@ -272,7 +291,7 @@ public class Game extends Applet implements Runnable, KeyListener {
         //reset after game's over
         if ( status == GameStatus.LOST || status == GameStatus.WON )
             if ( e.getKeyCode() == KeyEvent.VK_R ) {
-                reset();
+                prompt.setStatus(PopupStatus.DONE);
             }
 
 
@@ -321,5 +340,6 @@ public class Game extends Applet implements Runnable, KeyListener {
         prompt.setPROMPT_HEIGHT(0.421272023);
         prompt.setPROMPT_WIDTH(1.26381607);
         prompt.setDone(false);
+        prompt.setStatus(PopupStatus.INIT);
     }
 }

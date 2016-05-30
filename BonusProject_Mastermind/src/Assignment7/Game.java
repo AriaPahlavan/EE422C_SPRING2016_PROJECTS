@@ -23,11 +23,11 @@ public class Game extends Applet implements Runnable, KeyListener {
     private GameBoard myGameBoard;
     private Guess tempGuess;
     private ArrayList<RoundPegColor> tempPegs;
-    protected static int MAX_GUESS = 13;
+    protected static int MAX_GUESS = 1;
     private boolean isPromptDisabled = false;
     private Prompt prompt;
     private boolean keyPressed = true;
-    private GameStatus status = GameStatus.NOT_STRTD; 
+    private GameStatus status = GameStatus.NOT_STRTD;
     private boolean debugMode = false;
     private boolean isOver = false;
     private TextField maxGuess;
@@ -154,21 +154,27 @@ public class Game extends Applet implements Runnable, KeyListener {
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
 
-        if ( status == GameStatus.WON || status == GameStatus.LOST ) {
-            // Paint board and it's elements
-            myGameBoard.paintGameBoard(g2);
-        } else if ( status == GameStatus.IN_PRGRSS) {
-            // Paint board and it's elements and guess
-            myGameBoard.paintGameBoard(g2);
-            tempGuess.displayTempGuess(g2);
-            tempGuess.reset();
+        //In the middle of closing a popup?
+        if ( prompt.getStatus() != PopupStatus.DONE ) {
 
-            //code cover
-            if ( !debugMode ) {
-                g2.setColor(new Color(205, 133, 63));
-                g2.fillRoundRect(522, 80, 350, 60, 10, 360);
+            //Game over?
+            if ( (status == GameStatus.WON || status == GameStatus.LOST) ) {
+                // Paint board and it's elements
+                myGameBoard.paintGameBoard(g2);
+            } else if ( status == GameStatus.IN_PRGRSS ) {
+                // Paint board and it's elements and guess
+                myGameBoard.paintGameBoard(g2);
+                tempGuess.displayTempGuess(g2);
+                tempGuess.reset();
+
+                //code cover
+                if ( !debugMode ) {
+                    g2.setColor(new Color(205, 133, 63));
+                    g2.fillRoundRect(522, 80, 350, 60, 10, 360);
+                }
             }
         }
+
 
         //popup before starting the race
         if ( !isPromptDisabled ) {
@@ -307,7 +313,6 @@ public class Game extends Applet implements Runnable, KeyListener {
         if ( e.getKeyCode() == KeyEvent.VK_E ) {
             isPromptDisabled = false;
         }
-
 
 
         keyPressed = true;

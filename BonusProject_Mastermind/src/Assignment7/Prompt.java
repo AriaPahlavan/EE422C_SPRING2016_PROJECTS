@@ -246,7 +246,7 @@ public class Prompt {
             PROMPT_WIDTH /= 1.141;
             PROMPT_HEIGHT /= 1.113;
 
-            if ( (int) PROMPT_WIDTH == 0 ) {
+            if ( (int) PROMPT_HEIGHT == 0 ) {
                 status = PopupStatus.RESET;
             }
 

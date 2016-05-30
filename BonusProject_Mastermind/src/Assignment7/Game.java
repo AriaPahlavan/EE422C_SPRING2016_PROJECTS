@@ -45,6 +45,7 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
         //initializing the background images and threads
         this.setSize(1400, 700);
         addKeyListener(this);
+        this.setFocusable(true);
 
         //initializing txt, btn and lbl
         maxGuess = new TextField(5);
@@ -373,6 +374,8 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
                 disableSettings();
                 maxGuess.setForeground(Color.black);
 
+                if ( status == GameStatus.IN_PRGRSS )
+                    reset();
             } else {
                 maxGuess.setForeground(Color.red);
             }
@@ -381,14 +384,14 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
             maxGuess.setForeground(Color.red);
         }
         finally {
-            if ( status == GameStatus.IN_PRGRSS )
-                reset();
+
         }
     }
 
 
     private void enableSettings(){
         maxGuess.setFocusable(true);
+        ok.setFocusable(true);
         name.setVisible(true);
         maxGuess.setVisible(true);
         ok.setVisible(true);

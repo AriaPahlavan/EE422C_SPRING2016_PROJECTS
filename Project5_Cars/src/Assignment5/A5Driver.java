@@ -215,7 +215,7 @@ public class A5Driver extends Applet implements Runnable, KeyListener {
         //S for Sport!! ;)
 
         if ( e.getKeyCode() == KeyEvent.VK_S )
-            isSport = true;
+            isSport = !isSport;
 
 
     }

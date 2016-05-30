@@ -23,13 +23,16 @@ public class Game extends Applet implements Runnable, KeyListener {
     private GameBoard myGameBoard;
     private Guess tempGuess;
     private ArrayList<RoundPegColor> tempPegs;
-    protected static final int MAX_GUESS = 13;
+    protected static int MAX_GUESS = 13;
     private boolean isPromptDisabled = false;
     private Prompt prompt;
     private boolean keyPressed = true;
     private GameStatus status = GameStatus.NOT_STRTD;
     private boolean debugMode = false;
     private boolean isOver = false;
+    private TextField maxGuess;
+
+
 
     @Override
     /**
@@ -39,6 +42,17 @@ public class Game extends Applet implements Runnable, KeyListener {
         //initializing the background images and threads
         this.setSize(1400, 700);
         addKeyListener(this);
+
+//        maxGuess = new TextField("13");
+//        maxGuess.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                MAX_GUESS = new Integer(e.getActionCommand());
+//            }
+//        });
+//
+//        maxGuess.
+//        add(maxGuess);
 
     }
 

@@ -153,30 +153,30 @@ public class Prompt {
         int PROMPT_HEIGHT = 100;
         //Draw bg box
         g2.setColor(new Color(117, 151, 101));
-        g2.fillRoundRect(X_instruction + 155, Y_instruction + 30, (int) PROMPT_WIDTH - 20, (int) PROMPT_HEIGHT + 180, 80, 90);
+        g2.fillRoundRect(X_instruction + 155, Y_instruction + 30,  PROMPT_WIDTH - 20,  PROMPT_HEIGHT + 180, 80, 90);
 
         //Ask to press Enter or Space to start
         g2.setFont(START_SMALL_FONT);
         g2.setColor(Color.BLACK);
 
-        g2.drawString("\"Backspace\" to undo", (11 * X_instruction) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 80);
-        g2.drawString("\"Enter\" to match ", (11 * X_instruction) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 110);
-        g2.drawString("\"Q\" to give up", (11 * X_instruction) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 140);
+        g2.drawString("\"Backspace\" to undo", (11 * X_instruction) / 10 + 110, (21 *  PROMPT_HEIGHT) / 10 + 80);
+        g2.drawString("\"Enter\" to match ", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 110);
+        g2.drawString("\"Q\" to give up", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 140);
 
         Color[] colors = { Color.red, Peg.PURPLE, Color.blue, Color.YELLOW, Peg.ORANGE, Color.green };
         char[] colorInitials = { 'R', 'P', 'B', 'Y', 'O', 'G' };
 
         for ( int i = 0; i < 6; i += 2 ) {
             g2.setColor(Color.black);
-            g2.drawString(colorInitials[i] + " > ", (11 * X_instruction) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
+            g2.drawString(colorInitials[i] + " > ", (11 * X_instruction) / 10 + 110, (21 *  PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
             g2.setColor(colors[i]);
-            g2.fillOval((11 * X_instruction) / 10 + 155, (21 * (int) PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
+            g2.fillOval((11 * X_instruction) / 10 + 155, (21 *  PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
 
 
             g2.setColor(Color.black);
-            g2.drawString(colorInitials[i + 1] + " > ", (11 * X_instruction) / 10 + 240, (21 * (int) PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
+            g2.drawString(colorInitials[i + 1] + " > ", (11 * X_instruction) / 10 + 240, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
             g2.setColor(colors[i + 1]);
-            g2.fillOval((11 * X_instruction) / 10 + 285, (21 * (int) PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
+            g2.fillOval((11 * X_instruction) / 10 + 285, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
         }
     }
 

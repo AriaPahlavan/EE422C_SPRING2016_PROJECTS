@@ -158,7 +158,7 @@ public class Game extends Applet implements Runnable, KeyListener {
         if ( status == GameStatus.WON || status == GameStatus.LOST ) {
             // Paint board and it's elements
             myGameBoard.paintGameBoard(g2);
-        } else if ( status != GameStatus.NOT_STRTD || isPromptDisabled ) {
+        } else if ( status != GameStatus.NOT_STRTD) {
             // Paint board and it's elements and guess
             myGameBoard.paintGameBoard(g2);
             tempGuess.displayTempGuess(g2);
@@ -284,6 +284,9 @@ public class Game extends Applet implements Runnable, KeyListener {
         //Enabling popup!
         if ( e.getKeyCode() == KeyEvent.VK_E ) {
             isPromptDisabled = false;
+        }
+
+        if ( e.getKeyCode() == KeyEvent.VK_ESCAPE ) {
         }
 
 

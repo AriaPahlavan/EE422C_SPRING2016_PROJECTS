@@ -13,7 +13,7 @@ public class GameBoard {
     private List<Guess> guesses;
     private List<Result> results;
     private boolean guessMatch = false;
-    private final int MAX_GUESS = Game.MAX_GUESS;
+    private int MAX_GUESS;
     private Board gameBoard;
 
 
@@ -24,7 +24,11 @@ public class GameBoard {
         this.guesses = new ArrayList<>();
         this.results = new ArrayList<>();
         gameBoard = new Board();
+        this.MAX_GUESS = Game.MAX_GUESS;
+    }
 
+    public void setMAX_GUESS(int MAX_GUESS) {
+        this.MAX_GUESS = MAX_GUESS;
     }
 
     public GameBoard(SecretCode secretCode, List<Guess> guesses, List<Result> results) {

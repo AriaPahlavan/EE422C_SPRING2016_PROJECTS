@@ -2,6 +2,8 @@ package Assignment7;
 
 import java.applet.Applet;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ enum GameStatus {
  * BonusProject_Mastermind
  * Created by Aria Pahlavan on Apr 2016.
  */
-public class Game extends Applet implements Runnable, KeyListener {
+public class Game extends Applet implements Runnable, KeyListener, ActionListener {
     private Graphics doubleG;
     private Image image;
     private GameBoard myGameBoard;
@@ -31,6 +33,8 @@ public class Game extends Applet implements Runnable, KeyListener {
     private boolean debugMode = false;
     private boolean isOver = false;
     private TextField maxGuess;
+    private Label name;
+    private Button ok;
 
 
     @Override
@@ -42,16 +46,19 @@ public class Game extends Applet implements Runnable, KeyListener {
         this.setSize(1400, 700);
         addKeyListener(this);
 
-//        maxGuess = new TextField("13");
-//        maxGuess.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                MAX_GUESS = new Integer(e.getActionCommand());
-//            }
-//        });
-//
-//        maxGuess.
-//        add(maxGuess);
+        //initializing txt, btn and lbl
+        maxGuess = new TextField(5);
+        name = new Label("Enter maximum number of guesses: ");
+        ok = new Button("Update");
+
+        add(name);
+        add(maxGuess);
+        add(ok);
+
+
+        maxGuess.addActionListener(this);
+        ok.addActionListener(this);
+
 
     }
 
@@ -346,5 +353,31 @@ public class Game extends Applet implements Runnable, KeyListener {
         prompt.setPROMPT_WIDTH(1.26381607);
         prompt.setDone(false);
         prompt.setStatus(PopupStatus.INIT);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        try {
+            int temp = Integer.parseInt(maxGuess.getText());
+            if ( temp <=13 ) {
+                MAX_GUESS = temp;
+                myGameBoard.setMAX_GUESS(MAX_GUESS);
+                prompt.setStatus(PopupStatus.DONE);
+            }
+            else {
+                
+            }
+        }catch (Exception e1){
+
+        }finally {
+            System.out.println(MAX_GUESS);
+            name.setFocusable(false);
+            maxGuess.setFocusable(false);
+            ok.setFocusable(false);
+            name.setVisible(false);
+            maxGuess.setVisible(false);
+            ok.setVisible(false);
+            this.setFocusable(true);
+        }
     }
 }

@@ -25,7 +25,7 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
     private GameBoard myGameBoard;
     private Guess tempGuess;
     private ArrayList<RoundPegColor> tempPegs;
-    protected static int MAX_GUESS = 1;
+    protected static int MAX_GUESS = 13;
     private boolean isPromptDisabled = false;
     private Prompt prompt;
     private boolean keyPressed = true;
@@ -51,6 +51,7 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
         name = new Label("Enter maximum number of guesses: ");
         ok = new Button("Update");
 
+        maxGuess.setText(new Integer(MAX_GUESS).toString());
         add(name);
         add(maxGuess);
         add(ok);
@@ -321,6 +322,17 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
             isPromptDisabled = false;
         }
 
+        if ( e.getKeyCode() == KeyEvent.VK_S) {
+            //Display the settings
+            name.setFocusable(true);
+            maxGuess.setFocusable(true);
+            ok.setFocusable(true);
+            name.setVisible(true);
+            maxGuess.setVisible(true);
+            ok.setVisible(true);
+            this.setFocusable(false);
+
+        }
 
         keyPressed = true;
 
@@ -359,25 +371,27 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
     public void actionPerformed(ActionEvent e) {
         try {
             int temp = Integer.parseInt(maxGuess.getText());
-            if ( temp <=13 ) {
+            if ( temp <=13 && temp >0) {
                 MAX_GUESS = temp;
                 myGameBoard.setMAX_GUESS(MAX_GUESS);
                 prompt.setStatus(PopupStatus.DONE);
+
+                //Get rid of the settings
+                name.setFocusable(false);
+                maxGuess.setFocusable(false);
+                ok.setFocusable(false);
+                name.setVisible(false);
+                maxGuess.setVisible(false);
+                ok.setVisible(false);
+                this.setFocusable(true);
+                maxGuess.setForeground(Color.black);
             }
             else {
-                
+                maxGuess.setForeground(Color.red);
             }
-        }catch (Exception e1){
 
-        }finally {
-            System.out.println(MAX_GUESS);
-            name.setFocusable(false);
-            maxGuess.setFocusable(false);
-            ok.setFocusable(false);
-            name.setVisible(false);
-            maxGuess.setVisible(false);
-            ok.setVisible(false);
-            this.setFocusable(true);
+        }catch (Exception e1){
+            maxGuess.setForeground(Color.red);
         }
     }
 }

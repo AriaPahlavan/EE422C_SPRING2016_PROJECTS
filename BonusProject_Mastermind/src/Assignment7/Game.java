@@ -324,14 +324,7 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
 
         if ( e.getKeyCode() == KeyEvent.VK_S) {
             //Display the settings
-            name.setFocusable(true);
-            maxGuess.setFocusable(true);
-            ok.setFocusable(true);
-            name.setVisible(true);
-            maxGuess.setVisible(true);
-            ok.setVisible(true);
-            this.setFocusable(false);
-
+            enableSettings();
         }
 
         keyPressed = true;
@@ -371,27 +364,44 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
     public void actionPerformed(ActionEvent e) {
         try {
             int temp = Integer.parseInt(maxGuess.getText());
-            if ( temp <=13 && temp >0) {
+            if ( temp <= 13 && temp > 0 ) {
                 MAX_GUESS = temp;
                 myGameBoard.setMAX_GUESS(MAX_GUESS);
                 prompt.setStatus(PopupStatus.DONE);
 
                 //Get rid of the settings
-                name.setFocusable(false);
-                maxGuess.setFocusable(false);
-                ok.setFocusable(false);
-                name.setVisible(false);
-                maxGuess.setVisible(false);
-                ok.setVisible(false);
-                this.setFocusable(true);
+                disableSettings();
                 maxGuess.setForeground(Color.black);
-            }
-            else {
+
+            } else {
                 maxGuess.setForeground(Color.red);
             }
 
-        }catch (Exception e1){
+        } catch (Exception e1) {
             maxGuess.setForeground(Color.red);
         }
+        finally {
+            if ( status == GameStatus.IN_PRGRSS )
+                reset();
+        }
+    }
+
+
+    private void enableSettings(){
+        maxGuess.setFocusable(true);
+        name.setVisible(true);
+        maxGuess.setVisible(true);
+        ok.setVisible(true);
+        this.setFocusable(false);
+    }
+
+    private void disableSettings(){
+        name.setFocusable(false);
+        maxGuess.setFocusable(false);
+        ok.setFocusable(false);
+        name.setVisible(false);
+        maxGuess.setVisible(false);
+        ok.setVisible(false);
+        this.setFocusable(true);
     }
 }

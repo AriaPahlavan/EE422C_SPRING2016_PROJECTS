@@ -130,8 +130,6 @@ public class Prompt {
             PROMPT_WIDTH /= 1.7;
             PROMPT_HEIGHT /= 1.7;
 
-            System.out.println("1) Width: " + (int) PROMPT_WIDTH);
-            System.out.println("2) Height: " + (int) PROMPT_HEIGHT);
             if ( (int) PROMPT_WIDTH == 0 ) {
 
                 status = PopupStatus.RESET;

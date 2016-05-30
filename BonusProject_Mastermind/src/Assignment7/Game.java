@@ -158,7 +158,7 @@ public class Game extends Applet implements Runnable, KeyListener {
         if ( status == GameStatus.WON || status == GameStatus.LOST ) {
             // Paint board and it's elements
             myGameBoard.paintGameBoard(g2);
-        } else if ( status != GameStatus.NOT_STRTD) {
+        } else if ( status == GameStatus.IN_PRGRSS) {
             // Paint board and it's elements and guess
             myGameBoard.paintGameBoard(g2);
             tempGuess.displayTempGuess(g2);
@@ -175,15 +175,18 @@ public class Game extends Applet implements Runnable, KeyListener {
         if ( !isPromptDisabled )
             if ( status == GameStatus.NOT_STRTD ) {
 
-                //reset the prompt parameters and start the game
-                if ( prompt.getStatus() == PopupStatus.RESET ){
-                    prompt.setStatus(PopupStatus.INIT);
-                    status = GameStatus.IN_PRGRSS;
-                }
+
 
                 //initialize, run and close the prompt
                 prompt.startGame(g2);
 
+
+                //reset the prompt parameters and start the game
+                if ( prompt.getStatus() == PopupStatus.RESET ){
+                    prompt.setStatus(PopupStatus.INIT);
+                    status = GameStatus.IN_PRGRSS;
+                    keyPressed =true;
+                }
             }
 
 
@@ -286,8 +289,6 @@ public class Game extends Applet implements Runnable, KeyListener {
             isPromptDisabled = false;
         }
 
-        if ( e.getKeyCode() == KeyEvent.VK_ESCAPE ) {
-        }
 
 
         keyPressed = true;

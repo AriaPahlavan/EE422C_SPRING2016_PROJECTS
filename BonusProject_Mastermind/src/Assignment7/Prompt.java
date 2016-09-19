@@ -102,11 +102,11 @@ public class Prompt {
             g2.setFont(START_SMALL_FONT);
             g2.setColor(Color.BLACK);
 
-            g2.drawString("Press Enter or Space key to play...", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 50);
-            g2.drawString("Press Backspace or Delete to undo last peg.", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 80);
-            g2.drawString("Press Enter to place your new guess pegs in ", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 110);
-            g2.drawString("corresponding holes to be checked.", (11 * (int) PROMPT_WIDTH) / 10 + 160, (21 * (int) PROMPT_HEIGHT) / 10 + 140);
-            g2.drawString("Press Q if you want to give up trying.", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 170);
+            g2.drawString("Press Enter or Space to play...", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 30);
+            g2.drawString("Press Backspace or Delete to undo last peg", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 60);
+            g2.drawString("Press Enter to check your next guess ", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 90);
+            g2.drawString("Press S to change the settings", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 120);
+            g2.drawString("Press Q if you want to give up trying", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 150);
 
             Color[] colors = { Color.red, Peg.PURPLE, Color.blue, Color.YELLOW, Peg.ORANGE, Color.green };
             char[] colorInitials = { 'R', 'P', 'B', 'Y', 'O', 'G' };

@@ -49,14 +49,13 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
 
         //initializing txt, btn and lbl
         maxGuess = new TextField(5);
-        name = new Label("Enter maximum number of guesses: ");
-        ok = new Button("Update");
+        name = new Label("Number of guesses allowed: ");
+        ok = new Button("change");
 
         maxGuess.setText(new Integer(MAX_GUESS).toString());
         add(name);
         add(maxGuess);
         add(ok);
-
 
         maxGuess.addActionListener(this);
         ok.addActionListener(this);

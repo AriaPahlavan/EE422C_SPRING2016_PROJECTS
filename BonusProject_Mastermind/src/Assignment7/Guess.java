@@ -7,10 +7,10 @@ import java.util.ArrayList;
  * BonusProject_Mastermind
  * Created by Aria Pahlavan on Apr 2016.
  */
-public class Guess {
+class Guess {
     private GuessPeg[] guess;
 
-    public Guess() {
+    Guess() {
         this.guess = new GuessPeg[4];
     }
 
@@ -39,7 +39,7 @@ public class Guess {
     }
 
 
-    public GuessPeg[] getGuess() {
+    GuessPeg[] getGuess() {
         return guess;
     }
 
@@ -52,7 +52,7 @@ public class Guess {
      *
      * @param pegColors
      */
-    public void makeGuess(ArrayList<RoundPegColor> pegColors) {
+    void makeGuess(ArrayList<RoundPegColor> pegColors) {
 
         int i = 0;
         for ( RoundPegColor pegColor : pegColors ) {
@@ -72,7 +72,7 @@ public class Guess {
      *
      * @param pegColors
      */
-    public void makeGuess(RoundPegColor[] pegColors) {
+    private void makeGuess(RoundPegColor[] pegColors) {
 
         int i = 0;
         for ( RoundPegColor pegColor : pegColors ) {
@@ -89,7 +89,7 @@ public class Guess {
     /**
      * Displays users guess
      */
-    public void displayGuess(Graphics2D g2) {
+    void displayGuess(Graphics2D g2) {
         for ( int i = 0; i < 4; i += 1 ) {
             if ( guess[i] == null )
                 break;
@@ -100,11 +100,11 @@ public class Guess {
     /**
      * This method resets the guess
      */
-    public void reset() {
+    void reset() {
         this.guess = new GuessPeg[4];
     }
 
-    public void displayTempGuess(Graphics2D g2) {
+    void displayTempGuess(Graphics2D g2) {
 
         for ( int i = 0; i < guess.length; i += 1 ) {
 

@@ -16,7 +16,6 @@ public class SecretCode {
 
         for ( int i = 0; i < 4; i += 1 ) {
             this.secretCode[i] = new SecretPeg();
-            //TODO reenable this part plaese!
             this.secretCode[i].setxyPeg(525 + 100*i , 100);
         }
         generateSecretCode();

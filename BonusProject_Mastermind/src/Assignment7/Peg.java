@@ -3,6 +3,8 @@ package Assignment7;
 
 import java.awt.*;
 
+import static Assignment7.GameColors.*;
+
 /**
  * BonusProject_Mastermind
  * Created by Aria Pahlavan on Apr 2016.
@@ -16,8 +18,7 @@ public class Peg {
     protected static final int RESULT_PEG_RADIOUS = 10;
     private int yPeg;
     private int xPeg;
-    protected static Color PURPLE = new Color(95, 4, 153);
-    protected static Color ORANGE = new Color(255, 122, 0);
+
 
     public Peg() {
         this.color = RoundPegColor.none;
@@ -129,10 +130,10 @@ public class Peg {
                 newColor = Color.green;
                 break;
             case orange:
-                newColor = ORANGE;
+                newColor = peg_orange;
                 break;
             case purple:
-                newColor = PURPLE;
+                newColor = peg_purple;
                 break;
             case red:
                 newColor = Color.red;

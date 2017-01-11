@@ -8,91 +8,242 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
+import static Assignment7.GameColors.*;
+import static Assignment7.GameStatus.*;
+import static Assignment7.Prompt.END;
+import static Assignment7.Prompt.START;
+
 enum GameStatus {
-    NOT_STRTD,
+    NOT_STARTED,
     LOST,
     WON,
-    IN_PRGRSS
+    IN_PROGRESS
 }
 
 /**
- * BonusProject_Mastermind
+ * Bonus Project - Mastermind Game
  * Created by Aria Pahlavan on Apr 2016.
  */
 public class Game extends Applet implements Runnable, KeyListener, ActionListener {
+    private final static boolean isDebugMode = false;
+    private final int ABS_MAX_GUESS = 13;
+    static int MAX_GUESS = 13;
+    private boolean isPromptDisabled = false;
+    private boolean keyPressed = true;
+    private boolean isOver = false;
     private Graphics doubleG;
     private Image image;
     private GameBoard myGameBoard;
-    private Guess tempGuess;
-    private ArrayList<RoundPegColor> tempPegs;
-    protected static int MAX_GUESS = 13;
-    private boolean isPromptDisabled = false;
     private Prompt prompt;
-    private boolean keyPressed = true;
-    private GameStatus status = GameStatus.NOT_STRTD;
-    private boolean debugMode = false;
-    private boolean isOver = false;
-    private TextField maxGuess;
+    private Guess tempGuess;
+    private ArrayList<RoundPegColor> tempPegs = null;
+    private GameStatus status = GameStatus.NOT_STARTED;
+    private TextField maxGuessTxt;
     private Label name;
-    private Button ok;
+    private Button ok_button;
+    private Button cancel_button;
 
+    private void configureTempGuess() {
+        tempGuess.makeGuess(tempPegs);
+        for ( int i = 0; i < 4; i += 1 ) {
+            GuessPeg currPeg = tempGuess.getGuess()[i];
+            int guessNum = myGameBoard.getGuesses().size() - 1;
+
+            if ( currPeg == null )
+                break;
+
+            currPeg.setxyPeg(565 + 50 * i, 525 - 35 * (guessNum));
+        }
+    }
+
+    private void disablePopup() {
+        isPromptDisabled = true;
+
+        if ( status == NOT_STARTED )
+            status = IN_PROGRESS;
+    }
+
+    private boolean isPopupDone(KeyEvent e) {
+        return (status == NOT_STARTED && ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER ))
+                || ( (status == LOST || status == WON) && e.getKeyCode() == KeyEvent.VK_R );
+    }
+
+    private void keyPressedDuringGame(KeyEvent e) {
+        if ( isGuessRegisterTime(e) ) { registerGuess(); }                          // register guess
+        if ( isUndo(e) ) { tempPegs.remove(tempPegs.size() - 1); }                  // undo previous peg
+        if ( e.getKeyCode() == KeyEvent.VK_Q ) { userLost(); }                   // take the loss
+        if ( isUpdateGuessTime() ) { addColoredPegs(e); }                           // update guesses
+        if ( e.getKeyCode() == KeyEvent.VK_ESCAPE ) { this.requestFocus(); }        // request focus
+    }
+
+    private void registerGuess() {
+        configureTempGuess();
+        tempPegs.clear();
+        myGameBoard.addGuess(tempGuess);
+        tempGuess = new Guess();
+    }
+
+    private boolean isGuessRegisterTime(KeyEvent e) {
+        return e.getKeyCode() == KeyEvent.VK_ENTER && tempPegs.size() == 4;
+    }
+
+    private void addColoredPegs(KeyEvent e) {
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_B:
+                tempPegs.add(RoundPegColor.blue);
+                break;
+            case KeyEvent.VK_R:
+                tempPegs.add(RoundPegColor.red);
+                break;
+            case KeyEvent.VK_G:
+                tempPegs.add(RoundPegColor.green);
+                break;
+            case KeyEvent.VK_P:
+                tempPegs.add(RoundPegColor.purple);
+                break;
+            case KeyEvent.VK_O:
+                tempPegs.add(RoundPegColor.orange);
+                break;
+            case KeyEvent.VK_Y:
+                tempPegs.add(RoundPegColor.yellow);
+                break;
+        }
+    }
+
+    private boolean isUpdateGuessTime() {
+        return tempPegs.size() < 4
+                && status == IN_PROGRESS;
+    }
+
+    private boolean isUndo(KeyEvent e) {
+        return (e.getKeyCode() == KeyEvent.VK_BACK_SPACE || e.getKeyCode() == KeyEvent.VK_DELETE)
+                && !tempPegs.isEmpty();
+    }
+
+    private void reset() {
+        tempGuess = new Guess();
+        tempPegs = new ArrayList<>();
+        myGameBoard = new GameBoard();
+
+        if ( isPromptDisabled ) {
+            status = IN_PROGRESS;
+        } else
+            status = NOT_STARTED;
+
+        keyPressed = true;
+        resetPrompt();
+        isOver = false;
+    }
+
+    private void resetPrompt() {
+        prompt.resetPromptDim();
+        prompt.setStatus(PopupStatus.INIT);
+    }
+
+    private void updateMaxGuess(int newMaxGuess) {
+        MAX_GUESS = newMaxGuess;
+        myGameBoard.setMAX_GUESS(MAX_GUESS);
+        prompt.setStatus(PopupStatus.DONE);
+        disableSettings();
+        maxGuessTxt.setForeground(Color.black);
+
+        if ( status == IN_PROGRESS ) { reset(); }
+    }
+
+    private void enableSettings() {
+        maxGuessTxt.setFocusable(true);
+        ok_button.setFocusable(true);
+        cancel_button.setFocusable(true);
+        name.setVisible(true);
+        maxGuessTxt.setVisible(true);
+        ok_button.setVisible(true);
+        cancel_button.setVisible(true);
+        this.setFocusable(false);
+    }
+
+    private void disableSettings() {
+        name.setFocusable(false);
+        maxGuessTxt.setFocusable(false);
+        ok_button.setFocusable(false);
+        cancel_button.setFocusable(false);
+        name.setVisible(false);
+        maxGuessTxt.setVisible(false);
+        ok_button.setVisible(false);
+        cancel_button.setVisible(false);
+        this.setFocusable(true);
+    }
+
+    private void paintBoardWithElements(Graphics2D g2) {
+        myGameBoard.paintGameBoard(g2);
+        tempGuess.displayTempGuess(g2);
+        tempGuess.reset();
+
+        uncoverAnswerDebug(g2);
+    }
+
+    private void uncoverAnswerDebug(Graphics2D g2) {
+        if ( !isDebugMode ) {
+            g2.setColor(new Color(205, 133, 63));
+            g2.fillRoundRect(522, 80, 350, 60, 10, 360);
+        }
+    }
+
+    private void startGame(Graphics2D g2) {
+        prompt.startGamePopup(g2, START);
+        if ( prompt.getStatus() == PopupStatus.RESET ) { resetPromptAndStartGame(); }
+    }
+
+    private void endGame(Graphics2D g2, GameBoard myGameBoard) {
+        prompt.endGamePopup(g2, myGameBoard, END);
+
+        //reset the prompt parameters and start the game
+        if ( prompt.getStatus() == PopupStatus.RESET ) {
+            prompt.setStatus(PopupStatus.INIT);
+            reset();
+        }
+    }
+
+    private void resetPromptAndStartGame() {
+        prompt.setStatus(PopupStatus.INIT);
+        status = IN_PROGRESS;
+        keyPressed = true;
+    }
 
     @Override
-    /**
-     * This method initializes the background images and threads
-     */
     public void init() {
         //initializing the background images and threads
         this.setSize(1400, 700);
         addKeyListener(this);
         this.setFocusable(true);
+        this.setBackground(lightBlack);
 
         //initializing txt, btn and lbl
-        maxGuess = new TextField(5);
+        maxGuessTxt = new TextField(5);
         name = new Label("Number of guesses allowed: ");
-        ok = new Button("change");
+        ok_button = new Button("Update");
+        cancel_button = new Button("Cancel");
+        maxGuessTxt.setText(Integer.toString(MAX_GUESS));
 
-        maxGuess.setText(new Integer(MAX_GUESS).toString());
         add(name);
-        add(maxGuess);
-        add(ok);
+        add(maxGuessTxt);
+        add(ok_button);
+        add(cancel_button);
 
-        maxGuess.addActionListener(this);
-        ok.addActionListener(this);
-
-
+        maxGuessTxt.addActionListener(this);
+        ok_button.addActionListener(this);
+        cancel_button.addActionListener(this);
     }
 
     @Override
-    /**
-     * This method starts and initializes the cars, thread, and popups
-     */
-    public void start() {
-        //setting up the game!
-        tempGuess = new Guess();
-        tempPegs = new ArrayList<>();
-        prompt = new Prompt();
-
-        myGameBoard = new GameBoard();
-        myGameBoard.getGameBoard().setxyBoard(500, 40);
-        Thread thread = new Thread(this);
-        thread.start();
-        prompt = new Prompt();
-    }
-
-    @Override
-    /**
-     * This method updates the is called over and over to do stuff life repainting the screen!
-     */
     public void run() {
         while ( true ) {
 
             //repaint only if the user is interacting with game
-            if ( keyPressed || status != GameStatus.IN_PRGRSS ) {
+            if ( keyPressed || status != IN_PROGRESS ) {
 
                 //if use won
                 if ( myGameBoard.isGuessMatch() ) {
-                    status = GameStatus.WON;
+                    status = WON;
                     if ( !isOver ) {
                         prompt.reset();
                         isOver = true;
@@ -100,15 +251,11 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
                 }
                 //if the user hasn't guessed right and reached max # of guesses
                 else if ( myGameBoard.getGuesses().size() == MAX_GUESS ) {
-                    status = GameStatus.LOST;
-                    if ( !isOver ) {
-                        prompt.reset();
-                        isOver = true;
-                    }
+                    userLost();
                 }
 
                 //When the Enter or Space key is pressed, start the game
-                if ( status == GameStatus.IN_PRGRSS ) {
+                if ( status == IN_PROGRESS ) {
 
                     //Game has started and correct guess was not entered!
                     configureTempGuess();
@@ -126,19 +273,25 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
         }
     }
 
-    private void configureTempGuess() {
-        tempGuess.makeGuess(tempPegs);
-        for ( int i = 0; i < 4; i += 1 ) {
-            GuessPeg currPeg = tempGuess.getGuess()[i];
-            int guessNum = myGameBoard.getGuesses().size() - 1;
-
-            if ( currPeg == null )
-                break;
-
-            currPeg.setxyPeg(565 + 50 * i, 525 - 35 * (guessNum));
+    private void userLost() {
+        status = LOST;
+        if ( !isOver ) {
+            prompt.reset();
+            isOver = true;
         }
     }
 
+    @Override
+    public void start() {
+        //setting up the game!
+        tempGuess = new Guess();
+        tempPegs = new ArrayList<>();
+        prompt = new Prompt();
+        myGameBoard = new GameBoard();
+        prompt = new Prompt();
+        Thread thread = new Thread(this);
+        thread.start();
+    }
 
     @Override
     public void update(Graphics g) {
@@ -157,85 +310,31 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
         g.drawImage(image, 0, 0, this);
     }
 
-
     @Override
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
 
-        //In the middle of closing a popup?
-        if ( prompt.getStatus() != PopupStatus.DONE ) {
+        // While closing a popup
+        if ( prompt.getStatus() != PopupStatus.DONE )
+            if ( (status == WON || status == LOST) ) { myGameBoard.paintGameBoard(g2); }
+            else if ( status == IN_PROGRESS ) { paintBoardWithElements(g2); }
 
-            //Game over?
-            if ( (status == GameStatus.WON || status == GameStatus.LOST) ) {
-                // Paint board and it's elements
-                myGameBoard.paintGameBoard(g2);
-            } else if ( status == GameStatus.IN_PRGRSS ) {
-                // Paint board and it's elements and guess
-                myGameBoard.paintGameBoard(g2);
-                tempGuess.displayTempGuess(g2);
-                tempGuess.reset();
-
-                //code cover
-                if ( !debugMode ) {
-                    g2.setColor(new Color(205, 133, 63));
-                    g2.fillRoundRect(522, 80, 350, 60, 10, 360);
-                }
-            }
+        switch (status){
+            case NOT_STARTED:                                       // start game
+                if ( !isPromptDisabled) { startGame(g2); }
+                break;
+            case IN_PROGRESS:                                       // prompt instructions
+                prompt.instructions(g2);
+                break;
+            case WON:                                               // prompt win
+                endGame(g2, myGameBoard);
+                break;
+            case LOST:                                              // prompt loss
+                endGame(g2, myGameBoard);
+                break;
+            default:
         }
-
-
-        //popup before starting the race
-        if ( !isPromptDisabled ) {
-            if ( status == GameStatus.NOT_STRTD ) {
-
-
-                //initialize, run and close the prompt
-                prompt.startGame(g2);
-
-
-                //reset the prompt parameters and start the game
-                if ( prompt.getStatus() == PopupStatus.RESET ) {
-                    prompt.setStatus(PopupStatus.INIT);
-                    status = GameStatus.IN_PRGRSS;
-                    keyPressed = true;
-                }
-            }
-        }
-
-
-        if ( status == GameStatus.IN_PRGRSS ) {
-            this.prompt.instructions(g2);
-        }
-
-
-        //popup for game stats
-        if ( status == GameStatus.WON ) {
-            prompt.endGame(g2, "Congrats! You won :)", myGameBoard);
-
-            //reset the prompt parameters and start the game
-            if ( prompt.getStatus() == PopupStatus.RESET ) {
-                prompt.setStatus(PopupStatus.INIT);
-//                status = GameStatus.IN_PRGRSS;
-//                keyPressed = true;
-                reset();
-            }
-
-        } else if ( status == GameStatus.LOST ) {
-            prompt.endGame(g2, "You lost :(", myGameBoard);
-
-            //reset the prompt parameters and start the game
-            if ( prompt.getStatus() == PopupStatus.RESET ) {
-                prompt.setStatus(PopupStatus.INIT);
-//                status = GameStatus.IN_PRGRSS;
-//                keyPressed = true;
-                reset();
-
-            }
-        }
-
-
     }
-
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -244,108 +343,15 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
 
     @Override
     public void keyPressed(KeyEvent e) {
-
-
-        //When game in progress
-        if ( status == GameStatus.IN_PRGRSS ) {
-
-            // Register guess
-            if ( e.getKeyCode() == KeyEvent.VK_ENTER && tempPegs.size() == 4 ) {
-                configureTempGuess();
-                tempPegs.clear();
-                myGameBoard.addGuess(tempGuess);
-                tempGuess = new Guess();
-            }
-
-            //undo prev guess peg entered by user
-            if ( e.getKeyCode() == KeyEvent.VK_BACK_SPACE || e.getKeyCode() == KeyEvent.VK_DELETE ) {
-                if ( tempPegs.size() > 0 ) {
-                    tempPegs.remove(tempPegs.size() - 1);
-                }
-            }
-
-            //update guess
-            if ( tempPegs.size() < 4 && status == GameStatus.IN_PRGRSS && !(e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER) ) {
-                switch (e.getKeyCode()) {
-                    case KeyEvent.VK_B:
-                        tempPegs.add(RoundPegColor.blue);
-                        break;
-                    case KeyEvent.VK_R:
-                        tempPegs.add(RoundPegColor.red);
-                        break;
-                    case KeyEvent.VK_G:
-                        tempPegs.add(RoundPegColor.green);
-                        break;
-                    case KeyEvent.VK_P:
-                        tempPegs.add(RoundPegColor.purple);
-                        break;
-                    case KeyEvent.VK_O:
-                        tempPegs.add(RoundPegColor.orange);
-                        break;
-                    case KeyEvent.VK_Y:
-                        tempPegs.add(RoundPegColor.yellow);
-                        break;
-                }
-            }
-
-            //To give up
-            if ( e.getKeyCode() == KeyEvent.VK_Q ) {
-                status = GameStatus.LOST;
-
-            }
-        }
-
-
-        //Notifies that user wants to start the race
-        if ( status == GameStatus.NOT_STRTD )
-            if ( e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER ) {
-                prompt.setStatus(PopupStatus.DONE);
-            }
-
-        //reset after game's over
-        if ( status == GameStatus.LOST || status == GameStatus.WON )
-            if ( e.getKeyCode() == KeyEvent.VK_R ) {
-                prompt.setStatus(PopupStatus.DONE);
-            }
-
-
-        //Disabling popup!
-        if ( e.getKeyCode() == KeyEvent.VK_D ) {
-            isPromptDisabled = true;
-
-            if ( status == GameStatus.NOT_STRTD )
-                status = GameStatus.IN_PRGRSS;
-        }
-
-        //Enabling popup!
-        if ( e.getKeyCode() == KeyEvent.VK_E ) {
-            isPromptDisabled = false;
-        }
-
-        if ( e.getKeyCode() == KeyEvent.VK_S) {
-            //Display the settings
-            enableSettings();
-        }
+        if ( isPopupDone(e) ) { prompt.setStatus(PopupStatus.DONE); }           // popup is done
+        if ( status == IN_PROGRESS ) { keyPressedDuringGame(e); }               // key pressed and game in progress
+        if ( e.getKeyCode() == KeyEvent.VK_D ) { disablePopup(); }              // disable popups
+        if ( e.getKeyCode() == KeyEvent.VK_E ) { isPromptDisabled = false; }    // enable popups
+        if ( e.getKeyCode() == KeyEvent.VK_S ) { enableSettings(); }            // enable settings
+        if ( e.getKeyCode() == KeyEvent.VK_ESCAPE ) { disableSettings(); }      // disable settings
 
         keyPressed = true;
 
-    }
-
-    private void reset() {
-        tempGuess = new Guess();
-        tempPegs = new ArrayList<>();
-
-        myGameBoard = new GameBoard();
-        myGameBoard.getGameBoard().setxyBoard(500, 50);
-
-        if ( isPromptDisabled ) {
-            status = GameStatus.IN_PRGRSS;
-        } else
-            status = GameStatus.NOT_STRTD;
-
-        keyPressed = true;
-        resetPrompt();
-        isOver = false;
     }
 
     @Override
@@ -353,57 +359,20 @@ public class Game extends Applet implements Runnable, KeyListener, ActionListene
 
     }
 
-    public void resetPrompt() {
-        prompt.setPROMPT_HEIGHT(0.421272023);
-        prompt.setPROMPT_WIDTH(1.26381607);
-        prompt.setDone(false);
-        prompt.setStatus(PopupStatus.INIT);
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        try {
-            int temp = Integer.parseInt(maxGuess.getText());
-            if ( temp <= 13 && temp > 0 ) {
-                MAX_GUESS = temp;
-                myGameBoard.setMAX_GUESS(MAX_GUESS);
-                prompt.setStatus(PopupStatus.DONE);
+        if ( e.getActionCommand().equals("Cancel") ) {
+            disableSettings();
+            this.requestFocus();
+        }
+        else
+            try {
+                int temp = Integer.parseInt(maxGuessTxt.getText());
 
-                //Get rid of the settings
-                disableSettings();
-                maxGuess.setForeground(Color.black);
-
-                if ( status == GameStatus.IN_PRGRSS )
-                    reset();
-            } else {
-                maxGuess.setForeground(Color.red);
+                if ( temp <= ABS_MAX_GUESS && temp > 0 ) { updateMaxGuess(temp); }
+                else { maxGuessTxt.setForeground(Color.red); }
             }
-
-        } catch (Exception e1) {
-            maxGuess.setForeground(Color.red);
-        }
-        finally {
-
-        }
-    }
-
-
-    private void enableSettings(){
-        maxGuess.setFocusable(true);
-        ok.setFocusable(true);
-        name.setVisible(true);
-        maxGuess.setVisible(true);
-        ok.setVisible(true);
-        this.setFocusable(false);
-    }
-
-    private void disableSettings(){
-        name.setFocusable(false);
-        maxGuess.setFocusable(false);
-        ok.setFocusable(false);
-        name.setVisible(false);
-        maxGuess.setVisible(false);
-        ok.setVisible(false);
-        this.setFocusable(true);
+            catch (Exception ignored) { /* do nothing */ }
+            finally { maxGuessTxt.setForeground(Color.red); }
     }
 }

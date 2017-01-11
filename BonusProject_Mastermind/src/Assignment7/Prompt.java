@@ -1,7 +1,14 @@
 package Assignment7;
 
+import com.google.common.collect.ImmutableMap;
+
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.Map;
+
+import static Assignment7.GameColors.peg_orange;
+import static Assignment7.GameColors.peg_purple;
+import static Assignment7.GameFonts.*;
+import static Assignment7.PopupStatus.*;
 
 enum PopupStatus {
     INIT,
@@ -14,131 +21,70 @@ enum PopupStatus {
  * Project5_Cars
  * Created by Aria Pahlavan on Apr 2016.
  */
-public class Prompt {
-    //Member data
-    protected final Font START_FONT = new Font("DejaVu Sans, Bold", Font.BOLD + Font.ITALIC, 40);
-    protected final Font START_SMALL_FONT = new Font("DejaVu Sans, Bold", Font.BOLD + Font.ITALIC, 20);
-    protected final Font START_BIG_FONT = new Font("DejaVu Sans, Bold", Font.BOLD + Font.ITALIC, 45);
-    protected final Font START_BIGGER_FONT = new Font("DejaVu Sans, Bold", Font.BOLD + Font.ITALIC, 50);
-    protected final Font WINNER_FONT = new Font("Purisa", Font.BOLD, 40);
-    protected final Font PROMPT_FONT = new Font("Purisa", Font.BOLD, 25);
-    protected final Font SMALL_FONT = new Font("Purisa", Font.BOLD, 18);
-    private ArrayList<Integer> winnersList = new ArrayList<>();
-    private double PROMPT_HEIGHT = 0.421272023;
-    private double PROMPT_WIDTH = 1.26381607;
-    private int X_AXIS = 300;
-    private int X_instruction = 800;
-    private int Y_instruction = 220;
-    private boolean done = false;
-    private boolean inprogress = true;
-    private PopupStatus status = PopupStatus.INIT;
+class Prompt {
+    private double promptHeight = 0.421272023;
+    private double promptWidth = 1.26381607;
+    private final static int X_AXIS = 300;
+    private final static int X_INSTRUCTION = 800;
+    private final static int Y_INSTRUCTION = 220;
+    private boolean isInProgress = true;
+    private PopupStatus status = INIT;
+    final static String START = "start";
+    final static String END = "end";
+    final static Color[] colors = { Color.red, peg_purple, Color.blue, Color.YELLOW, peg_orange, Color.green };
+    final static char[] colorInitials = { 'R', 'P', 'B', 'Y', 'O', 'G' };
+    final static Map<Integer, String> welcomeMsg = ImmutableMap.of(
+            1, "Press Enter or Space to play...",
+            2, "Press Backspace or Delete to undo last peg",
+            3, "Press Enter to check your next guess ",
+            4, "Press S to change the settings",
+            5, "Press Q if you want to give up trying"
+    );
 
-
-    //Getters and Setters
-    public void setPROMPT_HEIGHT(double PROMPT_HEIGHT) {
-        this.PROMPT_HEIGHT = PROMPT_HEIGHT;
+    private void setPromptHeight(double promptHeight) {
+        this.promptHeight = promptHeight;
     }
 
-    public void setPROMPT_WIDTH(double PROMPT_WIDTH) {
-        this.PROMPT_WIDTH = PROMPT_WIDTH;
+    private void setPromptWidth(double promptWidth) {
+        this.promptWidth = promptWidth;
     }
 
-    public void setDone(boolean done) {
-        this.done = done;
-    }
-
-    public boolean isInprogress() {
-        return inprogress;
-    }
-
-    public PopupStatus getStatus() {
+    PopupStatus getStatus() {
         return status;
     }
 
-    public void setStatus(PopupStatus status) {
+    void setStatus(PopupStatus status) {
         this.status = status;
-    }
-
-    public void setInprogress(boolean inprogress) {
-        this.inprogress = inprogress;
     }
 
     /**
      * This method prompts the user to the isntructions on how to start the race.
      *
      * @param g2
+     * @param state
      */
-    public void startGame(Graphics2D g2) {
+    void startGamePopup(Graphics2D g2, String state) {
+        drawPromptWindow(g2, state);
+        beginningAnimation(state);
 
-        //draw Prompt window
-        g2.setFont(START_FONT);
-        g2.setColor(new Color(14, 61, 58));
-        g2.fillRoundRect(X_AXIS, (int) PROMPT_HEIGHT, 2 * (int) PROMPT_WIDTH + 125, 5 * (int) PROMPT_HEIGHT, 100, 90);
-        g2.setColor(new Color(0, 203, 160));
-        g2.fillRoundRect(X_AXIS, (int) PROMPT_HEIGHT, 2 * (int) PROMPT_WIDTH - 5 + 125, 5 * (int) PROMPT_HEIGHT - 12, 80, 90);
-
-        //Beginning animation
-        if ( status == PopupStatus.INIT ) {
-            PROMPT_WIDTH *= 1.2;
-            PROMPT_HEIGHT *= 1.2;
-
-            if ( (int) PROMPT_WIDTH == 300 || (int) PROMPT_HEIGHT == 100 ) {
-
-                status = PopupStatus.RUN;
-                PROMPT_WIDTH = 300;
-                PROMPT_HEIGHT = 100;
-            }
-        }
-
-
-        if ( status == PopupStatus.RUN ) {
-
-            //Write game title
-            g2.setColor(new Color(226, 45, 0));
-            g2.drawString("HELLO MASTERMIND!!", (11 * (int) PROMPT_WIDTH) / 10 + 125, (21 * (int) PROMPT_HEIGHT) / 10 - 25);
-
-
-            //Ask to press Enter or Space to start
-            g2.setFont(START_SMALL_FONT);
-            g2.setColor(Color.BLACK);
-
-            g2.drawString("Press Enter or Space to play...", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 30);
-            g2.drawString("Press Backspace or Delete to undo last peg", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 60);
-            g2.drawString("Press Enter to check your next guess ", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 90);
-            g2.drawString("Press S to change the settings", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 120);
-            g2.drawString("Press Q if you want to give up trying", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 150);
-
-            Color[] colors = { Color.red, Peg.PURPLE, Color.blue, Color.YELLOW, Peg.ORANGE, Color.green };
-            char[] colorInitials = { 'R', 'P', 'B', 'Y', 'O', 'G' };
-
-            for ( int i = 0; i < 6; i += 2 ) {
-                g2.setColor(Color.black);
-                g2.drawString(colorInitials[i] + " <->", (11 * (int) PROMPT_WIDTH) / 10 + 110, (21 * (int) PROMPT_HEIGHT) / 10 + 230 + 40 * (i / 2));
-                g2.setColor(colors[i]);
-                g2.fillOval((11 * (int) PROMPT_WIDTH) / 10 + 190, (21 * (int) PROMPT_HEIGHT) / 10 + 215 + 40 * (i / 2), 20, 20);
-
-
-                g2.setColor(Color.black);
-                g2.drawString(colorInitials[i + 1] + " <->", (11 * (int) PROMPT_WIDTH) / 10 + 410, (21 * (int) PROMPT_HEIGHT) / 10 + 230 + 40 * (i / 2));
-                g2.setColor(colors[i + 1]);
-                g2.fillOval((11 * (int) PROMPT_WIDTH) / 10 + 490, (21 * (int) PROMPT_HEIGHT) / 10 + 215 + 40 * (i / 2), 20, 20);
-            }
-        }
-
-        //closing animation
-        if ( status == PopupStatus.DONE ) {
-            PROMPT_WIDTH /= 1.7;
-            PROMPT_HEIGHT /= 1.7;
-
-            if ( (int) PROMPT_WIDTH == 0 ) {
-
-                status = PopupStatus.RESET;
-            }
-
-        }
-
+        if ( status == RUN ) { printPromptMessage(g2); }
+        if ( status == DONE ) { closetingAnimation(state); }
     }
 
+    /**
+     * Prompts the result of the game!
+     *
+     * @param g2
+     * @param myGameBoard
+     * @param state
+     */
+    public void endGamePopup(Graphics2D g2, GameBoard myGameBoard, String state) {
+        drawPromptWindow(g2, state);
+        beginningAnimation(state);
+
+        if ( status == RUN ) { printEndMsg(g2, myGameBoard); }
+        if ( status == DONE ) { closetingAnimation(state); }
+    }
 
     /**
      * This method prompts the user the instructions for playing the game properly.
@@ -149,116 +95,197 @@ public class Prompt {
         int PROMPT_WIDTH = 300;
         int PROMPT_HEIGHT = 100;
         //Draw bg box
-        g2.setColor(new Color(117, 151, 101));
-        g2.fillRoundRect(X_instruction + 155, Y_instruction + 30, PROMPT_WIDTH - 20, PROMPT_HEIGHT + 180, 80, 90);
+        g2.setColor(GameColors.yellowGreen);
+        g2.fillRoundRect(X_INSTRUCTION + 155, Y_INSTRUCTION + 30, PROMPT_WIDTH - 20, PROMPT_HEIGHT + 180, 80, 90);
 
         //Ask to press Enter or Space to start
         g2.setFont(START_SMALL_FONT);
         g2.setColor(Color.BLACK);
 
-        g2.drawString("\"Backspace\" to undo", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 80);
-        g2.drawString("\"Enter\" to match ", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 110);
-        g2.drawString("\"Q\" to give up", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 140);
+        g2.drawString("\"Backspace\" to undo", (11 * X_INSTRUCTION) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 80);
+        g2.drawString("\"Enter\" to match ", (11 * X_INSTRUCTION) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 110);
+        g2.drawString("\"Q\" to give up", (11 * X_INSTRUCTION) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 140);
 
-        Color[] colors = { Color.red, Peg.PURPLE, Color.blue, Color.YELLOW, Peg.ORANGE, Color.green };
+        Color[] colors = { Color.red, peg_purple, Color.blue, Color.YELLOW, peg_orange, Color.green };
         char[] colorInitials = { 'R', 'P', 'B', 'Y', 'O', 'G' };
 
         for ( int i = 0; i < 6; i += 2 ) {
             g2.setColor(Color.black);
-            g2.drawString(colorInitials[i] + " > ", (11 * X_instruction) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
+            g2.drawString(colorInitials[i] + " > ", (11 * X_INSTRUCTION) / 10 + 110, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
             g2.setColor(colors[i]);
-            g2.fillOval((11 * X_instruction) / 10 + 155, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
+            g2.fillOval((11 * X_INSTRUCTION) / 10 + 155, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
 
 
             g2.setColor(Color.black);
-            g2.drawString(colorInitials[i + 1] + " > ", (11 * X_instruction) / 10 + 240, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
+            g2.drawString(colorInitials[i + 1] + " > ", (11 * X_INSTRUCTION) / 10 + 240, (21 * PROMPT_HEIGHT) / 10 + 210 + 40 * (i / 2));
             g2.setColor(colors[i + 1]);
-            g2.fillOval((11 * X_instruction) / 10 + 285, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
+            g2.fillOval((11 * X_INSTRUCTION) / 10 + 285, (21 * PROMPT_HEIGHT) / 10 + 195 + 40 * (i / 2), 20, 20);
         }
     }
-
-
-    /**
-     * Prompts the result of the game!
-     *
-     * @param g2
-     * @param message
-     * @param myGameBoard
-     */
-    public void endGame(Graphics2D g2, String message, GameBoard myGameBoard) {
-
-
-        g2.setFont(START_BIG_FONT);
-        g2.setColor(new Color(0, 102, 28));
-
-
-        //draw Prompt window
-        g2.fillRoundRect((int) PROMPT_WIDTH - 220, (int) PROMPT_HEIGHT + 100, 2 * (int) PROMPT_WIDTH - 200, 5 * (int) PROMPT_HEIGHT - 100 - 50, 80, 90);
-        g2.setColor(new Color(104, 198, 97));
-        g2.fillRoundRect((int) PROMPT_WIDTH - 220, (int) PROMPT_HEIGHT + 100, 2 * (int) PROMPT_WIDTH - 5 - 200, 5 * (int) PROMPT_HEIGHT - 112 - 50, 80, 90);
-
-
-        //Beginning animation
-        if ( status == PopupStatus.INIT ) {
-            PROMPT_WIDTH *= 1.141;
-            PROMPT_HEIGHT *= 1.113;
-
-
-
-            if ( (int) PROMPT_WIDTH == 290 || (int) PROMPT_HEIGHT == 99 ) {
-
-                status = PopupStatus.RUN;
-                PROMPT_WIDTH = 300;
-                PROMPT_HEIGHT = 100;
-            }
-        }
-
-
-        if ( status == PopupStatus.RUN ) {
-
-            //Write game title
-            g2.setColor(new Color(226, 45, 0));
-
-            if ( myGameBoard.isGuessMatch() ) {
-                g2.drawString("Congrats!", (11 * (int) PROMPT_WIDTH) / 10 - 170, (21 * (int) PROMPT_HEIGHT) / 210 + 280);
-                g2.drawString("You won :)", (11 * (int) PROMPT_WIDTH) / 10 - 170, (21 * (int) PROMPT_HEIGHT) / 210 + 330);
-
-            } else {
-                g2.setFont(START_BIGGER_FONT);
-                g2.drawString(message, (11 * (int) PROMPT_WIDTH) / 10 - 190, (21 * (int) PROMPT_HEIGHT) / 210 + 330);
-            }
-
-            //Ask to press Enter or Space to start
-            g2.setFont(PROMPT_FONT);
-            g2.setColor(Color.BLACK);
-
-            if ( myGameBoard.isGuessMatch() )
-                g2.drawString("Number of guesses: " + myGameBoard.getGuesses().size(), (11 * (int) PROMPT_WIDTH) / 10 - 220, (21 * (int) PROMPT_HEIGHT) / 10 + 200);
-
-            g2.drawString("Press R to play again.", (11 * (int) PROMPT_WIDTH) / 10 - 220, (21 * (int) PROMPT_HEIGHT) / 10 + 250);
-
-        }
-
-        //closing animation
-        if ( status == PopupStatus.DONE ) {
-            PROMPT_WIDTH /= 1.141;
-            PROMPT_HEIGHT /= 1.113;
-
-            if ( (int) PROMPT_HEIGHT == 0 ) {
-                status = PopupStatus.RESET;
-            }
-
-        }
-    }
-
 
     /**
      * This method resets the prompt member variables
      */
-    public void reset() {
-        PROMPT_HEIGHT = 1;
-        PROMPT_WIDTH = 1;
-        done = false;
+    void reset() {
+        promptHeight = 1;
+        promptWidth = 1;
     }
 
+    private void closetingAnimation(String state) {
+        switch (state){
+            case START:
+                promptWidth /= 1.7;
+                promptHeight /= 1.7;
+                break;
+            case END:
+                promptWidth /= 1.141;
+                promptHeight /= 1.113;
+                break;
+        }
+
+        if ( (int) promptHeight == 0 ) { status = RESET; }
+    }
+
+    private void printEndMsg(Graphics2D g2, GameBoard myGameBoard) {
+        g2.setColor(GameColors.orange);
+
+        if ( myGameBoard.isGuessMatch() ) {
+            g2.drawString("Congrats!", calcStartGameX() - 280, (21 * (int) promptHeight) / 210 + 280);
+            g2.drawString("You won :)", calcStartGameX() - 280, (21 * (int) promptHeight) / 210 + 330);
+        } else {
+            g2.setFont(START_BIGGER_FONT);
+            g2.drawString("You lost :(", calcStartGameX() - 300, (21 * (int) promptHeight) / 210 + 330);
+        }
+
+        //Ask to press Enter or Space to start
+        g2.setFont(PROMPT_FONT);
+        g2.setColor(Color.BLACK);
+
+        if ( myGameBoard.isGuessMatch() )
+            g2.drawString("Number of guesses: " + myGameBoard.getGuesses().size(), calcStartGameX() - 330, calcStartGameY(6) + 20);
+
+        g2.drawString("Press R to play again.", calcStartGameX() - 330, calcStartGameY(8) + 10);
+    }
+
+    private void printPromptMessage(Graphics2D g2) {
+        printMsgStart(g2);
+    }
+
+    private void drawPromptWindow(Graphics2D g2, String state) {
+        switch (state) {
+            case "start":
+                g2.setFont(START_FONT);
+                g2.setColor(GameColors.indigo);
+                g2.fillRoundRect(X_AXIS, (int) promptHeight, 2 * (int) promptWidth + 125, 5 * (int) promptHeight, 100, 90);
+                g2.setColor(GameColors.cyan);
+                g2.fillRoundRect(X_AXIS, (int) promptHeight, 2 * (int) promptWidth - 5 + 125, 5 * (int) promptHeight - 12, 80, 90);
+                break;
+            case "end":
+                g2.setFont(START_BIG_FONT);
+                g2.setColor(GameColors.darkGreen);
+                g2.fillRoundRect((int) promptWidth - 220, (int) promptHeight + 100, 2 * (int) promptWidth - 200, 5 * (int) promptHeight - 100 - 50, 80, 90);
+                g2.setColor(GameColors.lightGreen);
+                g2.fillRoundRect((int) promptWidth - 220, (int) promptHeight + 100, 2 * (int) promptWidth - 5 - 200, 5 * (int) promptHeight - 112 - 50, 80, 90);
+                break;
+        }
+
+    }
+
+    private void printWelcome(Graphics2D g2) {
+        printWelcomeRec(g2, 5);
+    }
+
+    private void printWelcomeRec(Graphics2D g2, int num) {
+        if ( num == 0 ) {
+            return;
+        }
+
+        g2.drawString(welcomeMsg.get(num), calcStartGameX(), calcStartGameY(num));
+        printWelcomeRec(g2, num - 1);
+    }
+
+    private int calcStartGameY(int count) {
+        return (21 * (int) promptHeight) / 10 + (30 * count);
+    }
+
+    private int calcStartGameX() {
+        return (11 * (int) promptWidth) / 10 + 110;
+    }
+
+    private void beginningAnimation(String state) {
+        if ( status == INIT ) {
+            updatePromptDim(state);
+
+            if ( checkPromptDim(state) ) {
+                status = RUN;
+                promptWidth = 300;
+                promptHeight = 100;
+            }
+        }
+    }
+
+    private void updatePromptDim(String state) {
+        if ( state.equals(START) ) {
+            promptWidth *= 1.2;
+            promptHeight *= 1.2;
+        } else if ( state.equals(END) ) {
+            promptWidth *= 1.141;
+            promptHeight *= 1.113;
+        }
+    }
+
+    private boolean checkPromptDim(String state) {
+        boolean result = false;
+        switch (state) {
+            case START:
+                result = (int) promptWidth == 300 || (int) promptHeight == 100;
+                break;
+            case END:
+                result = (int) promptWidth == 290 || (int) promptHeight == 99;
+                break;
+        }
+        return result;
+    }
+
+    private void printMsgStart(Graphics2D g2) {
+        g2.setColor(GameColors.orange);
+        g2.drawString("HELLO MASTERMIND!!", calcStartGameX() - 30, calcStartGameY(-1));
+
+        g2.setFont(START_SMALL_FONT);
+        g2.setColor(Color.BLACK);
+
+        printWelcome(g2);
+        printColorCodes(g2);
+    }
+
+    private void printColorCodes(Graphics2D g2) {
+        printColorCodeRec(g2, 5);
+    }
+
+    private void printColorCodeRec(Graphics2D g2, int i) {
+        if ( i < 0 ) {
+            return;
+        }
+
+        printColors(g2, i, 0);
+        printColors(g2, i - 1, 300);
+
+        printColorCodeRec(g2, i - 2);
+    }
+
+    private void printColors(Graphics2D g2, int i, int x) {
+        g2.setColor(Color.black);
+        g2.drawString(colorInitials[i] + " <->", calcStartGameX() + x, calcColorCodeY(i, 4));
+        g2.setColor(colors[i]);
+        g2.fillOval(calcStartGameX() + x + 80, calcColorCodeY(i, 1), 20, 20);
+    }
+
+    private int calcColorCodeY(int i, int four) {
+        return calcStartGameY(7) + 5 * four + 40 * (i / 2);
+    }
+
+    void resetPromptDim() {
+        setPromptHeight(0.421272023);
+        setPromptWidth(1.26381607);
+    }
 }

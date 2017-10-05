@@ -9,7 +9,7 @@ import java.awt.*;
 public class SecretPeg extends Peg{
 
     @Override
-    public void paintPeg(Graphics2D g2) {
+    public void paint(Graphics2D g2) {
         super.paintCodePeg(g2);
     }
 }

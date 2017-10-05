@@ -10,13 +10,8 @@ public class Result {
     private ResultPeg[] result;
     private int numFeedbackPegs;
 
-    public Result() {
+    Result() {
         this.result = new ResultPeg[4];
-        this.numFeedbackPegs = 0;
-    }
-
-    public Result(ResultPeg[] result) {
-        this.result = result;
         this.numFeedbackPegs = 0;
     }
 
@@ -24,7 +19,7 @@ public class Result {
         return numFeedbackPegs;
     }
 
-    public void setNumFeedbackPegs(int numFeedbackPegs) {
+    void setNumFeedbackPegs(int numFeedbackPegs) {
         this.numFeedbackPegs = numFeedbackPegs;
     }
 
@@ -32,18 +27,14 @@ public class Result {
         return result;
     }
 
-    public void setResult(ResultPeg[] result) {
-        this.result = result;
-    }
-
     /**
      * Displays users guess
      */
-    public void displayResult(Graphics2D g2){
+    void displayResult(Graphics2D g2){
         for(int i = 0; i < 4; i+=1){
             if ( result[i] == null )
                 break;
-            result[i].paintPeg(g2);
+            result[i].paint(g2);
         }
     }
 }

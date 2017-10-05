@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * BonusProject_Mastermind
  * Created by Aria Pahlavan on Apr 2016.
  */
-class Guess {
+public class Guess {
     private GuessPeg[] guess;
 
     Guess() {
@@ -16,8 +16,6 @@ class Guess {
 
     /**
      * For testing purposes only!
-     *
-     * @param pegColors
      */
     public Guess(ArrayList<RoundPegColor> pegColors) {
         this.guess = new GuessPeg[4];
@@ -26,8 +24,6 @@ class Guess {
 
     /**
      * For testing purposes only!
-     *
-     * @param pegColors
      */
     public Guess(RoundPegColor[] pegColors) {
         this.guess = new GuessPeg[4];
@@ -43,17 +39,10 @@ class Guess {
         return guess;
     }
 
-    public void setGuess(GuessPeg[] guess) {
-        this.guess = guess;
-    }
-
     /**
      * This method receives 4 colors and makes an array of 4 guessPegs
-     *
-     * @param pegColors
      */
     void makeGuess(ArrayList<RoundPegColor> pegColors) {
-
         int i = 0;
         for ( RoundPegColor pegColor : pegColors ) {
 
@@ -70,10 +59,9 @@ class Guess {
     /**
      * This method receives 4 colors and makes an array of 4 guessPegs
      *
-     * @param pegColors
+     * @param pegColors the array of colors received
      */
     private void makeGuess(RoundPegColor[] pegColors) {
-
         int i = 0;
         for ( RoundPegColor pegColor : pegColors ) {
 
@@ -90,10 +78,10 @@ class Guess {
      * Displays users guess
      */
     void displayGuess(Graphics2D g2) {
-        for ( int i = 0; i < 4; i += 1 ) {
-            if ( guess[i] == null )
+        for (GuessPeg peg : guess ) {
+            if ( peg == null )
                 break;
-            guess[i].paintPeg(g2);
+            peg.paint(g2);
         }
     }
 
@@ -106,11 +94,11 @@ class Guess {
 
     void displayTempGuess(Graphics2D g2) {
 
-        for ( int i = 0; i < guess.length; i += 1 ) {
+        for (GuessPeg peg : guess) {
 
-            if ( guess[i] == null)
+            if (peg == null)
                 break;
-            guess[i].paintPeg(g2);
+            peg.paint(g2);
         }
 
     }

@@ -9,29 +9,14 @@ import java.awt.*;
 public class ResultPeg extends Peg{
     private FlatPegColor flatColor;
 
-    public ResultPeg() {
+    ResultPeg(FlatPegColor flatColor) {
         super();
-        this.flatColor = FlatPegColor.none;
-    }
-
-    public ResultPeg(FlatPegColor flatColor) {
-        super();
-        this.flatColor = flatColor;
-    }
-
-    public ResultPeg(RoundPegColor color, int position, FlatPegColor flatColor) {
-        super(color, position, false);
         this.flatColor = flatColor;
     }
 
     public FlatPegColor getFlatColor() {
         return flatColor;
     }
-
-    public void setFlatColor(FlatPegColor flatColor) {
-        this.flatColor = flatColor;
-    }
-
 
     @Override
     public Color pickColor() {
@@ -52,8 +37,7 @@ public class ResultPeg extends Peg{
     }
 
     @Override
-    public void paintPeg(Graphics2D g2) {
-
+    public void paint(Graphics2D g2) {
         g2.setColor(pickColor());
         paintResultPeg(g2);
     }

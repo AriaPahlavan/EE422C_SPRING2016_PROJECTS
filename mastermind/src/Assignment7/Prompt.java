@@ -27,13 +27,12 @@ class Prompt {
     private final static int X_AXIS = 300;
     private final static int X_INSTRUCTION = 800;
     private final static int Y_INSTRUCTION = 220;
-    private boolean isInProgress = true;
     private PopupStatus status = INIT;
     final static String START = "start";
     final static String END = "end";
-    final static Color[] colors = { Color.red, peg_purple, Color.blue, Color.YELLOW, peg_orange, Color.green };
-    final static char[] colorInitials = { 'R', 'P', 'B', 'Y', 'O', 'G' };
-    final static Map<Integer, String> welcomeMsg = ImmutableMap.of(
+    private final static Color[] colors = { Color.red, peg_purple, Color.blue, Color.YELLOW, peg_orange, Color.green };
+    private final static char[] colorInitials = { 'R', 'P', 'B', 'Y', 'O', 'G' };
+    private final static Map<Integer, String> welcomeMsg = ImmutableMap.of(
             1, "Press Enter or Space to play...",
             2, "Press Backspace or Delete to undo last peg",
             3, "Press Enter to check your next guess ",
@@ -73,12 +72,8 @@ class Prompt {
 
     /**
      * Prompts the result of the game!
-     *
-     * @param g2
-     * @param myGameBoard
-     * @param state
      */
-    public void endGamePopup(Graphics2D g2, GameBoard myGameBoard, String state) {
+    void endGamePopup(Graphics2D g2, GameBoard myGameBoard, String state) {
         drawPromptWindow(g2, state);
         beginningAnimation(state);
 
@@ -88,10 +83,8 @@ class Prompt {
 
     /**
      * This method prompts the user the instructions for playing the game properly.
-     *
-     * @param g2
      */
-    public void instructions(Graphics2D g2) {
+    void instructions(Graphics2D g2) {
         int PROMPT_WIDTH = 300;
         int PROMPT_HEIGHT = 100;
         //Draw bg box

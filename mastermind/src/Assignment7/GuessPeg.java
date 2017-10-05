@@ -9,7 +9,7 @@ public class GuessPeg extends Peg{
         super();
     }
 
-    public GuessPeg(RoundPegColor color) {
+    GuessPeg(RoundPegColor color) {
         super(color);
     }
 

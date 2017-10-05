@@ -23,7 +23,6 @@ public class SecretCode {
 
     /**
      * For testing purposes only!
-     * @param secretCode
      */
     public SecretCode(SecretPeg[] secretCode) {
         this.secretCode = secretCode;
@@ -32,12 +31,6 @@ public class SecretCode {
     public SecretPeg[] getSecretCode() {
         return secretCode;
     }
-
-    public void setSecretCode(SecretPeg[] secretCode) {
-        this.secretCode = secretCode;
-    }
-
-
 
     /**
      * Generates a secret code consisting of a sequence of
@@ -56,10 +49,10 @@ public class SecretCode {
     /**
      * Displays the auto-generated secret code
      */
-    public void displaySecretCode(Graphics2D g2){
+    void displaySecretCode(Graphics2D g2){
         for(int i = 0; i < 4; i+=1){
 
-            secretCode[i].paintPeg(g2);
+            secretCode[i].paint(g2);
         }
     }
 }
